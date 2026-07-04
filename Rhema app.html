@@ -1,140 +1,584 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhema - Daily Bible Quiz & Reading</title>
-    <!-- PWA Manifest Definition Inline -->
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlJoZW1hIiwKICAic2hvcnRfbmFtZSI6ICJSaGVtYSIsCiAgInN0YXJ0X3VybCI6ICIuL2luZGV4Lmh0bWwiLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMxYTFhMWEiLAogICJ0aGVtZV9jb2xvciI6ICIjZDRhZjM3IiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiaWNvbi5wbmciLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIKICAgIH0KICBdCn0=">
-    <meta name="theme-color" content="#d4af37">
-    
-    <!-- GOOGLE ADSENSE CODE PLACEHOLDER -->
-    <!-- Replace public-id with your actual AdSense Publisher ID -->
-    <!-- <script async src="https://googlesyndication.com" crossorigin="anonymous"></script> -->
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rhema - Bible Quiz & Reading</title>
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlJoZW1hIiwKICAic2hvcnRfbmFtZSI6ICJSaGVtYSIsCiAgInN0YXJ0X3VybCI6ICIuL2luZGV4Lmh0bWwiLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMxYTFhMWEiLAogICJ0aGVtZV9jb2xvciI6ICIjZDRhZjM3IiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiaWNvbi5wbmciLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIKICAgIH0KICBdCn0=" />
+    <meta name="theme-color" content="#d4af37" />
     <style>
         :root {
-            --primary: #d4af37; /* Metallic Gold */
+            --primary: #d4af37;
             --bg: #121212;
             --surface: #1e1e1e;
             --text: #ffffff;
             --muted: #a0a0a0;
             --error: #cf6679;
             --success: #4caf50;
+            --card-bg: #1a1a1a;
         }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); padding-bottom: 70px; min-height: 100vh; display: flex; flex-direction: column; }
-        
-        header { background: var(--surface); padding: 15px; text-align: center; border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
-        header h1 { font-size: 24px; color: var(--primary); font-weight: 700; letter-spacing: 1px; }
-        
-        .user-badge { font-size: 12px; background: #333; padding: 5px 10px; border-radius: 15px; border: 1px solid var(--primary); max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .container { width: 100%; max-width: 600px; margin: 0 auto; padding: 20px; flex: 1; }
-        .app-section { display: none; }
-        .app-section.active { display: block; }
-
-        /* Buttons & Toggles */
-        .btn { background: var(--primary); color: #000; padding: 12px 24px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; font-size: 16px; margin-top: 10px; transition: transform 0.1s; }
-        .btn:active { transform: scale(0.98); }
-        .btn-secondary { background: #333; color: #fff; border: 1px solid #444; }
-        
-        .mode-switch-container { display: flex; background: var(--surface); border-radius: 25px; padding: 5px; margin-bottom: 20px; border: 1px solid #333; }
-        .mode-btn { flex: 1; background: transparent; border: none; color: var(--muted); padding: 10px; font-weight: bold; border-radius: 20px; cursor: pointer; transition: 0.2s; }
-        .mode-btn.active { background: var(--primary); color: #000; }
-
-        /* Lists (Books) */
-        .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 15px; }
-        .book-card { background: var(--surface); border: 1px solid #333; padding: 15px; text-align: center; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 500; transition: border 0.2s; }
-        .book-card:hover { border-color: var(--primary); }
-        .testament-title { margin-top: 25px; margin-bottom: 10px; color: var(--primary); font-size: 18px; border-left: 3px solid var(--primary); padding-left: 8px; }
-
-        /* Quiz UI */
-        .quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-weight: bold; }
-        .timer { color: var(--primary); font-size: 20px; background: #2a2205; padding: 5px 12px; border-radius: 15px; border: 1px solid var(--primary); }
-        .question-box { background: var(--surface); padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary); margin-bottom: 20px; font-size: 18px; line-height: 1.5; }
-        .options-list { display: flex; flex-direction: column; gap: 12px; }
-        .option-btn { background: var(--surface); border: 1px solid #333; color: var(--text); padding: 15px; border-radius: 8px; text-align: left; font-size: 16px; cursor: pointer; transition: 0.2s; }
-        .option-btn:hover { background: #252525; }
-
-        /* Leaderboard */
-        .lead-row { display: flex; justify-content: space-between; padding: 12px; background: var(--surface); margin-bottom: 8px; border-radius: 6px; border-left: 3px solid #444; }
-        .lead-row.top3 { border-left-color: var(--primary); }
-
-        /* Bottom Nav Bar */
-        nav.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-top: 1px solid #333; display: flex; height: 60px; z-index: 100; }
-        .nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; cursor: pointer; border: none; background: transparent; }
-        .nav-item.active { color: var(--primary); font-weight: bold; }
-        .nav-icon { font-size: 20px; margin-bottom: 2px; }
-
-        /* Form Controls */
-        input[type="email"] { width: 100%; padding: 14px; background: #252525; border: 1px solid #444; border-radius: 8px; color: #fff; font-size: 16px; margin-bottom: 15px; }
-        input:focus { border-color: var(--primary); outline: none; }
-
-        /* Ad Placement Boxes */
-        .ad-container { background: #151515; border: 1px dashed #333; text-align: center; padding: 10px; margin: 15px 0; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; min-height: 90px; display: flex; flex-direction: column; justify-content: center; }
-
-        /* Offline screen override */
-        #offline-screen { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: var(--bg); z-index: 9999; flex-direction: column; align-items: center; justify-content: center; padding: 40px; text-align: center; }
-
-        /* Responsive Tweak */
-        @media(max-width: 480px) {
-            .book-grid { grid-template-columns: repeat(2, 1fr); }
-            header h1 { font-size: 20px; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding-bottom: 70px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: var(--surface);
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        header .header-center {
+            flex: 1;
+            text-align: center;
+        }
+        header .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        header h1 {
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+        .home-btn {
+            background: #333;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 15px;
+            border: 1px solid var(--primary);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .home-btn:hover {
+            background: var(--primary);
+            color: #000;
+        }
+        .home-btn .home-icon {
+            font-size: 14px;
+        }
+        .user-badge {
+            font-size: 12px;
+            background: #333;
+            padding: 5px 12px;
+            border-radius: 15px;
+            border: 1px solid var(--primary);
+            max-width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #fff;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+        .app-section {
+            display: none;
+        }
+        .app-section.active {
+            display: block;
+        }
+        .btn {
+            background: var(--primary);
+            color: #000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: transform 0.1s;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+        .btn-secondary {
+            background: #333;
+            color: #fff;
+            border: 1px solid #444;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .mode-switch-container {
+            display: flex;
+            background: var(--surface);
+            border-radius: 25px;
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+        .mode-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .mode-btn.active {
+            background: var(--primary);
+            color: #000;
+        }
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .book-card {
+            background: var(--surface);
+            border: 1px solid #333;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: border 0.2s, background 0.2s;
+        }
+        .book-card:hover {
+            border-color: var(--primary);
+            background: #282828;
+        }
+        .testament-title {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 18px;
+            border-left: 3px solid var(--primary);
+            padding-left: 8px;
+        }
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .timer {
+            color: var(--primary);
+            font-size: 20px;
+            background: #2a2205;
+            padding: 5px 12px;
+            border-radius: 15px;
+            border: 1px solid var(--primary);
+        }
+        .question-box {
+            background: var(--surface);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .option-btn {
+            background: var(--surface);
+            border: 1px solid #333;
+            color: var(--text);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .option-btn:hover:not(:disabled) {
+            background: #252525;
+        }
+        .option-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .option-btn.selected {
+            border-color: var(--primary);
+            background: #2a2205;
+        }
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            border-top: 1px solid #333;
+            display: flex;
+            height: 60px;
+            z-index: 100;
+        }
+        .nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 12px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+        }
+        .nav-item.active {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .nav-icon {
+            font-size: 20px;
+            margin-bottom: 2px;
+        }
+        .ad-container {
+            background: #151515;
+            border: 1px dashed #333;
+            text-align: center;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 11px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            min-height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .mission-box {
+            background: var(--surface);
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+            padding: 20px 22px;
+            margin: 0 0 25px 0;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .mission-box::before {
+            content: "✦";
+            position: absolute;
+            top: 8px;
+            right: 16px;
+            font-size: 28px;
+            color: var(--primary);
+            opacity: 0.15;
+            font-weight: 300;
+        }
+        .mission-box .mission-icon {
+            font-size: 26px;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .mission-box .mission-title {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .mission-box .mission-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text);
+            margin: 0;
+        }
+        .mission-box .mission-text strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .mission-box .mission-scripture {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            font-size: 13px;
+            color: var(--muted);
+            font-style: italic;
+            text-align: center;
+        }
+        .mission-box .mission-scripture span {
+            color: var(--primary);
+            font-style: normal;
+            font-weight: 500;
+        }
+        #offline-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: var(--bg);
+            z-index: 9999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+        }
+        /* Results */
+        .quiz-result-detailed {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid var(--primary);
+            margin-top: 10px;
+        }
+        .result-summary {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .result-summary .big-score {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .result-item {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 14px;
+            border-left: 4px solid #444;
+            transition: border-color 0.2s;
+        }
+        .result-item.correct-item {
+            border-left-color: var(--success);
+        }
+        .result-item.wrong-item {
+            border-left-color: var(--error);
+        }
+        .result-item .q-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .result-item .q-number {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--primary);
+        }
+        .result-item .q-status {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .result-item .q-status.correct-status {
+            color: var(--success);
+        }
+        .result-item .q-status.wrong-status {
+            color: var(--error);
+        }
+        .result-item .q-text {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .result-item .q-ref {
+            font-size: 13px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .result-item .options-review {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .result-item .opt-review {
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            border: 1px solid #333;
+            background: #121212;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .result-item .opt-review .opt-letter {
+            font-weight: 700;
+            color: var(--muted);
+            min-width: 22px;
+        }
+        .result-item .opt-review .opt-text {
+            flex: 1;
+        }
+        .result-item .opt-review.player-correct {
+            border-color: var(--success);
+            background: #1a3a1a;
+        }
+        .result-item .opt-review.player-correct .opt-letter {
+            color: var(--success);
+        }
+        .result-item .opt-review.player-wrong {
+            border-color: var(--error);
+            background: #3a1a1a;
+        }
+        .result-item .opt-review.player-wrong .opt-letter {
+            color: var(--error);
+        }
+        .result-item .opt-review.correct-answer {
+            border-color: var(--success);
+            background: #1a2a1a;
+        }
+        .result-item .opt-review.correct-answer .opt-letter {
+            color: var(--success);
+        }
+        .result-item .opt-review .check-mark {
+            font-size: 16px;
+            margin-left: auto;
+        }
+        .result-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .result-actions .btn {
+            flex: 1;
+            min-width: 120px;
+        }
+        @media(max-width:480px) {
+            .book-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            header h1 {
+                font-size: 20px;
+            }
+            .mission-box {
+                padding: 16px 18px;
+            }
+            .mission-box .mission-text {
+                font-size: 13px;
+            }
+            .result-item .q-text {
+                font-size: 14px;
+            }
+            .result-item .opt-review {
+                font-size: 13px;
+                padding: 6px 10px;
+            }
+            .home-btn {
+                font-size: 10px;
+                padding: 4px 10px;
+            }
+            .home-btn .home-icon {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Offline Modal Block -->
+    <!-- Offline Modal -->
     <div id="offline-screen">
         <h2 style="color: var(--primary); margin-bottom: 15px;">Internet Connection Required</h2>
-        <p style="color: var(--muted); margin-bottom: 25px;">Rhema requires an active internet connection to load your daily quiz updates, verify leaderboard scores, and sync live Bible reading text.</p>
-        <button class="btn" onclick="window.location.reload()">Retry Connection</button>
+        <p style="color: var(--muted); margin-bottom: 25px;">Rhema requires an active connection to load updates.</p>
+        <button class="btn" onclick="window.location.reload()">Retry</button>
     </div>
 
     <header>
-        <h1>RHEMA</h1>
-        <div class="user-badge" id="display-user">Guest Pub</div>
+        <div class="header-left">
+            <button class="home-btn" onclick="navigateTo('sec-home')">
+                <span class="home-icon">🏠</span> Home
+            </button>
+        </div>
+        <div class="header-center">
+            <h1>RHEMA</h1>
+        </div>
+        <div class="header-right">
+            <div class="user-badge" id="display-user">Guest</div>
+        </div>
     </header>
 
     <div class="container">
-        
-        <!-- TOP AD CONTAINER (Stays visible across standard states) -->
+        <!-- Ad -->
         <div class="ad-container">
-            <!-- AdSense Banner Template -->
             <span>Advertisement</span>
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 
-        <!-- SECTION: AUTHENTICATION -->
+        <!-- Auth -->
         <section id="sec-auth" class="app-section active">
-            <h2 style="margin-bottom: 10px; text-align: center;">Welcome to Rhema</h2>
-            <p style="color: var(--muted); text-align: center; margin-bottom: 25px; font-size: 14px;">Daily Quiz, Sunday Challenge, and sync your high scores globally.</p>
+            <h2 style="margin-bottom:10px;text-align:center;">Welcome to Rhema</h2>
+            <div class="mission-box">
+                <span class="mission-icon">📖</span>
+                <div class="mission-title">Our Mission</div>
+                <p class="mission-text">
+                    We're passionate about helping people of all ages and backgrounds explore the Bible in a way that's <strong>engaging</strong>, <strong>interactive</strong>, and <strong>fun</strong>! Our App is designed to make Scripture come alive through games, quizzes, and community discussions.
+                </p>
+                <div class="mission-scripture">
+                    “Your word is a lamp to my feet and a light to my path.” — <span>Psalm 119:105</span>
+                </div>
+            </div>
             <form id="login-form" onsubmit="handleAuth(event)">
-                <label style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: bold;">Enter Email Address</label>
-                <input type="email" id="auth-email" placeholder="you@example.com" required>
-                <button type="submit" class="btn">Instant Passwordless Sign In</button>
+                <button type="submit" class="btn">Play</button>
             </form>
         </section>
 
-        <!-- SECTION: HOME / SPLIT ROOT VIEW -->
+        <!-- Home -->
         <section id="sec-home" class="app-section">
             <div class="mode-switch-container">
-                <button class="mode-btn active" id="mode-quiz" onclick="toggleHomeMode('quiz')">Quiz Portal</button>
-                <button class="mode-btn" id="mode-read" onclick="toggleHomeMode('read')">Scripture Reader</button>
+                <button class="mode-btn active" id="mode-quiz" onclick="toggleHomeMode('quiz')">Quiz</button>
+                <button class="mode-btn" id="mode-read" onclick="toggleHomeMode('read')">Scripture</button>
             </div>
-
-            <!-- Home Mode A: Quiz Sub-Dashboard -->
             <div id="sub-mode-quiz">
-                <h3 style="margin-bottom: 15px;">Available Sessions</h3>
-                <button class="btn" onclick="startQuiz('daily')">Play Today's Daily Quiz</button>
-                <button class="btn btn-secondary" onclick="startQuiz('sunday')" style="margin-top: 15px;">Sunday Weekly Challenge 🏆</button>
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+                    <button class="btn" style="flex:1; min-width:120px;" onclick="startQuiz('daily')">📅 Daily Quiz</button>
+                    <button class="btn btn-secondary" style="flex:1; min-width:120px;" onclick="startQuiz('sunday')">⛪ Sunday Challenge</button>
+                </div>
+                <h3 style="margin-bottom:6px;">📚 Select a Book to Play</h3>
+                <p style="color:var(--muted); font-size:13px; margin-bottom:10px;">Choose a book and test your knowledge with 10 questions.</p>
+                <div class="testament-title">Old Testament</div>
+                <div class="book-grid" id="quiz-ot-grid"></div>
+                <div class="testament-title">New Testament</div>
+                <div class="book-grid" id="quiz-nt-grid"></div>
             </div>
-
-            <!-- Home Mode B: Reading Book List Dashboard -->
-            <div id="sub-mode-read" style="display: none;">
+            <div id="sub-mode-read" style="display:none;">
                 <h3>Select a Book to Read</h3>
                 <div class="testament-title">Old Testament</div>
                 <div class="book-grid" id="ot-reading-grid"></div>
@@ -143,9 +587,506 @@
             </div>
         </section>
 
-        <!-- SECTION: ACTIVE QUIZ PLAYGROUND -->
+        <!-- Quiz Play -->
         <section id="sec-quiz-play" class="app-section">
-            <div class="quiz-header">
-                <div>Question <span id="q-current-idx">1</span>/10</div>
-                <div class="timer" id="q-timer">30s</div>
-            </div>
+            <div id="quiz-play-area"></div>
+        </section>
+    </div>
+
+    <!-- Bottom Nav -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-section="sec-home" onclick="navigateTo('sec-home')">
+            <span class="nav-icon">🏠</span> Home
+        </button>
+        <button class="nav-item" data-section="sec-quiz-play" onclick="navigateTo('sec-quiz-play')">
+            <span class="nav-icon">🎯</span> Quiz
+        </button>
+        <button class="nav-item" data-section="sec-auth" onclick="navigateTo('sec-auth')">
+            <span class="nav-icon">👤</span> Profile
+        </button>
+    </nav>
+
+    <script>
+        // ================================================================
+        //  DATA
+        // ================================================================
+        const BOOKS_OT = [
+            "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy",
+            "Joshua", "Judges", "Ruth", "1 Samuel", "2 Samuel",
+            "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra",
+            "Nehemiah", "Esther", "Job", "Psalms", "Proverbs",
+            "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah", "Lamentations",
+            "Ezekiel", "Daniel", "Hosea", "Joel", "Amos",
+            "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk",
+            "Zephaniah", "Haggai", "Zechariah", "Malachi"
+        ];
+        const BOOKS_NT = [
+            "Matthew", "Mark", "Luke", "John", "Acts",
+            "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians",
+            "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians",
+            "1 Timothy", "2 Timothy", "Titus", "Philemon",
+            "Hebrews", "James", "1 Peter", "2 Peter",
+            "1 John", "2 John", "3 John", "Jude", "Revelation"
+        ];
+
+        const QUIZ_QUESTIONS = [
+            { book: "Genesis", ref: "Gen 1:1", question: "What did God create in the beginning?", options: ["The heavens and the earth", "Light", "Man", "Animals"], answer: 0 },
+            { book: "Genesis", ref: "Gen 1:3", question: "What did God say when He created light?", options: ["Let there be light", "Let there be day", "Let light shine", "Light be made"], answer: 0 },
+            { book: "Genesis", ref: "Gen 2:7", question: "What did God form man from?", options: ["Dust of the ground", "Water", "Clay", "Breath of life"], answer: 0 },
+            { book: "Genesis", ref: "Gen 3:1", question: "Which animal was more subtle than any beast?", options: ["The serpent", "The fox", "The lion", "The eagle"], answer: 0 },
+            { book: "Genesis", ref: "Gen 6:14", question: "What did God tell Noah to build?", options: ["An ark", "A boat", "A temple", "A city"], answer: 0 },
+            { book: "Genesis", ref: "Gen 12:1", question: "What did God tell Abram to leave?", options: ["His country, kindred, and father's house", "His riches", "His friends", "His land"], answer: 0 },
+            { book: "Exodus", ref: "Ex 3:14", question: "What did God call Himself when speaking to Moses?", options: ["I AM THAT I AM", "The Almighty", "The Lord God", "The Creator"], answer: 0 },
+            { book: "Exodus", ref: "Ex 20:1-17", question: "How many commandments did God give?", options: ["Ten", "Seven", "Twelve", "Five"], answer: 0 },
+            { book: "Exodus", ref: "Ex 12:23", question: "What did the Israelites put on their doorposts?", options: ["Blood of a lamb", "A cross", "Olive oil", "Salt"], answer: 0 },
+            { book: "Leviticus", ref: "Lev 19:18", question: "What does 'love your neighbor as yourself' come from?", options: ["Leviticus", "Deuteronomy", "Exodus", "Numbers"], answer: 0 },
+            { book: "Numbers", ref: "Num 6:24-26", question: "What is the Aaronic blessing?", options: ["The Lord bless you and keep you", "The Lord is my shepherd", "I am the Lord thy God", "Blessed are the pure"], answer: 0 },
+            { book: "Deuteronomy", ref: "Deut 6:4", question: "What is the Shema?", options: ["Hear, O Israel: The LORD our God is one LORD", "You shall love the Lord", "I am the Lord thy God", "The Lord is my shepherd"], answer: 0 },
+            { book: "Joshua", ref: "Josh 1:9", question: "What did God tell Joshua to be?", options: ["Strong and courageous", "Wise and just", "Patient and kind", "Humble and meek"], answer: 0 },
+            { book: "Judges", ref: "Judg 6:12", question: "Who was called a 'mighty man of valor'?", options: ["Gideon", "Samson", "Jephthah", "Barak"], answer: 0 },
+            { book: "Ruth", ref: "Ruth 1:16", question: "What did Ruth say to Naomi?", options: ["Whither thou goest, I will go", "I will return to my people", "I will serve the Lord", "I will find a new home"], answer: 0 },
+            { book: "1 Samuel", ref: "1 Sam 16:7", question: "What does the LORD look at?", options: ["The heart", "The appearance", "The wealth", "The strength"], answer: 0 },
+            { book: "2 Samuel", ref: "2 Sam 22:2", question: "What did David call the LORD?", options: ["My rock, my fortress, and my deliverer", "My shepherd", "My king", "My father"], answer: 0 },
+            { book: "1 Kings", ref: "1 Ki 3:9", question: "What did Solomon ask for?", options: ["Wisdom", "Wealth", "Power", "Long life"], answer: 0 },
+            { book: "2 Kings", ref: "2 Ki 2:11", question: "What happened to Elijah?", options: ["He was taken to heaven in a whirlwind", "He died in his sleep", "He was killed", "He disappeared"], answer: 0 },
+            { book: "Psalms", ref: "Ps 23:1", question: "What does Psalm 23 call the LORD?", options: ["My shepherd", "My king", "My rock", "My fortress"], answer: 0 },
+            { book: "Psalms", ref: "Ps 23:4", question: "What does the LORD's rod and staff do?", options: ["Comfort me", "Guide me", "Protect me", "Heal me"], answer: 0 },
+            { book: "Psalms", ref: "Ps 27:1", question: "What is the LORD?", options: ["My light and my salvation", "My king", "My father", "My friend"], answer: 0 },
+            { book: "Psalms", ref: "Ps 119:105", question: "What is a lamp to my feet?", options: ["Thy word", "The sun", "The light", "The truth"], answer: 0 },
+            { book: "Proverbs", ref: "Prov 1:7", question: "What is the beginning of knowledge?", options: ["The fear of the LORD", "Wisdom", "Understanding", "Instruction"], answer: 0 },
+            { book: "Proverbs", ref: "Prov 3:5", question: "What does it say to trust in?", options: ["The LORD with all your heart", "Your own understanding", "Your friends", "Your strength"], answer: 0 },
+            { book: "Isaiah", ref: "Isa 9:6", question: "What names are given to the child?", options: ["Wonderful, Counsellor, The mighty God", "Prince of Peace, King of Kings", "Lord of Lords, Saviour", "Emmanuel, Son of God"], answer: 0 },
+            { book: "Isaiah", ref: "Isa 40:31", question: "What will those who wait on the LORD do?", options: ["Renew their strength", "Fall down", "Be saved", "See the Lord"], answer: 0 },
+            { book: "Jeremiah", ref: "Jer 29:11", question: "What does God say about His plans?", options: ["Plans to prosper you and not to harm you", "Plans to save you", "Plans to bless you", "Plans to guide you"], answer: 0 },
+            { book: "Ezekiel", ref: "Ezek 36:26", question: "What will God give His people?", options: ["A new heart", "A new law", "A new covenant", "A new spirit"], answer: 0 },
+            { book: "Daniel", ref: "Dan 6:22", question: "What did God send to shut the lions' mouths?", options: ["An angel", "A messenger", "The Spirit", "A fire"], answer: 0 },
+            { book: "Matthew", ref: "Matt 5:3", question: "Who are the poor in spirit?", options: ["Theirs is the kingdom of heaven", "They shall be comforted", "They shall inherit the earth", "They shall be filled"], answer: 0 },
+            { book: "Matthew", ref: "Matt 5:4", question: "Who are they that mourn?", options: ["They shall be comforted", "They shall inherit the earth", "They shall be filled", "They shall see God"], answer: 0 },
+            { book: "Matthew", ref: "Matt 6:9", question: "How does the Lord's Prayer begin?", options: ["Our Father which art in heaven", "Hallowed be thy name", "Thy kingdom come", "Give us this day"], answer: 0 },
+            { book: "Mark", ref: "Mark 10:45", question: "What did the Son of Man come to do?", options: ["To serve and give His life a ransom", "To be served", "To rule", "To judge"], answer: 0 },
+            { book: "Luke", ref: "Luke 2:10-11", question: "What did the angel say about Jesus?", options: ["A Savior is born", "A king is born", "A prophet is born", "A priest is born"], answer: 0 },
+            { book: "John", ref: "John 1:1", question: "What does John say about the Word?", options: ["In the beginning was the Word", "The Word was made flesh", "The Word was God", "All of the above"], answer: 3 },
+            { book: "John", ref: "John 3:16", question: "What did God give because of His love?", options: ["His only begotten Son", "His law", "His Spirit", "His grace"], answer: 0 },
+            { book: "Acts", ref: "Acts 2:4", question: "What happened at Pentecost?", options: ["They were filled with the Holy Spirit", "They spoke in tongues", "They saw fire", "All of the above"], answer: 3 },
+            { book: "Romans", ref: "Rom 3:23", question: "What does it say about all?", options: ["All have sinned and fall short of God's glory", "All are saved", "All are righteous", "All are holy"], answer: 0 },
+            { book: "Romans", ref: "Rom 6:23", question: "What is the wages of sin?", options: ["Death", "Sickness", "Poverty", "Shame"], answer: 0 },
+            { book: "1 Corinthians", ref: "1 Cor 13:4", question: "What is love?", options: ["Patient and kind", "Proud", "Boastful", "Selfish"], answer: 0 },
+            { book: "Ephesians", ref: "Eph 2:8", question: "What are you saved by?", options: ["Grace through faith", "Works", "Law", "Knowledge"], answer: 0 },
+            { book: "Philippians", ref: "Phil 4:4", question: "What does Paul say to do?", options: ["Rejoice in the Lord always", "Pray without ceasing", "Be thankful", "Be content"], answer: 0 },
+            { book: "Revelation", ref: "Rev 1:8", question: "What does the Lord say about Himself?", options: ["I am Alpha and Omega", "I am the beginning and the end", "I am the Almighty", "All of the above"], answer: 3 },
+            { book: "Revelation", ref: "Rev 3:20", question: "What does Jesus say He does?", options: ["Stand at the door and knock", "Open the door", "Come in and dine", "All of the above"], answer: 3 },
+            { book: "Revelation", ref: "Rev 21:4", question: "What will God wipe away?", options: ["All tears", "All sins", "All sickness", "All pain"], answer: 0 },
+        ];
+
+        // ================================================================
+        //  STATE
+        // ================================================================
+        let currentUser = 'Guest';
+        let activeSection = 'sec-home';
+        let currentQuiz = {
+            questions: [],
+            index: 0,
+            score: 0,
+            timer: 30,
+            interval: null,
+            total: 0,
+            userAnswers: [],
+            questionSet: [],
+            selectedOption: null,
+            questionFinished: false,
+            hasAnswered: false,
+        };
+
+        // ================================================================
+        //  NAVIGATION
+        // ================================================================
+        function navigateTo(sectionId) {
+            document.querySelectorAll('.app-section').forEach(el => el.classList.remove('active'));
+            const target = document.getElementById(sectionId);
+            if (target) target.classList.add('active');
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.toggle('active', item.dataset.section === sectionId);
+            });
+            activeSection = sectionId;
+        }
+
+        function handleAuth(e) {
+            e.preventDefault();
+            navigateTo('sec-home');
+            currentUser = 'Rhema Player';
+            document.getElementById('display-user').textContent = currentUser;
+        }
+
+        function toggleHomeMode(mode) {
+            const subQuiz = document.getElementById('sub-mode-quiz');
+            const subRead = document.getElementById('sub-mode-read');
+            const btnQuiz = document.getElementById('mode-quiz');
+            const btnRead = document.getElementById('mode-read');
+            if (mode === 'quiz') {
+                subQuiz.style.display = 'block';
+                subRead.style.display = 'none';
+                btnQuiz.classList.add('active');
+                btnRead.classList.remove('active');
+                if (document.getElementById('quiz-ot-grid').children.length === 0) populateQuizGrids();
+            } else {
+                subQuiz.style.display = 'none';
+                subRead.style.display = 'block';
+                btnRead.classList.add('active');
+                btnQuiz.classList.remove('active');
+                if (document.getElementById('ot-reading-grid').children.length === 0) populateReadingGrids();
+            }
+        }
+
+        function populateReadingGrids() {
+            const otGrid = document.getElementById('ot-reading-grid');
+            const ntGrid = document.getElementById('nt-reading-grid');
+            otGrid.innerHTML = '';
+            ntGrid.innerHTML = '';
+            BOOKS_OT.forEach(book => {
+                const card = document.createElement('div');
+                card.className = 'book-card';
+                card.textContent = book;
+                card.onclick = () => alert(`Reading: ${book} (Genesis 1:1) - In the beginning God created the heaven and the earth.`);
+                otGrid.appendChild(card);
+            });
+            BOOKS_NT.forEach(book => {
+                const card = document.createElement('div');
+                card.className = 'book-card';
+                card.textContent = book;
+                card.onclick = () => alert(`Reading: ${book} (Matthew 1:1) - The book of the generation of Jesus Christ.`);
+                ntGrid.appendChild(card);
+            });
+        }
+
+        function populateQuizGrids() {
+            const otGrid = document.getElementById('quiz-ot-grid');
+            const ntGrid = document.getElementById('quiz-nt-grid');
+            otGrid.innerHTML = '';
+            ntGrid.innerHTML = '';
+            BOOKS_OT.forEach(book => {
+                const card = document.createElement('div');
+                card.className = 'book-card';
+                card.textContent = book;
+                card.onclick = () => startBookQuiz(book);
+                otGrid.appendChild(card);
+            });
+            BOOKS_NT.forEach(book => {
+                const card = document.createElement('div');
+                card.className = 'book-card';
+                card.textContent = book;
+                card.onclick = () => startBookQuiz(book);
+                ntGrid.appendChild(card);
+            });
+        }
+
+        // ================================================================
+        //  QUIZ STARTERS
+        // ================================================================
+        function startBookQuiz(book) {
+            const bookQuestions = QUIZ_QUESTIONS.filter(q => q.book === book);
+            if (bookQuestions.length === 0) {
+                alert(`No questions available for ${book}. Try another.`);
+                return;
+            }
+            const shuffled = shuffle(bookQuestions);
+            const selected = shuffled.slice(0, 10);
+            while (selected.length < 10) {
+                const extra = shuffle(QUIZ_QUESTIONS.filter(q => q.book !== book)).slice(0, 10 - selected.length);
+                selected.push(...extra);
+            }
+            startQuizSession(selected, `📖 ${book} Quiz`);
+        }
+
+        function startQuiz(type) {
+            let questions;
+            let label;
+            if (type === 'daily') {
+                const shuffled = shuffle([...QUIZ_QUESTIONS]);
+                questions = shuffled.slice(0, 10);
+                label = '📅 Daily Quiz';
+            } else if (type === 'sunday') {
+                const shuffled = shuffle([...QUIZ_QUESTIONS]);
+                questions = shuffled.slice(0, 10);
+                label = '⛪ Sunday Challenge';
+            } else {
+                return;
+            }
+            startQuizSession(questions, label);
+        }
+
+        function startQuizSession(questions, label) {
+            navigateTo('sec-quiz-play');
+            // Reset state
+            currentQuiz.questions = questions;
+            currentQuiz.index = 0;
+            currentQuiz.score = 0;
+            currentQuiz.timer = 30;
+            currentQuiz.total = questions.length;
+            currentQuiz.userAnswers = new Array(questions.length).fill(null);
+            currentQuiz.questionSet = questions.slice();
+            currentQuiz.selectedOption = null;
+            currentQuiz.questionFinished = false;
+            currentQuiz.hasAnswered = false;
+            if (currentQuiz.interval) clearInterval(currentQuiz.interval);
+            renderQuiz();
+        }
+
+        // ================================================================
+        //  RENDER QUIZ (removed score and verse ref)
+        // ================================================================
+        function renderQuiz() {
+            const area = document.getElementById('quiz-play-area');
+            const qs = currentQuiz.questions;
+            const idx = currentQuiz.index;
+
+            if (idx >= currentQuiz.total) {
+                showDetailedResults(area);
+                return;
+            }
+
+            const q = qs[idx];
+            const total = currentQuiz.total;
+            const questionNum = idx + 1;
+            const timer = currentQuiz.timer;
+            const finished = currentQuiz.questionFinished;
+            const hasSelected = currentQuiz.selectedOption !== null;
+
+            let optionsHtml = '';
+            const letters = ['A', 'B', 'C', 'D'];
+            q.options.forEach((opt, i) => {
+                const selectedClass = (currentQuiz.selectedOption === i) ? ' selected' : '';
+                optionsHtml += `<button class="option-btn${selectedClass}" data-optindex="${i}" onclick="selectOption(${i})" ${finished ? 'disabled' : ''}>${letters[i]}. ${opt}</button>`;
+            });
+
+            const isLast = (idx === total - 1);
+            const buttonText = isLast ? '✅ Submit Quiz' : '➡️ Next Question';
+            // Button disabled if finished OR no selection yet
+            const buttonDisabled = finished || !hasSelected;
+
+            area.innerHTML = `
+                <div class="quiz-header">
+                    <div>Question ${questionNum}/${total}</div>
+                    <div class="timer" id="q-timer-display">${timer}s</div>
+                </div>
+                <div class="question-box">
+                    <div>${q.question}</div>
+                </div>
+                <div class="options-list" id="options-container">
+                    ${optionsHtml}
+                </div>
+                <div style="margin-top:15px;display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap;gap:8px;">
+                    <span id="feedback-message" style="font-size:14px;color:var(--muted);"></span>
+                </div>
+                <div style="margin-top:12px;">
+                    <button class="btn" id="quiz-nav-btn" ${buttonDisabled ? 'disabled' : ''} onclick="handleNavClick()">${buttonText}</button>
+                </div>
+            `;
+
+            // If not finished, start/continue timer
+            if (!finished) {
+                let timeLeft = timer;
+                const timerDisplay = document.getElementById('q-timer-display');
+                if (currentQuiz.interval) clearInterval(currentQuiz.interval);
+                currentQuiz.interval = setInterval(() => {
+                    timeLeft--;
+                    timerDisplay.textContent = timeLeft + 's';
+                    currentQuiz.timer = timeLeft;
+                    if (timeLeft <= 0) {
+                        clearInterval(currentQuiz.interval);
+                        // Auto-finalize and advance
+                        if (!currentQuiz.questionFinished) {
+                            finalizeAndAdvance();
+                        }
+                    }
+                }, 1000);
+            }
+        }
+
+        // ================================================================
+        //  QUIZ ACTIONS
+        // ================================================================
+        function selectOption(index) {
+            if (currentQuiz.questionFinished) return;
+            currentQuiz.selectedOption = index;
+            currentQuiz.hasAnswered = true;
+            // Update UI highlight
+            const options = document.querySelectorAll('.option-btn');
+            options.forEach((btn, i) => {
+                btn.classList.toggle('selected', i === index);
+            });
+            // Enable the next button
+            const navBtn = document.getElementById('quiz-nav-btn');
+            if (navBtn) {
+                navBtn.disabled = false;
+            }
+        }
+
+        function handleNavClick() {
+            finalizeAndAdvance();
+        }
+
+        // ================================================================
+        //  FINALIZE AND ADVANCE (common for both timer and button click)
+        // ================================================================
+        function finalizeAndAdvance() {
+            if (currentQuiz.questionFinished) return;
+            const idx = currentQuiz.index;
+            const q = currentQuiz.questions[idx];
+            const finalChoice = currentQuiz.selectedOption !== null ? currentQuiz.selectedOption : -1;
+            currentQuiz.userAnswers[idx] = finalChoice;
+            if (finalChoice !== -1 && finalChoice === q.answer) {
+                currentQuiz.score++;
+            }
+            currentQuiz.questionFinished = true;
+            if (currentQuiz.interval) clearInterval(currentQuiz.interval);
+
+            // Advance or finish
+            if (idx < currentQuiz.total - 1) {
+                currentQuiz.index++;
+                currentQuiz.selectedOption = null;
+                currentQuiz.questionFinished = false;
+                currentQuiz.hasAnswered = false;
+                currentQuiz.timer = 30;
+                renderQuiz();
+            } else {
+                // Last question: go to results
+                currentQuiz.index = currentQuiz.total; // triggers results
+                renderQuiz();
+            }
+        }
+
+        // ================================================================
+        //  DETAILED RESULTS
+        // ================================================================
+        function showDetailedResults(area) {
+            const qs = currentQuiz.questionSet;
+            const userAnswers = currentQuiz.userAnswers;
+            const total = qs.length;
+            let correctCount = 0;
+            let itemsHtml = '';
+            const letters = ['A', 'B', 'C', 'D'];
+
+            qs.forEach((q, i) => {
+                const userAns = userAnswers[i];
+                const isCorrect = (userAns === q.answer);
+                if (isCorrect) correctCount++;
+                const itemClass = isCorrect ? 'result-item correct-item' : 'result-item wrong-item';
+                const statusText = isCorrect ? '✅ Correct' : '❌ Incorrect';
+                const statusClass = isCorrect ? 'correct-status' : 'wrong-status';
+
+                let optionsReviewHtml = '';
+                q.options.forEach((opt, optIdx) => {
+                    let optClass = 'opt-review';
+                    let checkMark = '';
+                    const isPlayerChoice = (userAns === optIdx);
+                    const isCorrectAnswer = (optIdx === q.answer);
+
+                    if (isPlayerChoice && isCorrectAnswer) {
+                        optClass += ' player-correct';
+                        checkMark = '✅';
+                    } else if (isPlayerChoice && !isCorrectAnswer) {
+                        optClass += ' player-wrong';
+                        checkMark = '❌';
+                    } else if (!isPlayerChoice && isCorrectAnswer) {
+                        optClass += ' correct-answer';
+                        checkMark = '✔';
+                    }
+
+                    optionsReviewHtml += `
+                        <div class="${optClass}">
+                            <span class="opt-letter">${letters[optIdx]}.</span>
+                            <span class="opt-text">${opt}</span>
+                            <span class="check-mark">${checkMark}</span>
+                        </div>
+                    `;
+                });
+
+                let timeoutMsg = '';
+                if (userAns === -1) {
+                    timeoutMsg = '<div style="color:var(--error);font-size:13px;margin-top:6px;">⏱️ You did not answer this question in time.</div>';
+                }
+
+                itemsHtml += `
+                    <div class="${itemClass}">
+                        <div class="q-header">
+                            <span class="q-number">Question ${i+1}</span>
+                            <span class="q-status ${statusClass}">${statusText}</span>
+                        </div>
+                        <div class="q-text">${q.question}</div>
+                        <div class="q-ref">📖 ${q.ref}</div>
+                        <div class="options-review">
+                            ${optionsReviewHtml}
+                        </div>
+                        ${timeoutMsg}
+                    </div>
+                `;
+            });
+
+            const percent = Math.round((correctCount / total) * 100);
+            let emoji = '';
+            let message = '';
+            if (percent === 100) { emoji = '🌟';
+                message = 'Perfect! Divine wisdom!'; } else if (percent >= 70) { emoji = '👏';
+                message = 'Great job! You know the Word!'; } else if (percent >= 40) { emoji = '📖';
+                message = 'Good effort! Keep reading!'; } else { emoji = '💪';
+                message = 'Keep studying the Word!'; }
+
+            area.innerHTML = `
+                <div class="quiz-result-detailed">
+                    <div class="result-summary">
+                        <div style="font-size:32px;">${emoji}</div>
+                        <div class="big-score">${correctCount}/${total}</div>
+                        <div style="font-size:18px;margin-top:4px;">${message}</div>
+                    </div>
+                    <div style="margin-bottom:12px;font-weight:600;font-size:15px;color:var(--muted);">📋 Detailed Review</div>
+                    ${itemsHtml}
+                    <div class="result-actions">
+                        <button class="btn" onclick="redoQuiz()">🔄 Redo Quiz</button>
+                        <button class="btn btn-secondary" onclick="navigateTo('sec-home')">🏠 Go Home</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function redoQuiz() {
+            const questions = currentQuiz.questionSet.slice();
+            if (questions.length === 0) {
+                navigateTo('sec-home');
+                return;
+            }
+            startQuizSession(questions, '🔄 Redo Quiz');
+        }
+
+        // ================================================================
+        //  UTILITY
+        // ================================================================
+        function shuffle(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // ================================================================
+        //  INIT
+        // ================================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            navigateTo('sec-auth');
+            populateReadingGrids();
+            populateQuizGrids();
+            document.getElementById('login-form').addEventListener('submit', handleAuth);
+        });
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js', { scope: '/' })
+                .then(() => console.log('SW registered'))
+                .catch(() => console.log('SW reg failed'));
+        }
+        window.addEventListener('online', () => document.getElementById('offline-screen').style.display = 'none');
+        window.addEventListener('offline', () => document.getElementById('offline-screen').style.display = 'flex');
+
+        console.log('✝ Rhema loaded with clean quiz UI and auto-advance on timeout.');
+    </script>
+</body>
+</html>
