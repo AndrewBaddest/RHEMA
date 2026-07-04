@@ -165,6 +165,7 @@
             gap: 10px;
             margin-top: 15px;
         }
+        /* UPDATED book-card with forward transition */
         .book-card {
             background: var(--surface);
             border: 1px solid #333;
@@ -174,11 +175,18 @@
             cursor: pointer;
             font-size: 14px;
             font-weight: 500;
-            transition: border 0.2s, background 0.2s;
+            transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), 
+                        border-color 0.25s ease,
+                        background 0.25s ease,
+                        box-shadow 0.25s ease;
+            will-change: transform;
+            transform: translateY(0) scale(1);
         }
         .book-card:hover {
             border-color: var(--primary);
             background: #282828;
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
         }
         .testament-title {
             margin-top: 25px;
