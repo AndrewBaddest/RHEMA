@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/Rhema app.html",
+      "dest": "/index.html",
       "status": 200
     }
   ],
@@ -26,8 +26,5 @@
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
-  ],
-  "github": {
-    "silent": true
-  }
+  ]
 }
