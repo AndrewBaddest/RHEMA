@@ -1,0 +1,518 @@
+[
+  {
+    "ref": "Jn 1:1",
+    "question": "Jonah was the son of _______ (Jn 1:1)",
+    "options": [
+      "Shammai",
+      "Azariah",
+      "Amittai",
+      "Ethan"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:2",
+    "question": "What city did God command Jonah to go to (Jn 1:2)?",
+    "options": [
+      "Babylon",
+      "Nineveh",
+      "Jerusalem",
+      "Damascus"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:2",
+    "question": "Why did God send Jonah to Nineveh (Jn 1:2)?",
+    "options": [
+      "Because of all their gods",
+      "Because they had slaughtered the people of Ephraim",
+      "Because of the oppression of all nations",
+      "Because its wickedness had come up before God"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:3",
+    "question": "Where did Jonah flee to in order to avoid the call of God (Jn 1:3)?",
+    "options": [
+      "Caphtor",
+      "Tarshish",
+      "Arabia",
+      "Tanis"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:4",
+    "question": "What did the Lord do after Jonah boarded a ship to flee to Tarshish (Jn 1:4)?",
+    "options": [
+      "The Lord sent a tornado",
+      "A rock punctured a hole in the boat",
+      "The Lord sent a hail storm against the boat",
+      "The Lord sent a great wind threatening the ship"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:5",
+    "question": "What did the sailors do when they were afraid of the boat breaking up (Jn 1:5)?",
+    "options": [
+      "They cried out to the Lord their God",
+      "They threw the cargo into the sea",
+      "They began throwing passengers into the sea",
+      "They took down the sail"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:5",
+    "question": "What did Jonah do when the wind threatened to break up the boat (Jn 1:5)?",
+    "options": [
+      "Helped the sailors throw the cargo overboard",
+      "Cried out to the gods of the sailors",
+      "Went below deck and fell asleep",
+      "Tore the sail down"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:6",
+    "question": "What did the captain tell Jonah to do (Jn 1:6)?",
+    "options": [
+      "Prepare to abandon ship",
+      "Prepare to be thrown overboard",
+      "Prepare to swim",
+      "Call on his god"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:10",
+    "question": "What had Jonah already told the sailors (Jn 1:10)?",
+    "options": [
+      "That he was under the curse of God",
+      "That he was a prophet of the Lord God Almighty",
+      "That he was running away from the Lord",
+      "That he was sent to Nineveh"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:12",
+    "question": "What did Jonah tell the sailors to do in order to make the sea calm down (Jn 1:12)?",
+    "options": [
+      "Throw him into the sea",
+      "Row harder for land",
+      "Throw the cargo overboard",
+      "Pray to the God of Israel"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:13",
+    "question": "What did the sailors do after Jonah told them to throw him into the turbulent sea (Jn 1:13)?",
+    "options": [
+      "They immediately threw him overboard",
+      "They tried to row back to land",
+      "They put a life preserver on him",
+      "They went behind an island to avoid the wind"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:14",
+    "question": "After the sea grew even wilder what did the sailors do (Jn 1:14)?",
+    "options": [
+      "They rowed even harder to get back to land",
+      "They cried out to the Lord",
+      "They started ripping up parts of the boat to lighten it",
+      "They were washed overboard"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:15",
+    "question": "What was the response of the sea after the sailors threw Jonah overboard (Jn 1:15)?",
+    "options": [
+      "The ship struck a sand bar",
+      "The ship pulled into a harbor and was spared",
+      "The boat ran aground on an island",
+      "The sea grew calm"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:16",
+    "question": "When the sea grew calm what was the sailors response (Jn 1:16)?",
+    "options": [
+      "They greatly feared the Lord",
+      "They praised the God of Israel",
+      "They looked for land",
+      "They raised the sail once again"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:16",
+    "question": "After the sea grew calm the sailors did all of the following EXCEPT (Jn 1:16)",
+    "options": [
+      "Feared the Lord greatly",
+      "Offered a sacrifice to the Lord",
+      "Worshipped the God of Israel",
+      "Made vows to the Lord"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:16",
+    "question": "How long was Jonah in the belly of the fish (Jn 1:16)?",
+    "options": [
+      "One day and one night",
+      "Two days",
+      "Three days and three nights",
+      "Seven days and seven nights"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:1",
+    "question": "What did Jonah do from inside the fish (Jn 2:1)?",
+    "options": [
+      "He slept",
+      "He prayed",
+      "He struggled",
+      "He passed out"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:2",
+    "question": "From where did Jonah call for help (Jn 2:2)?",
+    "options": [
+      "From the depths of the grave",
+      "From the bottom of the sea",
+      "From the stomach of a great fish",
+      "From the deep waters"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:3",
+    "question": "What swept over Jonah (Jn 2:3)?",
+    "options": [
+      "God’s waves and breakers",
+      "God’s swells of water",
+      "Aloneness in the deep",
+      "The waters of the Lord"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:4",
+    "question": "In his prayer, from where did Jonah say he was banished (Jn 2:4)?",
+    "options": [
+      "From the land of the living",
+      "From God’s sight",
+      "From the memory of the living",
+      "From his homeland"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:4",
+    "question": "Where did Jonah say he would look again (Jn 2:4)?",
+    "options": [
+      "Toward the sun",
+      "Toward heaven, God’s dwelling place",
+      "Toward God’s holy temple",
+      "Toward the holy land"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:6",
+    "question": "What barred Jonah in forever (Jn 2:6)?",
+    "options": [
+      "The grave",
+      "The earth",
+      "The mountains",
+      "The depths of the sea"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 2:6",
+    "question": "From where did God bring up Jonah’s life (Jn 2:6)?",
+    "options": [
+      "From the belly of the great fish",
+      "From the prison of the sea",
+      "From the pit",
+      "From the caves of the deep"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:7",
+    "question": "What did Jonah say he did when his life was ebbing away (Jn 2:7)?",
+    "options": [
+      "He cried out to the Lord",
+      "He remembered better days",
+      "He sought the Spirit of God",
+      "He remembered the Lord"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:8",
+    "question": "Who forfeit the grace that could be theirs (Jn 2:8)?",
+    "options": [
+      "Those who do not call out to the Lord",
+      "Those who cling to worthless idols",
+      "Those who cannot confess their own sins",
+      "Those who trust in themselves"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:9",
+    "question": "What does Jonah in his prayer say comes from the Lord (Jn 2:9)?",
+    "options": [
+      "Light",
+      "Holiness",
+      "Forgiveness",
+      "Salvation"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:1",
+    "question": "What was the message the second time when the word of the Lord came to Jonah (Jn 3:1f)?",
+    "options": [
+      "Repent and return to Nineveh where you will speak to the king",
+      "Go to the great city Nineveh and proclaim the message God will give",
+      "I am the God of all the earth therefore go to Nineveh and tell them to repent",
+      "Tell Nineveh to repent or in 60 days I will destroy the city"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:4",
+    "question": "What message did Jonah preach in Nineveh upon entering the city (Jn 3:4)?",
+    "options": [
+      "Forty more days and Nineveh will be overturned",
+      "Seven days and God will destroy the walls of Nineveh",
+      "In twenty days the Babylonians will destroy Nineveh",
+      "The gods of Nineveh will be burned with fire for seven days"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:5",
+    "question": "What was Nineveh’s response to Jonah’s preaching (Jn 3:5)?",
+    "options": [
+      "They tore their garments and put dust on their heads",
+      "They ordered all the gods of stone and silver to be destroyed",
+      "They humbled themselves and sought the Lord",
+      "They believed God and declared a fast and put on sackcloth"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:7",
+    "question": "What did the king of Nineveh order in the decree after hearing Jonah’s message (Jn 3:7)?",
+    "options": [
+      "They were to stop oppressing the poor and to seek justice",
+      "Both man and beast should not eat or drink anything",
+      "They were to cleanse their temples of statues of Marduk",
+      "They were to eat only bitter herbs for three days"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:7",
+    "question": "What did the king of Nineveh order in the decree after hearing Jonah’s message (Jn 3:7)?",
+    "options": [
+      "They were to stop oppressing the poor and to seek justice",
+      "They were to cleanse their temples of statues of Marduk",
+      "They were to eat only bitter herbs for three days",
+      "Both man and beast were to be covered with sackcloth"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:7",
+    "question": "What did the king of Nineveh order in the decree after hearing Jonah’s message (Jn 3:7)?",
+    "options": [
+      "They were to stop oppressing the poor and to seek justice",
+      "They should call on their gods pleading for mercy",
+      "They should urgently call upon God",
+      "They were to eat only bitter herbs for three days"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:9",
+    "question": "What was the king of Nineveh hoping in his decree to his people (Jn 3:9)?",
+    "options": [
+      "God would see their repentance and spare the city from fire",
+      "God would relent and turn from his fierce anger",
+      "God would send rain to relieve the drought",
+      "God would teach them his ways"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:10",
+    "question": "What did God see after the king of Nineveh’s decree (Jn 3:10)?",
+    "options": [
+      "Their fasting and humbling themselves before him",
+      "They truly were seeking the Lord",
+      "They freed the slaves and put down their weapons of war",
+      "How they turned from their evil ways"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:1",
+    "question": "When Nineveh repented what was Jonah’s response (Jn 4:1)?",
+    "options": [
+      "He was silent and refused to speak",
+      "He was displeased and angry",
+      "He was delighted they repented",
+      "He was disappointed and went away saddened"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:3",
+    "question": "After God spared Nineveh what did Jonah wish for himself (Jn 4:3)?",
+    "options": [
+      "That the Lord would take away his life",
+      "That the Lord would allow him to return to Israel",
+      "That he might return to the temple at Jerusalem",
+      "That he might see the devastation in Samaria by the Assyrians"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:5",
+    "question": "Where did Jonah go after expressing his displeasure about the sparing of Nineveh (Jn 4:5)?",
+    "options": [
+      "North of the city",
+      "South of the city",
+      "East of the city",
+      "West of the city"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 4:5",
+    "question": "What did Jonah make for himself (Jn 4:5)?",
+    "options": [
+      "A place to sit rest and wait and see what would happen",
+      "An altar to offer up sacrifices to the Lord",
+      "A cup so he could drink while he waited",
+      "Made a shelter to sit and wait in its shade"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:6",
+    "question": "What was Jonah happy about (Jn 4:6)?",
+    "options": [
+      "The vine God had made for him",
+      "The fire on the walls of Nineveh",
+      "The rain that refreshed him",
+      "That Nineveh listened to him and repented"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:7",
+    "question": "After the vine grew up what did God make next (Jn 4:7)?",
+    "options": [
+      "A bird that lodged in the vine",
+      "A worm which chewed the vine so it withered",
+      "A swarm of locusts which came and ate the vine",
+      "A snake which came and went up into the vine"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:8",
+    "question": "Besides the blazing sun what did God send so that Jonah grew faint (Jn 4:8)?",
+    "options": [
+      "A strong south wind",
+      "A dust storm",
+      "A scorching east wind",
+      "A messenger from Nineveh"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:9",
+    "question": "What after the vine died what did God ask Jonah (Jn 4:9)?",
+    "options": [
+      "Do you have a right to be angry about the vine?",
+      "What do you want to replace the vine with?",
+      "How long before you understand?",
+      "Why don’t you return to Israel?"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:10",
+    "question": "The Lord noted what had Jonah showed concern for (Jn 4:10)?",
+    "options": [
+      "The people of Israel over those of Assyria",
+      "The vine which grew up overnight and died overnight",
+      "The fatherless and widows in Nineveh",
+      "The worm that ate the vine"
+    ],
+    "answer": 1,
+    "level": "B"
+  }
+]

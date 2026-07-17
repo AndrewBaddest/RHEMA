@@ -1,0 +1,7274 @@
+[
+  {
+    "ref": "Mat 1:2",
+    "question": "In the genealogy of Jesus Christ, who was the father of Isaac (Mat 1:2)?",
+    "options": [
+      "David",
+      "Abraham",
+      "Joseph",
+      "Jacob"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:2",
+    "question": "In the genealogy of Jesus Christ, who was the father of Jacob (Mat 1:2)?",
+    "options": [
+      "Abraham",
+      "David",
+      "Judah",
+      "Isaac"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:5",
+    "question": "In the genealogy of Jesus Christ, who was the father of Boaz (Mat 1:5)?",
+    "options": [
+      "Perez",
+      "Salmon",
+      "Obed",
+      "Judah"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:5",
+    "question": "In the genealogy of Jesus Christ, who was the father of Jesse (Mat 1:5)?",
+    "options": [
+      "David",
+      "Obed",
+      "Hezron",
+      "Boaz"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:5",
+    "question": "In the genealogy of Jesus Christ, who was the mother of Obed (Mat 1:5)?",
+    "options": [
+      "Rahab",
+      "Ruth",
+      "Bathsheba",
+      "Tamar"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:6",
+    "question": "In the genealogy of Jesus Christ, who was the father of King David (Mat 1:6)?",
+    "options": [
+      "Boaz",
+      "Hezron",
+      "Ram",
+      "Jesse"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:6",
+    "question": "In the genealogy of Jesus Christ, who was the father of Solomon (Mat 1:6)?",
+    "options": [
+      "Jesse",
+      "Boaz",
+      "David",
+      "Jehoshaphat"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:5",
+    "question": "In the genealogy of Jesus Christ, who alone is given the title of “king” (Mat 1:5)?",
+    "options": [
+      "Solomon",
+      "David",
+      "Hezekiah",
+      "Josiah"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:7",
+    "question": "In the genealogy of Jesus Christ, who was the father of Abijah (Mat 1:7)?",
+    "options": [
+      "Salmon",
+      "Rehoboam",
+      "Solomon",
+      "Jehoshaphat"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:7",
+    "question": "In the genealogy of Jesus Christ, who was the father of Asa (Mat 1:7)?",
+    "options": [
+      "Abijah",
+      "Rehoboam",
+      "Jehoshaphat",
+      "Jehoram"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:8",
+    "question": "In the genealogy of Jesus Christ, who was the father of Jehoshaphat (Mat 1:8)?",
+    "options": [
+      "Abijah",
+      "Rehoboam",
+      "Jotham",
+      "Asa"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:8",
+    "question": "In the genealogy of Jesus Christ, who was the father of Jehoram (Mat 1:8)?",
+    "options": [
+      "Abijah",
+      "Rehoboam",
+      "Jehoshaphat",
+      "Asa"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:8",
+    "question": "In the genealogy of Jesus Christ, who was the father of Uzziah (Mat 1:8)?",
+    "options": [
+      "Jehoram",
+      "Rehoboam",
+      "Jehoshaphat",
+      "Asa"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:9",
+    "question": "In the genealogy of Jesus Christ, who was the father of Jotham (Mat 1:9)?",
+    "options": [
+      "Jehoram",
+      "Uzziah",
+      "Jehoshaphat",
+      "Asa"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:9",
+    "question": "In the genealogy of Jesus Christ, who was the father of Ahaz (Mat 1:9)?",
+    "options": [
+      "Jehoram",
+      "Asa",
+      "Jehoshaphat",
+      "Jotham"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:9",
+    "question": "In the genealogy of Jesus Christ, who was the father of Hezekiah (Mat 1:9)?",
+    "options": [
+      "Jehoram",
+      "Jehoshaphat",
+      "Ahaz",
+      "Asa"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:10",
+    "question": "In the genealogy of Jesus Christ, who was the father of Amon (Mat 1:10)?",
+    "options": [
+      "Jehoram",
+      "Jehoshaphat",
+      "Asa",
+      "Manasseh"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:10",
+    "question": "In the genealogy of Jesus Christ, who was the father of Josiah (Mat 1:10)?",
+    "options": [
+      "Amon",
+      "Jehoram",
+      "Hezekiah",
+      "Asa"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:12",
+    "question": "In the genealogy of Jesus Christ, who was the father of Shealtiel (Mat 1:12)?",
+    "options": [
+      "Jeconiah",
+      "Asa",
+      "Jehoshaphat",
+      "Manasseh"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:12",
+    "question": "In the genealogy of Jesus Christ, who was the father of Zerubbabel (Mat 1:12)?",
+    "options": [
+      "Jeconiah",
+      "Shealtiel",
+      "Jehoshaphat",
+      "Jotham"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 1:16",
+    "question": "In the genealogy of Jesus Christ, who was the husband of Mary (Mat 1:16)?",
+    "options": [
+      "Jacob",
+      "Zadok",
+      "Joseph",
+      "Judah"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:16",
+    "question": "In the genealogy of Jesus Christ, who was the mother of Jesus (Mat 1:16)?",
+    "options": [
+      "Ruth",
+      "Rahab",
+      "Bathsheba",
+      "Mary"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:17",
+    "question": "What happened fourteen generations after the exile to Babylon (Mat 1:17)?",
+    "options": [
+      "The birth of Jesus",
+      "The birth of Mary",
+      "The burning of the temple",
+      "The carrying away into Egypt"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:19",
+    "question": "What adjective was used to characterize Joseph the husband of Mary (Mat 1:19)?",
+    "options": [
+      "Righteous",
+      "Holy",
+      "Good",
+      "Loving"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:19",
+    "question": "Why was Joseph thinking about divorcing Mary quietly (Mat 1:19)?",
+    "options": [
+      "So she could be free to remarry",
+      "So not to expose her to public disgrace",
+      "In order to follow the law of Moses",
+      "In order to follow Mary’s desires"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:20",
+    "question": "The angel of the Lord calls Joseph “the son of ______” (Mat 1:20)?",
+    "options": [
+      "David",
+      "Abraham",
+      "Israel",
+      "Judah"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:21",
+    "question": "Why was Joseph to name Mary’s son Jesus (Mat 1:21)?",
+    "options": [
+      "Because he was born of the Holy Spirit",
+      "Because he would be the Messiah promised of old",
+      "Because he would save his people from their sins",
+      "Because he would be the rising and fall of many"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:23",
+    "question": "What had the Lord said through the prophet (Mat 1:23)?",
+    "options": [
+      "He would be the son of David",
+      "She would give birth to the king of Israel",
+      "The virgin will be with child",
+      "Through him all the nations of the earth would be blessed"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:23",
+    "question": "What does the name “Immanuel” mean (Mat 1:23)?",
+    "options": [
+      "God with us",
+      "He shall save his people from their sins",
+      "God is great",
+      "A virgin has conceived"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:24",
+    "question": "What did Joseph do after he awoke (Mat 1:24)?",
+    "options": [
+      "He took Mary to Bethlehem",
+      "He praised God in the highest",
+      "He took Mary as his wife",
+      "He circumcised Jesus"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 1:25",
+    "question": "What did Joseph not do with Mary until after she gave birth to Jesus (Mat 1:25)?",
+    "options": [
+      "He did not tell her what the angel had said",
+      "He had no union with her",
+      "He divorce her",
+      "Took her to Bethlehem"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:1",
+    "question": "Where was Jesus born (Mat 2:1)?",
+    "options": [
+      "Jerusalem",
+      "Hebron",
+      "Nazareth",
+      "Bethlehem"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:1",
+    "question": "Who was king when Jesus was born (Mat 2:1)?",
+    "options": [
+      "Herod",
+      "Tiberius",
+      "Julius Caesar",
+      "Archaelaus"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:2",
+    "question": "Who came from the east to Jerusalem after the birth of Jesus (Mat 2:2)?",
+    "options": [
+      "Two prophets",
+      "The Joseph and Mary",
+      "The magi",
+      "The shepherds"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:2",
+    "question": "What triggered the magi coming to Jerusalem to seek the king of the Jews (Mat 2:2)?",
+    "options": [
+      "The word of the prophet",
+      "They were struck with lightning and fell to the earth",
+      "They saw a cloud",
+      "They saw a star"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:2",
+    "question": "Why had the magi come to Jerusalem (Mat 2:2)?",
+    "options": [
+      "To be baptized by the prophet",
+      "To worship the king of the Jews",
+      "To pay tribute to the Messiah",
+      "To serve the God of heaven"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:3",
+    "question": "What was Herod’s response after hearing the magi (Mat 2:3)?",
+    "options": [
+      "He was angry",
+      "He was suspicious",
+      "He was disturbed",
+      "He was inquisative"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:4",
+    "question": "Who did Herod ask where Christ should be born (Mat 2:4)?",
+    "options": [
+      "The chief priests and teachers of the law",
+      "The Pharisees and Sadducees",
+      "The Sanhedrin and high priest",
+      "The scribes and sages"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 2:6",
+    "question": "Who was predicted to come out of the town of Bethlehem by the prophet (Mat 2:6)?",
+    "options": [
+      "A priest of the most high God",
+      "The son of God",
+      "A ruler of Israel",
+      "The great prophet"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:8",
+    "question": "Why did Herod allege that he was sending the magi to Bethlehem (Mat 2:8)?",
+    "options": [
+      "To kill the young child",
+      "To see if what the prophet spoke had come true",
+      "To set up a banquet for the child",
+      "To search for the child"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:9",
+    "question": "Where did the star stop that the magi were following (Mat 2:9)?",
+    "options": [
+      "Over the temple in Jerusalem",
+      "Over the tents of the shepherds",
+      "Over the place where the child was",
+      "Over Rachel’s tomb outside of Bethlehem"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:12",
+    "question": "What were the magi warned about in a dream (Mat 2:12)?",
+    "options": [
+      "The danger of remaining in Bethlehem",
+      "The envy of the High Priest",
+      "Not to return to Herod",
+      "To repent for the kingdom was near"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:12",
+    "question": "How were the magi warned not to return to Herod (Mat 2:12)?",
+    "options": [
+      "In a vision",
+      "By the star",
+      "By the word of the Lord",
+      "In a dream"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:13",
+    "question": "What did the angel tell Joseph Herod was planning to do (Mat 2:13)?",
+    "options": [
+      "Search and attempt to lill Jesus",
+      "Send an army to bring them to Jerusalem",
+      "Kill the magi",
+      "Destroy the town of Bethlehem"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:15",
+    "question": "What prophecy was fulfilled when Jesus returned to Israel (Mat 2:15)?",
+    "options": [
+      "Out of Egypt I have called my son",
+      "I desire to do your will O God",
+      "He shall be like a tree planted by the temple of God",
+      "Light has departed from Egypt"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:15",
+    "question": "Which prophet said, “Out of Egypt I have called my son” (Mat 2:15)?",
+    "options": [
+      "Micah",
+      "Isaiah",
+      "Hosea",
+      "Jeremiah"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 2:16",
+    "question": "What was Herod’s response when he realized the magi had outwitted him (Mat 2:16)?",
+    "options": [
+      "He ordered their deaths",
+      "He ordered the boys of Bethlehem killed",
+      "He ordered his army to burn the town of Bethlehem",
+      "He ordered the death of the high priest"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:16",
+    "question": "Whose death did Herod order after being outwitted by the magi (Mat 2:16)?",
+    "options": [
+      "All Bethlehem boys under 2 years of age",
+      "All Jewish children under 2 years of age",
+      "All circumcized children in Judah",
+      "All who would not pledge loyalty to him"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:19",
+    "question": "When did the angel appear in a dream to Joseph in Egypt (Mat 2:19)?",
+    "options": [
+      "After two years",
+      "After the death of the high priest",
+      "After the infants of Bethlehem were killed",
+      "After the death of Herod"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:22",
+    "question": "Who in Judea was Joseph concerned to avoid while returning from Egypt (Mat 2:22)?",
+    "options": [
+      "Herod Antipas",
+      "Archelaus",
+      "Herod the Great",
+      "Pilate"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:22",
+    "question": "Over what region did Archelaus reign after the death of Herod (Mat 2:22)?",
+    "options": [
+      "Judea",
+      "Gilead",
+      "Galilee",
+      "Jezreel"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 2:23",
+    "question": "After returning from Egypt to what town did Joseph take his family (Mat 2:23)?",
+    "options": [
+      "Capernaum",
+      "Bethsaida",
+      "Caesarea Philippi",
+      "Nazareth"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 2:23",
+    "question": "The prophet said “He will be called a __________” (Mat 2:23)?",
+    "options": [
+      "Shepherd",
+      "Nazarene",
+      "Son of David",
+      "Messiah"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 3:1",
+    "question": "Who came preaching in the desert (Mat 3:1)?",
+    "options": [
+      "Jesus",
+      "Peter",
+      "The centurion",
+      "John the Baptist"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 3:2",
+    "question": "What was the summary of John’s preaching in the wilderness (Mat 3:2)?",
+    "options": [
+      "Repent, for the kingdom of heaven is near",
+      "Scribes and Pharisees hypocrites rend your hearts not your garments",
+      "The kingdom is coming on earth as it is in heaven",
+      "Behold, the Christ has come"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 3:3",
+    "question": "How did Isaiah characterized John the Baptist (Mat 3:3)?",
+    "options": [
+      "A reed broken by the wind",
+      "A tree standing strong against the storm",
+      "A voice calling in the desert",
+      "A mighty hand and outstretched arm"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 3:4",
+    "question": "What were John’s clothes made of (Mat 3:4)?",
+    "options": [
+      "Linen",
+      "Goat’s hair",
+      "Camel’s hair",
+      "Sackcloth"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 3:4",
+    "question": "What food did John the Baptist eat (Mat 3:4)?",
+    "options": [
+      "Locusts and wild honey",
+      "Milk and honey",
+      "Unleavened bread and wine",
+      "Unleavened bread and olive oil"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 3:6",
+    "question": "Where did John the Baptist baptize people (Mat 3:6)?",
+    "options": [
+      "In the Jordan River",
+      "In the Sea of Galilee",
+      "In the Gihon Spring in Jerusalem",
+      "By the Dead Sea"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 3:9",
+    "question": "Who did John the Baptist warn the Pharisees not to call their father (Mat 3:9)?",
+    "options": [
+      "Abraham",
+      "Jacob",
+      "David",
+      "Moses"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 3:11",
+    "question": "What did John the Baptist cite as the purpose of his baptism with water (Mat 3:11)?",
+    "options": [
+      "Grace",
+      "Mercy",
+      "Redemption",
+      "Repentance"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 3:12",
+    "question": "What will the one coming after John the Baptist gather into his barn (Mat 3:12)?",
+    "options": [
+      "His wheat",
+      "His figs",
+      "The fruit of his children",
+      "His grapes and olives"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 3:13",
+    "question": "Where was Jesus prior to coming to John the Baptist to be baptized (Mat 3:13)?",
+    "options": [
+      "Jerusalem",
+      "The Jordan River",
+      "Galilee",
+      "Samaria"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 3:14",
+    "question": "What was John’s response when Jesus came to him to be baptized (Mat 3:14)?",
+    "options": [
+      "I need to be baptized by you",
+      "I repent in dust and ashes",
+      "How can I baptize my Lord",
+      "May it never be"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 3:16",
+    "question": "How did the Spirit of God come on him after he was baptized by John (Mat 3:16)?",
+    "options": [
+      "As a bread from heaven",
+      "As a dove",
+      "As a tongue of fire",
+      "As a still small voice"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:1",
+    "question": "How was Jesus led out into the wilderness (Mat 4:1)?",
+    "options": [
+      "By his desire to be alone with God",
+      "By the Spirit",
+      "By the devil",
+      "By the crowds"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:1",
+    "question": "What was the purpose of the Spirit leading Jesus into the desert (Mat 4:1)?",
+    "options": [
+      "To fast and pray",
+      "To leave the crowds behind",
+      "To do battle with the evil one",
+      "To be tempted"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:2",
+    "question": "How long did Jesus fast in the desert (Mat 4:2)?",
+    "options": [
+      "A day",
+      "A week",
+      "Forty days",
+      "Seven weeks of seven days"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:3",
+    "question": "Who initially came to Jesus when he was fasting in the desert (Mat 4:3)?",
+    "options": [
+      "Angels",
+      "The Spirit",
+      "His disciples",
+      "The tempter"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:3",
+    "question": "What was the tempter’s second temptation to Jesus in the desert (Mat 4:3)?",
+    "options": [
+      "Bow down and worship me",
+      "Turn these stones into bread",
+      "Throw yourself down",
+      "Deny your Father in heaven"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:3",
+    "question": "What was the tempter’s third temptation to Jesus in the desert (Mat 4:3)?",
+    "options": [
+      "Bow down and worship me",
+      "Turn these stones into bread",
+      "Throw yourself down",
+      "Deny your Father in heaven"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:4",
+    "question": "How did Jesus respond to the devil’s temptation to make stones into bread (Mat 4:4)?",
+    "options": [
+      "Man does not live by bread alone",
+      "Do not put the Lord your God to the test",
+      "Worship the Lord your God",
+      "God alone is to be feared"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:5",
+    "question": "Where did the devil take Jesus for his second temptation (Mat 4:5)?",
+    "options": [
+      "The wall of Jerusalem",
+      "A very high mountain",
+      "The spring of Gihon in Jerusalem",
+      "The highest point of the temple"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:7",
+    "question": "How did Jesus respond to the devil’s second temptation (Mat 4:7)?",
+    "options": [
+      "Worship the Lord your God, and serve him only",
+      "Man does not live by bread alone but on every word of God",
+      "Do not put the Lord your God to the test",
+      "Resist the devil and he will flee"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:8",
+    "question": "For the final temptation where did the devil take Jesus to (Mat 4:8)?",
+    "options": [
+      "The desert",
+      "The highest point of the temple",
+      "The well of Shechem",
+      "A very high mountain"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:8",
+    "question": "What did the devil offer Jesus in the last temptation in the desert (Mat 4:8f)?",
+    "options": [
+      "All the kingdoms of the world and their splendor",
+      "The souls of all humankind",
+      "The divine crown of heaven without a cross",
+      "His control of evil in this present age"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:9",
+    "question": "What did the devil demand in the final temptation of Jesus in the desert (Mat 4:9)?",
+    "options": [
+      "That Jesus turn stones to bread",
+      "That Jesus bow down and worship him",
+      "That Jesus trust God by throwing himself down",
+      "That Jesus acknowledge Satan’s authority"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:11",
+    "question": "After the devil left him in the desert who came and tended to him (Mat 4:11)?",
+    "options": [
+      "His disciples",
+      "The crowds",
+      "His family",
+      "Angels"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:12",
+    "question": "When did Jesus withdraw to Galilee (Mat 4:12)?",
+    "options": [
+      "When he came up out of the water of his baptism",
+      "When he left the desert of temptation",
+      "When he heard John was put in prison",
+      "When he went to preach the coming kingdom"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 4:13",
+    "question": "The town of Capernaum is in what tribal regions (Mat 4:13)?",
+    "options": [
+      "Asher and Dan",
+      "Zebulun and Naphtali",
+      "Benjamin and Judea",
+      "Ephraim and Manasseh"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 4:17",
+    "question": "What was the summary of Jesus early preaching (Mat 4:17)?",
+    "options": [
+      "Make disciples of all peoples",
+      "You are the light of the world",
+      "Repent, for the kingdom of heaven has come near",
+      "Come and follow me the light of the world who was to come"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:17",
+    "question": "How did Jesus initially describe the kingdom of heaven (Mat 4:17)?",
+    "options": [
+      "As being among you",
+      "As being near",
+      "As belonging to the Father in heaven",
+      "As a kingdom of righteousness and justice"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:18",
+    "question": "What was Peter’s “other” name (Mat 4:18)?",
+    "options": [
+      "Didymus",
+      "Eleazar",
+      "Simon",
+      "Justus"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:19",
+    "question": "What was Jesus’ initial call of Peter and Andrew (Mat 4:19)?",
+    "options": [
+      "Repent, for the kingdom of heaven is near",
+      "Take up your cross",
+      "Who will go for us?",
+      "Come and follow me"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:19",
+    "question": "What was Jesus’ initial call of Peter and Andrew (Mat 4:19)?",
+    "options": [
+      "I will send you out to fish for people",
+      "Repent, for the kingdom of heaven is near",
+      "Take up your cross",
+      "Who will go for us?"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 4:21",
+    "question": "Who was the brother of John (Mat 4:21)?",
+    "options": [
+      "Peter",
+      "Andrew",
+      "Thomas",
+      "James"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:1",
+    "question": "Who were the explicit recipients of the Sermon on the Mount (Mat 5:1)?",
+    "options": [
+      "The crowds",
+      "The lame, blind and paralyzed",
+      "The Pharisees and Sadducees",
+      "His disciples"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:3",
+    "question": "Why are the poor in spirit blessed (Mat 5:3)?",
+    "options": [
+      "They will see God",
+      "They will inherit the earth",
+      "Theirs is the kingdom of heaven",
+      "They will be called the sons of God"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:4",
+    "question": "Why are those who mourn blessed (Mat 5:4)?",
+    "options": [
+      "They will see God",
+      "They will inherit the earth",
+      "Theirs is the kingdom of heaven",
+      "They will be comforted"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:5",
+    "question": "Who will inherit the earth (Mat 5:5)?",
+    "options": [
+      "The righteous",
+      "The meek",
+      "The pure in heart",
+      "The peacemakers"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:6",
+    "question": "Who will be filled (Mat 5:6)?",
+    "options": [
+      "Those who hunger and thirst for righteousness",
+      ". Those who are poor in spirit",
+      "Those who are persecuted",
+      "The pure in heart"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:6",
+    "question": "Those are blessed who hunger and thirst for _______ (Mat 5:6)",
+    "options": [
+      "Peace",
+      "Mercy",
+      "Righteousness",
+      "Justice"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:8",
+    "question": "Why are the pure in heart blessed (Mat 5:8)?",
+    "options": [
+      "They will see God",
+      "They will inherit the earth",
+      "Theirs is the kingdom of heaven",
+      "They will be called the sons of God"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:9",
+    "question": "Who shall be called the sons of God (Mat 5:9)?",
+    "options": [
+      "The pure in heart",
+      "The merciful",
+      "Those who mourn",
+      "The peacemakers"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:10",
+    "question": "Whose is the kingdom of heaven (Mat 5:10)?",
+    "options": [
+      "Those persecuted for righteousness",
+      "Peacemakers",
+      "The pure in heart",
+      "Those who mourn"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:13",
+    "question": "What is no longer good for anything but to be thrown out (Mat 5:13)?",
+    "options": [
+      "Salt that has lost its saltiness",
+      "Fruit that has rotted and gone bad",
+      "A linen clothe that has been torn",
+      "A wheel that has broken"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:14",
+    "question": "Jesus said, “You are the ________ of the world” (Mat 5:14)",
+    "options": [
+      "Gold",
+      "Wine",
+      "Hope",
+      "Light"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:14",
+    "question": "What did Jesus say could not be hidden (Mat 5:14)?",
+    "options": [
+      "A large treasure",
+      "A city on a hill",
+      "A tree on a mountain",
+      "The shining of the sun"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:14",
+    "question": "What do people not put under a bowl (Mat 5:14)?",
+    "options": [
+      "Spilled food",
+      "A sheep",
+      "A plant",
+      "A lamp"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:16",
+    "question": "What did Jesus liken to letting your light shine (Mat 5:16)?",
+    "options": [
+      "Your good deeds",
+      "God’s glory",
+      "God’s grace",
+      "Your faith"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:17",
+    "question": "Jesus came to ________ the Law and the Prophets (Mat 5:17)",
+    "options": [
+      "Fulfill",
+      "Keep",
+      "Honor",
+      "Obey"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:18",
+    "question": "What will never disappear from the Law until everything is accomplished (Mat 5:18)",
+    "options": [
+      "The least of these my brethren",
+      "The least commandment",
+      "The smallest letter",
+      "The mercy of the Lord"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:19",
+    "question": "What teachers will be called “great” in the kingdom of heaven (Mat 5:19)?",
+    "options": [
+      "Those who fulfill all righteousness",
+      "Those who practice the commandments",
+      "Those who interpret the commandments",
+      "Those who listen to the commandments"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:20",
+    "question": "Unless your righteousness surpasses the Pharisees’ what will not happen (Mat 5:20)?",
+    "options": [
+      "You will not enter the kingdom",
+      "You will not be justified",
+      "You will not be blessed",
+      "You will not be a follower of Jesus"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:21",
+    "question": "Jesus said they had heard it said to people long ago “Do not ______” (Mat 5:21)",
+    "options": [
+      "Lie",
+      "Steal",
+      "Covet",
+      "Murder"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:21",
+    "question": "Who did Jesus say would be subject to judgment similar to murder (Mat 5:21)?",
+    "options": [
+      "Anyone plotting murder in his heart",
+      "Anyone angry with his brother",
+      "Anyone who is a hypocrite",
+      "Anyone who has stolen"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:22",
+    "question": "Jesus said not to call one’s brother “Raca” possibly meaning ________ (Mat 5:22)?",
+    "options": [
+      "Hypocrite",
+      "Thief",
+      "Empty-headed",
+      "Murderer"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 5:24",
+    "question": "One should be reconciled to one’s brother before ________ (Mat 5:24)",
+    "options": [
+      "Fasting and praying",
+      "Offering a gift on the altar",
+      "Telling a brother what to do",
+      "Teaching the law"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:27",
+    "question": "What had they heard that they should not commit (Mat 5:27)?",
+    "options": [
+      "Murder",
+      "Theft",
+      "Hypocrisy",
+      "Adultery"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:28",
+    "question": "Whom did Jesus say had already committed adultery (Mat 5:28)?",
+    "options": [
+      "One who looked on a woman lustfully",
+      "One who had taken another man’s wife",
+      "One who had divorced his wife",
+      "One who remarries after divorce"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:29",
+    "question": "If your eye offends you what should you do (Mat 5:29)?",
+    "options": [
+      "Close it",
+      "Look away",
+      "Gouge it out",
+      "Forgive your enemy"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:30",
+    "question": "What should one do if their right hand causes them to sin (Mat 5:30)?",
+    "options": [
+      "Break it until it stop its offense",
+      "Cut it off and throw it away",
+      "Force it to do acts of kindness",
+      "Bind it to one’s body"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:30",
+    "question": "Jesus said it is better to loose one part than for what to happen (Mat 5:30)?",
+    "options": [
+      "One’s whole body to go to hell",
+      "Than that all be lost from the kingdom",
+      "One fall under judgment",
+      "One become a hypocrite"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:32",
+    "question": "What was a reason or an exception made allowing for divorce (Mat 5:32)?",
+    "options": [
+      "Apostasy",
+      "Sexual immorality",
+      "Abandonment",
+      "Unkindness"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:37",
+    "question": "Why did Jesus say simply say “Yes” or “No” rather than making vows (Mat 5:37)?",
+    "options": [
+      "Because vows are only to be made with prayer and fasting",
+      "Because vows make people liars",
+      "Vows comprise the truth",
+      "Anything beyond that come from the evil one"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:39",
+    "question": "If one is slapped on the right cheek Jesus says one should _______ (Mat 5:39)?",
+    "options": [
+      "Turn the other cheek",
+      "Count one’s blessings",
+      "Flee from evil",
+      "Remember the norm “an eye for an eye”"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:40",
+    "question": "What does Jesus say one should do if one is sued for one’s shirt (Mat 5:40)?",
+    "options": [
+      "If one is wrong, give it up",
+      "Render righteous judgments",
+      "Hand over one’s coat as well",
+      "Give one’s sandal as well"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:41",
+    "question": "If someone forces you to go one mile what should be your response (Mat 5:41)?",
+    "options": [
+      "Carry his bags as well",
+      "Refuse to go on the Sabbath",
+      "Do it with joy",
+      "Go with him two miles"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:43",
+    "question": "Jesus said people have heard “Love your neighbor and ________” (Mat 5:43)",
+    "options": [
+      "Love the Lord your God",
+      "Hate your enemy",
+      "Do good",
+      "Forgive your enemy"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:44",
+    "question": "For whom did Jesus explicitly say to pray (Mat 5:44)?",
+    "options": [
+      "Your brothers and sisters",
+      "The leaders of the nation",
+      "Those that persecute you",
+      "Those who reject the kingdom"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:45",
+    "question": "What does God do for both the righteous and unrighteous (Mat 5:45)?",
+    "options": [
+      "Causes the sun to rise",
+      "Gives them rest",
+      "Sends rain",
+      "Feeds them with bread and wine"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:46",
+    "question": "What does Jesus say even the tax collectors do (Mat 5:46)?",
+    "options": [
+      "Are fair to those who pay their taxes",
+      "Serve those that are over them",
+      "Protect their own",
+      "Love those that love them"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 5:48",
+    "question": "Jesus said that we are to be ________ as our Father in heaven is _______ (Mat 5:48)",
+    "options": [
+      "Righteous",
+      "Perfect",
+      "Loving",
+      "Merciful"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:1",
+    "question": "What should not be done before people to be seen by them (Mat 6:1)?",
+    "options": [
+      "Fasting",
+      "Giving of tithes and offerings",
+      "Acts of righteousness",
+      "Praying"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:2",
+    "question": "What should not be announced by trumpets (Mat 6:2)?",
+    "options": [
+      "When giving to the needy",
+      "When praying",
+      "When fasting",
+      "When worshipping"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:4",
+    "question": "Who sees what is done in secret (Mat 6:4)?",
+    "options": [
+      "Jesus",
+      "The Spirit",
+      "The angels in heaven",
+      "The Father"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:3",
+    "question": "How should one give to the needy (Mat 6:3)?",
+    "options": [
+      "Without the left hand knowing what the right is doing",
+      "In ones closet with the door closed",
+      "On the street corners where the homeless live",
+      "Without any thought of being repaid"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:6",
+    "question": "Where does Jesus tell his disciples to go when they pray (Mat 6:6)?",
+    "options": [
+      "The synagogue",
+      "The street corner",
+      "Their room",
+      "Into the desert"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:7",
+    "question": "Why do pagans think they will be heard by God (Mat 6:7)?",
+    "options": [
+      "Because of their righteousness",
+      "Because of their many words",
+      "Because they pray in public",
+      "Because they weep and fast"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:9",
+    "question": "In the Lord’s prayer, how is the Father identified (Mat 6:9)?",
+    "options": [
+      "As in Jerusalem",
+      "As listening",
+      "As compassionate",
+      "As in heaven"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:9",
+    "question": "In the Lord’s prayer what is to be hallowed (Mat 6:9)?",
+    "options": [
+      "Your throne",
+      "Your will",
+      "Your name",
+      "Your glory"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:10",
+    "question": "For what does the Lord’s prayer request would come (Mat 6:10)?",
+    "options": [
+      "Jesus",
+      "Your kingdom",
+      "Your glory",
+      "Your will"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:10",
+    "question": "Where does the Lord’s prayer request God’s will be done (Mat 6:10)?",
+    "options": [
+      "On earth",
+      "In heaven",
+      "In Jerusalem",
+      "In our hearts"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:12",
+    "question": "What does the Lord’s prayer ask to be forgiven (Mat 6:12)?",
+    "options": [
+      "Our sins",
+      "Our debts",
+      "All evil",
+      "The rejection of God"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:12",
+    "question": "On what does the Lord’s prayer condition our debts being forgiven (Mat 6:12)?",
+    "options": [
+      "The blood of Jesus",
+      "As God forgives those who love him",
+      "As Jesus forgave those against him",
+      "As we have forgiven our debtors"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:13",
+    "question": "Where does the Lord’s prayer request that we not be led (Mat 6:13)?",
+    "options": [
+      "Into temptation",
+      "Into trouble",
+      "Into evil",
+      "Into the path of those despising God"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:13",
+    "question": "From what/whom does the Lord’s prayer ask for deliverance (Mat 6:13)?",
+    "options": [
+      "All harm",
+      "Those who would persecute the righteous",
+      "The evil one",
+      "Pride and arrogance"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:14",
+    "question": "According to Jesus when will your heavenly Father forgive you (Mat 6:14)?",
+    "options": [
+      "When you turn in repentance to him",
+      "When you believe on Jesus",
+      "When you turn away from your sin",
+      "When you forgive those who sin against you"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:14",
+    "question": "According to Jesus, when will your heavenly Father not forgive you (Mat 6:14)?",
+    "options": [
+      "If you do not forgive others their sins",
+      "If you do not repent and turn to him",
+      "If you do not believe that Jesus is the son of God",
+      "If the Spirit does not make you alive"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:18",
+    "question": "What does Jesus say the Father sees (Mat 6:18)?",
+    "options": [
+      "What is done in secret",
+      "What is done with a pure heart",
+      "What is done for the sake of the kingdom",
+      "All things"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:21",
+    "question": "Where does Jesus recommend one store up treasure (Mat 6:21)?",
+    "options": [
+      "On earth",
+      "On Zion",
+      "In heaven",
+      "In one’s heart"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:21",
+    "question": "What will be where your treasure is stored up (Mat 6:21)?",
+    "options": [
+      "Your heart",
+      "Your soul",
+      "Your delight",
+      "Your Lord"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:23",
+    "question": "If the eye is unhealthy what will the body be full of (Mat 6:23)?",
+    "options": [
+      "Evil",
+      "Sadness",
+      "Darkness",
+      "Sickness"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:24",
+    "question": "Jesus said, what can no one do (Mat 6:24)?",
+    "options": [
+      "Come unto God on his own",
+      "Forgive others their sins",
+      "Worship God but serve the devil",
+      "Serve two masters"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:24",
+    "question": "Jesus said one cannot serve both God and ______ (Mat 6:24)?",
+    "options": [
+      "Self",
+      "Money",
+      "The praise of people",
+      "The devil"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:25",
+    "question": "Jesus says one should not ______ about one’s life (Mat 6:25)?",
+    "options": [
+      "Worry",
+      "Plan",
+      "Think",
+      "Weep"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:26",
+    "question": "What do birds not do, yet the heavenly Father takes care of them (Mat 6:26)?",
+    "options": [
+      "Put on clothes",
+      "Build homes",
+      "Treasure up riches",
+      "Sow or reap"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:28",
+    "question": "What did Jesus say neither labors or spins clothes (Mat 6:28)?",
+    "options": [
+      "Birds",
+      "Sheep",
+      "Flowers",
+      "Trees"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:33",
+    "question": "What does Jesus say we should seek first along with God’s kingdom (Mat 6:33)?",
+    "options": [
+      "Righteousness",
+      "Faith",
+      "Love",
+      "Mercy"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:34",
+    "question": "What should one not worry about because it will take care of itself (Mat 6:34)?",
+    "options": [
+      "Clothes",
+      "Food",
+      "Tomorrow",
+      "Shelter"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 6:34",
+    "question": "What does each day have enough of on its own (Mat 6:34)?",
+    "options": [
+      "Blessing",
+      "Mercy",
+      "Worry",
+      "Trouble"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:1",
+    "question": "Why should one not judge (Mat 7:1)?",
+    "options": [
+      "One will be judged",
+      "God alone is the judge",
+      "One cannot judge righteously",
+      "Forgiveness is a better way"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:6",
+    "question": "What should not be thrown to pigs (Mat 7:6)?",
+    "options": [
+      "Pearls",
+      "The children’s food",
+      "Sacred meat",
+      "Good grain"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:7",
+    "question": "What is required for something to be given to you (Mat 7:7)?",
+    "options": [
+      "You must be righteous",
+      "You must fast",
+      "You must seek the Lord",
+      "You must ask"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:8",
+    "question": "For whom will the door be opened (Mat 7:8)?",
+    "options": [
+      "For the one calling",
+      "For the one being invited in",
+      "For the one knocking",
+      "For the one asking"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:9",
+    "question": "What will a father not give a son if he asks for bread (Mat 7:9)?",
+    "options": [
+      "A stone",
+      "A snake",
+      "A stick",
+      "An empty plate"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:11",
+    "question": "Jesus said what do you, being evil, know how to do (Mat 7:11)?",
+    "options": [
+      "Care for your father and mother",
+      "Pray in the synagogues day and night",
+      "Help those who are in need",
+      "Give good gifts to your children"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:11",
+    "question": "To whom will the Father in heaven give good gifts too (Mat 7:11)?",
+    "options": [
+      "All this children",
+      "Those who are in need",
+      "Those who ask him",
+      "Those who walk in his ways"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:12",
+    "question": "What should you do for others (Mat 7:12)?",
+    "options": [
+      "What you would have them do to you",
+      "All things as you are able",
+      "What they have need of",
+      "Give them food, clothes and shelter"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:13",
+    "question": "Where does the wide gate and broad road lead to (Mat 7:13)?",
+    "options": [
+      "Heaven",
+      "Life",
+      "Evil",
+      "Destruction"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:14",
+    "question": "Where does the small gate and narrow road lead to (Mat 7:14)?",
+    "options": [
+      "Heaven",
+      "Life",
+      "The Father’s house",
+      "The land"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:14",
+    "question": "How many find the road to life (Mat 7:14)?",
+    "options": [
+      "None",
+      "Few",
+      "Some",
+      "Many"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:13",
+    "question": "How many find the road to destruction (Mat 7:13)?",
+    "options": [
+      "None",
+      "Few",
+      "Some",
+      "Many"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:15",
+    "question": "How do false prophets come to you (Mat 7:15)?",
+    "options": [
+      "In sheep’s clothing",
+      "In lion’s clothing",
+      "In fine linen",
+      "In royal robes"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:15",
+    "question": "To what does Jesus liken false prophets inwardly (Mat 7:15)?",
+    "options": [
+      "Lions",
+      "Snakes",
+      "Wolves",
+      "Vultures"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:19",
+    "question": "What happens to a tree that does not bear good fruit (Mat 7:19)?",
+    "options": [
+      "It is trimmed back and pruned",
+      "It is watered and fertilized",
+      "It is cut down and burned",
+      "It is overgrown with thornes"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:21",
+    "question": "Not everyone who says _______will enter into the kingdom of heaven (Mat 7:21)?",
+    "options": [
+      "Lord, Lord",
+      "I believe",
+      "I followed you will",
+      "Jesus is Lord"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:23",
+    "question": "What will be the ultimate condemnation of evildoers from Jesus (Mat 7:23)?",
+    "options": [
+      "I never knew you",
+      "Depart from the kingdom",
+      "Your sins are not forgiven",
+      "Follow your own desires"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:24",
+    "question": "Who is like the rock house building wise man (Mat 7:24)?",
+    "options": [
+      "Everyone who hears Jesus’ words and puts them into practice",
+      "Everyone who hears Jesus’ teachings and teaches them to others",
+      "Everyone who fears God and keeps his commandments",
+      "Everyone who takes up his cross and follows Christ"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:24",
+    "question": "Where does the wise man build his house (Mat 7:24)?",
+    "options": [
+      "By the king’s palace",
+      "Inside the city wall",
+      "Near trees",
+      "On a rock"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:25",
+    "question": "Who is a foolish man according to Jesus (Mat 7:25)?",
+    "options": [
+      "One who hears Jesus’ words and does not put them into practice",
+      "One who turns away from Jesus’ words following his own words",
+      "One who hears the voice of the evil one rather than Jesus",
+      "One who turns his back on the kingdom of heaven"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 7:29",
+    "question": "Why were the crowds amazed at Jesus teaching (Mat 7:29)?",
+    "options": [
+      "Because he taught them the word of God",
+      "Because he disagreed with the Pharisees and Sadducees",
+      "Because he taught them with authority",
+      "Because he taught them from the Scriptures"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:2",
+    "question": "Who came and knelt before Jesus (Mat 8:2)?",
+    "options": [
+      "A blind man",
+      "A centurion",
+      "A demon possessed man",
+      "A man with leprosy"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 8:2",
+    "question": "How did the man with leprosy approach Jesus (Mat 8:2)?",
+    "options": [
+      "He cried out to him",
+      "He raised his hands to him",
+      "He knelt before him",
+      "He hid his face from him"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:2",
+    "question": "What did the man with leprosy request from Jesus (Mat 8:2)?",
+    "options": [
+      "To be made clean",
+      "To be forgiven",
+      "To be healed",
+      "To become a follower of Christ"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:4",
+    "question": "How did Jesus make the man with leprosy clean (Mat 8:4)?",
+    "options": [
+      "He forgave his sins",
+      "He said “Be clean”",
+      "He put mud on the man’s leprosy",
+      "He told him to wash in the pool of Siloam"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:4",
+    "question": "After curing the leper what did Jesus tell the man not to do (Mat 8:4)?",
+    "options": [
+      "Tell anyone",
+      "Sin any more",
+      "Go to the priests",
+      "Return to his parents"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:5",
+    "question": "Where did Jesus meet the centurion asking him for help (Mat 8:5)?",
+    "options": [
+      "Bethsaida",
+      "Capernaum",
+      "Gergasa",
+      "Jerusalem"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 8:6",
+    "question": "Who asked Jesus to help his servant who was paralyzed (Mat 8:6)?",
+    "options": [
+      "A centurion",
+      "The ruler of the synagogue",
+      "The high priest",
+      "The governor"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:6",
+    "question": "For whom did the centurion ask Jesus for help (Mat 8:6)?",
+    "options": [
+      "His daughter",
+      "His wife",
+      "His servant",
+      "His brother"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:6",
+    "question": "What was wrong with the centurion’s servant (Mat 8:6)?",
+    "options": [
+      "He was lame",
+      "He was blind",
+      "He was deaf and mute",
+      "He was paralyzed"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:8",
+    "question": "What did the centurion say he did not deserve (Mat 8:8)?",
+    "options": [
+      "To have Jesus come under his roof",
+      "To eat with Jesus and the disciples",
+      "To have Jesus do a miracle for him",
+      "To have any mercy from Jesus"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:8",
+    "question": "How did the centurion suggest that Jesus heal his servant (Mat 8:8)?",
+    "options": [
+      "By coming to his house",
+      "By just saying the word",
+      "By sending one of his disciples",
+      "By touching his garment"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:12",
+    "question": "What did Jesus say would happen to the subjects of the kingdom (Mat 8:12)?",
+    "options": [
+      "They would not be forgiven in this world or in the one to come",
+      "They would be thrown out into the darkness",
+      "They would be rejected and the temple destroyed",
+      "They would be have to pay the final judge"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:12",
+    "question": "How did Jesus characterize the darkness of hell (Mat 8:12)?",
+    "options": [
+      "Weeping and gnashing of teeth",
+      "Fire and brimstone",
+      "Loneliness and punishment",
+      "Emptiness and falling down"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:14",
+    "question": "Who did Jesus find in Peter’s home (Mat 8:14)?",
+    "options": [
+      "Peter’s wife",
+      "Peter’s mother-in-law",
+      "Peter’s son",
+      "Peter’s servant"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:14",
+    "question": "What problem did Peter’s mother-in-law have (Mat 8:14)?",
+    "options": [
+      "Paralyzed",
+      "Blind",
+      "Demon possessed",
+      "Fever"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:16",
+    "question": "How did Jesus drive out the spirits of the demon possessed (Mat 8:16)?",
+    "options": [
+      "He touched those possessed",
+      "He spoke a word",
+      "He spit on the ground",
+      "He had music played and the spirits left"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:22",
+    "question": "Who did Jesus say should bury their dead (Mat 8:22)?",
+    "options": [
+      "His followers",
+      "The children",
+      "Those who loved him",
+      "The dead"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:24",
+    "question": "What was Jesus doing when the boat was hit with a furious storm (Mat 8:24)?",
+    "options": [
+      "He was walking on the water",
+      "He was sleeping",
+      "He was fishing",
+      "He was reading the Scripture"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:26",
+    "question": "How did Jesus react to the furious storm (Mat 8:26)?",
+    "options": [
+      "He walked on the water",
+      "He cast in a fishing line",
+      "He told the disciples to believe in him",
+      "He calmed the wind and waves"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:28",
+    "question": "How many demon possessed men came out of the tombs to meet Jesus (Mat 8:28)?",
+    "options": [
+      "Two",
+      "Three",
+      "Five",
+      "Twelve"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:29",
+    "question": "What did the demon possessed men accuse Jesus of attempting to do (Mat 8:29)?",
+    "options": [
+      "Come to save them",
+      "Come to torture them",
+      "Come to expell them from the men",
+      "Come to judge them"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:30",
+    "question": "What were feeding near the demon possessed men (Mat 8:30)?",
+    "options": [
+      "Sheep",
+      "Goats",
+      "Pigs",
+      "Cattle"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 8:31",
+    "question": "What did the demons request of Jesus (Mat 8:31)?",
+    "options": [
+      "To be sent into the pigs",
+      "To be sent into the water",
+      "To be released into the desert",
+      "To be forgiven"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:1",
+    "question": "In what town did Jesus meet the paralytic lying on a mat (Mat 9:1)?",
+    "options": [
+      "The town of Matthew",
+      "His own town",
+      "The governor’s town",
+      "The town of the synagogue"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 9:2",
+    "question": "To whom did Jesus say, “your sins are forgiven” (Mat 9:2)?",
+    "options": [
+      "A blind man",
+      "A leper",
+      "A paralytic",
+      "A demon-possessed man"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:2",
+    "question": "In response to what did Jesus tell the paralytic his sins were forgiven (Mat 9:2)?",
+    "options": [
+      "When he looked at the paralytic",
+      "When he looked at the crowd",
+      "When he saw the man’s faith",
+      "When he saw the faith of those that brought him"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:6",
+    "question": "Why did Jesus tell the paralytic to get up and go home (Mat 9:6)?",
+    "options": [
+      "So that they might believe that he was the Son of Man",
+      "So that they might know he had authority to forgive sins",
+      "So that they might follow him",
+      "So that they might have compassion on the sick"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:9",
+    "question": "Where was Matthew when Jesus called him (Mat 9:9)?",
+    "options": [
+      "Casting a net into the sea",
+      "Walking on the way to Jerusalem",
+      "Sitting in the city gate",
+      "Sitting at the tax collector’s booth"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:10",
+    "question": "Who came to eat with Jesus at Matthew’s house (Mat 9:10)?",
+    "options": [
+      "Scribes and Pharisees",
+      "Jesus’ mother and brothers",
+      "The blind and lame",
+      "Tax collectors and sinners"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:13",
+    "question": "Who did Jesus say he had not come to call (Mat 9:13)?",
+    "options": [
+      "The healthy",
+      "The righteous",
+      "The holy",
+      "The rich"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:13",
+    "question": "Who did Jesus say he had come to call (Mat 9:13)?",
+    "options": [
+      "The sick",
+      "The poor of this world",
+      "Sinners",
+      "Those who believed in him"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:14",
+    "question": "Who asked Jesus why his disciples did not fast (Mat 9:14)?",
+    "options": [
+      "The Pharisees",
+      "The teachers of the law",
+      "The ruler of the synagogue",
+      "John the Baptist’s disciples"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:16",
+    "question": "Jesus said, what does one not put a patch on (Mat 9:16)?",
+    "options": [
+      "On sandals",
+      "On a soiled table cloth",
+      "On an old garment",
+      "On a broken chair"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:17",
+    "question": "Jesus said where do people not put new wine (Mat 9:17)?",
+    "options": [
+      "In old jugs",
+      "In already used bottles",
+      "In old vats",
+      "In old wineskins"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:17",
+    "question": "Why does one not put new wine in old wineskins (Mat 9:17)?",
+    "options": [
+      "Lest the wine be spoiled",
+      "Lest the wineskins burst",
+      "Lest the wineskins are confused",
+      "Lest the wine turns sour"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:18",
+    "question": "Who came asking Jesus to come and raise his daughter from the dead (Mat 9:18)?",
+    "options": [
+      "A Pharisee",
+      "A grieving mother",
+      "A synagogue leader",
+      "A centurion"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:20",
+    "question": "How long had the bleeding woman had that malaldy (Mat 9:20)?",
+    "options": [
+      "Six months",
+      "A year",
+      "Three years",
+      "Twelve years"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 9:20",
+    "question": "What did the bleeding woman touch (Mat 9:20)?",
+    "options": [
+      "The sleeve of Jesus’ robe",
+      "The edge of Jesus cloak",
+      "The top of Jesus’ turban",
+      "The strap on Jesus’ sandal"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:22",
+    "question": "What did Jesus say to the bleeding woman (Mat 9:22)?",
+    "options": [
+      "Be healed and follow me",
+      "Your sins are forgiven",
+      "Your faith has healed you",
+      "I cannot give the children’s bread to dogs"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:24",
+    "question": "What did Jesus say that made the people laugh at him (Mat 9:24)?",
+    "options": [
+      "The girl is asleep",
+      "The girl is in need of rest",
+      "Be quiet and all will be well",
+      "Only believe and she will live again"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:25",
+    "question": "How did Jesus raise the synagogue leader’s dead daughter (Mat 9:25)?",
+    "options": [
+      "He spoke the word",
+      "He took her by the hand",
+      "He anointed her with oil",
+      "He had her parents wash her with water seven times"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:27",
+    "question": "What did the blind men cry out to Jesus (Mat 9:27)?",
+    "options": [
+      "We would see Jesus",
+      "Son of God, give us our sight",
+      "Have mercy on us, Son of David",
+      "O Lord, how long until we can see the kingdom"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:27",
+    "question": "How many blind man/men called out to Jesus as the Son of David (Mat 9:27)?",
+    "options": [
+      "One",
+      "Two",
+      "Three",
+      "Five"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 9:27",
+    "question": "The two blind men addressed Jesus as _________ (Mat 9:27)",
+    "options": [
+      "The Son of God",
+      "The Son of Abraham",
+      "The Son of Righteousness",
+      "The Son of David"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:29",
+    "question": "According to what did Jesus say the eyes of the blind men were opened (Mat 9:29)?",
+    "options": [
+      "Their righteousness",
+      "Their faith",
+      "God’s mercy",
+      "The kingdom of heaven"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:30",
+    "question": "After healing the blind men what did Jesus tell them (Mat 9:30)?",
+    "options": [
+      "See that no one knows about this",
+      "Come and follow me",
+      "Let the light of the kingdom fill your eyes",
+      "I am the light of the world"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:31",
+    "question": "What did the blind men do after they were healed (Mat 9:31)?",
+    "options": [
+      "They worshipped God",
+      "They rejoiced in the city gate",
+      "They went home",
+      "They spread the news about Jesus"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:35",
+    "question": "Where did Jesus teach as he went through the towns of Galilee (Mat 9:35)?",
+    "options": [
+      "In the temple",
+      "On the mountain sides",
+      "In their synagogues",
+      "On the sea"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:36",
+    "question": "What was Jesus’ general reaction to the crowds (Mat 9:36)?",
+    "options": [
+      "He left them behind",
+      "He wanted to feed them",
+      "He had compassion on them",
+      "He taught them"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:36",
+    "question": "Jesus saw the crowds as _________ (Mat 9:36)",
+    "options": [
+      "Lost sheep wandering away from the kingdom",
+      "Birds looking for food",
+      "Olive shoots linked into the olive tree",
+      "Sheep without a shepherd"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 9:38",
+    "question": "What did Jesus say his disciples should ask the Lord of harvest for (Mat 9:38)?",
+    "options": [
+      "The kingdom to come",
+      "To send workers into the harvest",
+      "To call many for the fall and rising of Israel",
+      "To ripen the harvest"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:2",
+    "question": "What was Peter’s other name (Mat 10:2)?",
+    "options": [
+      "Didymus",
+      "Zebedee",
+      "Simon",
+      "Apollos"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:2",
+    "question": "Who were the disciples who were the sons of Zebedee (Mat 10:2)?",
+    "options": [
+      "Peter and Andrew",
+      "Philip and Bartholomew",
+      "Thomas and Thaddaeus",
+      "James and John"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:3",
+    "question": "Of the disciples, who was idenitifed as the tax collector (Mat 10:3)?",
+    "options": [
+      "Matthew",
+      "Thaddaeus",
+      "Thomas",
+      "Philip"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:4",
+    "question": "Who among the disciples was identified as Iscariot (Mat 10:4)?",
+    "options": [
+      "Matthew",
+      "Judas",
+      "Thomas",
+      "Philip"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:8",
+    "question": "Where were the disciples instructed not to go by Jesus (Mat 10:8)?",
+    "options": [
+      "To Jerusalem",
+      "To the Gentiles",
+      "To the coastal plain",
+      "To the decapolis"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:16",
+    "question": "Jesus said he was sending his disciples out like _________ (Mat 10:16)?",
+    "options": [
+      "Sheep among lions",
+      "Sheep among wolves",
+      "Doves among snakes",
+      "Lambs to the slaughter"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:17",
+    "question": "Jesus warned his disciples that they would be flogged in what location (Mat 10:17)?",
+    "options": [
+      "The synagogues",
+      "The temple",
+      "Their homes",
+      "In the desert"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 10:21",
+    "question": "Because of the gospel, what will brother do to brother (Mat 10:21)?",
+    "options": [
+      "Forgive him",
+      "Become jealous of him",
+      "Betray brother to death",
+      "Turn him in to the Romans"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:22",
+    "question": "Why did Jesus say all people would hate the disciples (Mat 10:22)?",
+    "options": [
+      "Because of the kingdom",
+      "Because of your message",
+      "Because of their hatred of God",
+      "Because of me"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:22",
+    "question": "Who does Jesus tell his disciples will be saved (Mat 10:22)?",
+    "options": [
+      "Those who stand firm until the end",
+      "Those who preach the kingdom of heaven",
+      "Those who follow Jesus",
+      "Those who believe in Jesus"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:27",
+    "question": "Where were they to proclaim what Jesus whispered in their ear (Mat 10:27)?",
+    "options": [
+      "In the highways and byways",
+      "In the city gates",
+      "On the roofs",
+      "In the king’s palace"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:29",
+    "question": "What is sold for a penny (Mat 10:29)?",
+    "options": [
+      "A child",
+      "A skin of wine",
+      "Two sparrows",
+      "An ephah of flour"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 10:29",
+    "question": "What did Jesus take particular note saying God had numbered them (Mat 10:29)?",
+    "options": [
+      "The sand of the seashore",
+      "The stars of the heavens",
+      "The righeous on the earth",
+      "The hairs of our head"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:31",
+    "question": "What did Jesus say a human was worth more than (Mat 10:31)?",
+    "options": [
+      "Many sparrows",
+      "Much gold",
+      "Many sheep",
+      "Many thrones on this earth"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:34",
+    "question": "Jesus said he did not come to bring peace but _________ (Mat 10:34)",
+    "options": [
+      "Redemption",
+      "Forgiveness of sins",
+      "A sword",
+      "A scepter of righteousness"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:38",
+    "question": "Who is not worthy of Jesus (Mat 10:38)?",
+    "options": [
+      "One who does not take up his cross and follow him",
+      "One who denies Christ before men",
+      "One who does not do the will of his Father in heaven",
+      "One loves himself more than Jesus"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:37",
+    "question": "What did Jesus say his followers were to take up (Mat 10:37)?",
+    "options": [
+      "Their sword",
+      "Their cross",
+      "Their yoke",
+      "Their cloaks"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:38",
+    "question": "What will happen to the one who “finds” his life (Mat 10:38)?",
+    "options": [
+      "He will loose it",
+      "He will keep it unto eternal life",
+      "He will never die",
+      "He will treasure it"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:39",
+    "question": "Who will find his life (Mat 10:39)?",
+    "options": [
+      "He who seeks",
+      "He who fears the Lord",
+      "He who loses it for Jesus’ sake",
+      "He who buries the desires of this world"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:1",
+    "question": "After instructing and sending out the twelve where did Jesus go to preach (Mat 11:1)?",
+    "options": [
+      "In the Decapolis",
+      "To Jerusalem",
+      "On the mountains of the Samaritans",
+      "In the towns of Galilee"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 11:2",
+    "question": "Who heard what Jesus was doing and sent to ask him things (Mat 11:2)?",
+    "options": [
+      "John the Baptist",
+      "Herod",
+      "Caiaphas the high priest",
+      "Joseph of Arimathea"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:2",
+    "question": "Where was John the Baptist when Jesus was preaching in Galilee (Mat 11:2)?",
+    "options": [
+      "By the Jordan River",
+      "By the Sea of Galilee",
+      "In Prison",
+      "On a boat"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:3",
+    "question": "Who asked Jesus “are you the one who was to come?” (Mat 11:3)?",
+    "options": [
+      "Matthew",
+      "Peter",
+      "Zebedee",
+      "John the Baptist"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:6",
+    "question": "Who did Jesus say was blessed in the context of John being in prison (Mat 11:6)?",
+    "options": [
+      "The one who does not fall away on account of me",
+      "Those who are persecuted for righteousness sake",
+      "The one who believes in me",
+      "The one who seeks first the kingdom of God and his righteousness"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:9",
+    "question": "What did Jesus identify John as (Mat 11:9)?",
+    "options": [
+      "A priest",
+      "An angel from God",
+      "A brother",
+      "A prophet"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:10",
+    "question": "What did Jesus say was written about John (Mat 11:10)?",
+    "options": [
+      "He would be killed for his faith",
+      "He will prepare your way before you",
+      "He will baptize the one who is to come",
+      "He would baptize many for the remission of their sins"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:14",
+    "question": "Who did Jesus identify John the Baptist with, if they would receive it (Mat 11:14)?",
+    "options": [
+      "Moses",
+      "Elijah",
+      "Elisha",
+      "Malachi"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:18",
+    "question": "What did Jesus say John came to them doing (Mat 11:18)?",
+    "options": [
+      "Singing a dirge",
+      "Neither eating or drinking",
+      "Eating locusts in the desert",
+      "Prophesying"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:19",
+    "question": "The Son of Man was caricatured as all of the following EXCEPT (Mat 11:19)",
+    "options": [
+      "A glutton",
+      "A drunkard",
+      "A sluggard",
+      "Friend of sinners"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:20",
+    "question": "What cities did Jesus denounce (Mat 11:20)?",
+    "options": [
+      "The ones in which he had done miracles",
+      "The ones which had rejected his disciples",
+      "Jerusalem the cities of Judea",
+      "The ones which had rejected him"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:21",
+    "question": "What two cities did Jesus denounce where he had done miracles (Mat 11:21)?",
+    "options": [
+      "Tiberius and Gergasa",
+      "Jericho and Bethlehem",
+      "Korazin and Bethsaida",
+      "Jerusalem and Samaria"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:21",
+    "question": "How would Tyre have responded had Jesus done his miracles there (Mat 11:21)?",
+    "options": [
+      "They would have repented long ago",
+      "They would have followed Jesus",
+      "They would have welcomed Jesus",
+      "They would have entered the kingdom of heaven"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:23",
+    "question": "What city was “lifted up to the skies” in their own minds (Mat 11:23)?",
+    "options": [
+      "Jerusalem",
+      "Bethlehem",
+      "Capernaum",
+      "Nazareth"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 11:24",
+    "question": "For what city will it be more bearable in the judgment than Capernaum (Mat 11:24)?",
+    "options": [
+      "Jericho",
+      "Shechem",
+      "Sodom",
+      "Samaria"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:27",
+    "question": "Who alone knows the Father (Mat 11:27)?",
+    "options": [
+      "The Son",
+      "The righteous",
+      "The just",
+      "The pure in heart"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:28",
+    "question": "To whom does Christ promise to give rest (Mat 11:28)?",
+    "options": [
+      "Those pursuing God",
+      "Those who have taken up their cross to follow him",
+      "The weary and burdened",
+      "All his children"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:29",
+    "question": "What does Jesus say we should take upon us and learn from him (Mat 11:29)?",
+    "options": [
+      "His cross",
+      "His way",
+      "His tunic",
+      "His yoke"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:29",
+    "question": "How does Christ characterize himself (Mat 11:29)?",
+    "options": [
+      "Holy and righteous",
+      "Gentle and humble in heart",
+      "Like a lion and a lamb",
+      "Full of love and peace"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 11:30",
+    "question": "How does Jesus characterize his burden (Mat 11:30)?",
+    "options": [
+      "Hard",
+      "Easy",
+      "Temporary",
+      "Light"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:1",
+    "question": "What did the disciples pick when they were hungry on the Sabbath (Mat 12:1)?",
+    "options": [
+      "Some grapes",
+      "Some heads of grain",
+      "Some figs",
+      "Some honey from the comb"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:4",
+    "question": "What did David’s men eat which was unlawful (Mat 12:4)?",
+    "options": [
+      "Heads of grain on the Sabbath",
+      "The consecrated bread from the house of God",
+      "The children’s bread who had nothing else to eat",
+      "The lamb that was sacrificed on the altar"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:5",
+    "question": "Who desecrate the Sabbath in the temple and are considered innocent (Mat 12:5)?",
+    "options": [
+      "The high priest",
+      "Those bringing their offerings",
+      "The priests",
+      "The poor"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:7",
+    "question": "What did God desire more than sacrifice (Mat 12:7)?",
+    "options": [
+      "Mercy",
+      "Righteousness",
+      "Forgiveness",
+      "Redemption"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:13",
+    "question": "How did Jesus heal the man’s shriveled hand (Mat 12:13)?",
+    "options": [
+      "He told him to stretch it out",
+      "He told him to hold his hands up in praise to God",
+      "He told him to pick up a glass on the table",
+      "He shook his hand"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:15",
+    "question": "When Jesus healed all their sick, what did he warned them to do (Mat 12:15)?",
+    "options": [
+      "Praise the Father in heaven",
+      "Rejoice and be exceeding glad",
+      "Not to tell who he was",
+      "To remember these things when he had risen from the dead"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:19",
+    "question": "What will Isaiah’s servant not break (Mat 12:19)?",
+    "options": [
+      "A promise",
+      "A bruised reed",
+      "A single law",
+      "The glass of the king"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:20",
+    "question": "Isaiah’s servant will lead what to victory (Mat 12:20)?",
+    "options": [
+      "Righteousness",
+      "His servants",
+      "Holiness",
+      "Justice"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 12:21",
+    "question": "Who did Isaiah say would put their hope in the servant (Mat 12:21)?",
+    "options": [
+      "The nations",
+      "Those who were chosen",
+      "All humankind",
+      "The children of Abraham"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:30",
+    "question": "Jesus said who was against him (Mat 12:30)?",
+    "options": [
+      "The hypocritics",
+      "The ones who are not with him",
+      "Those accusing him of casting out demons by Beelzebub",
+      "The religious leaders"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:31",
+    "question": "What sin will not be forgiven (Mat 12:31)?",
+    "options": [
+      "Hypocrisy",
+      "Being a follower of Beelzebub",
+      "Blasphemy against the Holy Spirit",
+      "Rejecting the Son of Man"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:33",
+    "question": "How is a tree recognized (Mat 12:33)?",
+    "options": [
+      "By its fruit",
+      "By its leaves",
+      "By its bark",
+      "By its shade"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:35",
+    "question": "What does the evil man bring out (Mat 12:35)?",
+    "options": [
+      "Both good and evil things",
+      "Cursings and blasphemes against the Holy Spirit",
+      "Bad fruit which cannot be eaten but must be thrown out",
+      "Evil things out of the evil stored up in him"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:37",
+    "question": "By what will you be acquitted (Mat 12:37)?",
+    "options": [
+      "By your words",
+      "By faith in Christ",
+      "By the grace of God",
+      "By confessing your sins"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:38",
+    "question": "Who sought a miraculous sign from Jesus (Mat 12:38)?",
+    "options": [
+      "The Pharisees and Sadducees",
+      "The Pharisees and teachers of the law",
+      "The synagogue rulers and scribes",
+      "The governor and his officials"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 12:39",
+    "question": "Who did Jesus say asks for a miraculous sign (Mat 12:39)?",
+    "options": [
+      "A sinful and rebellious nation",
+      "The hypocrites",
+      "A wicked and adulterous generation",
+      "The evil and unfaithful among men"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:40",
+    "question": "As Jonah was in the belly of the fish where would the Son of Man be (Mat 12:40)?",
+    "options": [
+      "In the heart of the earth",
+      "In the belly of the grave",
+      "In the grips of death",
+      "In Abraham’s bosom"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:40",
+    "question": "How long was Jonah in the belly of the huge fish (Mat 12:40)?",
+    "options": [
+      "One day and one night",
+      "Three days and three nights",
+      "Seven days and seven nights",
+      "Six days and six nights"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:42",
+    "question": "Who will rise against this generation and condemn it (Mat 12:42)?",
+    "options": [
+      "The King of Tyre",
+      "Pharaoh’s daughter",
+      "Hiram king of the North",
+      "The Queen of the South"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 12:42",
+    "question": "Jesus said one greater than both of these was now here (Mat 12:42)?",
+    "options": [
+      "Moses and Elijah",
+      "David and Isaiah",
+      "Jonah and Solomon",
+      "Noah and Abraham"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:43",
+    "question": "Where does an evil spirit that comes out of a man seek rest (Mat 12:43)?",
+    "options": [
+      "In the gates of the city",
+      "In arid places",
+      "By streams of water",
+      "On the tops of mountains"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 12:45",
+    "question": "When the evil spirit returns to its original home what does it take with it (Mat 12:45)?",
+    "options": [
+      "Cursings and bitterness",
+      "Pride and arrogance",
+      "All wickedness",
+      "Seven evil spirits"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:46",
+    "question": "Who stood outside waiting to speak with Jesus (Mat 12:46)?",
+    "options": [
+      "His father and mother",
+      "His disciples",
+      "His mother and brothers",
+      "A blind man"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:49",
+    "question": "Who did Jesus point to identifying them as his mother and brothers (Mat 12:49)?",
+    "options": [
+      "The crowds",
+      "Those in the synagogue",
+      "Those seeking healing",
+      "His disciples"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 12:50",
+    "question": "What trait did Jesus say his “mother and brothers” have (Mat 12:50)?",
+    "options": [
+      "They do the will of the Father",
+      "They believe in him",
+      "They follow him wherever he goes",
+      "They give alms to the fatherless and poor"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:9",
+    "question": "Who does Jesus say should hear his parables (Mat 13:9)?",
+    "options": [
+      "All people",
+      "The poor and needy",
+      "Whoever has ears",
+      "Those who believe in him"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:12",
+    "question": "What will happen to the one who does not have (Mat 13:12)?",
+    "options": [
+      "Even what they have will be taken from them",
+      "They will be receive from the Father in heaven",
+      "They will be given more",
+      "They will be blessed of the Father in heaven"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 13:17",
+    "question": "Who longed to see what the disciples were seeing (Mat 13:17)?",
+    "options": [
+      "Kings",
+      "The humble",
+      "Prophets",
+      "Priests"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:19",
+    "question": "What is the meaning of the seed sown along the path (Mat 13:19)?",
+    "options": [
+      "One who hears and receives but only lasts for a short time",
+      "One who hears the message of the kingdom but does not understand",
+      "One that is choked out by wealth and the worries of this life",
+      "One that turns back and refused to enter the kingdom of heaven"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:20",
+    "question": "What is the meaning of the seed that fell on the rocks (Mat 13:20)?",
+    "options": [
+      "One who hears and receives but only lasts for a short time",
+      "One who hears the message of the kingdom but does not understand",
+      "One that is choked out by wealth and the worries of this life",
+      "One that turns back and refused to enter the kingdom of heaven"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:22",
+    "question": "What is the meaning of the seed sown among thorns (Mat 13:22)?",
+    "options": [
+      "One who hears and receives but only lasts for a short time",
+      "One who hears the message of the kingdom but does not understand",
+      "One that is choked out by wealth and the worries of this life",
+      "One that turns back and refused to enter the kingdom of heaven"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:23",
+    "question": "The one who receives the seed on good soil is the one __________ (Mat 13:23)",
+    "options": [
+      "Who hears the word and understands it",
+      "Who believes the word and turns from his sin",
+      "Who receives the word and does it",
+      "Who reproduces the word in the lives of others"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:28",
+    "question": "What did the field owner say about how the weeds got in his field (Mat 13:28)?",
+    "options": [
+      "The wicked had done it",
+      "The evil one did it",
+      "The hypocritics did it",
+      "An enemy had done it"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:29",
+    "question": "Why did the owner not want the servants pulling up the weeds (Mat 13:29)?",
+    "options": [
+      "Because they might hurt the wheat",
+      "Because the weeds would just come up again",
+      "Because the weeds would not hurt the true wheat",
+      "The kingdom is a mixture"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:30",
+    "question": "When would the wheat and weeds be separated (Mat 13:30)?",
+    "options": [
+      "When the heads of grain appeared",
+      "When it was the time of the harvest",
+      "When the kingdom had come upon them",
+      "When the weeds produced thorns"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:31",
+    "question": "What kind of seed did Jesus say the kingdom of heaven was like (Mat 13:31)?",
+    "options": [
+      "Wheat",
+      "Figs",
+      "Pomegranate",
+      "Mustard"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:32",
+    "question": "What characteristic does Jesus note about the mustard seed (Mat 13:32)?",
+    "options": [
+      "Its small size",
+      "Its aroma",
+      "Its ability to multiply",
+      "Its need of water"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:33",
+    "question": "Jesus said the kingdom of heaven was like ______ (Mat 13:33)",
+    "options": [
+      "Honey",
+      "A trumpet",
+      "A camel",
+      "Yeast"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:34",
+    "question": "How did Jesus speak to the crowds (Mat 13:34)?",
+    "options": [
+      "In proverbs",
+      "In parables",
+      "In sayings",
+      "In preaching"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:39",
+    "question": "Who did Jesus say sowed the weeds (Mat 13:39)?",
+    "options": [
+      "The evil one",
+      "The Pharisees",
+      "The teachers of the law",
+      "The wicked"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:38",
+    "question": "What does the good seed in the parable stand for (Mat 13:38)?",
+    "options": [
+      "Those who listen to Jesus’ words",
+      "The doers of the law",
+      "The sons of the kingdom",
+      "The children of God"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:39",
+    "question": "Who are the harvesters of the wheat and the weeds (Mat 13:39)?",
+    "options": [
+      "The disciples",
+      "The sons of the kingdom",
+      "Those who do the will of the Father",
+      "The angels"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:40",
+    "question": "When will the weeds be pulled up and burned (Mat 13:40)?",
+    "options": [
+      "At the end of the age",
+      "Just before the coming of the Son of Man",
+      "When the temple is destroyed",
+      "When the Son of Man is crucified"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:42",
+    "question": "What characterizes the fiery furnace where the weeds are burned (Mat 13:42)?",
+    "options": [
+      "Pulling out of hair and cutting themselves",
+      "Crying out for mercy in the midst of suffering",
+      "Weeping and gnashing of teeth",
+      "Pain and sorrow"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:43",
+    "question": "Who will shine like the sun in the kingdom of the Father (Mat 13:43)?",
+    "options": [
+      "The children of God",
+      "The righteous",
+      "The wise",
+      "Those who believe"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 13:44",
+    "question": "The kingdom of heaven is like _________ (Mat 13:44)?",
+    "options": [
+      "A gold coin in a chest",
+      "A cup of cold water",
+      "A treasure hidden in a field",
+      "A sun rising brighter as the day"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:44",
+    "question": "What did the man do to acquire the treasure hidden in the field (Mat 13:44)?",
+    "options": [
+      "He guarded the field day and night",
+      "He dug up the treasure and with it bought the field",
+      "He built a wall around the field",
+      "He sold all he had and bought the field"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:45",
+    "question": "How did the merchant acquire the pearl of great value (Mat 13:45)?",
+    "options": [
+      "He traded his house for it",
+      "He sold everything he had for it",
+      "He bought it for a bag of gold",
+      "He told the king to purchase it"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:47",
+    "question": "The kingdom of heaven is like a __________ (Mat 13:47)",
+    "options": [
+      "Fishing hook",
+      "Fishing boat",
+      "Fishing net",
+      "Fishing market"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:48",
+    "question": "What did the fishermen put in baskets (Mat 13:48)?",
+    "options": [
+      "Wheat and barley",
+      "Olives and figs",
+      "Good nets",
+      "Good fish"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:49",
+    "question": "What did the good and bad fish in the parable of the net represent (Mat 13:49)?",
+    "options": [
+      "The righteous and wicked",
+      "The wise and foolish",
+      "The rich and poor",
+      "Believers and unbelievers"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:50",
+    "question": "Where does Jesus say the wicked will be thrown (Mat 13:50)?",
+    "options": [
+      "Into the lake of fire",
+      "Into a place of deep darkness",
+      "Into a blazing furnace",
+      "Into the depths of the earth"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:54",
+    "question": "After entering his hometown where did Jesus teach the people (Mat 13:54)?",
+    "options": [
+      "In the marketplace",
+      "In the gates of the city",
+      "In the synagogue",
+      "In the school"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:57",
+    "question": "Where did Jesus say a prophet was without honor (Mat 13:57)?",
+    "options": [
+      "In Jerusalem",
+      "In Galilee",
+      "In his hometown",
+      "In all of Israel"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 13:58",
+    "question": "Why did Jesus not do many miracles in his hometown (Mat 13:58)?",
+    "options": [
+      "Because they would not listen",
+      "Because of there were not many sick there",
+      "Because of the Pharisees and Sadducees",
+      "Because of their lack of faith"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:1",
+    "question": "Herod who had put John into prison was a(n) ________ (Mat 14:1)",
+    "options": [
+      "Ethnarch",
+      "Monarch",
+      "Tetrarch",
+      "Pentarch"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 14:2",
+    "question": "When Herod the tetrarch heard about Jesus what conclusion did he draw (Mat 14:2)?",
+    "options": [
+      "Jesus was John the Baptist risen from the dead",
+      "Jesus was the Son of Man predicted by Daniel the prophet",
+      "Jesus was the Son of God",
+      "Jesus was the Messiah as announced by Isaiah the prophet"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:3",
+    "question": "Why had Herod put John in prison (Mat 14:3)?",
+    "options": [
+      "Because of Mariamne",
+      "Because of Herodias",
+      "Because of Caesar",
+      "Because of Cleopatra"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:4",
+    "question": "What inhibited Herod from killing John the Baptist (Mat 14:4)?",
+    "options": [
+      "He feared God",
+      "He feared the people who held John as a prophet",
+      "He feared his wife who liked to listen to John",
+      "He feared the religious authorities who defended John"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:6",
+    "question": "Who danced before Herod on his birthday (Mat 14:6)?",
+    "options": [
+      "The women of Tekoa",
+      "The concubines of Herod",
+      "Herodias, the wife of Herod",
+      "Herodias’ daughter"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:13",
+    "question": "How did Jesus react after hearing of John’s death (Mat 14:13)?",
+    "options": [
+      "He wept",
+      "He condemn Herod of his evil deed",
+      "He withdrew to a solitary place",
+      "He taught his disciples"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:16",
+    "question": "Who did Jesus tell to feed the 5,000 (Mat 14:16)?",
+    "options": [
+      "The Pharisees",
+      "The priests",
+      "The young boy",
+      "The disciples"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:20",
+    "question": "After feeding the 5,000 how many baskets full did the disciples pick up (Mat 14:20)?",
+    "options": [
+      "Five",
+      "Seven",
+      "Ten",
+      "Twelve"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:21",
+    "question": "How many ate of Jesus’ multiplying the fives loaves and two fish (Mat 14:21)?",
+    "options": [
+      "1,000",
+      "4,000",
+      "5,0000",
+      "12,000"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:28",
+    "question": "Who asked to come to Jesus on the water (Mat 14:28)?",
+    "options": [
+      "John",
+      "Peter",
+      "James",
+      "Matthew"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:30",
+    "question": "While walking on the water, when did Peter get afraid (Mat 14:30)?",
+    "options": [
+      "When Jesus was out of sight",
+      "When he fell into the water",
+      "When he lost site of the boat",
+      "When he saw the wind"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:31",
+    "question": "How did Jesus save Peter from falling into the water (Mat 14:31)?",
+    "options": [
+      "He spoke a word",
+      "He stilled the waves",
+      "He reached out his hand",
+      "He pulled him into the boat"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 14:34",
+    "question": "After Peter walked on the water, where did they land the boat (Mat 14:34)?",
+    "options": [
+      "At Capernaum",
+      "At Bethsaida",
+      "At Nazareth",
+      "At Gennesaret"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 15:4",
+    "question": "What was the Old Testament penalty for one cursing a parent (Mat 15:4)?",
+    "options": [
+      "40 lashes",
+      "5 days in prison",
+      "No food for 3 days",
+      "Death"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:8",
+    "question": "What did Isaiah put in contrast with those that honored God with their lips (Mat 15:8)?",
+    "options": [
+      "Their hearts are hardened to the ways of the Lord",
+      "Their deeds fell far short of what the law commands",
+      "Their hearts are far from God",
+      "Their deceitful tongues"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:11",
+    "question": "What did Jesus say defiles a person (Mat 15:11)?",
+    "options": [
+      "What comes out of a persons mouth",
+      "The evil deeds a person does",
+      "The treachery of the human heart",
+      "A jealous heart"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:13",
+    "question": "What plants did Jesus say would be pulled up by the roots (Mat 15:13)?",
+    "options": [
+      "The ones not planted by his heavenly Father",
+      "The ones planted by the evil one",
+      "The ones not planted by the Holy Spirit",
+      "The one planted by the Pharisees and Sadducees"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:14",
+    "question": "What kind of guides did Jesus call the Pharisees (Mat 15:14)?",
+    "options": [
+      "Wicked guides",
+      "Lame guides",
+      "Lost guides",
+      "Blind guides"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:14",
+    "question": "What did Jesus say happens when the blind lead the blind (Mat 15:14)?",
+    "options": [
+      "They both fall off a cliff",
+      "They both fall into a pit",
+      "They both walk into a wall",
+      "They both fall into the river"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:18",
+    "question": "Where did Jesus say things that come out of the mouth come from (Mat 15:18)?",
+    "options": [
+      "The soul",
+      "The stomach",
+      "The heart",
+      "The evil one"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:20",
+    "question": "What did Jesus say does not defile a person (Mat 15:20)?",
+    "options": [
+      "To be baptized by his disciples",
+      "Eat with unwashed hands",
+      "To gather grain on the Sabbath",
+      "To eat fat and drink blood"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:22",
+    "question": "What problem did the Canaanite woman come to Jesus with (Mat 15:22)?",
+    "options": [
+      "A demon-possessed daughter",
+      "A paralyzed husband",
+      "An issue of blood",
+      "A son who was deaf and mute"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:24",
+    "question": "To whom did Jesus tell the Canaanite woman he was sent (Mat 15:24)?",
+    "options": [
+      "The lost sheep of Israel",
+      "The sons and daughters of Israel",
+      "Those who had been circumcised",
+      "The house of David"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:26",
+    "question": "What did Jesus say was not to be cast to the dogs (Mat 15:26)?",
+    "options": [
+      "The servants’ food",
+      "That which is holy",
+      "The children’s food",
+      "The lost sheep of Israel"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:31",
+    "question": "What was the reaction of the people when they saw the mute speaking (Mat 15:31)?",
+    "options": [
+      "They shouted for joy",
+      "They carried Jesus on their shoulders",
+      "They spread their robes on the road in front of Jesus",
+      "They were amazed and praised God"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Matthew 1:1",
+    "question": "Why was Jesus concerned that the people had not eaten in three days (Mat (15:32)?",
+    "options": [
+      "They might collapse on the way",
+      "They might riot",
+      "They might steal food on the way home",
+      "They might reject the kingdom of heaven"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 15:39",
+    "question": "After Jesus fed the 4,000 where did he go to next (Mat 15:39)?",
+    "options": [
+      "Genesaret",
+      "Capernaum",
+      "Tiberius",
+      "Magadan"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 16:1",
+    "question": "What did the Pharisees and Sadducees ask in order to tempt Jesus (Mat 16:1)?",
+    "options": [
+      "To make stones into bread",
+      "To call God his Father",
+      "To show them a sign from heaven",
+      "To heal a blind man on the Sabbath"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:3",
+    "question": "Jesus rebuked the Pharisees because they could not interpret ________ (Mat 16:3)",
+    "options": [
+      "The appearance of the sky",
+      "The olive tree’s blooming",
+      "The prophecies of Scripture",
+      "The signs of the times"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:4",
+    "question": "What does a wicked and adulterous generation look for (Mat 16:4)?",
+    "options": [
+      "A miraculous sign",
+      "Signs in the sky",
+      "Signs in the stars",
+      "The end of the age"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:5",
+    "question": "When they went across the lake, what had the disciples forgotten (Mat 16:5)?",
+    "options": [
+      "To take water",
+      "To take bread",
+      "To take wine",
+      "To bring their fishing net"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:13",
+    "question": "What did Jesus ask his disciples at Caesarea Philippi (Mat 16:13)?",
+    "options": [
+      "When will the Son of Man come in power?",
+      "Who do people say the Son of Man is?",
+      "How long until you believe?",
+      "Who do the Pharisees say is the Son of David?"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:15",
+    "question": "How did Peter answer Jesus’ question about “who do you say I am?” (Mat 16:15)?",
+    "options": [
+      "You are the Son of David",
+      "You are the Son of the living God",
+      "You are the Son of Man",
+      "You are the one who is to come"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:17",
+    "question": "Who did Jesus say revealed to Peter that he was the Christ (Mat 16:17)?",
+    "options": [
+      "The Scripture",
+      "The Holy Spirit",
+      "Peter’s eyes and ears",
+      "His heavenly Father"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:18",
+    "question": "On what did Jesus say he would build his church (Mat 16:18)?",
+    "options": [
+      "On this rock",
+      "On this faith",
+      "On this mountain",
+      "On this foundation"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:18",
+    "question": "What did Jesus say would not prevail against his church (Mat 16:18)?",
+    "options": [
+      "The works of the evil one",
+      "The gates of Hades",
+      "The walls of Hades",
+      "The enemies of the gospel"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:19",
+    "question": "What did Jesus promise to give to Peter (Mat 16:19)?",
+    "options": [
+      "A mansion in heaven",
+      "A seat at his right hand",
+      "A crown of righteousness",
+      "The keys to the kingdom"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:19",
+    "question": "What was given to Peter (Mat 16:19)?",
+    "options": [
+      "Whatever he asked for he would receive in the name of Jesus",
+      "Whevever he would he bound in heaven would be bound on earth",
+      "Whatever he bound in earth to be bound in heaven",
+      "Wherever he preached the gospel of the kingdom would prosper"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:21",
+    "question": "At the hands of all of the following Jesus said he would suffer EXCEPT (Mat 16:21)",
+    "options": [
+      "Chief priests",
+      "Elders",
+      "Pharisees",
+      "Teachers of the law"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 16:22",
+    "question": "When did Peter rebuke Jesus (Mat 16:22)?",
+    "options": [
+      "When Jesus told him to get into the boat",
+      "When Jesus told him he would suffer and die",
+      "When Jesus told him the people would reject him",
+      "When Jesus told him they would all flee"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:22",
+    "question": "Who said, “Lord this shall never happen to you” (Mat 16:22)?",
+    "options": [
+      "Thomas",
+      "James",
+      "Judas",
+      "Peter"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:23",
+    "question": "What was Jesus’ response to Peter saying he would not suffer and die (Mat 16:23)?",
+    "options": [
+      "Get behind me Satan",
+      "How can you say such a thing?",
+      "O you of little faith",
+      "How would the Scripture be fulfilled"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:25",
+    "question": "What will happen to the one who wants to save his life (Mat 16:25)?",
+    "options": [
+      "He must find it",
+      "He must lay it down",
+      "He must give it up",
+      "He will lose it"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:27",
+    "question": "How will the Son of Man come (Mat 16:27)?",
+    "options": [
+      "With the stars of heaven",
+      "In the kingdom of heaven",
+      "In his Father’s glory and with his angels",
+      "On a chariot of fire with the hosts of heaven"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:27",
+    "question": "How will Jesus reward each person when he returns (Mat 16:27)?",
+    "options": [
+      "According to their faith",
+      "According to his righteousness",
+      "According to the Father’s mercy",
+      "According to what they have done"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 16:28",
+    "question": "Who did Jesus say would see the Son of Man coming in his kingdom (Mat 16:28)?",
+    "options": [
+      "All men",
+      "Some standing there",
+      "Those who remain faithful to the end",
+      "The righteous"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 17:2",
+    "question": "What two things were mentioned in describing Christ’s transfiguration (Mat 17:2)?",
+    "options": [
+      "His eyes became flames of fire and his skin became white",
+      "His hair became white and this voice became like thunder",
+      "His face shone and his clothes became white",
+      "His hair became white and he had eyes of fire"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 17:3",
+    "question": "Who appeared with Jesus on the Mount of Transfiguration (Mat 17:3)?",
+    "options": [
+      "John the Baptist and Elijah",
+      "Enoch and Elijah",
+      "Isaiah and Moses",
+      "Moses and Elijah"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 17:4",
+    "question": "What did Peter offer to do when he was on the Mount of Transfiguration (Mat 17:4)?",
+    "options": [
+      "Build three shelters",
+      "Build an altar to worship",
+      "To cook a lamb",
+      "To wash their feet"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 17:11",
+    "question": "What did Jesus say Elijah would come and do (Mat 17:11)?",
+    "options": [
+      "Destroy the works of darkness",
+      "Restore all things",
+      "Bring everyone to repentance",
+      "Bring in righteousness and justice"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 17:11",
+    "question": "Who did Jesus say that his suffering would be the same as (Mat 17:11)?",
+    "options": [
+      "Elijah’s",
+      "Moses’",
+      "Isaiah’s",
+      "Jeremiah’s"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 17:15",
+    "question": "Who said to Jesus, “Lord, have mercy on my son” (Mat 17:15)?",
+    "options": [
+      "A mother",
+      "A father",
+      "A servant",
+      "A ruler of the synaogue"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 17:16",
+    "question": "What complaint did the father of the boy with seizures have (Mat 17:16)?",
+    "options": [
+      "He could not bring the boy to Jesus",
+      "The Pharisees could do nothing for the boy",
+      "The boy was now dead",
+      "Jesus’ disciples could not heal him"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 17:20",
+    "question": "How much faith did Jesus say it would take to move a mountain (Mat 17:20)?",
+    "options": [
+      "A spoonful size",
+      "An ounce",
+      "A speck size",
+      "A mustard seed size"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 17:24",
+    "question": "What tax did the collectors ask Peter about (Mat 17:24)?",
+    "options": [
+      "Income tax",
+      "Roman tax",
+      "Toll tax",
+      "Temple tax"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 17:24",
+    "question": "Where did the tax collectors ask Peter about the temple tax (Mat 17:24)?",
+    "options": [
+      "Bethsaida",
+      "Capernaum",
+      "Jerusalem",
+      "Caesarea Philippi"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 17:24",
+    "question": "How much was the temple tax that the collectors asked Peter about (Mat 17:24)?",
+    "options": [
+      "Two drachmas",
+      "Two shekels",
+      "One silver piece",
+      "Two pence"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 17:26",
+    "question": "Who did Jesus say kings exempt from taxes (Mat 17:26)?",
+    "options": [
+      "The king’s servants",
+      "The king’s sons",
+      "The king’s parents",
+      "The king’s city"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 17:27",
+    "question": "How did Jesus instruct Peter to catch a fish for the temple tax (Mat 17:27)?",
+    "options": [
+      "By throwing a hand net",
+      "By dragging a net to shore",
+      "By throwing in a line",
+      "By using a fishing spear"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 18:3",
+    "question": "What did Jesus say one must become like in order to enter the kingdom (Mat 18:3)?",
+    "options": [
+      "Little child",
+      "A trusting baby",
+      "A bird that waits on God for its food",
+      "Humble servant"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:4",
+    "question": "Who did Jesus say would be the greatest in the kingdom (Mat 18:4)?",
+    "options": [
+      "One with faith like a child",
+      "One who believes but has never seen",
+      "One who humbles himself like a child",
+      "One who serves others"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:5",
+    "question": "Who did Jesus say welcomes him (Mat 18:5)?",
+    "options": [
+      "Whoever welcomes the poor, blind and naked in Jesus’ name",
+      "Whoever welcomes the fatherless and orphans",
+      "Wjpever welcomes the least of these my brethren",
+      "Whoever welcomes a little child in his name"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:8",
+    "question": "What did Jesus say to do if a hand or foot cause you to sin (Mat 18:8)?",
+    "options": [
+      "Break hand and foot",
+      "Cut them off and throw them away",
+      "Burn them with fire in this life",
+      "Bind it with ropes to restrain it from doing sin"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:9",
+    "question": "When should an eye be gouged out and thrown away (Mat 18:9)?",
+    "options": [
+      "If it leads one astray",
+      "If it can only see darkness",
+      "If it looks away from Jesus",
+      "If it causes you to sin"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:12",
+    "question": "How many sheep did the shepherd leave to go after the one lost one (Mat 18:12)?",
+    "options": [
+      "Nine",
+      "Eleven",
+      "Forty-nine",
+      "Ninety-nine"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:15",
+    "question": "If a brother sins against you what is the first thing you should do (Mat 18:15)?",
+    "options": [
+      "Pray to the Father in heaven for him",
+      "Go and show him his fault",
+      "Take one or two with you to establish every matter",
+      "Tell it to the church"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:15",
+    "question": "If a brother who has sinned against you listens to you, what is the result (Mat 18:15)?",
+    "options": [
+      "Great rejoicing in heaven",
+      "He will have forgiven you",
+      "You have won your brother over",
+      "The church will rejoice"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:18",
+    "question": "What will be bound in heaven (Mat 18:18)?",
+    "options": [
+      "Whatever John binds on earth",
+      "Whatever you bind on earth",
+      "Whatever God has bound on earth",
+      "Those God has chosen"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:19",
+    "question": "What will be done for you by the Father in heaven (Mat 18:19)?",
+    "options": [
+      "If you ask anything of your Father in heaven",
+      "All things that are according to his will in heaven as it is on earth",
+      "If two of you agree about anything you ask for",
+      "If the church binds it on earth"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:20",
+    "question": "What happens where two or three come together in Jesus’ name (Mat 18:20)?",
+    "options": [
+      "He will bind in heaven what they have bound on earth",
+      "He will forgive their sins",
+      "He will guide them into all truth",
+      "He will there with them"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:21",
+    "question": "Who asked Jesus how often his brother should be forgiven (Mat 18:21)?",
+    "options": [
+      "James",
+      "Peter",
+      "John",
+      "Thomas"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:21",
+    "question": "How many times did Peter suggest that he should forgive a brother (Mat 18:21)?",
+    "options": [
+      "Three times",
+      "Seven times",
+      "Twelve times",
+      "Seventy-seven times"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:22",
+    "question": "How many times did Jesus tell Peter he should forgive his brother (Mat 18:22)?",
+    "options": [
+      "One hundred times",
+      "A thousand times",
+      "Twelve times",
+      "Seventy-seven times"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:27",
+    "question": "What did the master do for the first debtor who owed a huge amount (Mat 18:27)?",
+    "options": [
+      "He cut the debt in half",
+      "He had pity and cancelled the debt",
+      "He paid the debt for the debtor himself",
+      "He owner sold his own son to pay the debt"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 18:35",
+    "question": "What was the ultimate lesson of the story of the unforgiving servant (Mat 18:35)?",
+    "options": [
+      "Beware or you will be thrown into prison until you pay the debt",
+      "Forgive your brother from the heart",
+      "Mercy received is mercy required",
+      "One should forgive seventy times"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:3",
+    "question": "What question did the Pharisees ask Jesus in order to test him (Mat 19:3)?",
+    "options": [
+      "Is it right to pay taxes to Caesar?",
+      "Is it right to rebel against the Romans?",
+      "Is it right for a man to divorce his wife?",
+      "Is it right for a man to eat with unwashed hands?"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:4",
+    "question": "How did Jesus say the Creator made humankind (Mat 19:4)?",
+    "options": [
+      "Male and female",
+      "Out of the dust of the ground",
+      "By speaking on the sixth day",
+      "Perfect and without sin"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:5",
+    "question": "What will happen when a man leaves his father and mother (Mat 19:5)?",
+    "options": [
+      "He come and follow Jesus",
+      "He will be united to his wife",
+      "He will seek his own home",
+      "He will work for himself and his family"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:6",
+    "question": "What did Jesus say man should not separate (Mat 19:6)?",
+    "options": [
+      "What has been united into one",
+      "Two who are pledged in marriage",
+      "Those who have agreed to become one",
+      "What God has joined together"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:8",
+    "question": "What did Moses command concerning divorce according to the Pharisees (Mat 19:8)?",
+    "options": [
+      "A man could not divorce his wife in Israel",
+      "A man could give his wife a certificate of divorce",
+      "A man could divorce his wife only if she were unfaithful",
+      "A man could divorce his wife for any cause"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:8",
+    "question": "Why did Jesus say Moses permitted divorce (Mat 19:8)?",
+    "options": [
+      "Because your hearts were hard",
+      "Because he did not want his people to suffer",
+      "Because love sometimes fades",
+      "Because your hearts were unfaithful"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:9",
+    "question": "What was the only exception Jesus allowed for divorce (Mat 19:9)?",
+    "options": [
+      "Death",
+      "Abuse",
+      "Marital unfaithfulness",
+      "Abandonment"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:10",
+    "question": "What did the disciples conclude after hearing Jesus’ position on divorce (Mat 19:10)?",
+    "options": [
+      "One must divorce only as a last resort",
+      "It is better to stay married",
+      "It is better not to have children",
+      "It is better not to marry"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:11",
+    "question": "Who did Jesus say it was better if they do not marry (Mat 19:11)?",
+    "options": [
+      "Only those to whom it has been given",
+      "Only those who are committed to God",
+      "Only those who take such a vow of chastity",
+      "Only those who are sons of the kingdom"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:12",
+    "question": "All of the following are reasons Jesus cites for being eunuch’s EXCEPT (Mat 19:12)",
+    "options": [
+      "Some are born that way",
+      "Some are made eunuchs by men",
+      "Some are committed to that by their parents",
+      "Some have renounced marriage for the kingdom"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:13",
+    "question": "Who did the disciples rebuke from coming to Jesus (Mat 19:13)?",
+    "options": [
+      "The tax collectors and sinners",
+      "Those bringing little children",
+      "Those bringing blind and lame",
+      "The Pharisees"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:13",
+    "question": "Who rebuked those bringing little children to Jesus (Mat 19:13)?",
+    "options": [
+      "The Pharisees",
+      "The crowds",
+      "The chief priests and elders",
+      "The disciples"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:14",
+    "question": "To whom did Jesus say the kingdom of heaven belonged (Mat 19:14)?",
+    "options": [
+      "Little children",
+      "Those who believe",
+      "Those in need of healing",
+      "The poor and needy"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:24",
+    "question": "What is easier than for a rich man to enter the kingdom of heaven (Mat 19:24)?",
+    "options": [
+      "For a bird to fly against the windw",
+      "For a fish to swim upstream",
+      "For a camel to go through the eye of a needle",
+      "For a sheep to pass through a lion’s den"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:28",
+    "question": "What did Jesus say would happen at the renewal of all things (Mat 19:28)?",
+    "options": [
+      "The Son of Man will come in the clouds of heaven",
+      "The Son of Man will sit on his glorious throne",
+      "The Son of Man will separate the wheat from the chaff",
+      "The Son of Man will come with fiery eyes sifting all men"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 19:30",
+    "question": "What did Jesus say would happen to those who are first (Mat 19:30)?",
+    "options": [
+      "They will be last",
+      "They will be cast into outer darkness",
+      "He will say he never knew them",
+      "They will serve the least of these"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:1",
+    "question": "What did the kingdom landowner do early in the morning (Mat 20:1)?",
+    "options": [
+      "Plowed his ground and planted his seed",
+      "Harvested his wheat",
+      "Hired workmen for his vineyard",
+      "Pruned his olive trees"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:2",
+    "question": "How much did the landowner agree to pay those he hired in the morning (Mat 20:2)?",
+    "options": [
+      "A talent",
+      "A denarius",
+      "A shekel",
+      "A drachma"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 20:7",
+    "question": "Where did the landowner send those he hired (Mat 20:7)?",
+    "options": [
+      "Into his wheat fields",
+      "To his fig trees",
+      "To his vineyard",
+      "To his olive grove"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:10",
+    "question": "Whose expectations did the landowner not meet (Mat 20:10)?",
+    "options": [
+      "Those hired first thought they should receive more",
+      "Those hired last thought they had received too little",
+      "Those who harvested the most thought they should have been paid more",
+      "Those who slept during the harvest thought they should be paid"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:13",
+    "question": "The equal paying landowner defended himself by saying _______ (Mat 20:13)",
+    "options": [
+      "I have kept my promise and now should you not keep yours?",
+      "I am not unfair, are you envious because I am generous?",
+      "I have given you what you asked for now take it and go",
+      "Take what you have and give it to the poor even as I have done"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:18",
+    "question": "Who did Jesus tell his disciples would condemn him to death (Mat 20:18)?",
+    "options": [
+      "The people",
+      "The chief priests",
+      "The Romans",
+      "The governor"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:21",
+    "question": "What did James and John’s mother request from Jesus (Mat 20:21)?",
+    "options": [
+      "That her sons be given authority to do miracles",
+      "That her sons be allowed to go home and bury their father",
+      "That her sons be the chief officers in Christ’s kingdom",
+      "That her sons sit on Jesus’ right and left in the kingdom"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:23",
+    "question": "What did Jesus say he didn’t have the authority to grant (Mat 20:23)?",
+    "options": [
+      "To tell them when the end was to come",
+      "To let them sit on his right and left in the kingdom",
+      "To allow them to be raised from the dead even as he would be",
+      "To let them do miracles like Jesus had done"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:26",
+    "question": "What did Jesus say the one who would become great must do (Mat 20:26)?",
+    "options": [
+      "Follow Jesus through thick and thin",
+      "Become your servant",
+      "Become a leader of men",
+      "Become a fisher of men"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 10:28",
+    "question": "For what purpose did the Son of Man not come according to Jesus (Mat 10:28)?",
+    "options": [
+      "To be served",
+      "To rule on this earth",
+      "To be granted a crown",
+      "To be a prophet"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:28",
+    "question": "Why did Jesus come (Mat 20:28)?",
+    "options": [
+      "To show us the way to life and the kingdom",
+      "To love humankind as God did",
+      "To give his life a ransom for many",
+      "To fulfill the Scripture"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:29",
+    "question": "Who met Jesus as he was leaving Jericho (Mat 20:29)?",
+    "options": [
+      "A demon-possessed man",
+      "A lame man",
+      "Two blind men",
+      "A man with a withered hand"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:31",
+    "question": "How did the crowd react to the two blind men by Jericho (Mat 20:31)?",
+    "options": [
+      "The crowd hushed while they cried out to Jesus",
+      "The crowd rebuked them telling them to be quiet",
+      "The crowd blocked their way so they could not get to Jesus",
+      "The crowd led the blind men to Jesus"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:34",
+    "question": "How did Jesus heal the eyes of the blind men on the road by Jericho (Mat 20:34)?",
+    "options": [
+      "He spoke and their eyes opened",
+      "He put mud on their eyes and told them to wash",
+      "He touched their eyes",
+      "He told them to show themselves to the priests"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 20:34",
+    "question": "What did the blind men by Jericho do after they received their sight (Mat 20:34)?",
+    "options": [
+      "They showed themselves to the priests",
+      "They went home praising God",
+      "They wept for joy",
+      "They followed Jesus"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 21:2",
+    "question": "How many disciples did Jesus send to get a donkey and her colt (Mat 21:2)?",
+    "options": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 21:2",
+    "question": "From Bethphage why did Jesus send two disciples on ahead of him (Mat 21:2)?",
+    "options": [
+      "To get a donkey and her colt",
+      "To prepare the way for the Lord",
+      "To prepare a place where they could eat",
+      "To bring him two turtle doves"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 21:5",
+    "question": "What did the prophet say about the donkey (Mat 21:5)?",
+    "options": [
+      "Your king comes to you gentle riding on a donkey",
+      "This donkey will help prepare the way of the Lord",
+      "Jerusalem, O Jerusalem, your king will ride a donkey’s colt",
+      "How is it that the king comes riding on a donkey?"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 21:7",
+    "question": "What did the disciples do after they brought the donkey to Jesus (Mat 21:7)?",
+    "options": [
+      "They placed their cloaks on the road before him",
+      "They got a saddle for him to ride on",
+      "They placed their cloaks on the donkey",
+      "They made steps for Jesus to mount the donkey"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 21:12",
+    "question": "Whose tables did Jesus overturn (Mat 21:12)?",
+    "options": [
+      "The money changers",
+      "Those selling doves",
+      "Those selling sheep",
+      "Those selling food"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 21:12",
+    "question": "Who did Jesus drive out of the temple area (Mat 21:12)?",
+    "options": [
+      "The money changers",
+      "Those selling doves",
+      "Those buying and selling",
+      "Those preaching"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 21:14",
+    "question": "Who came to Jesus for healing at the temple (Mat 21:14)?",
+    "options": [
+      "The lame and sick",
+      "Those possessed with demons and the lame",
+      "The blind and mute",
+      "The blind and lame"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 21:17",
+    "question": "Where did Jesus go after he cleansed the temple (Mat 21:17)?",
+    "options": [
+      "Bethlehem",
+      "Jericho",
+      "Samaria",
+      "Bethany"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 21:28",
+    "question": "In Jesus’ story, what did the father of two sons ask his son to do (Mat 21:28)?",
+    "options": [
+      "To plow his field",
+      "To bring him some figs from their fig tree",
+      "To work in the vineyard",
+      "To harvest the olives"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 21:38",
+    "question": "Why did the wicked tenants kill the landowner’s son (Mat 21:38)?",
+    "options": [
+      "Because they hated the landowner",
+      "Because he was the heir",
+      "So they wouldn’t have to pay the rent",
+      "So they could keep all the fruit"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 21:39",
+    "question": "What did the wicked tenants do before they killed the landowner’s son (Mat 21:39)?",
+    "options": [
+      "They killed him on the temple mount",
+      "They threw him into a pit",
+      "They threw him out of the vineyard",
+      "They tied him to a tree"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 21:42",
+    "question": "What happened to the stone which the builders rejected (Mat 21:42)?",
+    "options": [
+      "It was crushed into powder",
+      "It was anointed with oil",
+      "It was thrown out of the vineyard",
+      "It became the capstone"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 21:44",
+    "question": "What will happen to the one who falls on this stone (Mat 21:44)?",
+    "options": [
+      "He will be broken to pieces",
+      "He will be crushed",
+      "He will break his leg",
+      "He will rise again"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 21:46",
+    "question": "Why were the chief priests and Pharisees afraid to arrest Jesus (Mat 21:46)?",
+    "options": [
+      "Because of the truth that he spoke",
+      "They feared God",
+      "They knew he was right",
+      "They feared the people"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:11",
+    "question": "Who did the king notice when he came into the wedding hall (Mat 22:11)?",
+    "options": [
+      "A guest without wedding clothes",
+      "The guests had run out of wine",
+      "Some who were refusing to eat the king’s food",
+      "The doors had been shut"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:13",
+    "question": "What did the king order be done with the ill-clothed wedding guest (Mat 22:13)",
+    "options": [
+      "He be put in prison until the wedding was over",
+      "He be thrown out into the street",
+      "Tied up and thown into the darkness",
+      "Be forced to leave the banquet"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:21",
+    "question": "What did Jesus say about paying the coin as tax to Caesar (Mat 22:21)?",
+    "options": [
+      "Give God the firstfruits and then pay what you owe to Caesar",
+      "Give to Caesar what is Caesar’s",
+      "God needs not your silver and gold",
+      "Pay what is due to the rulers of this world"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:21",
+    "question": "What did Jesus say about paying the coin as tax to Caesar (Mat 22:21)?",
+    "options": [
+      "Give God the firstfruits and then pay what you owe to Caesar",
+      "God needs not your silver and gold",
+      "Pay what is due to the rulers of this world",
+      "Give to God what is God’s"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:23",
+    "question": "What position does the text say the Sadducees held (Mat 22:23)?",
+    "options": [
+      "They believed in ranks of angels",
+      "They did not believe in the power of Rome",
+      "They did not believe in the temple and chief priests ruling there",
+      "They did not believe in the resurrection"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:24",
+    "question": "Who did the Sadducees question Jesus about (Mat 22:24)?",
+    "options": [
+      "What Moses said about a woman whose husband had died",
+      "What Jeremiah had said about the temple being destroyed",
+      "What Isaiah had said about the servant who would suffer for the nation",
+      "What Daniel said about the Son of Man coming in the clouds"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:29",
+    "question": "Why did Jesus say the Sadducees were in error (Mat 22:29)?",
+    "options": [
+      "They didn’t know the Scriptures",
+      "They were twisting the law of Moses",
+      "Their hearts were evil",
+      "They were thinking the thoughts of men and not of God"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:30",
+    "question": "Who are not married according to Jesus (Mat 22:30)?",
+    "options": [
+      "Eunuchs",
+      "The members of the kingdom",
+      "The angels",
+      "The prophets of old"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:33",
+    "question": "What was the crowds reaction to Jesus’ teaching on the resurrection (Mat 22:33)?",
+    "options": [
+      "They were surprised",
+      "They praised God",
+      "They knelt before Jesus",
+      "They were astonished"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:36",
+    "question": "What did the expert at law ask Jesus after the Sadducees were silenced (Mat 22:36)?",
+    "options": [
+      "Whether they were required to pay taxes to Caesar",
+      "What was the greatest commandment",
+      "Who would enter the kingdom of heaven",
+      "How he knew the law"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:37",
+    "question": "What did Jesus say was the greatest commandment in the law (Mat 22:37)?",
+    "options": [
+      "Love your neighbor as yourself",
+      "Love the Lord your God with all your heart",
+      "Blessed are the peacemakers",
+      "Seek justice for the poor and walk humbly before your God"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:38",
+    "question": "What did Jesus say was the second greatest command (Mat 22:38)?",
+    "options": [
+      "Love your neighbor as yourself",
+      "Love the Lord your God with all your heart",
+      "Blessed are the peacemakers",
+      "Seek justice for the poor and walk humbly before your God"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:42",
+    "question": "How did the Pharisees respond when asked whose son the Christ was (Mat 22:42)?",
+    "options": [
+      "The Son of the Blessed One",
+      "The Son of David",
+      "The Son of Righteousness with healing in his wings",
+      "Joseph’s son"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:44",
+    "question": "Where were the enemies of David’s son put (Mat 22:44)?",
+    "options": [
+      "In prison",
+      "In hell",
+      "With Satan and his demons",
+      "Under his feet"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 22:44",
+    "question": "Where was David’s son to sit (Mat 22:44)?",
+    "options": [
+      "On a donkey",
+      "In the clouds of heaven",
+      "At the right hand of God",
+      "On his throne in heaven"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:2",
+    "question": "Jesus said the teachers of the law and Pharisees sit in whose seat (Mat 23:2)?",
+    "options": [
+      "Elijah’s",
+      "David’s",
+      "Moses’",
+      "Aaron’s"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:3",
+    "question": "Why did Jesus tell his disciples not to do what the Pharisees do (Mat 23:3)?",
+    "options": [
+      "They do not practice what they preach",
+      "They tell others things they themselves do not do",
+      "They sit in Moses’ seat without the power of God",
+      "They teach their traditions more than the word of God"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:4",
+    "question": "What do the Pharisees put on men’s shoulders (Mat 23:4)?",
+    "options": [
+      "A yoke of slavery",
+      "The works of the law",
+      "Their tradition",
+      "Heavy loads"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:5",
+    "question": "What did Jesus say motivates the Pharisees in everything they do (Mat 23:5)?",
+    "options": [
+      "To follow the law of the Lord",
+      "To satisfy their pride",
+      "To be seen by men",
+      "To gain power"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:7",
+    "question": "What do the Pharisees love to be called in the marketplaces (Mat 23:7)?",
+    "options": [
+      "Master",
+      "Father",
+      "Holy father",
+      "Rabbi"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:8",
+    "question": "Jesus said they had only one Master and his disciples were all _______ (Mat 23:8)?",
+    "options": [
+      "Children",
+      "Brothers",
+      "Servants",
+      "Rulers"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:11",
+    "question": "Who did Jesus say would be greatest among them (Mat 23:11)?",
+    "options": [
+      "Peter",
+      "Your servant",
+      "A child",
+      "Those who believe"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:12",
+    "question": "Who will be humbled (Mat 23:12)?",
+    "options": [
+      "The rich",
+      "The Pharisees",
+      "Whoever exalts himself",
+      "Those who live in king’s palaces"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:14",
+    "question": "What is the Pharisee’s relation to the kingdom of heaven (Mat 23:14)?",
+    "options": [
+      "They would not enter or let others",
+      "They were under the condemnation of the kingdom",
+      "They knew nothing of it",
+      "They claimed they were leading people into it"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:15",
+    "question": "Why did Jesus say the Pharisees travel over land and sea (Mat 23:15)?",
+    "options": [
+      "To pay the correct tithe",
+      "To make a single convert",
+      "To keep themselves clean",
+      "To avoid the Samaritans"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:15",
+    "question": "What did the Pharisees do to those they converted (Mat 23:15)?",
+    "options": [
+      "They made them as big hypocritcs as they are",
+      "They made them think they were better than everyone else",
+      "They made them twice as much a son of hell as they are",
+      "They made them carry all their heavy loads"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:16",
+    "question": "What kind of guides did Jesus call the Pharisees (Mat 23:16)?",
+    "options": [
+      "Blind",
+      "Lazy",
+      "Deceitful",
+      "Corrupt"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:20",
+    "question": "By what does one swear when swearing by the altar (Mat 23:20)?",
+    "options": [
+      "By everything on the altar",
+      "By everyone who serves at the altar",
+      "By all the stones of the altar",
+      "By the flames coming from the altar"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:22",
+    "question": "By what does one swear who swears by heaven (Mat 23:22)?",
+    "options": [
+      "By the temple in heaven",
+      "By the angels that inhabit heaven",
+      "By the heavenly streets of gold",
+      "By the one who sits on God’s throne"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:23",
+    "question": "What were the hypocritical Pharisees careful to give a tenth of (Mat 23:23)?",
+    "options": [
+      "Their crops",
+      "Their spices",
+      "Their income",
+      "That which they sold"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:24",
+    "question": "Jesus said, after straining out a gnat what did the Pharisees swallow (Mat 23:24)?",
+    "options": [
+      "A donkey",
+      "An elephant",
+      "A grasshopper",
+      "A camel"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:27",
+    "question": "What did Jesus say the Pharisees were like (Mat 23:27)?",
+    "options": [
+      "Broken cisterns where there is no water",
+      "A dried up water brook in which there is no water",
+      "Whitewashed tombs full of dead men’s bones",
+      "Rotten figs"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:29",
+    "question": "What did Jesus say the Pharisees build (Mat 23:29)?",
+    "options": [
+      "The temple",
+      "The synagogues",
+      "The tombs for the prophets",
+      "The streets for the righteous"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:29",
+    "question": "What did Jesus say the Pharisees decorated (Mat 23:29)?",
+    "options": [
+      "The graves of the righteous",
+      "The altar",
+      "The synagogues of the people",
+      "The gates of Jerusalem"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:31",
+    "question": "Who did Jesus say the Pharisees were the descendants of (Mat 23:31)?",
+    "options": [
+      "Those who died rebelling against God in the wilderness",
+      "Those who worshipped the snake at Taberah",
+      "Those who descrated the temple",
+      "Those who murdered the prophets"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:33",
+    "question": "What kind of animal did Jesus call the Pharisees (Mat 23:33)?",
+    "options": [
+      "Wolves",
+      "Snakes",
+      "Vultures",
+      "Goats"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:34",
+    "question": "Where did the Pharisees flog the prophets sent to them (Mat 23:34)?",
+    "options": [
+      "At the temple",
+      "In their synagogues",
+      "In the marketplaces",
+      "In the city gates"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 23:35",
+    "question": "Where was Zechariah son of Berechiah murdered (Mat 23:35)?",
+    "options": [
+      "Between the Lion’s Gate and Herod’s Gate",
+      "Between the altar and the temple",
+      "Between the Huldah Gates and the altar",
+      "Between the altar of incense and and ark"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 23:37",
+    "question": "Jesus said, what did Jerusalem do to the prophets sent to it (Mat 23:37)?",
+    "options": [
+      "Abused them",
+      "Beat them",
+      "Killed them",
+      "Crucified them"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 23:37",
+    "question": "How did Jesus long to respond to Jerusalem (Mat 23:37)?",
+    "options": [
+      "As a lion devouring its prey",
+      "As a bear protecting its cubs",
+      "As a rock shielding its people",
+      "As a hen gathers her chicks"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:2",
+    "question": "What did Jesus say about the stones of the temple to his disciples (Mat 24:2)?",
+    "options": [
+      "They would remain forever",
+      "They would cry out",
+      "Not one would be left on another",
+      "They would be dragged away and thrown into the valley"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:3",
+    "question": "What did Jesus’ disciples ask him as he sat on the Mount of Olives (Mat 24:3)?",
+    "options": [
+      "How long would God spare Israel before the temple was destroyed",
+      "What will be the sign of Jesus’ coming and the end of the age",
+      "When would the kingdom of heaven come in power and glory",
+      "What would happen to Israel in the Day of the Lord"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:5",
+    "question": "What will many in the end times claim (Mat 24:5)?",
+    "options": [
+      "I am the Christ",
+      "I am the Son of Man",
+      "I am the Son of David",
+      "I am Elijah"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:6",
+    "question": "Of what will one hear at the end of the age (Mat 24:6)?",
+    "options": [
+      "Famines",
+      "Earthquakes",
+      "Storms",
+      "Wars"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:5",
+    "question": "All of the following must happen before the end EXCEPT (Mat 24:5)",
+    "options": [
+      "Wars",
+      "Many claiming to be the Christ",
+      "The earth warming",
+      "Rumours of war"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:7",
+    "question": "All the following Jesus listed as the beginning of birth pains EXCEPT (Mat 24:7)",
+    "options": [
+      "The sun darkened",
+      "Nation will rise against nation",
+      "Earthquakes",
+      "Famines"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:11",
+    "question": "Who will deceive many people as the end approaches (Mat 24:11)?",
+    "options": [
+      "The rulers of the synagogues",
+      "The kings of the earth",
+      "False prophets",
+      "False Christ’s"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:12",
+    "question": "What will the increase of wickedness cause (Mat 24:12)?",
+    "options": [
+      "God’s wrath",
+      "Injustice to the poor",
+      "Signs to multiply in the heavens",
+      "The love of most to grow cold"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:13",
+    "question": "Who will be saved (Mat 24:13)?",
+    "options": [
+      "Those who stand firm to the end",
+      "Those who believe on the Christ",
+      "Those who follow Jesus",
+      "Those who hide in the caves"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:14",
+    "question": "When will the end come (Mat 24:14)?",
+    "options": [
+      "When the clouds of heaven gather",
+      "When the gospel of the kingdom is preached in the whole world",
+      "When many will come from the east and west to enter the kingdom",
+      "When the sun is silenced"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:15",
+    "question": "Which prophet spoke of the abomination that causes desolation (Mat 24:15)?",
+    "options": [
+      "Isaiah",
+      "Jeremiah",
+      "Ezekiel",
+      "Daniel"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:15",
+    "question": "What did the prophet say would stand in the holy place (Mat 24:15)?",
+    "options": [
+      "The man of sin",
+      "Violence against the children of the kingdom",
+      "The abomination that causes desolation",
+      "The son of the wicked one"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:16",
+    "question": "Where did Jesus say those in Judea should flee in the end times (Mat 24:16)?",
+    "options": [
+      "Into the wilderness",
+      "Into the mountains",
+      "Into the caves",
+      "Into the wall cities"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:20",
+    "question": "What season should they pray that their flight not be (Mat 24:20)?",
+    "options": [
+      "Winter",
+      "Summer",
+      "Fall",
+      "Spring"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:22",
+    "question": "If the days of great distress were not cut short what would happen (Mat 24:22)?",
+    "options": [
+      "The whole earth would crumble",
+      "Waters would once again destroy all living",
+      "No one would survive",
+      "Fire would consume all flesh"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:22",
+    "question": "Why would the days of great distress be cut short (Mat 24:22)?",
+    "options": [
+      "For the sake of those who believe",
+      "For the sake of the holy ones",
+      "For the sake of the righteous",
+      "For the sake of the elect"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:24",
+    "question": "What will false Christs and false prophets do in the days of distress (Mat 24:24)?",
+    "options": [
+      "Perform great miracles and signs",
+      "Prophecy of the coming of the end",
+      "Speak against the Most High",
+      "Pursue and persecute the people of God"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:25",
+    "question": "Who would almost be deceived by the false prophets of the end times (Mat 24:25)?",
+    "options": [
+      "The disciples",
+      "All people",
+      "The elect",
+      "The righteous"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:26",
+    "question": "Where would some in the end time falsely say Christ is (Mat 24:26)?",
+    "options": [
+      "In his temple",
+      "On the mountain top",
+      "In the clouds",
+      "In the desert"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 24:26",
+    "question": "In the end times what should one not believe (Mat 24:26)?",
+    "options": [
+      "That Christ is in the inner rooms",
+      "That Christ is up on the mountain",
+      "That Christ is on his throne",
+      "That Christ is riding the clouds"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 24:30",
+    "question": "What will appear after the distress of those days (Mat 24:30)",
+    "options": [
+      "The sign of the Son of Man will appear in the sky",
+      "The anger of God will shake both the heavens and earth",
+      "A cloud in the sky like a man’s hand",
+      "The sign spoken of by Daniel the prophet"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:30",
+    "question": "Who will the nations see coming on the clouds of the sky (Mat 24:30)?",
+    "options": [
+      "The Son of David",
+      "The Son of Man",
+      "The Son of God",
+      "Elijah"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:31",
+    "question": "With a loud trumpet what will the Son of Man’s angels do (Mat 24:31)?",
+    "options": [
+      "Gather his children",
+      "Gather those who believe",
+      "Gather the elect",
+      "Gather his sheep"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:31",
+    "question": "Who will the Son of Man send to gather his elect (Mat 24:31)?",
+    "options": [
+      "His apostles",
+      "The twelve sons of Israel",
+      "The two witnesses",
+      "His angels"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:32",
+    "question": "What did Jesus use to indicate that summer is near (Mat 24:32)?",
+    "options": [
+      "An olive tree",
+      "A fig tree",
+      "A sycamore tree",
+      "A vineyard"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:35",
+    "question": "What will pass away before Jesus’ words (Mat 24:35)?",
+    "options": [
+      "All things",
+      "Heaven and earth",
+      "The mountains and the seas",
+      "This temple"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:37",
+    "question": "The coming of the Son of Man will be like the days of ________ (Mat 24:37)?",
+    "options": [
+      "Moses",
+      "Sodom and Gomorrah",
+      "Noah",
+      "Babel"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:40",
+    "question": "When the Son of Man comes what will happen to two men in the field (Mat 24:40)?",
+    "options": [
+      "One will be taken the other left behind",
+      "They will work but the field will produce nothing",
+      "They will look up to the heavens",
+      "They will fall down and worship"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:42",
+    "question": "What did Jesus say to do because we don’t know the day or the hour (Mat 24:42)?",
+    "options": [
+      "Believe",
+      "Repent",
+      "Weep",
+      "Watch"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:44",
+    "question": "When will the Son of Man come (Mat 24:44)?",
+    "options": [
+      "In an hour when you do not expect him",
+      "When the dark clouds gather",
+      "In the day of the Lord promised by the prophet",
+      "When the sun is darkened"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:45",
+    "question": "What should the servant of the master be doing when he returns (Mat 24:45)?",
+    "options": [
+      "Making a profit for his master",
+      "Looking for his return",
+      "Giving food to those of the household",
+      "Building the house with its doors and windows"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 24:47",
+    "question": "What kind of servant will the master put over all his possessions (Mat 24:47)?",
+    "options": [
+      "Trustworthy",
+      "Motivated",
+      "Diligent",
+      "Faithful"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:51",
+    "question": "What will the master do to the wicked servant when he returns (Mat 24:51)?",
+    "options": [
+      "Throw him out of the house",
+      "Put him in prison",
+      "Cut him to pieces",
+      "Make him repay all"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 24:51",
+    "question": "Where will the hypocritics be assigned a place (Mat 24:51)?",
+    "options": [
+      "Where there will be weeping and gnashing of teeth",
+      "Where they will burn forever and ever",
+      "In a place of deep darkness",
+      "Where there will be no escape from the wrath of him who sits on the throne"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:1",
+    "question": "What did Jesus say the kingdom heaven was like (Mat 25:1)?",
+    "options": [
+      "10 bridesmaids",
+      "10 farmers planting",
+      "10 treasure seekers",
+      "10 skins of wine"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:2",
+    "question": "What separated the five foolish and five wise bridesmaids (Mat 25:2)?",
+    "options": [
+      "The foolish did not go out to meet the bridegroom",
+      "The foolish did not have one wedding garments",
+      "The foolish did not bring oil for their lamps",
+      "The foolish refused to come to the dinner"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:8",
+    "question": "What did the foolish bridesmaids request of the wise (Mat 25:8)?",
+    "options": [
+      "To be given lamps",
+      "To be given wedding clothes",
+      "To be given oil for their lamps",
+      "To travel with the wise as they escorted the bride"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:10",
+    "question": "When did the bridegroom arrive (Mat 25:10)?",
+    "options": [
+      "When the bride was ready",
+      "When the foolish virgins were away buying oil",
+      "When the foolish virgins went back to sleep",
+      "When the foolish virgins least expected him to come"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:14",
+    "question": "Who gave his servants five talents (Mat 25:14)?",
+    "options": [
+      "A man going on a journey",
+      "A king going off to war",
+      "A ruler of a city",
+      "A bridegroom"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:18",
+    "question": "What did the man with one talent do with the money given him (Mat 25:18)?",
+    "options": [
+      "He put it in the bank",
+      "He hid it in a tree",
+      "He buried it",
+      "He kept it under his bed"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:28",
+    "question": "What happened to the one talent of the servant who buried it (Mat 25:28)?",
+    "options": [
+      "It was given to the other servants",
+      "It was given to the poor",
+      "It was given to the one who had ten",
+      "It was given to the wicked servant’s family"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:29",
+    "question": "In the parable of the talents to whom will be given more (Mat 25:29)?",
+    "options": [
+      "To the faithful",
+      "To those who have none",
+      "To the one who has",
+      "To the one who is generous"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:29",
+    "question": "What will be the outcome of the servant who does not have (Mat 25:29)?",
+    "options": [
+      "Even what he has will be taken from him",
+      "Even his bed will be taken from under him",
+      "He will receive nothing from his master",
+      "He will lose his master’s favor"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:30",
+    "question": "What was the final end of the servant that buried his master’s money (Mat 25:30)?",
+    "options": [
+      "He was put in prison",
+      "He was thrown outside into darkness",
+      "He was buried with his money",
+      "He was thrown out into the city streets"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:31",
+    "question": "When the Son of Man comes who will come with him (Mat 25:31)?",
+    "options": [
+      "The Father from heaven",
+      "All his holy ones",
+      "All the angels",
+      "The disciples"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:31",
+    "question": "When the Son of Man comes with his angels what will he do (Mat 25:31)?",
+    "options": [
+      "Sit between the cherubim",
+      "Ride in on the clouds of heaven",
+      "Stand before all the kings of the earth",
+      "Sit on his throne of heavenly glory"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:32",
+    "question": "Who will be gathered before the Son of Man when he comes (Mat 25:32)?",
+    "options": [
+      "All the nations",
+      "All the tribes",
+      "All the wicked",
+      "All those believing in him"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:32",
+    "question": "What will the Son of Man separate when he comes (Mat 25:32)?",
+    "options": [
+      "The righteous and the wicked",
+      "The just and the unjust",
+      "The clean and unclean",
+      "The sheep and the goats"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:33",
+    "question": "Who will the Son of Man put on his right hand when he comes (Mat 25:33)?",
+    "options": [
+      "The donkeys",
+      "The sheep",
+      "The goats",
+      "The birds"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:34",
+    "question": "What inheritance did the sheep receive from the king (Mat 25:34)?",
+    "options": [
+      "Mansions in heaven",
+      "Streets of gold in Jerusalem",
+      "A tree of life in the garden of God",
+      "The kingdom prepared for you"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:37",
+    "question": "What were the sheep also called in the parable of the sheep and goats (Mat 25:37)?",
+    "options": [
+      "The disciples",
+      "The righteous",
+      "The saints",
+      "The children of God"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 25:38",
+    "question": "What did the righteous sheep ask the Lord (Mat 25:38f)?",
+    "options": [
+      "When did we see you sick or in prison?",
+      "When did we see you in need and give you a place to stay?",
+      "When did we see you beaten and rejected?",
+      "When did we see you coming in the clouds of heaven?"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:40",
+    "question": "How had the sheep aided the King (Mat 25:40)?",
+    "options": [
+      "Whatever they did for the elect of God",
+      "Whatever they did for one of the least of his brothers",
+      "Whatever they did to the widows and orphans",
+      "Whatever they did to those who believed in him"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:41",
+    "question": "What will the king say to those on his left (Mat 25:41)?",
+    "options": [
+      "Enter into my kingdom",
+      "Hypocritics, out of my presence forever",
+      "Depart from me you who are cursed",
+      "I never knew you"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:41",
+    "question": "Where were those on the King’s left sent (Mat 25:41)?",
+    "options": [
+      "Into eternal fire",
+      "Into the place of the dead",
+      "To where there is weeping and gnashing of teeth",
+      "Into the bowels of the earth"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 25:41",
+    "question": "Who was the eternal fire prepared for (Mat 25:41)?",
+    "options": [
+      "The unrighteous",
+      "The wicked",
+      "The evil one",
+      "The devil and his angels"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 25:38",
+    "question": "What did the goats ask the Lord (Mat 25:38f)?",
+    "options": [
+      "When did we see you sick or in prison?",
+      "When did we see you in need and give you a place to stay?",
+      "When did we see you beaten and rejected?",
+      "When did we see you coming in the clouds of heaven?"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 24:46",
+    "question": "Who will go away to eternal life (Mat 24:46)?",
+    "options": [
+      "The holy",
+      "The ones believing",
+      "The righteous",
+      "The elect"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:3",
+    "question": "Who was the high priest when Jesus was crucified (Mat 26:3)?",
+    "options": [
+      "Ananias",
+      "Caiaphas",
+      "Hilkiah",
+      "Abiathar"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:5",
+    "question": "Why did those plotting against Jesus not want to arrest him on a feast day (Mat 26:5)?",
+    "options": [
+      "They feared the people might riot",
+      "They feared the Romans",
+      "They had to perform religious ceremonies that day",
+      "He would not be accessible among the crowds"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:6",
+    "question": "Whose house in Bethany did Jesus stay at (Mat 26:6)?",
+    "options": [
+      "Nicodemus’",
+      "Miriam’s the prostitute",
+      "Lazarus’ whom he had raised",
+      "Simon the leper"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:7",
+    "question": "What did the woman come to Jeuss with in Simon the leper’s house (Mat 26:7)?",
+    "options": [
+      "A jar of alabaster perfume",
+      "A crown of gold and silver",
+      "A towel to wipe Jesus’ feet",
+      "Bread and wine for Jesus to eat"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:7",
+    "question": "What did the woman do with the perfume at Simon the leper’s house (Mat 26:7)?",
+    "options": [
+      "Poured it on Jesus’ feet",
+      "Poured it on Jesus’ head",
+      "Poured it on the mat in the house",
+      "Poured it on her hair"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:10",
+    "question": "Jesus described the woman’s pouring perfume on him as (Mat 26:10)?",
+    "options": [
+      "As an act of kindness",
+      "As a beautiful thing",
+      "As fulfilling Scripture",
+      "As a wonderful gift"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 26:14",
+    "question": "Who did Judas go to in order to betray Christ (Mat 26:14)?",
+    "options": [
+      "The Pharisees",
+      "The Sadducees",
+      "The chief priests",
+      "The Sanhedrin"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:15",
+    "question": "What did Judas ask in betraying Jesus (Mat 26:15)?",
+    "options": [
+      "What charge will you make if I hand him over?",
+      "What will you give me to hand him over?",
+      "When do you want me to turn him over?",
+      "How do you want me to turn him over?"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:15",
+    "question": "For how much did Judas betray Jesus (Mat 26:15)?",
+    "options": [
+      "Ten pieces of silver",
+      "Twenty pieces of silver",
+      "Thirty pieces of silver",
+      "Forty pieces of silver"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:19",
+    "question": "Who prepared the final Passover for Jesus (Mat 26:19)?",
+    "options": [
+      "The crowd",
+      "The blind man who had been healed",
+      "Lazarus, Mary and Martha",
+      "His disciples"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:23",
+    "question": "How did Jesus identify the disciple who would betray him (Mat 26:23)?",
+    "options": [
+      "The one with the 30 pieces of silver",
+      "The one who takes my food and drinks my cup",
+      "The one who dips his hand in the bowl with me",
+      "The one who leaves before the prayer"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:24",
+    "question": "What did Jesus say about the destiny of the one who would betray him (Mat 26:24)?",
+    "options": [
+      "He will be cast out of the kingdom",
+      "He will go to a place where there will be weeping and gnashing of teeth",
+      "He will end his own life in shame and disgrace",
+      "It would be better for him if he had not been born"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:28",
+    "question": "What did Jesus say the cup represented (Mat 26:28)?",
+    "options": [
+      "The blood of a sacrificial lamb",
+      "The death of the sins of many",
+      "A sacrifice to God",
+      "The blood of the covenant"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:30",
+    "question": "After the Passover meal where did Jesus and his disciples go (Mat 26:30)?",
+    "options": [
+      "To Bethany",
+      "To the temple",
+      "To Mount Zion",
+      "To the Mount of Olives"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:31",
+    "question": "What did Jesus say would cause the sheep of the flock to be scattered (Mat 26:31)?",
+    "options": [
+      "The striking of the shepherd",
+      "The striking of lightning",
+      "A great earthquake",
+      "The coming of a lion to attack"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:36",
+    "question": "What garden did Jesus go to pray after the Passover meal (Mat 26:36)?",
+    "options": [
+      "Garden of the Kings",
+      "Garden of Gethsemane",
+      "Garden of Ramah",
+      "The temple garden"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:38",
+    "question": "In Gethsemane what did Jesus tell his disciples the state of his soul was (Mat 26:38)?",
+    "options": [
+      "Overcome with wonder",
+      "Heavy as the sand of the sea",
+      "Overwhelmed with sorrow",
+      "Anticipating what was to come"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:39",
+    "question": "How did Jesus pray in the garden of Gethsemane (Mat 26:39)?",
+    "options": [
+      "My Father, forgive them for they don’t know what they are doing",
+      "My Father, into your hands I commend my spirit",
+      "My Father, there is no one like you in all the earth",
+      "My Father, if it is possible may this cup be taken from me"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:39",
+    "question": "How did Jesus pray in the garden of Gethsemane (Mat 26:39)?",
+    "options": [
+      "May your name receive glory, honor and power",
+      "Not as I will, but as you will",
+      "Your kingdom come your will be done",
+      "Into your hands I commend my spirit"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:45",
+    "question": "After returning from praying a third time what did he tell his disciples (Mat 26:45)?",
+    "options": [
+      "The Son of Man is delivered into the hands of sinners",
+      "The Son of Man will come in the clouds of heaven",
+      "Woe to the one who betrays the Son of Man",
+      "Why could you not watch with the Son of man for one hour"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:49",
+    "question": "How did Judas tell the crowd how he would identify Jesus (Mat 26:49)?",
+    "options": [
+      "With a hug",
+      "With a kiss",
+      "With a slap",
+      "With loosing his sandal"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:52",
+    "question": "Why did Jesus tell his companion to put his sword back in its place (Mat 26:52)?",
+    "options": [
+      "One who weilds the sword is like damaging lightning",
+      "The sword can take life but it cannot give life",
+      "Those who live by the sword will die by the sword",
+      "The sword can destroy and the sword can harm"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:56",
+    "question": "How did the disciples respond to Jesus’ arrest by the crowd (Mat 26:56)?",
+    "options": [
+      "They sent for the temple guards",
+      "They deserted him",
+      "They defended him",
+      "They tried to quiet the crowd"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:57",
+    "question": "To whom did those who arrested Jesus take him (Mat 26:57)?",
+    "options": [
+      "The governor",
+      "The leader of the great synagogue",
+      "The chief priest",
+      "The Roman centurion"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:57",
+    "question": "Who was the high priest to whom Jesus was brought after being arrested (Mat 26:57)?",
+    "options": [
+      "Pilate",
+      "Tiberius",
+      "Ananais",
+      "Caiaphas"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:58",
+    "question": "Who followed Jesus to the courtyard of the high priest (Mat 26:58)?",
+    "options": [
+      "James",
+      "John",
+      "Peter",
+      "Thomas"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:58",
+    "question": "How far did Peter follow Jesus after he was arrested (Mat 26:58)?",
+    "options": [
+      "To the gate of the temple yard",
+      "To the courtyard of the high priest",
+      "Into the palace of the high priest",
+      "Into the praetorium where the Romans held him"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:59",
+    "question": "Before what body was Jesus tried that was over seen by the high priest (Mat 26:59)?",
+    "options": [
+      "The Great Council",
+      "The Great Synagogue",
+      "The Praetorium",
+      "The Sanhedrin"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:60",
+    "question": "Who came forward to testify against Jesus (Mat 26:60)?",
+    "options": [
+      "False witnesses",
+      "Roman guards",
+      "Some of those Jesus healed",
+      "Some Pharisees"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:64",
+    "question": "How did Jesus say the high priest would see him coming (Mat 26:64)?",
+    "options": [
+      "On the clouds of heaven",
+      "In power and glory",
+      "With legions of angels",
+      "Riding a chariot of fire"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:68",
+    "question": "When slapped, what did they demand that Christ tell them (Mat 26:68)?",
+    "options": [
+      "Are you really the Christ?",
+      "Who his father was?",
+      "Who hit you?",
+      "How will you destroy the temple?"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:69",
+    "question": "Who first accused Peter of being with Jesus (Mat 26:69)?",
+    "options": [
+      "A Roman guard",
+      "A servant girl",
+      "A gate keeper",
+      "A Pharisee from Galilee"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:78",
+    "question": "What happened the third time Peter denied the Lord (Mat 26:78)?",
+    "options": [
+      "The ground shook",
+      "The rooster crowed",
+      "The dogs barked",
+      "The evening trumpet sounded"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 26:75",
+    "question": "After Peter heard the rooster crow, what did he do (Mat 26:75)?",
+    "options": [
+      "He went out and wept bitterly",
+      "He confessed that he had been with Jesus",
+      "He ran from the place where he had denied Jesus",
+      "He fell to his knees remembering what Jesus had said"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:2",
+    "question": "Who did the chief priests and elders turn Jesus over to (Mat 27:2)?",
+    "options": [
+      "Herod Agrippa",
+      "Pilate",
+      "Herod Anitpas",
+      "Caiaphas"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:3",
+    "question": "What did Judas do after feeling remorse for what he had done (Mat 27:3)?",
+    "options": [
+      "He smote his breast",
+      "He sat in dust and ashes",
+      "He returned the 30 pieces of silver",
+      "He tried to free Jesus"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:6",
+    "question": "What did the chief priests object to doing with Judas’ 30 pieces of silver (Mat 27:6)?",
+    "options": [
+      "Put the blood money into the treasury",
+      "Accept the blood money for the poor",
+      "Use the blood money to pay the priests",
+      "Send the blood money to Pilate"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:7",
+    "question": "What did the chief priests do with Judas’ blood money (Mat 27:7)?",
+    "options": [
+      "They bought food for the poor",
+      "They put it in the treasury",
+      "They used the money to pay their tax to the Romans",
+      "They bought a potter’s field to bury foreigners"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:8",
+    "question": "What was the field that was purchased with Judas’ money called (Mat 27:8)?",
+    "options": [
+      "The field of betrayal",
+      "The field of blasphemy",
+      "The field of blood",
+      "The field of the Nazarene"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:11",
+    "question": "What was the first question the governor asked Jesus after this trial (Mat 27:11)?",
+    "options": [
+      "Are you the king of the Jews?",
+      "Are you the Son of God?",
+      "Are you the Son of Man?",
+      "Why are they wanting to kill you?"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:14",
+    "question": "Why was Pilate amazed at Jesus (Mat 27:14)?",
+    "options": [
+      "Because he had compassion on his enemies",
+      "Because he made not reply to any charge against him",
+      "Because the chief priests hated him so much",
+      "Because the crowd was crying out for his death"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:15",
+    "question": "What was a custom of the governor to do at the festival time (Mat 27:15)?",
+    "options": [
+      "To announce all prisoners could be set free",
+      "To provide a celebration for all the Jews",
+      "To grant one wish of the high priest that year",
+      "To release a prisoner chosen by the crowd"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:21",
+    "question": "Who did the crowd pick to be released by Pilate (Mat 27:21)?",
+    "options": [
+      "Barabbas",
+      "Justus",
+      "Aenias",
+      "Cornelius"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:26",
+    "question": "What did Pilate do with Jesus before he turned him over to be crucified (Mat 27:26)?",
+    "options": [
+      "Gave him some food and wine",
+      "Told the crowds to leave his palace",
+      "Had him flogged",
+      "Stripped him naked before the people"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:29",
+    "question": "How did the soldiers mock Jesus verbally (Mat 27:29)?",
+    "options": [
+      "We bow before you, O Son of God",
+      "O mighty Caesar",
+      "Hail, king of the Jews",
+      "O prophet, who hit you that time"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Matthew 1:1",
+    "question": "Who was forced to carry the cross of Jesus (Mat 27: 32)?",
+    "options": [
+      "Simon of Cyrene",
+      "Joseph of Arimathea",
+      "Justus of Tyre",
+      "Ananias of Jezreel"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:33",
+    "question": "Where did the soldiers take Jesus to be crucified (Mat 27:33)?",
+    "options": [
+      "Mount Zion",
+      "Mount of Olives",
+      "Gihon",
+      "Golgotha"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:33",
+    "question": "What does Golgotha mean (Mat 27:33)?",
+    "options": [
+      "Place of crucifixion",
+      "Dead man’s hill",
+      "The place of the skull",
+      "Bone mountain"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:34",
+    "question": "When offered wine and gall what did Jesus do (Mat 27:34) ?",
+    "options": [
+      "He refused to drink it",
+      "He spit it out",
+      "He drank it to the dregs",
+      "He drank only the gall"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:35",
+    "question": "How did the soldiers divide Jesus’ clothes (Mat 27:35)?",
+    "options": [
+      "To the highest bidder",
+      "They sold them online",
+      "They cast lots for them",
+      "They split them up equally"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:37",
+    "question": "What was the charge written over Jesus’ head when he was crucified (Mat 27:37)?",
+    "options": [
+      "This is Jesus, the prophet of Nazareth",
+      "This is the Christ, the Messiah",
+      "This is the Jewish Son of God",
+      "This is Jesus, king of the Jews"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:45",
+    "question": "After Jesus was crucified how long was there darkness (Mat 27:45)?",
+    "options": [
+      "From the third to the tenth hour",
+      "From the sixth to the twelfth hour",
+      "From the sixth to the ninth hour",
+      "From the twelfth to the twentieth hour"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 27:47",
+    "question": "Who did some think Jesus was calling for when he said “Eloi, Eloi” (Mat 27:47)?",
+    "options": [
+      "Elijah",
+      "God",
+      "Moses",
+      "Isaiah"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:48",
+    "question": "What did one man get Jesus to drink when he was on the cross (Mat 27:48)?",
+    "options": [
+      "Gall",
+      "Wine vinegar",
+      "Water",
+      "Red wine"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:54",
+    "question": "Who exclaimed, “Surely he was the Son of God” (Mat 27:54)?",
+    "options": [
+      "The centurion and those guarding Jesus",
+      "The people present at Jesus death",
+      "The chief priests and elders",
+      "Pontius Pilate"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:55",
+    "question": "Who were at Jesus’ death watching from a distance (Mat 27:55)?",
+    "options": [
+      "The disciples",
+      "The chief priests",
+      "Many women",
+      "The Romans"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:60",
+    "question": "How was Jesus’ tomb sealed (Mat 27:60)?",
+    "options": [
+      "A stone was rolled in front of the entrance",
+      "A stone top was placed over the top of it",
+      "A wooden door was shut to close it",
+      "A bronze door was shut to close it off"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:61",
+    "question": "Who was sitting opposite the tomb when Jesus was buried (Mat 27:61)?",
+    "options": [
+      "Mary the mother of Jesus and Martha",
+      "Mary Magdalene and the other Mary",
+      "Priscilla and Martha the sister of Lazarus",
+      "The mother of James and Mary the mother of Jesus"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 27:63",
+    "question": "How did the Pharisees refer to Jesus to Pilate after his death (Mat 27:63)?",
+    "options": [
+      "Liar",
+      "Rebel",
+      "False prophet",
+      "Deceiver"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 27:64",
+    "question": "What did the Pharisees want Pilate to do after the death of Jesus (Mat 27:64)?",
+    "options": [
+      "To give the order to incarcerate some of Jesus’ disciples",
+      "To give the order to secure the tomb of Jesus",
+      "To give the order freeing the Jews to persecute Jesus’ followers",
+      "To give the order that no one should mention Jesus any more"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 27:66",
+    "question": "How did Pilate secure the tomb of Jesus (Mat 27:66)?",
+    "options": [
+      "Putting a seal on the stone and posting a guard there",
+      "Posting an order that no one should move the stone",
+      "Posting a platoon of soldiers to secure the tomb",
+      "He refused to do it"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 28:1",
+    "question": "Who went to the tomb of Jesus on the first day of the week (Mat 28:1)?",
+    "options": [
+      "Mary Magdalene and the other Mary",
+      "Mary the mother of Jesus and Martha the sister of Lazarus",
+      "Mary Magdalene and Peter",
+      "Peter and John"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 28:1",
+    "question": "When did Mary Magdalene go to the tomb of Jesus (Mat 28:1)?",
+    "options": [
+      "On the Sabbath",
+      "On the third day of the week",
+      "On the first day of the week",
+      "On the seventh day of the week"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 28:5",
+    "question": "What was the first thing the angel said to the women at the tomb of Jesus (Mat 28:5)?",
+    "options": [
+      "Do not be afraid",
+      "Why have you come?",
+      "I have come to set him free",
+      "I will move the stone for you"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 28:6",
+    "question": "Who said, “He has risen, just as he said” (Mat 28:6)?",
+    "options": [
+      "Mary Magdalene",
+      "An angel of the Lord",
+      "Peter",
+      "Jesus himself after his resurrection"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 28:11",
+    "question": "To whom did the guards report what had happened at Jesus’ tomb (Mat 28:11)?",
+    "options": [
+      "The Sanhedrin",
+      "The chief priests",
+      "The disciples",
+      "Pilate"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 28:15",
+    "question": "What story is still widely circulated until this day (Mat 28:15)?",
+    "options": [
+      "That Jesus rose from the dead",
+      "That Joseph of Arimathea stole Jesus’ body",
+      "That the women stole the body of Jesus",
+      "That the disciples stole Jesus’ body"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 28:16",
+    "question": "Where in Galilee did the disciples go to meet Jesus (Mat 28:16)?",
+    "options": [
+      "To a mountain",
+      "To the Sea of Galilee",
+      "To Capernaum",
+      "To Nazareth"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mat 28:18",
+    "question": "What did Jesus after the resurrection tell his disciples to do (Mat 28:18)?",
+    "options": [
+      "Baptize disciples",
+      "Teach disciples",
+      "Proclaim the gospel",
+      "Tell of Jesus’ resurrection"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 28:18",
+    "question": "How were the apostles to baptize those whom they made disciples (Mat 28:18)?",
+    "options": [
+      "In Jesus name",
+      "In the Holy Spirit",
+      "In the name of the Son of Man",
+      "In the name of the Father, Son and Holy Spirit"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mat 28:18",
+    "question": "After the resurrection what did Jesus say was given to him (Mat 28:18)?",
+    "options": [
+      "All authority in heaven and on earth",
+      "The souls of those who were elect",
+      "The kingdom of heaven",
+      "The ability to make intercession at the throne of grace"
+    ],
+    "answer": 0,
+    "level": "B"
+  }
+]

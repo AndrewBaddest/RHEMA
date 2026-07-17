@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rhema Admin Dashboard</title>
+    <style>
+        :root {
+            --primary: #d4af37;
+            --bg: #121212;
+            --surface: #1e1e1e;
+            --text: #ffffff;
+            --muted: #a0a0a0;
+            --error: #cf6679;
+            --success: #4caf50;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 30px 25px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            border: 1px solid #2a2a2a;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .subtitle {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 16px;
+        }
+        .upload-area {
+            background: var(--bg);
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .upload-area label {
+            display: block;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .upload-area input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: var(--surface);
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        .upload-area .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background: var(--primary);
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        .btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+        }
+        .btn-danger {
+            background: var(--error);
+            color: #000;
+        }
+        .btn-danger:hover {
+            background: #b1455a;
+        }
+        .btn-secondary {
+            background: #333;
+            color: #fff;
+        }
+        .btn-secondary:hover {
+            background: #444;
+        }
+        .btn-exit {
+            background: #cf6679;
+            color: #000;
+        }
+        .btn-exit:hover {
+            background: #b1455a;
+        }
+        .status-msg {
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+        .status-msg.success {
+            background: #1a3a1a;
+            color: var(--success);
+        }
+        .status-msg.error {
+            background: #3a1a1a;
+            color: var(--error);
+        }
+        .status-msg.info {
+            background: #1a2a3a;
+            color: #66b0ff;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: var(--bg);
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 14px 10px;
+            text-align: center;
+        }
+        .stat-card .stat-number {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-card .stat-label {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .footer-note {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #2a2a2a;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .footer-note a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+        .clear-btn {
+            margin-top: 8px;
+        }
+        @media (max-width: 480px) {
+            .container { padding: 20px 15px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .header { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛠 Rhema Admin</h1>
+            <div class="header-actions">
+                <button class="btn btn-exit" onclick="logout()">🚪 Logout</button>
+            </div>
+        </div>
+        <div class="subtitle">Upload your Bible and quiz JSON files. Data is stored in your browser (localStorage) and will be used by the Rhema app.</div>
+
+        <!-- Bible Upload -->
+        <div class="upload-area">
+            <label>📖 Upload Bible JSON</label>
+            <input type="file" id="bibleFileInput" accept=".json" />
+            <div class="btn-group">
+                <button class="btn" onclick="uploadBible()">Upload Bible</button>
+            </div>
+            <div id="bibleStatus" class="status-msg"></div>
+        </div>
+
+        <!-- Quiz Upload -->
+        <div class="upload-area">
+            <label>📝 Upload Quiz JSON (one or multiple files)</label>
+            <input type="file" id="quizFileInput" accept=".json" multiple />
+            <div class="btn-group">
+                <button class="btn" onclick="uploadQuiz()">Upload Quiz(es)</button>
+            </div>
+            <div id="quizStatus" class="status-msg"></div>
+        </div>
+
+        <!-- Stats -->
+        <h2 style="color:var(--primary); font-size:18px; margin-bottom:12px;">📊 Current Data Stats</h2>
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card"><div class="stat-number" id="statBooks">0</div><div class="stat-label">Bible Books</div></div>
+            <div class="stat-card"><div class="stat-number" id="statChapters">0</div><div class="stat-label">Chapters</div></div>
+            <div class="stat-card"><div class="stat-number" id="statVerses">0</div><div class="stat-label">Verses</div></div>
+            <div class="stat-card"><div class="stat-number" id="statQuestions">0</div><div class="stat-label">Quiz Questions</div></div>
+            <div class="stat-card"><div class="stat-number" id="statQuizBooks">0</div><div class="stat-label">Quiz Books</div></div>
+            <div class="stat-card"><div class="stat-number" id="statSource">Fallback</div><div class="stat-label">Data Source</div></div>
+        </div>
+
+        <!-- Actions -->
+        <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-danger" onclick="clearData()">🗑️ Clear Admin Data</button>
+            <button class="btn btn-secondary" onclick="goToApp()">📲 Go to Rhema App</button>
+        </div>
+
+        <div class="footer-note">
+            <span>Data is saved locally in your browser.</span>
+            <span><a href="javascript:void(0)" onclick="logout()">Logout & Close</a></span>
+        </div>
+    </div>
+
+    <script>
+        // ================================================================
+        //  ADMIN FUNCTIONS
+        // ================================================================
+
+        // ----- Logout / Exit -----
+        function logout() {
+            if (confirm('Are you sure you want to logout and close the admin dashboard?')) {
+                // Try to close the window
+                window.close();
+                // If window.close() doesn't work (most browsers block it),
+                // we redirect to a blank page or the main app.
+                setTimeout(() => {
+                    // Fallback: redirect to the main app
+                    window.location.href = 'Rhema app.html';
+                }, 300);
+            }
+        }
+
+        // ----- Go to App -----
+        function goToApp() {
+            window.location.href = 'Rhema app.html';
+        }
+
+        // ----- Bible Upload -----
+        function uploadBible() {
+            const input = document.getElementById('bibleFileInput');
+            const status = document.getElementById('bibleStatus');
+            const file = input.files[0];
+            if (!file) {
+                status.textContent = '⚠️ Please select a Bible JSON file.';
+                status.className = 'status-msg error';
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    // Validate: must be an object with book keys
+                    if (typeof data !== 'object' || Array.isArray(data)) {
+                        throw new Error('Bible JSON must be an object with book names as keys.');
+                    }
+                    const books = Object.keys(data);
+                    if (books.length === 0) {
+                        throw new Error('Bible JSON is empty.');
+                    }
+                    // Check structure of first book
+                    const firstBook = data[books[0]];
+                    if (typeof firstBook !== 'object' || Array.isArray(firstBook)) {
+                        throw new Error('Each book must be an object with chapter numbers as keys and verse arrays as values.');
+                    }
+                    // Check that first chapter has verses
+                    const firstChapter = Object.keys(firstBook)[0];
+                    if (!Array.isArray(firstBook[firstChapter]) || firstBook[firstChapter].length === 0) {
+                        throw new Error('Each chapter must have an array of verse strings.');
+                    }
+
+                    // Save to localStorage
+                    localStorage.setItem('rhema_bible_admin', JSON.stringify(data));
+                    status.textContent = `✅ Bible uploaded successfully! (${books.length} books)`;
+                    status.className = 'status-msg success';
+                    updateStats();
+                } catch (err) {
+                    status.textContent = `❌ Error: ${err.message}`;
+                    status.className = 'status-msg error';
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // ----- Quiz Upload (multiple files) -----
+        function uploadQuiz() {
+            const input = document.getElementById('quizFileInput');
+            const status = document.getElementById('quizStatus');
+            const files = input.files;
+            if (!files || files.length === 0) {
+                status.textContent = '⚠️ Please select at least one quiz JSON file.';
+                status.className = 'status-msg error';
+                return;
+            }
+
+            let allQuestions = [];
+            let processed = 0;
+            let errors = 0;
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const data = JSON.parse(e.target.result);
+                        if (!Array.isArray(data)) {
+                            throw new Error(`File "${file.name}" is not an array.`);
+                        }
+                        // Validate each question
+                        data.forEach((q, idx) => {
+                            if (!q.question || !q.options || !Array.isArray(q.options) || q.options.length !== 4 ||
+                                typeof q.answer !== 'number' || q.answer < 0 || q.answer > 3) {
+                                throw new Error(`Question ${idx+1} in "${file.name}" is invalid.`);
+                            }
+                            // Set book field if missing (use filename without .json)
+                            if (!q.book) {
+                                q.book = file.name.replace('.json', '');
+                            }
+                        });
+                        allQuestions = allQuestions.concat(data);
+                        processed++;
+                    } catch (err) {
+                        errors++;
+                        status.textContent = `❌ Error in "${file.name}": ${err.message}`;
+                        status.className = 'status-msg error';
+                    }
+                    // Check if all files are processed
+                    if (processed + errors === files.length) {
+                        if (allQuestions.length === 0) {
+                            status.textContent = '❌ No valid questions found.';
+                            status.className = 'status-msg error';
+                            return;
+                        }
+                        localStorage.setItem('rhema_quiz_admin', JSON.stringify(allQuestions));
+                        status.textContent = `✅ ${allQuestions.length} questions uploaded from ${processed} file(s).`;
+                        status.className = 'status-msg success';
+                        updateStats();
+                    }
+                };
+                reader.readAsText(file);
+            }
+        }
+
+        // ----- Clear Data -----
+        function clearData() {
+            if (!confirm('Are you sure you want to clear all admin‑uploaded data?')) return;
+            localStorage.removeItem('rhema_bible_admin');
+            localStorage.removeItem('rhema_quiz_admin');
+            document.getElementById('bibleStatus').textContent = '';
+            document.getElementById('bibleStatus').className = 'status-msg';
+            document.getElementById('quizStatus').textContent = '';
+            document.getElementById('quizStatus').className = 'status-msg';
+            document.getElementById('bibleFileInput').value = '';
+            document.getElementById('quizFileInput').value = '';
+            updateStats();
+            alert('✅ Admin data cleared. The app will now use fallback data.');
+        }
+
+        // ----- Update Stats -----
+        function updateStats() {
+            // Bible stats
+            let bibleData = null;
+            const adminBible = localStorage.getItem('rhema_bible_admin');
+            if (adminBible) {
+                try { bibleData = JSON.parse(adminBible); } catch (e) {}
+            }
+            let books = 0,
+                chapters = 0,
+                verses = 0;
+            if (bibleData) {
+                books = Object.keys(bibleData).length;
+                for (const book in bibleData) {
+                    const chs = Object.keys(bibleData[book]);
+                    chapters += chs.length;
+                    for (const ch of chs) {
+                        verses += bibleData[book][ch].length;
+                    }
+                }
+            }
+            document.getElementById('statBooks').textContent = books;
+            document.getElementById('statChapters').textContent = chapters;
+            document.getElementById('statVerses').textContent = verses;
+
+            // Quiz stats
+            let quizData = null;
+            const adminQuiz = localStorage.getItem('rhema_quiz_admin');
+            if (adminQuiz) {
+                try { quizData = JSON.parse(adminQuiz); } catch (e) {}
+            }
+            let questions = 0,
+                quizBooks = 0;
+            if (Array.isArray(quizData)) {
+                questions = quizData.length;
+                const bookSet = new Set(quizData.map(q => q.book));
+                quizBooks = bookSet.size;
+            }
+            document.getElementById('statQuestions').textContent = questions;
+            document.getElementById('statQuizBooks').textContent = quizBooks;
+
+            // Data source
+            const hasBible = adminBible !== null;
+            const hasQuiz = adminQuiz !== null;
+            let source = 'Fallback';
+            if (hasBible && hasQuiz) source = 'Admin (Both)';
+            else if (hasBible) source = 'Admin (Bible)';
+            else if (hasQuiz) source = 'Admin (Quiz)';
+            document.getElementById('statSource').textContent = source;
+        }
+
+        // ----- Auto-update stats on load -----
+        window.onload = function() {
+            updateStats();
+        };
+    </script>
+</body>
+</html>

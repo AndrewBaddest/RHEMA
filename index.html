@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rhema - Bible Quiz & Reading</title>
+
+    <!-- PWA Manifest (kept inline as data URI) -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlJoZW1hIC0gQmlibGUgUXVpeiIsCiAgInNob3J0X25hbWUiOiAiUmhlbWEiLAogICJkZXNjcmlwdGlvbiI6ICJFeHBsb3JlIHRoZSBCaWJsZSB0aHJvdWdoIGludGVyYWN0aXZlIHF1aXp6ZXMgYW5kIHJlYWRpbmcuIiwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMxMjEyMTIiLAogICJ0aGVtZV9jb2xvciI6ICIjZDRhZjM3IiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sLDxzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgNTEyIDUxMic+PHJlY3Qgd2lkdGg9JzUxMicgaGVpZ2h0PSc1MTInIHJ4PSc2MCcgZmlsbD0nIzEyMTIxMicvPjx0ZXh0IHg9JzI1NicgeT0nMzQwJyBmb250LXNpemU9JzI4MCcgdGV4dC1hbmNob3I9J21pZGRsZScgZmlsbD0nI2Q0YWYzNycgZm9udC1mYW1pbHk9J3NlcmlmJz7inK08L3RleHQ+PC9zdmc+IiwKICAgICAgInNpemVzIjogIjUxMng1MTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfQogIF0sCiAgInN0YXJ0X3VybCI6ICIuIiwKICAib3JpZW50YXRpb24iOiAiYW55IiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiY2F0ZWdvcnkiOiAiZWR1Y2F0aW9uIiwKICAic2NvcGUiOiAiaW5zdGFsbGFibGUtb25seSIsCiAgInByZWZlcl9yZWxhdGVkX2FwcGxpY2F0aW9ucyI6IFtdCn0=" />
+    <meta name="theme-color" content="#d4af37" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Rhema" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Offline Modal -->
+    <div id="offline-screen">
+        <h2 style="color: var(--primary); margin-bottom: 15px;">No Internet Connection</h2>
+        <p style="color: var(--muted); margin-bottom: 25px;">Rhema requires an active internet connection to load content.</p>
+        <button class="btn" onclick="window.location.reload()">Retry</button>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-left" id="headerLeft"></div>
+        <div class="header-center"><h1>RHEMA</h1></div>
+        <div class="header-right" id="headerRight"></div>
+    </header>
+
+    <div class="container">
+        <!-- Ad -->
+        <div class="ad-container">
+            <span>Advertisement</span>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- WELCOME / AUTH -->
+        <section id="sec-auth" class="app-section active">
+            <h2 style="margin-bottom:10px;text-align:center;">Welcome to Rhema</h2>
+            <div class="mission-box">
+                <span class="mission-icon"></span>
+                <div class="mission-title">Our Mission</div>
+                <p class="mission-text">
+                    We're passionate about helping people of all ages and backgrounds explore the Bible in a way that's <strong>engaging</strong>, <strong>interactive</strong>, and <strong>fun</strong>! Our App is designed to make Scripture come alive through games, quizzes, and community discussions.
+                </p>
+                <div class="mission-scripture">
+                    “Your word is a lamp to my feet and a light to my path.” — <span>Psalm 119:105</span>
+                </div>
+            </div>
+            <form id="login-form" onsubmit="handleAuth(event)">
+                <div style="margin-bottom:12px;">
+                    <input type="text" id="username-input" placeholder="Enter your name (e.g., Noah)" style="width:100%;padding:12px;border-radius:8px;border:1px solid #333;background:var(--surface);color:var(--text);font-size:16px;" />
+                </div>
+                <button type="submit" class="btn" id="playBtn">▶ Play</button>
+            </form>
+            <div style="margin-top:12px;text-align:center;color:var(--muted);font-size:13px;">
+                Your progress will be saved locally. Create an account to save across devices.
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="sec-about" class="app-section">
+            <div class="info-page">
+                <h2> About Rhema</h2>
+                <p><strong>Rhema</strong> – The Greek word for the <em>"spoken word"</em> of God. Our Bible Quiz Game is designed to make reading the Bible more fun and interactive for people of all ages and backgrounds.</p>
+                <p><strong> Target:</strong> People of all ages and backgrounds interested in exploring the Bible in a way that's engaging, interactive, and fun!</p>
+                <p><strong> Company Profile:</strong> We're passionate about helping people of all ages and backgrounds explore the Bible in a way that's engaging, interactive, and fun! Our App is designed to make Scripture come alive through games, quizzes, and community discussions.</p>
+                <p><strong> Our Story:</strong> Our team of Bible enthusiasts, educators, and tech experts came together with a shared vision: to create a platform that makes Bible study enjoyable and accessible for everyone. We believe that learning about God's Word should be an exciting adventure, not a chore.</p>
+                <p><strong> Our Mission:</strong> Inspire a love for the Bible and its teachings by providing innovative and interactive tools for learning.</p>
+                <p><strong> Our Values:</strong> Faith, Fun, Community, Innovation.</p>
+
+                <button class="btn btn-secondary back-btn" onclick="navigateTo('sec-auth')">← Back to Home</button>
+
+                <!-- Download / Install Section -->
+                <div class="download-section">
+                    <h3> Download & Install</h3>
+                    <button class="btn btn-success" id="installAppBtn"> Install Rhema App</button>
+                    <div id="installStatus" class="install-status-msg">Tap the button above to install Rhema on your device.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="sec-contact" class="app-section">
+            <div class="info-page">
+                <h2> Contact Us</h2>
+                <p>Have questions, feedback, or prayer requests? We'd love to hear from you!</p>
+                <p style="font-size:1.2rem;margin:16px 0;">
+                     <a href="mailto:info@rhema.org" class="email-link">info@rhema.org</a>
+                </p>
+                <p>We typically respond within 24–48 hours.</p>
+                <button class="btn btn-secondary back-btn" onclick="navigateTo('sec-auth')">← Back to Welcome</button>
+            </div>
+        </section>
+
+        <!-- HOME (Quiz / Read) -->
+        <section id="sec-home" class="app-section">
+            <div class="mode-switch-container">
+                <button class="mode-btn active" id="mode-quiz" onclick="toggleHomeMode('quiz')">Quiz</button>
+                <button class="mode-btn" id="mode-read" onclick="toggleHomeMode('read')">Scripture</button>
+            </div>
+            <div id="sub-mode-quiz">
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+                    <button class="btn" style="flex:1; min-width:120px;" onclick="startDailyQuiz()">📅 Daily Quiz</button>
+                    <button class="btn btn-secondary" style="flex:1; min-width:120px;" onclick="startGlobalChallenge()">🌍 Global Challenge</button>
+                </div>
+                <h3 style="margin-bottom:6px;"> Select a Book to Play</h3>
+                <p style="color:var(--muted); font-size:13px; margin-bottom:10px;">Choose a book and test your knowledge with 10 questions.</p>
+                <div class="testament-title">Old Testament</div>
+                <div class="book-grid" id="quiz-ot-grid"></div>
+                <div class="testament-title">New Testament</div>
+                <div class="book-grid" id="quiz-nt-grid"></div>
+            </div>
+            <div id="sub-mode-read" style="display:none;">
+                <h3 style="margin-bottom:6px;"> Select a Book to Read</h3>
+                <p style="color:var(--muted); font-size:13px; margin-bottom:10px;">Choose a book and chapter to start reading.</p>
+                <div class="testament-title">Old Testament</div>
+                <div class="book-grid" id="scripture-ot-grid"></div>
+                <div class="testament-title">New Testament</div>
+                <div class="book-grid" id="scripture-nt-grid"></div>
+            </div>
+        </section>
+
+        <!-- READER -->
+        <section id="sec-reader" class="app-section">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+                <h2 style="color:var(--primary);"> Bible Reader</h2>
+                <div style="display:flex; gap:8px;">
+                    <button class="btn btn-secondary" style="flex:0 1 auto; padding:8px 18px; font-size:0.9rem; margin-top:0;" id="readerBackBtn" onclick="goBackFromReader()">← Back</button>
+                </div>
+            </div>
+            <div class="reader-controls">
+                <select id="reader-book-select"></select>
+                <select id="reader-chapter-select"></select>
+            </div>
+            <div class="reader-verse-box" id="reader-content">
+                <p style="color:var(--muted);">Select a book and chapter to read.</p>
+            </div>
+            <div class="reader-actions">
+                <button class="btn btn-secondary" onclick="readerPrevChapter()">◀ Prev</button>
+                <button class="btn btn-secondary" onclick="readerNextChapter()">Next ▶</button>
+            </div>
+        </section>
+
+        <!-- QUIZ PLAY -->
+        <section id="sec-quiz-play" class="app-section">
+            <div id="quiz-play-area"></div>
+        </section>
+
+        <!-- Global Challenge Page -->
+        <section id="sec-challenge" class="app-section">
+            <div id="challenge-area"></div>
+        </section>
+
+        <!-- PROGRESS -->
+        <section id="sec-progress" class="app-section">
+            <div id="progress-area">
+                <h2 style="color:var(--primary);">📊 Your Progress</h2>
+                <div id="progress-content">
+                    <!-- Dynamically filled -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Global copyright footer -->
+        <div class="copyright-footer">© RHEMA BIBLE QUIZ 2026</div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

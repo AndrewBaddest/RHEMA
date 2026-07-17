@@ -1,0 +1,1586 @@
+[
+  {
+    "ref": "Mic 1:1",
+    "question": "Where was Micah from (Mic 1:1)?",
+    "options": [
+      "Shechem",
+      "Tekoa",
+      "Moresheth",
+      "Keilah"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:1",
+    "question": "What was the vision of Micah about (Mic 1:1)?",
+    "options": [
+      "Samaria and Jerusalem",
+      "Israel and Judah",
+      "Moab and Ammon",
+      "Bethel and Dan"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:2",
+    "question": "Who/what is going to witness against the earth (Mic 1:2)?",
+    "options": [
+      "The heavens",
+      "The mountains",
+      "The Lord",
+      "The prophets"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:2",
+    "question": "From where will the Lord witness against the peoples (Mic 1:2)?",
+    "options": [
+      "The heavens",
+      "The clouds",
+      "His dwelling on Sinai",
+      "His holy temple"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:3",
+    "question": "Where is the Lord coming from (Mic 1:3)?",
+    "options": [
+      "His dwelling place",
+      "Zion",
+      "From between the cherubim",
+      "From his chariot"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:4",
+    "question": "How do the mountains respond to God’s coming down (Mic 1:4)?",
+    "options": [
+      "They applaud",
+      "They part",
+      "They melt",
+      "They shake"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:4",
+    "question": "What do the mountains melt like as God comes down (Mic 1:4)?",
+    "options": [
+      "Wax",
+      "Iron",
+      "Silver",
+      "Hail"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:5",
+    "question": "What is Jacob’s transgression (Mic 1:5)?",
+    "options": [
+      "Is it not Bethel",
+      "Is it not Shechem",
+      "Is it not Samaria",
+      "Is it not Jezreel"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:5",
+    "question": "What is Judah’s high place (Mic 1:5)?",
+    "options": [
+      "Is it not Bethel",
+      "Is it not Bethlehem",
+      "Is it not Gibeon",
+      "Is it not Jerusalem"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:6",
+    "question": "What did God say he would make Samaria (Mic 1:6)?",
+    "options": [
+      "A heap of rubble",
+      "An unassailable fortress",
+      "A crevice in the ground",
+      "A unquenchable furnace"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:6",
+    "question": "What will God pour into the valley (Mic 1:6)?",
+    "options": [
+      "The oil of Jezreel",
+      "The waters of Shechem",
+      "Blood of the wicked",
+      "The stones of Samaria"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:8",
+    "question": "How did Micah say he would howl as a result of the judgment of Samaria (Mic 1:8)?",
+    "options": [
+      "Like a bear having lost her cubs",
+      "Like a lion over its prey",
+      "Like a jackal",
+      "Like a rooster"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:9",
+    "question": "What has come to Judah even to Jerusalem (Mic 1:9)?",
+    "options": [
+      "The defilement of Samaria",
+      "The uncleanness of Bethel",
+      "The incurable wound of Samaria",
+      "The howling of the jackal"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:10",
+    "question": "Where should it not be told or weeping expressed (Mic 1:10)?",
+    "options": [
+      "In Ekron",
+      "In Damascus",
+      "In Tyre",
+      "In Gath"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:10",
+    "question": "What should Beth Ophrah do as a result of the judgment on Samaria (Mic 1:10)?",
+    "options": [
+      "Put on sackcloth",
+      "Weep and mourn",
+      "Roll in the dust",
+      "Pray for forgiveness"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:11",
+    "question": "What does Micah tell Shaphir to do (Mic 1:11)?",
+    "options": [
+      "Not to come out",
+      "Be in mourning",
+      "Writhe in pain",
+      "Pass on in nakedness"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Mic 1:11",
+    "question": "What will happen to Zaanan (Mic 1:11)?",
+    "options": [
+      "They will not to come out",
+      "They will be in mourning",
+      "They will writhe in pain",
+      "They will pass on in nakedness"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mic 1:11",
+    "question": "Why is Beth Ezel in mourning (Mic 1:11)?",
+    "options": [
+      "Their walls are broken down",
+      "Their protection is taken from them",
+      "Their wells are dried up",
+      "They walk away to exile"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Mic 1:12",
+    "question": "What do those in Maroth do (Mic 1:12)?",
+    "options": [
+      "Not to come out",
+      "Be in mourning",
+      "Writhe in pain",
+      "Pass on in nakedness"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Mic 1:13",
+    "question": "What was found in Lachish (Mic 1:13)?",
+    "options": [
+      "The transgressions of Israel",
+      "The idols of Bethel",
+      "The whoredom of Samaria",
+      "The plunder of Shechem"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:15",
+    "question": "What will happen to Adullam (Mic 1:15)?",
+    "options": [
+      "They will pass on in nakedness",
+      "They will not come out alive",
+      "They will writhe in pain",
+      "The glory of Israel will come to them"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 1:16",
+    "question": "What will happen to the children of Adullam (Mic 1:16)?",
+    "options": [
+      "They will go from their parents into exile",
+      "They will be taken as slaves to Egypt",
+      "They will die before their parents",
+      "They will be left orphans"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:1",
+    "question": "Where do they plot evil (Mic 2:1)?",
+    "options": [
+      "In their city gates",
+      "On their beds",
+      "In the marketplace",
+      "On every hill"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:2",
+    "question": "What do they covet and seize (Mic 2:2)?",
+    "options": [
+      "Gold and silver",
+      "Luxurious food",
+      "Ivory couches",
+      "Fields"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:2",
+    "question": "What do they defraud a person of (Mic 2:2)?",
+    "options": [
+      "Their home",
+      "Their food",
+      "Their wine",
+      "Their children"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:3",
+    "question": "What was the Lord planning against those who defraud people (Mic 2:3)?",
+    "options": [
+      "War",
+      "Enslavement",
+      "Disaster",
+      "Exile"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:3",
+    "question": "What will those upon whom the Lord is planning disaster not do (Mic 2:3)?",
+    "options": [
+      "Walk proudly",
+      "Escape",
+      "Sleep unafraid",
+      "Eat bread and wine"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:4",
+    "question": "In the mournful song how is Israel’s ruin described (Mic 2:4)?",
+    "options": [
+      "The king of Israel will be dragged through the street with no one to deliver him",
+      "The people’s land will produce no crops",
+      "The people’s possession is divided up and taken from them",
+      "The people’s home are burned with fire"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:4",
+    "question": "To whom does God assign their fields (Mic 2:4)?",
+    "options": [
+      "Their enemies",
+      "Their neighbors",
+      "The faithful",
+      "Traitors"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:6",
+    "question": "What do their prophets say (Mic 2:6)?",
+    "options": [
+      "Peace, peace",
+      "God is merciful and compassionate",
+      "Do not prophesy about disgrace",
+      "Do not tell the people to repent"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:6",
+    "question": "What do the false prophets say will not overtake them (Mic 2:6)?",
+    "options": [
+      "Death",
+      "Destruction",
+      "Famine",
+      "Disgrace"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:8",
+    "question": "What do they do to those who pass by without a care (Mic 2:8)?",
+    "options": [
+      "Strip off their rich robes",
+      "Kill them",
+      "Drag them into court",
+      "Send them into slavery"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:9",
+    "question": "Who are driven from their pleasant homes (Mic 2:9)?",
+    "options": [
+      "My priests and Levites",
+      "The women of my people",
+      "The fatherless and widows",
+      "The children of the king"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:10",
+    "question": "Why does God say this is not their resting place (Mic 2:10)?",
+    "options": [
+      "Because they have sought other gods",
+      "Because they have broken the covenant",
+      "Because it is defiled",
+      "Because there is no water"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:12",
+    "question": "Who will God bring together (Mic 2:12)?",
+    "options": [
+      "The remnant of Israel",
+      "The people of Ephraim",
+      "Those that have been scattered",
+      "The blind and lame"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:12",
+    "question": "How will God gather the remnant of Israel (Mic 2:12)?",
+    "options": [
+      "Like a flock of birds",
+      "Like sheep in a pen",
+      "Like children in a school",
+      "Like horses in a field"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 2:13",
+    "question": "What will the sheep do (Mic 2:13)?",
+    "options": [
+      "They will sleep in safety",
+      "They will feed in green pastures",
+      "They will break through the gate and leave",
+      "They will be led by quiet streams"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:1",
+    "question": "What should the leaders of Jacob know (Mic 3:1)?",
+    "options": [
+      "Righteousness",
+      "Justice",
+      "Mercy",
+      "Compassion"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:2",
+    "question": "What do the leaders of Israel love and hate (Mic 3:2)?",
+    "options": [
+      "Love evil and hate good",
+      "Love wickedness and hate righteousness",
+      "Love folly and hate wisdom",
+      "Love idols and hate the Lord"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:4",
+    "question": "What will happen when they cry out to the Lord (Mic 3:4)?",
+    "options": [
+      "He will bring them back",
+      "He will not listen to them",
+      "He will not answer them",
+      "He will be compassionate on them"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:4",
+    "question": "What will God do because of the evil they have done (Mic 3:4)?",
+    "options": [
+      "Bring them into judgment",
+      "Send them into exile",
+      "Burn their cities with fire",
+      "Hide his face from them"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:4",
+    "question": "What will God do because of the evil they have done (Mic 3:4)?",
+    "options": [
+      "Bring them into judgment",
+      "Not answer their cries",
+      "Send them into exile",
+      "Burn their cities with fire"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:5",
+    "question": "What happens is one feeds the prophets (Mic 3:5)?",
+    "options": [
+      "They proclaim “peace”",
+      "They bless him",
+      "They serve come and stay with the person",
+      "They curse his enemies"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:7",
+    "question": "Who will be ashamed (Mic 3:7)?",
+    "options": [
+      "The king",
+      "The nobles of Israel",
+      "The seers",
+      "The priests"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:7",
+    "question": "Why will the seers cover their faces (Mic 3:7)?",
+    "options": [
+      "Because their wickedness is exposed",
+      "Because there is no answer from God",
+      "Because all their predictions do not come true",
+      "Because they are liars"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:9",
+    "question": "What does God condemn the rulers of the house of Israel for doing (Mic 3:9)?",
+    "options": [
+      "Distorting all that is right",
+      "Serving the Baals",
+      "Lounging in ivory palaces",
+      "Not listening to the voice of the Lord"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:11",
+    "question": "What do their leaders judge on the basis of (Mic 3:11)?",
+    "options": [
+      "Justice",
+      "Showing favors",
+      "A bribe",
+      "Wickedness"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:11",
+    "question": "What do their priests do for a price (Mic 3:11)?",
+    "options": [
+      "Offer sacrifices",
+      "Carry the ark",
+      "Pray for people",
+      "Teach"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:11",
+    "question": "What do prophets who tell fortunes for money ask (Mic 3:11)?",
+    "options": [
+      "Is not this the word of the Lord",
+      "Is not this what will happen to you",
+      "Is not the Lord among us",
+      "Is not God a forgiving God"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:11",
+    "question": "What do the prophets assume based on the fact that God was among them (Mic 3:11)?",
+    "options": [
+      "No disaster would come upon them",
+      "They would be blessed forever",
+      "God would forgive them",
+      "What they said was God’s word"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:12",
+    "question": "What will happen because of the false prophets (Mic 3:12)?",
+    "options": [
+      "Jerusalem will be burned with fire",
+      "The gates of Zion will be broken",
+      "Zion will be plowed like a field",
+      "Blood will flow down from Zion’s heights"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 3:12",
+    "question": "What will happen because of the false prophets (Mic 3:12)?",
+    "options": [
+      "The temple hill will become overgrown with thickets",
+      "Jerusalem will be burned with fire",
+      "The gates of Zion will be broken",
+      "Blood will flow down from Zion’s heights"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:1",
+    "question": "What will be established in the last days (Mic 4:1)?",
+    "options": [
+      "The high places of Ephraim",
+      "The mountain of the Lord’s temple",
+      "The walls of Jerusalem",
+      "The gates of Zion"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:1",
+    "question": "What will happen when the mountain of the Lord’s temple is raised above the hills (Mic 4:1)?",
+    "options": [
+      "Peoples will stream into it",
+      "All the world will bow before it",
+      "The Lord will descend with a shout",
+      "The glorious cloud will abide there"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:2",
+    "question": "What will many nations say (Mic 4:2)?",
+    "options": [
+      "Let us beat our swords into plowshares",
+      "Let us seek the Lord",
+      "Let us go up to the mountain of the Lord",
+      "Let us rest In the presence of the Lord"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:2",
+    "question": "Where will many nations say they want to go (Mic 4:2)?",
+    "options": [
+      "To climb the mountain of the Lord",
+      "To gather with the saints of Israel",
+      "To enter the gates of the holy city",
+      "To the house of the God of Jacob"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:2",
+    "question": "What will go out from Zion (Mic 4:2)?",
+    "options": [
+      "The Spirit of the Lord",
+      "The Word of the prophet",
+      "The law",
+      "The people"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:2",
+    "question": "In the last days what will God do (Mic 4:2)?",
+    "options": [
+      "Purify all nations",
+      "Teach his ways",
+      "Receive one final sacrifice",
+      "Rejoice over his people"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:3",
+    "question": "What role will God fill in the last days among many peoples (Mic 4:3)?",
+    "options": [
+      "He will judge between them",
+      "He will lead them into the city",
+      "He will rule over them",
+      "He will speak to them"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:3",
+    "question": "In the last days what will the nations do with their swords (Mic 4:3)?",
+    "options": [
+      "Break them into pieces",
+      "Melt them down an altar",
+      "Beat them into plowshares",
+      "Turn them over to the Lord"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:3",
+    "question": "In the last days what will nations not do any longer (Mic 4:3)?",
+    "options": [
+      "Train for war",
+      "Dispute over boundaries",
+      "Seek to rule one another",
+      "Sacrifice to other gods"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:3",
+    "question": "In the last days what will nations use against other nations (Mic 4:3)?",
+    "options": [
+      "Bow and arrows",
+      "Swords",
+      "Spears",
+      "Chariots"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:4",
+    "question": "In the last days what will not happen to anyone (Mic 4:4)?",
+    "options": [
+      "They shall never weep again",
+      "No one can harm them",
+      "No one will carry them away",
+      "No one will make them afraid"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:5",
+    "question": "In what will “we” walk in the last days (Mic 4:5)?",
+    "options": [
+      "In the light of his glory",
+      "In the name of the Lord our God",
+      "In the paths of righteousness",
+      "In green pastures"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:7",
+    "question": "In that day where will the Lord rule over those he has gathered (Mic 4:7)?",
+    "options": [
+      "The temple",
+      "The Mount of Olives",
+      "Armageddon",
+      "Mount Zion"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:8",
+    "question": "What will come to the Daughter of Jerusalem (Mic 4:8)?",
+    "options": [
+      "The priesthood",
+      "The temple will be restored",
+      "Kingship",
+      "The hosts of the Most High"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:10",
+    "question": "What was the Daughter of Zion to do for being forced to leave the city (Mic 4:10)?",
+    "options": [
+      "Writhe in agony like a woman in labor",
+      "Fast and pray like one losing an only child",
+      "Put on sackcloth as your leave",
+      "Weep and mourn like a dove"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:10",
+    "question": "Where will the Daughter of Zion go out to (Mic 4:10)?",
+    "options": [
+      "To Nineveh",
+      "To Assyria",
+      "To Babylon",
+      "To Susa"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:12",
+    "question": "What do the enemies of Zion not understand (Mic 4:12)?",
+    "options": [
+      "The Lord’s promises",
+      "The Lord’s plan",
+      "The ways of the Lord",
+      "The decrees of the Lord"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:12",
+    "question": "What do the enemies of Zion not know (Mic 4:12)?",
+    "options": [
+      "The Lord’s promises",
+      "The ways of the Lord",
+      "The Lord’s thougths",
+      "The decrees of the Lord"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:12",
+    "question": "How will God gather Zion (Mic 4:12)?",
+    "options": [
+      "Like the harvesting of olives",
+      "Like grapes to the winepress",
+      "Like wheat to the baker",
+      "Like sheaves to the threshing floor"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:13",
+    "question": "What does the Lord tell the Daughter of Zion to rise and do (Mic 4:13)?",
+    "options": [
+      "Harvest",
+      "Thread the winepress",
+      "Thresh",
+      "Grind"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:13",
+    "question": "What will the Lord give the Daughter of Zion for threshing (Mic 4:13)?",
+    "options": [
+      "Refreshing rain and morning dew",
+      "Horns of iron and hoofs of bronze",
+      "An iron grinding wheel and a mighty ox",
+      "Bronze sickles and iron sledges"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:13",
+    "question": "What will the Daughter of Zion do with horns of iron (Mic 4:13)?",
+    "options": [
+      "Break to pieces many nations",
+      "Destroy the high places of Ephraim",
+      "Stab the gods of Ammon",
+      "Crush the altars of Bethel"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 4:13",
+    "question": "What will the Daughter of Zion do with the wealth of the nations (Mic 4:13)?",
+    "options": [
+      "Build their houses",
+      "Devote it to the Lord",
+      "Bring it into the temple",
+      "Give it as an inheritance to her children"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:1",
+    "question": "What will happen to Israel’s ruler (Mic 5:1)?",
+    "options": [
+      "Dogs will eat his flesh",
+      "He will be struck with a rod on the cheek",
+      "He will be trampled into the dust of the ground",
+      "He will be taken into exile to a foreign land"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:2",
+    "question": "What town was small among the clans of Judah (Mic 5:2)?",
+    "options": [
+      "Bethzur in Judah",
+      "Tekoa in the desert",
+      "Bethlehem in Ephrathah",
+      "Socoh in the Elah Valley"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:2",
+    "question": "Who will come out of Bethlehem (Mic 5:2)?",
+    "options": [
+      "One who will be ruler over Israel",
+      "The son of David",
+      "The prince of peace",
+      "One wiser than Solomon"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:3",
+    "question": "Until when will Israel be abandoned (Mic 5:3)?",
+    "options": [
+      "Until a times times and half a time",
+      "Until that day",
+      "Until the time when she who is in labor gives birth",
+      "Until Israel is restored to the land promised to Abraham"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:5",
+    "question": "What will the ruler from Bethlehem be for his people (Mic 5:5)?",
+    "options": [
+      "Their peace",
+      "Their righteousness",
+      "Their redemption",
+      "Their atoning sacrifice"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:5",
+    "question": "Who will invade the land and march through their fortresses (Mic 5:5)?",
+    "options": [
+      "Babylon",
+      "Aram",
+      "Assyria",
+      "Egypt"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:6",
+    "question": "How will the eight leaders of men rule over Assyria (Mic 5:6)?",
+    "options": [
+      "With cruelty",
+      "As they have ruled over others",
+      "With the sword",
+      "With an iron rod"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:6",
+    "question": "Assyria is also called the land of _________ (Mic 5:6)",
+    "options": [
+      "Nimrod",
+      "Aram-Naharaim",
+      "Anatolia",
+      "Mari"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Mic 5:7",
+    "question": "What will the remnant of Jacob be like (Mic 5:7)?",
+    "options": [
+      "Snow covering the land",
+      "A swarm of locusts",
+      "Dew from the Lord",
+      "Fire in a withered field"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:8",
+    "question": "What will the remnant of Jacob be like (Mic 5:8)?",
+    "options": [
+      "Like the sun on newly fallen snow",
+      "Like an eagle among the birds of the air",
+      "Like a lion among the beasts of the forest",
+      "Like a flower among the thorn bushes of the field"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:10",
+    "question": "In that day what does the Lord say he will destroy from among them (Mic 5:10)?",
+    "options": [
+      "Their horses and chariots",
+      "Their swords and spears",
+      "Their gold and fine linen",
+      "Their walls and gates"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:12",
+    "question": "In that day what will God destroy (Mic 5:12)?",
+    "options": [
+      "Their altars",
+      "Their high places",
+      "Their witchcraft",
+      "Their storehouses"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:12",
+    "question": "In that day what will God destroy (Mic 5:12)?",
+    "options": [
+      "Their altars",
+      "Their sacred stones",
+      "Their high places",
+      "Their storehouses"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:14",
+    "question": "In that day what will God uproot from among them (Mic 5:14)?",
+    "options": [
+      "Their Asherah poles",
+      "Their sacred olive groves",
+      "Their wheat and barley",
+      "The foundations of their temples"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 5:15",
+    "question": "In that day upon whom will the Lord take vengeance in anger (Mic 5:15)?",
+    "options": [
+      "Those Israelites who have gone after other gods",
+      "The ones who have oppressed the poor",
+      "The nations that have not obeyed me",
+      "Those who have not walked in his ways"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:1",
+    "question": "Before whom does the Lord say they should stand up and plead their case (Mic 6:1)?",
+    "options": [
+      "Before the heavens",
+      "Before the gates of the city",
+      "Before the elders",
+      "Before the mountains"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:2",
+    "question": "Against whom is the Lord lodging a charge (Mic 6:2)?",
+    "options": [
+      "Israel",
+      "The elders",
+      "The kings and princes of Judah",
+      "The priests and prophets"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:2",
+    "question": "Who does the Lord command to listen (Mic 6:2)?",
+    "options": [
+      "The heavens",
+      "The city walls",
+      "The foundations of the earth",
+      "The rocks"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:3",
+    "question": "From what does the Lord say he redeemed his people (Mic 6:3)?",
+    "options": [
+      "The desert",
+      "Their sins",
+      "False idols",
+      "The land of slavery"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:4",
+    "question": "God sent all of the following to redeem Israel from the land of slavery EXCEPT (Mic 6:4)",
+    "options": [
+      "Miriam",
+      "Aaron",
+      "Joseph",
+      "Moses"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:5",
+    "question": "The Lord says Israel should remember what king counseled against her (Mic 6:5)?",
+    "options": [
+      "Og king of Hesbon",
+      "Balak king of Moab",
+      "Achish king of Gath",
+      "Agag king of Amalek"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:5",
+    "question": "Who answered Balak king of Moab (Mic 6:5)?",
+    "options": [
+      "Balaam",
+      "Omri",
+      "Manoah",
+      "Jezebel"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:6",
+    "question": "How rhetorically does Micah ask that he should come before God (Mic 6:6)?",
+    "options": [
+      "With tithes and offerings",
+      "With fasting and prayer",
+      "With a broken and repentant heart",
+      "With burnt offerings with year old calves"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:7",
+    "question": "What will not be accepted for their transgressions (Mic 6:7)?",
+    "options": [
+      "Flasks of olive oil",
+      "Their firstborn",
+      "Gold and silver",
+      "Blood of bulls"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:8",
+    "question": "The Lord requires all of the following EXCEPT (Mic 6:8)",
+    "options": [
+      "Act justly",
+      "Love mercy",
+      "Walk humbly with God",
+      "Confess sin"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:8",
+    "question": "How should one walk with God (Mic 6:8)?",
+    "options": [
+      "Humbly",
+      "Righteously",
+      "Wisely",
+      "Uprightly"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:9",
+    "question": "What is wisdom (Mic 6:9)?",
+    "options": [
+      "To forgive as you have been forgiven",
+      "To fear God’s name",
+      "To walk in the ways of the Lord",
+      "To pursue justice"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:10",
+    "question": "What is accursed (Mic 6:10)?",
+    "options": [
+      "Those who break the law",
+      "Those who pursue idols",
+      "Oppressors",
+      "The short ephah"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:11",
+    "question": "What person does God ask if he should indeed acquit (Mic 6:11)?",
+    "options": [
+      "A person with dishonest scales",
+      "A person who steals the land of the widow",
+      "A person who serves the Baals",
+      "A person who does not know him"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:13",
+    "question": "What has God begun to do to them because of their sins (Mic 6:13)?",
+    "options": [
+      "Cause no rain to fall",
+      "Sell them to the Assyrians",
+      "Call them to account",
+      "Destroy them"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:14",
+    "question": "What will happen when they eat (Mic 6:14)?",
+    "options": [
+      "They will not be satisfied",
+      "They will vomit up what they have eaten",
+      "They will",
+      "They will"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:15",
+    "question": "What will happen when they press olives (Mic 6:15)?",
+    "options": [
+      "They will not find an anointed one",
+      "They will not eat food with olive oil",
+      "They will not",
+      "They will not use the oil on themselves"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:16",
+    "question": "Whose statutes has Israel followed (Mic 6:16)?",
+    "options": [
+      "Jeroboam’s",
+      "Jezebel’s",
+      "Omri’s",
+      "Jehu’s"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:16",
+    "question": "Whose practices does Israel observe (Mic 6:16)?",
+    "options": [
+      "Ahab’s",
+      "Jeroboam’s",
+      "Jezebel’s",
+      "Jehu’s"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 6:16",
+    "question": "What will Israel bear (Mic 6:16)?",
+    "options": [
+      "Exile to Assyria",
+      "Drought from the heavens",
+      "The scorn of the nations",
+      "The weight of their sin"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:1",
+    "question": "What is Israel like one gathering (Mic 7:1)?",
+    "options": [
+      "Figs",
+      "Olives",
+      "Summer fruit",
+      "Winter wheat"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:3",
+    "question": "What do the rulers demand (Mic 7:3)?",
+    "options": [
+      "Obedience",
+      "Gifts",
+      "Loyalty",
+      "Taxes"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:3",
+    "question": "What do the judges of Israel do (Mic 7:3)?",
+    "options": [
+      "Accept bribes",
+      "Render unjust decisions",
+      "Pervert justice",
+      "Break the covenant"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:4",
+    "question": "What is the day of Israel’s watchman (Mic 7:4)?",
+    "options": [
+      "A day of famine",
+      "A day of pestilence",
+      "A day God visits",
+      "A day the king dies"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:5",
+    "question": "With whom should one be careful of your words (Mic 7:5)?",
+    "options": [
+      "Your trusted friend",
+      "Your neighbor",
+      "One who lies in your embrace",
+      "A son or daughter"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:6",
+    "question": "In Israel whom does a son dishonor (Mic 7:6)?",
+    "options": [
+      "His mother",
+      "His father",
+      "His brother",
+      "His friend"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:6",
+    "question": "In Israel who rises up against a mother (Mic 7:6)?",
+    "options": [
+      "A son",
+      "Her husband",
+      "A judge",
+      "A daughter"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:7",
+    "question": "For whom does Micah wait (Mic 7:7)?",
+    "options": [
+      "His Father",
+      "God his Savior",
+      "The Anointed One",
+      "The great King"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:7",
+    "question": "In what will Micah watch for the Lord (Mic 7:7)?",
+    "options": [
+      "In hope",
+      "In righteousness",
+      "In the early morning hours",
+      "In his tent"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:8",
+    "question": "What will happen though Israel sits in darkness (Mic 7:8)?",
+    "options": [
+      "The Lord will be his light",
+      "The sun will rise in the morning",
+      "The darkness will be banished forever",
+      "He will stand in the light"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:9",
+    "question": "What will Israel bear because of his sins (Mic 7:9)?",
+    "options": [
+      "Shame and reproach",
+      "The Lord’s wrath",
+      "The yoke of remorse",
+      "The weight of guilt"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:9",
+    "question": "What will the Lord do for Israel while bearing the Lord’s wrath (Mic 7:9)?",
+    "options": [
+      "Forgive their sins",
+      "Show them their sin",
+      "Plead their case",
+      "Guide them to streams of righteousness"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:10",
+    "question": "What did the enemy say to Israel (Mic 7:10)?",
+    "options": [
+      "How long until your God comes to save?",
+      "Where is his glory now?",
+      "Where is the Lord your God?",
+      "Why has God abandoned you?"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:10",
+    "question": "What will happen to Israel’s enemy (Mic 7:10)?",
+    "options": [
+      "They will be weep and lament",
+      "They will be trampled underfoot",
+      "They will be devoured by locusts",
+      "They will wither away and perish"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:12",
+    "question": "In that day where will people come to Israel from (Mic 7:12)?",
+    "options": [
+      "Egypt to the Euphrates",
+      "Dan to Beersheba",
+      "Jerusalem and Samaria",
+      "The north and the south"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:15",
+    "question": "How will God show his wonders (Mic 7:15)?",
+    "options": [
+      "With a strong hand",
+      "As when he descended on Sinai",
+      "As when the walls of Jericho fell",
+      "As when they came out of Egypt"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:17",
+    "question": "What will the nations become like (Mic 7:17)?",
+    "options": [
+      "A vulture eating its prey",
+      "A snake licking dust",
+      "A lion roaring because there is no food",
+      "A dog returning to its vomit"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:17",
+    "question": "How will they turn to the Lord (Mic 7:17)?",
+    "options": [
+      "In shame",
+      "In repentance",
+      "In fear",
+      "In righteousness"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:18",
+    "question": "What demonstrates there is no one like God (Mic 7:18)?",
+    "options": [
+      "He maintains justice in the land",
+      "He does great wonders in the heavens",
+      "He speaks and it is done",
+      "He pardons sins"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:18",
+    "question": "What does God delight in doing (Mic 7:18)?",
+    "options": [
+      "Establishing justice",
+      "Showing mercy",
+      "Signs and wonders",
+      "Righteousness"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:19",
+    "question": "What will God tread under his feet (Mic 7:19)?",
+    "options": [
+      "Satan",
+      "Our enemies",
+      "Our sins",
+      "The nations"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Mic 7:19",
+    "question": "What will happen to all our iniquities (Mic 7:19)?",
+    "options": [
+      "They will be burned with an unquenchable fire",
+      "They will be covered in the blood of the lamb",
+      "They will fly away like a bird",
+      "They will be hurled into the depths of the sea"
+    ],
+    "answer": 3,
+    "level": "B"
+  }
+]

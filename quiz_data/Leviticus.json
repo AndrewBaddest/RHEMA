@@ -1,0 +1,1082 @@
+[
+  {
+    "ref": "Lev. 1:10",
+    "question": "The flocks contained what types of animals (Lev. 1:10)",
+    "options": [
+      "Sheep alone",
+      "Cows and donkeys",
+      "Sheep and goats",
+      "Sheep, goats and cattle"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Leviticus 1:1",
+    "question": "The one bringing the burnt offering was to",
+    "options": [
+      "Slaughter the animal only",
+      "Slaughter the animal and cut it into pieces only",
+      "Slaughter, skin, cut it into pieces and wash its inner parts",
+      "Present it to the priests and they would slaughter it"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 2:1",
+    "question": "The grain offering was to be made of (Lev. 2:1)",
+    "options": [
+      "Fresh grains of wheat and barley",
+      "Stalks of grain",
+      "Fine flour",
+      "Unbaked bread"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 2:1",
+    "question": "What two substances were to be added to the grain offering (Lev. 2:1)?",
+    "options": [
+      "Oil and incense",
+      "Oil and cinnamon",
+      "Oil and sugar",
+      "Incense and honey"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 2:2",
+    "question": "How much of the grain offering was burned on the altar (Lev. 2:2)?",
+    "options": [
+      "A spoonful",
+      "A handful",
+      "A omer (2 liters)",
+      "An ephah"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 2:4",
+    "question": "What three ways could the regular grain offering be cooked (Lev. 2:4f)?",
+    "options": [
+      "Over a fire, in an oven, on a grill",
+      "In a pan, on a grill, in an oven",
+      "In an oven, on a griddle, in a pan",
+      "Over a fire, in a pan, in a jar"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 2:14",
+    "question": "If the grain offering was of the firstfruits, it could be (Lev. 2:14)",
+    "options": [
+      "Baked",
+      "Roasted in the fire",
+      "Cooked on the altar",
+      "Fried in a pan"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 3:1",
+    "question": "A fellowship offering animal was to be _________ (Lev. 3:1)",
+    "options": [
+      "Without defect",
+      "Male",
+      "One year old",
+      "The firstborn"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 3:2",
+    "question": "The priests were whose sons (Lev. 3:2)?",
+    "options": [
+      "Moses'",
+      "Jethro's",
+      "Aaron's",
+      "Levi's"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 4:1",
+    "question": "The sin offering was for when someone sinned _____ (Lev. 4:1)",
+    "options": [
+      "Against God",
+      "With a high hand",
+      "Intentionally",
+      "Unintentionally"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 4:3",
+    "question": "If a priest brought a sin offering, it was to be a _______ (Lev. 4:3)",
+    "options": [
+      "Young bull",
+      "Female goat",
+      "Ram",
+      "Male goat"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 4:22",
+    "question": "If a leader sinned, what sin offering did they offer up (Lev. 4:22)?",
+    "options": [
+      "A female cow",
+      "A male goat",
+      "A young bull",
+      "A ram"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 4:28",
+    "question": "In the sin offering, all the animals were to be ______ (Lev. 4:28)",
+    "options": [
+      "A year old",
+      "Male",
+      "Without defect",
+      "The firstborn"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 5:6",
+    "question": "One that was found guilty was to bring a ______ lamb or goat (Lev. 5:6)",
+    "options": [
+      "Female",
+      "Male",
+      "Spotted",
+      "One year old"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 5:11",
+    "question": "If a person could not afford pigeons, they were to bring (Lev. 5:11)",
+    "options": [
+      "Fine flour with salt",
+      "Blood of a lamb",
+      "Fine flour without oil",
+      "Fine flour with oil"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 6:13",
+    "question": "What must be kept burning continuously (Lev. 6:13)",
+    "options": [
+      "The incense altar",
+      "The place where the hides were burned outside the camp",
+      "The hearts of Israel",
+      "The fire for the burnt offering altar"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 6:15",
+    "question": "The grain offering was to be mixed with (Lev. 6:15)",
+    "options": [
+      "Oil and water",
+      "Salt and yeast",
+      "Blood and oil",
+      "Oil and incense"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 6:20",
+    "question": "On the day a priest was anointed, what was he to bring (Lev. 6:20)?",
+    "options": [
+      "A young bull as a burnt offering",
+      "Lamb as a sin offering",
+      "A tenth of an ephah of fine flour for a grain offering",
+      "A goat as a dedication offering"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 6:28",
+    "question": "A clay pot that had meat cooked in it was to be ______ (Lev. 6:28)",
+    "options": [
+      "It was to be washed",
+      "It was to be anointed with oil",
+      "It was to be broken",
+      "It was to be buried"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 7:2",
+    "question": "Where was the blood of the guilt offering was sprinkled (Lev. 7:2)?",
+    "options": [
+      "On the horns of the altar",
+      "On the base of the altar",
+      "On the sides of the altar",
+      "Before the curtain in the Tent of Meeting"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 7:6",
+    "question": "Where was the meat of the guilt offering to be eaten (Lev. 7:6)?",
+    "options": [
+      "In the holy place",
+      "In the holy of holies",
+      "In the entrance to the tabernacle",
+      "In the entrance to their tents"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 7:9",
+    "question": "What grain offerings did the priest get to eat (Lev. 7:9)?",
+    "options": [
+      "Ones baked, cooked in a pan or griddle",
+      "Ones mixed with oil or dry",
+      "Ones brought by the leaders of Israel",
+      "Ones brought by the priests of Israel"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 7:10",
+    "question": "What gain offerings was a priest not to eat (Lev. 7:10)?",
+    "options": [
+      "Ones baked, cooked in a pan or griddle",
+      "Ones mixed with oil or dry",
+      "Ones brought by the leaders of Israel",
+      "Ones brought by the priests of Israel"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 7:25",
+    "question": "What was to happen to anyone who ate the fat of an animal (Lev. 7:25)?",
+    "options": [
+      "They were to be cut off from his people",
+      "They must offer a burnt offering",
+      "They were to be sprinkled with blood",
+      "They were to be put outside the camp for seven days"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 7:30",
+    "question": "In the fellowship offering, the breast of the animal was (Lev. 7:30)",
+    "options": [
+      "Burned",
+      "Anointed",
+      "Waved",
+      "Eaten by the person's family"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 8:8",
+    "question": "What was put into the breastpiece (Lev. 8:8)?",
+    "options": [
+      "The Urim and Thumim",
+      "The blood of the scapegoat",
+      "A scroll of the commandments",
+      "A stone inscribed with the names of the tribes of Israel"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 8:9",
+    "question": "What was put on the Aaron's priestly turban (Lev. 8:9)?",
+    "options": [
+      "The scarlet ban",
+      "The 12 gems, one per tribe",
+      "The priestly crown",
+      "The gold sacred diadem"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 9:24",
+    "question": "How did the LORD respond on the day of God's appearing (Lev. 9:24)?",
+    "options": [
+      "The glory of the LORD appeared on top of the mountain",
+      "The LORD pronounced his name before the people",
+      "The ground shook and the pillar of cloud became a fire",
+      "Fire came out and consumed the burnt offering"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 10:2",
+    "question": "Which two sons of Aaron were consumed before the LORD (Lev. 10:2)?",
+    "options": [
+      "Nadab and Eleazar",
+      "Ithamar and Abihu",
+      "Nadab and Abihu",
+      "Eleazar and Ithamar"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 10:2",
+    "question": "Where did the fire come from that slew Aaron's two sons (Lev. 10:2)?",
+    "options": [
+      "From the altar of incense",
+      "From the altar of burn offering",
+      "From the presence of the LORD",
+      "From between the cherubim"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 10:5",
+    "question": "Aaron's two dead sons were carried to what location (Lev. 10:5)?",
+    "options": [
+      "Outside the camp",
+      "Their tents",
+      "Mount Horeb",
+      "Aaron's tent"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 10:16",
+    "question": "Why did Moses get angry with Eleazar and Ithamar (Lev. 10:16)?",
+    "options": [
+      "Because they offered an unauthorized fire before the LORD",
+      "Because they burnt up the whole sin offering",
+      "Because they ate the burnt offering",
+      "Because they did not eat the grain offering mixed with oil"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 10:10",
+    "question": "The holy must be distinguished from the ________ (Lev. 10:10)",
+    "options": [
+      "Unclean",
+      "Common",
+      "Profane",
+      "Defiled"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 11:22",
+    "question": "Which insects were allowed to be eaten by the Israelites (Lev. 11:22)?",
+    "options": [
+      "Those with jointed legs for hopping",
+      "Those that walk on all fours",
+      "Those that crawl on their bellies",
+      "Those that travel in swarms"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 11:27",
+    "question": "All animals that walk on ______ were considered unclean (Lev. 11:27)",
+    "options": [
+      "Hoofs",
+      "Split hoofs",
+      "Paws",
+      "Four legs"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 11:38",
+    "question": "If a carcass fell on seeds, they were still clean unless (Lev. 11:38)",
+    "options": [
+      "They had sprouted",
+      "They were in a clay pot",
+      "Had been planted",
+      "They had water put on them"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 11:44",
+    "question": "God said Israel was to be holy because (Lev. 11:44)",
+    "options": [
+      "He was a jealous God",
+      "He was a righteous God",
+      "He was holy",
+      "He hates uncleanness"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 11:47",
+    "question": "God told the Israelites they must distinguish between (Lev. 11:47)",
+    "options": [
+      "The clean and unclean",
+      "The righteous and the unrighteous",
+      "The holy and the unholy",
+      "The rich and the poor"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 13:11",
+    "question": "Who was not allowed to be put in isolation (Lev. 13:11)?",
+    "options": [
+      "Someone that had offered a purification sacrifice",
+      "Someone who had already been declared unclean",
+      "Someone who had only a rash but no sores",
+      "Someone who had a white swelling"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 15:17",
+    "question": "Any clothing or leather that got semen on it was to be (Lev. 15:17)",
+    "options": [
+      "Washed with water",
+      "Anointed with oil",
+      "Burned",
+      "Buried outside the camp"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 15:18",
+    "question": "When a couple has marital relations, they were unclean (Lev. 15:18)",
+    "options": [
+      "Until morning",
+      "For three days",
+      "Until evening",
+      "For seven days"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 16:2",
+    "question": "Where was Aaron not allowed to go on penalty of death (Lev. 16:2)?",
+    "options": [
+      "Into the Holy Place",
+      "Into the Most Holy Place",
+      "Into the Tent of Meeting",
+      "Outside the camp when the anointing oil was on him"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 17:11",
+    "question": "The _______ of the creature was said to be in the blood (Lev. 17:11)",
+    "options": [
+      "Value",
+      "Promise",
+      "Life",
+      "Seed"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 17:15",
+    "question": "Anyone who ate an animal found dead was to (Lev. 17:15)",
+    "options": [
+      "Wash his clothes and bathe himself",
+      "Anoint himself with oil and bring a sin offering",
+      "Remain outside the camp until evening",
+      "Offer 2 doves as a sin offering"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 17:15",
+    "question": "Anyone who ate an animal found dead was unclean (Lev. 17:15)",
+    "options": [
+      "Until morning",
+      "Until evening",
+      "Seven days",
+      "Until he washed"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 18:6",
+    "question": "No one is to approach a ________ for sexual relations (Lev. 18:6)",
+    "options": [
+      "Friend",
+      "Close relative",
+      "A priest",
+      "An foreigner"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 18:18",
+    "question": "Who was one not to take as a second wife (Lev. 18:18)?",
+    "options": [
+      "A neighbor",
+      "One's wife's sister",
+      "One's wife's aunt",
+      "One's wife's cousin"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 18:22",
+    "question": "What was considered detestable or an abomination (Lev. 18:22)?",
+    "options": [
+      "Lying with one's wife during her monthly period",
+      "Lying with a man as one lies with a woman",
+      "Lying with a woman who one was not married to",
+      "Lying with one's uncle's sister"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 18:23",
+    "question": "What was considered a perversion (Lev. 18:23)",
+    "options": [
+      "Having sexual relations with an Egyptian",
+      "Having sexual relations with oneself",
+      "Having sexual relations with an animal",
+      "Having sexual relations on the first day after circumcision"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 19:1",
+    "question": "\"Be _______ because I the LORD your God am _______ \" (Lev. 19:1)",
+    "options": [
+      "Righteous",
+      "Holy",
+      "Just",
+      "Merciful"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 19:3",
+    "question": "Who were the Israelites explicitly commanded to respect (Lev. 19:3)?",
+    "options": [
+      "Their elders",
+      "The priests of Israel",
+      "Their mother and father",
+      "Moses"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 19:9",
+    "question": "What part of the field was not to be reaped (Lev. 19:9)?",
+    "options": [
+      "The edges",
+      "The center",
+      "The top",
+      "The bottom"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 19:10",
+    "question": "Why were parts of the field not to be harvested (Lev. 19:10)?",
+    "options": [
+      "It was to be left of the poor and alien",
+      "It was to be left so that the land would be fertile",
+      "It was the LORD's inheritance",
+      "It was to be the children's food"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 19:12",
+    "question": "One was not to swear falsely by God's name because it (Lev. 19:12)",
+    "options": [
+      "Defiled the land",
+      "Defiled God's name",
+      "It was detestable",
+      "It was wickedness"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 19:15",
+    "question": "Who was one not to show partiality in judgment (Lev. 19:15)?",
+    "options": [
+      "The widow",
+      "The priests",
+      "The poor",
+      "The elders"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 19:16",
+    "question": "What was not to be spread among the people (Lev. 19:16)?",
+    "options": [
+      "Slander",
+      "Sinful gain",
+      "Uncleanness",
+      "Lies"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 19:18",
+    "question": "One was to \"love your neighbor as ________\" (Lev. 19:18)",
+    "options": [
+      "Himself",
+      "A friend",
+      "Yourself",
+      "A brother or sister"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 19:19",
+    "question": "The Israelites were not to wear garments made of (Lev. 19:19)",
+    "options": [
+      "Two kinds of material",
+      "Animal skins",
+      "Red wool",
+      "Purple linen"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 19:32",
+    "question": "In whose presence were Israelites to rise (Lev. 19:32)?",
+    "options": [
+      "Their parents",
+      "The priests",
+      "The aged",
+      "Moses"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 19:31",
+    "question": "The Israelites were not to turn to or seek out (Lev. 19:31)",
+    "options": [
+      "Mediums",
+      "Foreign priests",
+      "Foreign wives",
+      "Idols"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 19:33",
+    "question": "Who were the Israelites specifically not to mistreat (Lev. 19:33)?",
+    "options": [
+      "Their neighbor",
+      "Their parents",
+      "Priests",
+      "Aliens"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 19:35",
+    "question": "The Israelites were not to use _______ (Lev. 19:35)",
+    "options": [
+      "Slaves",
+      "Dishonest standards",
+      "Foreign judges",
+      "Hungry priests"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 20:20",
+    "question": "If a man sleeps with his aunt, the punishment would be (Lev. 20:20)",
+    "options": [
+      "They would die childless",
+      "They would be put outside the camp",
+      "They would be stoned",
+      "They would offer 2 bulls as a burnt offering"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 20:25",
+    "question": "Israel was to distinguish between (Lev. 20:25)",
+    "options": [
+      "The righteous and wicked",
+      "The just and the unjust",
+      "The rich and the poor",
+      "The clean and unclean"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 21:6",
+    "question": "The offerings offered by the priests were called the (Lev. 21:6)",
+    "options": [
+      "Holy atonement",
+      "The food of their God",
+      "Redemption price",
+      "Meat of forgiveness"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 22:20",
+    "question": "What kind of animal was not accepted as a burnt offering (Lev. 22:20)?",
+    "options": [
+      "A spotted goat",
+      "A black sheep",
+      "A bull with horns",
+      "A blemished goat"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 22:28",
+    "question": "A cow and its young were not to be offered on (Lev. 22:28)",
+    "options": [
+      "In the same week",
+      "In the same year",
+      "On the same day",
+      "At the same feast"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 22:23",
+    "question": "God's holy name was not to be ______ (Lev. 22:23)",
+    "options": [
+      "Unclean",
+      "Profaned",
+      "Despised",
+      "Polluted"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 23:3",
+    "question": "On what day was the Sabbath of rest (Lev. 23:3)?",
+    "options": [
+      "First",
+      "Third",
+      "Sixth",
+      "Seventh"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 23:3",
+    "question": "What was not to be done on the Sabbath (Lev. 23:3)?",
+    "options": [
+      "Any eating",
+      "Any rest",
+      "Any work",
+      "Any drinking of strong drink"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 23:10",
+    "question": "When was the Feast of the Firstfruits to begin (Lev. 23:10)",
+    "options": [
+      "Whenever they harvested honey from the hives",
+      "When they harvested figs and olives from the groves",
+      "When they harvested grapes in the fall",
+      "When they reaped grain"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Lev 23:20",
+    "question": "What parts of the field were not to be harvested (Lev 23:20)?",
+    "options": [
+      "The hills",
+      "The edges",
+      "The center",
+      "The north side"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 23:24",
+    "question": "The Feast of Trumpets was on what month and day (Lev. 23:24)?",
+    "options": [
+      "First day of the first month",
+      "First day of the seventh month",
+      "Tenth day of the first month",
+      "Tenth day of the seventh month"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 23:24",
+    "question": "What was to be done at the Feast of Trumpets (Lev. 23:24)?",
+    "options": [
+      "They harvested their grapes",
+      "They lived in booths",
+      "They put blood on their right ear lobes",
+      "They blew their trumpets"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 23:27",
+    "question": "The Day of Atonement was on what month and day (Lev. 23:27)?",
+    "options": [
+      "First day of the first month",
+      "First day of the seventh month",
+      "Tenth day of the first month",
+      "Tenth day of the seventh month"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 23:30",
+    "question": "No _______ was to be done on the Day of Atonement (Lev. 23:30)",
+    "options": [
+      "Work",
+      "Mourning",
+      "Sleeping",
+      "Laughing"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 23:36",
+    "question": "The eighth day of the Feast of Tabernacles was a (Lev. 23:36)",
+    "options": [
+      "Day of rejoicing",
+      "Sacred assembly",
+      "Most holy day",
+      "Day of offerings and sacrifices"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 23:39",
+    "question": "The Feast of Tabernacles was celebrated by people (Lev. 23:39)",
+    "options": [
+      "Gathering crops of the land and they living in booths",
+      "Living in booths and eating unleavened bread",
+      "Bringing stones and singing",
+      "Offering of the firstfruits of the grain harvest"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 24:8",
+    "question": "On what day was the bread of the presence to be set out (Lev. 24:8)?",
+    "options": [
+      "The first day of the week",
+      "The third day of the week",
+      "The day before the Sabbath",
+      "On the Sabbath"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 24:19",
+    "question": "If someone injures his neighbor, the punishment was (Lev. 24:19)",
+    "options": [
+      "The offering of a young bull burnt offering",
+      "Payment of 30 pieces of silver",
+      "Eye for eye and tooth for tooth",
+      "He must be put outside the camp for seven days"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 24:21",
+    "question": "Whoever kills a man was to be (Lev. 24:21)",
+    "options": [
+      "Expelled from the community forever",
+      "Pay 30 shekels of silver",
+      "Put in prison for all his days",
+      "Put to death"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 25:10",
+    "question": "The fiftieth year was to be the year of ______ (Lev. 25:10)",
+    "options": [
+      "Sabbatical",
+      "Jubilee",
+      "Atonement",
+      "Redemption"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 25:10",
+    "question": "What was special on the Jubilee year? Each person was to (Lev. 25:10)",
+    "options": [
+      "Have a continual festival before the lord",
+      "Return to his family property",
+      "Rejoice before the LORD with sacrifices",
+      "Celebrate their deliverance from Egypt"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 25:23",
+    "question": "The land was not to be sold permanently because (Lev. 25:23)",
+    "options": [
+      "The land belonged to each family and tribe",
+      "The land was a gift and they were to receive it as such",
+      "The land was a promise to Abraham",
+      "The land was God's and they were his tenants"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 25:36",
+    "question": "The poor among the Israelites were to be helped by (Lev. 25:36)",
+    "options": [
+      "Giving them free land to use",
+      "Allowing them to work",
+      "Buying their land at double the real value",
+      "Giving them loans without interest"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 25:55",
+    "question": "Israelites were viewed as God's servants because (Lev. 25:55)",
+    "options": [
+      "They were his special possession",
+      "He had given them his law",
+      "He brought them out of Egypt",
+      "They were to bring his offerings and make atonement for all"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 26:2",
+    "question": "The Israelites were commanded to have reverence for (Lev. 26:2)",
+    "options": [
+      "The land",
+      "The rain on the land",
+      "The sanctuary",
+      "The mountain of the LORD"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Lev. 26:41",
+    "question": "If Israel violated the covenant, God said they had (Lev. 26:41)",
+    "options": [
+      "Thick skulls",
+      "Hardened hearts",
+      "Uncircumcised hearts",
+      "Blind eyes"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 27:21",
+    "question": "A piece of property dedicated on the year of Jubilee became (Lev. 27:21)",
+    "options": [
+      "Part of the holy area in Israel",
+      "A city of refuge",
+      "The property of Moses' family",
+      "The priests'"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Lev. 27:29",
+    "question": "Who was not allowed to be ransomed (Lev. 27:29)?",
+    "options": [
+      "A slave",
+      "A son or daughter",
+      "A priest",
+      "A person devoted for destruction"
+    ],
+    "answer": 3,
+    "level": "A"
+  }
+]
