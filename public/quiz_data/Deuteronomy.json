@@ -1,0 +1,2066 @@
+[
+  {
+    "ref": "Deut. 1:2",
+    "question": "What road does one take to go from Horeb to Kadesh Barnea (Deut. 1:2)?",
+    "options": [
+      "The Kadesh road",
+      "The Via Maris",
+      "The Negev road",
+      "The Mount Seir road"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 1:3",
+    "question": "In the Arabah, what did Moses proclaim to the Israelites (Deut. 1:3)?",
+    "options": [
+      "All the journey where they had gone",
+      "All that the LORD had commanded him",
+      "All the statutes and decrees of the LORD",
+      "All that he had seen on Mount Horeb"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 1:22",
+    "question": "Why were the spies sent out from Kadesh Barnea (Deut. 1:22f)?",
+    "options": [
+      "To see if there were giants there",
+      "To request permission to enter the land from the Amorites",
+      "To report on the route and towns they would come to",
+      "To determine how the land should be divided"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 2:4",
+    "question": "Esau's descendants settled in the hill country of _______ (Deut. 2:4)",
+    "options": [
+      "Negev",
+      "Gilead",
+      "Seir",
+      "Ephraim"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 2:5",
+    "question": "Who had given Esau the hill country of Seir (Deut. 2:5)?",
+    "options": [
+      "The LORD",
+      "The Horites",
+      "The Moabites",
+      "Chemosh"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 2:18",
+    "question": "The region of Moab is located at ______ (Deut. 2:18)",
+    "options": [
+      "Gilead",
+      "Bashan",
+      "Ar",
+      "Negev"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 2:14",
+    "question": "Who died as Israel went by Moab and Edom (Deut. 2:14)?",
+    "options": [
+      "Those that had complained of no food in the desert",
+      "Those that had complained of no water in the desert",
+      "Those who followed Korah opposing Moses and Aaron",
+      "The entire former generation of fighting men"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 2:19",
+    "question": "Who gave the Ammonites their land (Deut. 2:19)?",
+    "options": [
+      "The LORD",
+      "The Horites",
+      "The Moabites",
+      "Chemosh"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 2:23",
+    "question": "Who had formerly lived in villages as far as Gaza (Deut. 2:23)?",
+    "options": [
+      "Rephaites",
+      "Horites",
+      "Avvites",
+      "Emites"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 2:24",
+    "question": "Who was the king of Heshbon in the time of Moses (Deut. 2:24)?",
+    "options": [
+      "Og",
+      "Balak",
+      "Sihon",
+      "Hermon"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 2:24",
+    "question": "Both Sihon and Og were from what tribal group (Deut. 2:24)?",
+    "options": [
+      "Edomites",
+      "Amorites",
+      "Moabites",
+      "Amalekites"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 2:36",
+    "question": "What city sits on the rim of the Arnon Gorge (Deut. 2:36)?",
+    "options": [
+      "Hesbon",
+      "Medaba",
+      "Aroer",
+      "Ephrath"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 3:1",
+    "question": "Og and Israel did battle at _______ (Deut. 3:1)",
+    "options": [
+      "Medaba",
+      "Heshbon",
+      "Edrei",
+      "Jahaz"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 3:9",
+    "question": "Mount Hermon is called ______ by the Sidonians (Deut. 3:9)",
+    "options": [
+      "Sirion",
+      "Senir",
+      "Shivta",
+      "Sheba"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 3:9",
+    "question": "Mount Hermon is called ______ by the Amorites (Deut. 3:9)",
+    "options": [
+      "Sirion",
+      "Senir",
+      "Shivta",
+      "Sheba"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 3:13",
+    "question": "The rest of Gilead and Bashan was given to (Deut. 3:13)",
+    "options": [
+      "The Reubenites",
+      "The Gadites",
+      "The Danites",
+      "Half the tribe of Manasseh"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 3:14",
+    "question": "Who took the whole region of Argob (Deut. 3:14)?",
+    "options": [
+      "Caleb",
+      "Jair",
+      "Zelophehad",
+      "Azzan"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 3:14",
+    "question": "Argob is on the border of what two tribal regions (Deut. 3:14)?",
+    "options": [
+      "Moabites and Edomites",
+      "Amalekites and Amorites",
+      "Gershurites and Maacathites",
+      "Rephaites and Anakites"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 3:14",
+    "question": "What place was named after Jair \"to this day\" (Deut. 3:14)?",
+    "options": [
+      "Havvoth Jair",
+      "Shemoth Jair",
+      "Mizpeh Jair",
+      "Ramon Jair"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 3:17",
+    "question": "The Jordan river lies in the ________ (Deut. 3:17)",
+    "options": [
+      "Maktesh",
+      "Pisgah",
+      "Mizpeh",
+      "Arabah"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 3:24",
+    "question": "What request of Moses did God deny (Deut. 3:24ff)?",
+    "options": [
+      "His request to stay with tribe of Reuben",
+      "His request to cross the Jordan",
+      "His request to continue the manna",
+      "His request to forgive him for striking the rock"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:1",
+    "question": "What did Moses command the Israelites to hear (Deut. 4:1)",
+    "options": [
+      "The ten commandments from the tablets of stone",
+      "The laws and decrees he was about to teach them",
+      "The words of God which he spoke",
+      "The voice of God from the pillar of cloud over the tabernacle"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:1",
+    "question": "Who was giving Israel the land (Deut. 4:1)",
+    "options": [
+      "God Almighty",
+      "The LORD of hosts",
+      "The God of your fathers",
+      "The LORD of Sinai"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:12",
+    "question": "From Horeb God spoke to his people from (Deut. 4:12)",
+    "options": [
+      "The Tent of Meeting",
+      "A pillar of cloud",
+      "A fire",
+      "Mighty wind"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:13",
+    "question": "While Israel heard God's voice at Horeb they did not (Deut. 4:13)",
+    "options": [
+      "Understand what he said",
+      "See his form",
+      "Listen to his words",
+      "Draw near to touch him"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:13",
+    "question": "God declared his covenant to the Israelites at Horeb called (Deut. 4:13)",
+    "options": [
+      "The ten commandments",
+      "The law of the LORD",
+      "The covenant of circumcision",
+      "The covenant of Abraham, Isaac and Jacob"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:13",
+    "question": "God wrote the ten commandments on (Deut. 4:13)",
+    "options": [
+      "Their hearts",
+      "The pages of a book",
+      "Two tablets of stone",
+      "The side of the mountain"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:19",
+    "question": "What should Israel not be enticed to worship (Deut. 4:19)?",
+    "options": [
+      "Sun, moon and stars",
+      "Animals that move and crawl",
+      "Kings and priests",
+      "Rocks and trees"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:21",
+    "question": "Moses said the LORD was angry at him because (Deut. 4:21)",
+    "options": [
+      "He struck the rock",
+      "He had not obeyed fully",
+      "He did not listen to the voice of the LORD",
+      "Of them (the Israelites)"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:23",
+    "question": "Israel was to be careful not to forget __________ (Deut. 4:23)",
+    "options": [
+      "The covenant",
+      "The miracles of the LORD",
+      "Moses",
+      "What God did to Korah"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:24",
+    "question": "Moses said God was a consuming fire and a _______ God (Deut. 4:24)",
+    "options": [
+      "Zealous",
+      "Angry",
+      "Jealous",
+      "Holy"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:29",
+    "question": "The scattered Israelites would find God if they (Deut. 4:29)",
+    "options": [
+      "Looked for him with all their heart and soul",
+      "Confessed their sins and destroy their idols",
+      "Returned to Horeb and remember the laws",
+      "Humbled themselves and prayed"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 4:48",
+    "question": "Mount Siyon is another name for what mountain (Deut. 4:48)?",
+    "options": [
+      "Tabor",
+      "Olives",
+      "Hermon",
+      "Horeb"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 5:2",
+    "question": "What did God make with Israel at Horeb (Deut. 5:2)",
+    "options": [
+      "An alliance",
+      "A truce",
+      "A covenant",
+      "An agreement"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 5:5",
+    "question": "Why did Moses stand between God and Israel at Horeb (Deut. 5:5)?",
+    "options": [
+      "Because Israel was shamed by their sin",
+      "Because Israel feared a plague",
+      "Because Israel wanted Moses to present their requests",
+      "Because Israel was afraid of the fire"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 5:7",
+    "question": "God said they should have no other ________ (Deut. 5:7)",
+    "options": [
+      "Idols before me",
+      "Gods before me",
+      "Things before me",
+      "Loyalties before me"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 5:8",
+    "question": "God commanded that they should not make (Deut. 5:8)",
+    "options": [
+      "Injustice",
+      "People into slaves",
+      "An idol",
+      "Rebellion"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 5:11",
+    "question": "What should the Israelites not be misuse (Deut. 5:11)",
+    "options": [
+      "The glory of the LORD",
+      "The name of the LORD God",
+      "Their children",
+      "Their slaves"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 5:12",
+    "question": "The _________ was to be observed by keeping it holy (Deut. 5:12)",
+    "options": [
+      "Priesthood",
+      "Law",
+      "Word of the LORD",
+      "Sabbath"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 5:13",
+    "question": "How long were the Israelites to labor and work (Deut. 5:13)",
+    "options": [
+      "Five days a week",
+      "Six days a week",
+      "Seven days a week",
+      "Eight days a week"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 5:16",
+    "question": "Who did God command to be honored (Deut. 5:16)?",
+    "options": [
+      "The elders",
+      "The priests",
+      "Father and mother",
+      "God"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 5:22",
+    "question": "God wrote his commandments on (Deut. 5:22)",
+    "options": [
+      "A scroll",
+      "A skin of leather",
+      "On the side of the mountain",
+      "Two stone tablets"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 5:25",
+    "question": "At Horeb what did the Israelite leaders fear (Deut. 5:25)?",
+    "options": [
+      "They would disobey the voice of the LORD",
+      "The fire would consume them",
+      "The ground would open up and swallow them",
+      "The cloud would come down on them"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 5:29",
+    "question": "What did God wish for at Horeb (Deut. 5:29)?",
+    "options": [
+      "That they would honor him and listen to his words",
+      "That they would destroy all their idols and despise Egypt",
+      "That they would fear him and keep his commandments always",
+      "That they would worship him in spirit and in truth"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 5:10",
+    "question": "God shows his love to thousands of those who (Deut. 5:10)",
+    "options": [
+      "Walk in his ways",
+      "Fear him and walk in his ways",
+      "Trust him and walk righteously",
+      "Love him and keep his commandments"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 6:2",
+    "question": "Keeping the commandments would lead to (Deut. 6:2)",
+    "options": [
+      "A holy life",
+      "A long life",
+      "A joyful life",
+      "A happy life"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 6:4",
+    "question": "\"________, O Israel, the LORD our God, the LORD is one\" (Deut. 6:4)",
+    "options": [
+      "Obey",
+      "Trust",
+      "Hear",
+      "Remember"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 6:7",
+    "question": "The commandments were to be impressed upon (Deut. 6:7)",
+    "options": [
+      "The elders",
+      "The whole assembly",
+      "The children",
+      "The priests"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 6:8",
+    "question": "The commandments were to be tied as symbols on their (Deut. 6:8)",
+    "options": [
+      "Feet",
+      "Fingers",
+      "Hearts",
+      "Foreheads"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 7:6",
+    "question": "God considered Israel his ___________ (Deut. 7:6)",
+    "options": [
+      "Promised people",
+      "Special servants",
+      "Treasured possession",
+      "Crown jewel among the nations"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 7:8",
+    "question": "Why did God bring Israel out of the slavery of Egypt (Deut. 7:8)?",
+    "options": [
+      "Because he is a righteous God punishing oppressors",
+      "Because Pharaoh had hardened his heart against God",
+      "Because he wanted Israel to worship him at Horeb",
+      "Because he kept his oath he swore to their forefathers"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 7:8",
+    "question": "God had ________ Israel from the land of slavery in Egypt (Deut. 7:8)",
+    "options": [
+      "Redeemed",
+      "Delivered",
+      "Rescued",
+      "Reconciled"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 8:3",
+    "question": "Man does not live by bread but does live by what (Deut. 8:3)?",
+    "options": [
+      "The decrees and laws of the LORD",
+      "The promises of God given to their forefathers",
+      "The manna of the LORD",
+      "Every word that comes from the mouth of the LORD"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 8:5",
+    "question": "The LORD God disciplined Israel as (Deut. 8:5)",
+    "options": [
+      "A mother bear disciplines her cubs",
+      "A father disciplines a son",
+      "A king disciplines his people",
+      "A lion disciplines its cubs"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 9:1",
+    "question": "Israel was about the cross the _________ river (Deut. 9:1)",
+    "options": [
+      "Jabbok",
+      "Jordan",
+      "Kishon",
+      "Litani"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 9:10",
+    "question": "The two stone tablets were inscribed (Deut. 9:10)",
+    "options": [
+      "By the sword of the LORD",
+      "By the word of the God",
+      "By the finger of God",
+      "By the fire of God"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 9:18",
+    "question": "Israel's evil at Horeb had provoked God __________ (Deut. 9:18)",
+    "options": [
+      "To judgment",
+      "To jealousy",
+      "To regret",
+      "To anger"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 9:20",
+    "question": "At Horeb who did Moses pray for by name (Deut. 9:20)?",
+    "options": [
+      "Miriam",
+      "Aaron",
+      "Korah",
+      "Hobab"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 9:23",
+    "question": "What did the LORD tell Israel to do at Kadesh Barnea (Deut. 9:23)?",
+    "options": [
+      "Get water from a rock",
+      "Receive manna from the sky",
+      "Put a serpent on a pole",
+      "Go up and take the land"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 10:2",
+    "question": "Where were the commandments to be placed (Deut. 10:2)",
+    "options": [
+      "In a wooden chest",
+      "In a Tent of Meeting",
+      "In a gold frame",
+      "In the tents of the elders of Israel"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 10:6",
+    "question": "Who succeeded Aaron as priest (Deut. 10:6)?",
+    "options": [
+      "Ithamar",
+      "Eleazar",
+      "Caleb",
+      "Joshua"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 10:9",
+    "question": "Why do the Levites not have any inheritance in the land (Deut. 10:9)",
+    "options": [
+      "The Tent of Meeting was their inheritance",
+      "The people of Israel were to share their inheritance with them",
+      "The LORD is their inheritance",
+      "The law was their inheritance"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 10:16",
+    "question": "Moses told the Israelites they needed to circumcise their (Deut. 10:16)",
+    "options": [
+      "Flesh",
+      "Hearts",
+      "Minds",
+      "Souls"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 10:18",
+    "question": "Whose cause does God defend (Deut. 10:18)?",
+    "options": [
+      "Poor and needy",
+      "Humble and lowly",
+      "His chosen",
+      "The fatherless and widow"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 10:22",
+    "question": "How many originally went down into Egypt (Deut. 10:22)?",
+    "options": [
+      "Thirty-five",
+      "Seventy",
+      "Ninety",
+      "One-hundred and forty-four"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 11:8",
+    "question": "Israel was to observe the commands so that (Deut. 11:8f)",
+    "options": [
+      "They would live long in the land",
+      "They would receive the blessings of Abraham",
+      "They would be able to worship the LORD",
+      "They would be God's holy people"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 11:20",
+    "question": "Where on their homes were they to write God's word (Deut. 11:20)?",
+    "options": [
+      "Doorframes and gates",
+      "Tables and chairs",
+      "Windows and sills",
+      "Beds and doors"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 11:28",
+    "question": "If Israel disobeyed, what would come upon them (Deut. 11:28)?",
+    "options": [
+      "The discipline of the LORD",
+      "The curse",
+      "Their enemies would destroy them",
+      "The plagues of Egypt"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 12:5",
+    "question": "To what place were the Israelites to bring their sacrifices (Deut. 12:5)?",
+    "options": [
+      "The mountain of his own choosing",
+      "The place where the pillar of cloud would lead them",
+      "The place God would put his name",
+      "The Levitical cities"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 12:16",
+    "question": "What was not to be eaten in their towns (Deut. 12:16)?",
+    "options": [
+      "The blood",
+      "The head",
+      "The right thigh",
+      "The rear quarter"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 12:13",
+    "question": "Who had no inheritance or allotment of their own (Deut. 12:13)?",
+    "options": [
+      "The widows",
+      "The Levites",
+      "The aliens",
+      "The orphans"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 13:5",
+    "question": "What was to be done to the false prophet or dreamer (Deut. 13:5)?",
+    "options": [
+      "He was to be cut off from his people",
+      "He was to be put in prison",
+      "He was to be put outside the camp",
+      "He was to be put to death"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 14:1",
+    "question": "What two things were the Israelites not to do for the dead (Deut. 14:1)?",
+    "options": [
+      "Cut themselves or shave their heads",
+      "Tattoo themselves or pierce their lips",
+      "Embalm them or bury them with gold",
+      "Burn their bodies or tear their clothes"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 14:6",
+    "question": "What two requirements were there for clean land animals (Deut. 14:6)?",
+    "options": [
+      "Fur and move in herds",
+      "Split the hoof and chew the cud",
+      "Split the hoof and eat grains",
+      "Eat grains and have fur"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 14:9",
+    "question": "The clean water animals had to have (Deut. 14:9)",
+    "options": [
+      "Fins and gills",
+      "Gills and tails",
+      "Tails and scales",
+      "Fins and scales"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 14:21",
+    "question": "A young goat was not to be cooked in (Deut. 14:21)",
+    "options": [
+      "Its mother's milk",
+      "Fat",
+      "An open fire",
+      "Oil"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 14:22",
+    "question": "How much of their fields were they to tithe each year (Deut. 14:22)?",
+    "options": [
+      "A third",
+      "An eighth",
+      "A tenth",
+      "A quarter"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 14:27",
+    "question": "The Levites were not to be neglected because they (Deut. 14:27)",
+    "options": [
+      "Had no inheritance of their own",
+      "Had no flocks and herds",
+      "Carried the Tent of Meeting",
+      "Were the LORD's special inheritance"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 15:1",
+    "question": "Debts were to be cancelled every _______ years (Deut. 15:1)",
+    "options": [
+      "Three",
+      "Seven",
+      "Fourteen",
+      "Fifty"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 15:6",
+    "question": "Israel was told it would _________ the nations (Deut. 15:6)",
+    "options": [
+      "Lend to",
+      "Borrow from",
+      "Conquer",
+      "Reconcile"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 15:12",
+    "question": "A Hebrew slave must be set free after how many years (Deut. 15:12)?",
+    "options": [
+      "Three",
+      "Seven",
+      "Fourteen",
+      "Fifty"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 16:1",
+    "question": "What was to be celebrated in the month of Abib (Deut. 16:1)?",
+    "options": [
+      "Feast of Weeks",
+      "Feast of Tabernacles",
+      "Day of Atonement",
+      "Passover"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 16:2",
+    "question": "Where was the Passover to be sacrificed (Deut. 16:2)",
+    "options": [
+      "At the place the LORD will choose as a dwelling",
+      "At the Tent of Meeting in the heart of the promised land",
+      "On the threshing floor on the top of mount Pisgah",
+      "Where Israel would gather to serve the LORD"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 16:3",
+    "question": "Unleavened bread was called the bread of (Deut. 16:3)",
+    "options": [
+      "Slavery",
+      "Remembrance",
+      "The presence",
+      "Affliction"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 16:3",
+    "question": "Why was the bread unleavened (Deut. 16:3)?",
+    "options": [
+      "Because they left Egypt in haste",
+      "Because it was hard like their slavery had been",
+      "Because Pharaoh commanded no yeast be given to the Israelites",
+      "Because the yeast in bread represented sin"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 16:9",
+    "question": "The Feast of Weeks was to be seven weeks after (Deut. 16:9)",
+    "options": [
+      "The Feast of Tabernacles",
+      "The sickle was put to standing grain",
+      "The first day of the first month",
+      "The first grape was harvested"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 16:9",
+    "question": "At the Feast of Weeks a freewill offering was to be given (Deut. 16:9)",
+    "options": [
+      "As they thought about their sin",
+      "Remembering their slavery in Egypt",
+      "As required in the law",
+      "In proportion to the blessing of the LORD"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 16:18",
+    "question": "Judges were to be appointed in every ________ (Deut. 16:18)",
+    "options": [
+      "House",
+      "Clan",
+      "Town",
+      "District"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 16:20",
+    "question": "What sole guide was the judge to follow (Deut. 16:20)?",
+    "options": [
+      "Justice",
+      "Righteousness",
+      "Holiness",
+      "Integrity"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 17:6",
+    "question": "No one was to be put to death on the basis of (Deut. 17:6)",
+    "options": [
+      "The decision of the priests",
+      "One witness",
+      "Two witnesses",
+      "The decision of the judge"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 17:11",
+    "question": "One of the roles of the priests was to (Deut. 17:11)",
+    "options": [
+      "Teach the Israelites the law",
+      "Maintain justice in Israel",
+      "Show compassion to the aliens",
+      "Handle the blood of the covenant"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 17:14",
+    "question": "When Israel had settled in the land what would they say (Deut. 17:14)",
+    "options": [
+      "Let us go up to the house of the LORD",
+      "Let us appoint prophets to tell us the word of the LORD",
+      "Let us serve the LORD",
+      "Let us set a king over us"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 17:18",
+    "question": "What was the king to do for himself (Deut. 17:18)?",
+    "options": [
+      "Give his tithes to the priests",
+      "Lead the people in worship",
+      "Memorize the ten commandments",
+      "Write on a scroll a copy of the law"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 18:1",
+    "question": "Who got no allotment or inheritance in Israel (Deut. 18:1)?",
+    "options": [
+      "Priests and levites",
+      "Kings and prophets",
+      "Judges and elders",
+      "Gad and Reuben"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 18:2",
+    "question": "What were the priests and Levites to live off (Deut. 18:2)?",
+    "options": [
+      "Profits taken from the aliens and foreigners",
+      "The field surrounding the levitical cities",
+      "The taxes the people paid",
+      "The offerings made to the LORD"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 18:2",
+    "question": "What inheritance did the priests and Levites get (Deut. 18:2)?",
+    "options": [
+      "The land in the midst of Israel",
+      "The food from the Feasts",
+      "The LORD",
+      "The gold from the Tent of Meeting"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 18:16",
+    "question": "What did Israel ask at Horeb (Deut. 18:16)?",
+    "options": [
+      "Not to see the LORD's cloud lest they die",
+      "Not to have to draw near to the LORD's holy ground",
+      "Not to have to offer their own sacrifices",
+      "Not to hear the voice of the LORD lest they die"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 18:18",
+    "question": "What would God do for the prophet (Deut. 18:18)?",
+    "options": [
+      "Put God's words in his mouth",
+      "Tell him what was wrong with Israel",
+      "Guide him in the way he should go",
+      "Give him a copy of the law"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 18:22",
+    "question": "Israel could judge a prophet to be false if what he said (Deut. 18:22)",
+    "options": [
+      "Was not in the promises of God",
+      "Did not come true",
+      "Could not be verified by the priests",
+      "Did not make sense"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 19:3",
+    "question": "What were to be built because of the cities of refuge (Deut. 19:3)",
+    "options": [
+      "Walls",
+      "Altars",
+      "Roads",
+      "Gates"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 19:4",
+    "question": "For what type of person were the cities of refuge built (Deut. 19:4)?",
+    "options": [
+      "The warriors of Israel",
+      "Any one who killed someone",
+      "The Levites",
+      "The poor, fatherless and widow"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 19:8",
+    "question": "To whom did God promise to give the land by an oath (Deut. 19:8)",
+    "options": [
+      "Moses and Aaron",
+      "Himself",
+      "The forefathers",
+      "The heavens and earth"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 19:10",
+    "question": "The cities of refuge were to be set up so that (Deut. 19:10)",
+    "options": [
+      "Innocent blood would not be shed in the land",
+      "Israel could purge evil from their land",
+      "Forgiveness would rule the land the LORD was giving them",
+      "Justice would prevail in the land"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 20:2",
+    "question": "Just before battle, who was to address the people (Deut. 20:2)?",
+    "options": [
+      "Joshua",
+      "The judges",
+      "The elders",
+      "The priest"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 20:8",
+    "question": "Anyone who was afraid or fainthearted was to go home so (Deut. 20:8)",
+    "options": [
+      "He could learn to trust the LORD",
+      "The enemy would not be able to take advantage of their fear",
+      "His brothers would not become disheartened",
+      "Israel would be holy with no wavering"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 20:5",
+    "question": "Who was to send home anyone who was afraid (Deut. 20:5)",
+    "options": [
+      "The officers",
+      "The elders",
+      "The priests",
+      "The commander-in-chief"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 20:20",
+    "question": "What trees could be used for a long siege (Deut. 20:20)?",
+    "options": [
+      "Olive trees",
+      "Fig trees",
+      "Almond trees",
+      "Oak trees"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 21:17",
+    "question": "The firstborn son was a sign of ________ (Deut. 21:17)",
+    "options": [
+      "The father's first love",
+      "The LORD's blessing",
+      "The fathers strength",
+      "The fulfilling of the covenant"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 21:18",
+    "question": "To whom were the parents to bring a rebellious son (Deut. 21:18)",
+    "options": [
+      "The priest",
+      "The prophet",
+      "The judge",
+      "The elders"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 22:5",
+    "question": "Who does the LORD detest (Deut. 22:5)?",
+    "options": [
+      "A man that kills his neighbor's ox",
+      "A man who wears cloths of wool and linen",
+      "A man who sleeps with his father's wife",
+      "A man who wears women's clothing"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 22:9",
+    "question": "The fruit of a vineyard was defiled if (Deut. 22:9)",
+    "options": [
+      "An unclean animal was captured there",
+      "A dead bird was found there",
+      "An animal's blood was shed in the vineyard",
+      "Two kinds of seed were planted in the vineyard"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 22:11",
+    "question": "What two clothes were not to be woven together (Deut. 22:11)?",
+    "options": [
+      "Cotton and linen",
+      "Wool and linen",
+      "Wool and leather",
+      "Linen and silk"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 22:21",
+    "question": "What was to be purged from Israel (Deut. 22:21)?",
+    "options": [
+      "Sin",
+      "Shame",
+      "Evil",
+      "Guilt"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 22:30",
+    "question": "How would the father's bed be defiled (Deut. 22:30)?",
+    "options": [
+      "By sending the mother away in divorce",
+      "By giving one's daughter to a foreigner",
+      "Uncovering their father's nakedness",
+      "By marrying one's father's wife"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 23:1",
+    "question": "Who may not enter the assembly of the LORD (Deut. 23:1)?",
+    "options": [
+      "An Egyptian",
+      "A person with a withered hand",
+      "A person who has been emasculated",
+      "A person who was lame"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 23:4",
+    "question": "Who hired Balaam son of Beor from Aram Naharaim (Deut. 23:4)?",
+    "options": [
+      "Jebusites",
+      "Edomites",
+      "Moabites",
+      "Hittites"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 23:5",
+    "question": "Why did God turn Balaam's curse into a blessing (Deut. 23:5)?",
+    "options": [
+      "Because he loved Israel",
+      "Because of his promise",
+      "Because of Balaam's wickedness",
+      "Because Israel was walking in God's ways"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 23:7",
+    "question": "What two people groups are not to be abhorred (Deut. 23:7)?",
+    "options": [
+      "Jebusite and Ammonite",
+      "Ammonite and Moabite",
+      "Edomite and Egyptian",
+      "Hittite and Jebusite"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 23:15",
+    "question": "What was to happen if a slave sought refuge among them (Deut. 23:15)?",
+    "options": [
+      "He was to be returned to his owner",
+      "He was to be taken to the city of refuge",
+      "He was not to be returned to his owner",
+      "He was to be given refuge for three days"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 23:23",
+    "question": "What must they be sure to do (Deut. 23:23)?",
+    "options": [
+      "Sowing their seed in the spring",
+      "Pour oil on the head of the firstborn",
+      "Giving of their firstfruits to the poor",
+      "Bring a goat to the Feast of Trumpets"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 24:1",
+    "question": "A man could divorce his wife if (Deut. 24:1)",
+    "options": [
+      "She becomes displeasing to her husband",
+      "Her husband leaves Israel",
+      "She becomes unclean for over one month",
+      "She is unable to bear children"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 24:6",
+    "question": "What was not to be taken as security on a debt (Deut. 24:6)?",
+    "options": [
+      "A donkey",
+      "A sickle",
+      "Cistern",
+      "A millstone"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 24:7",
+    "question": "Israel was to _________ evil from among them (Deut. 24:7)",
+    "options": [
+      "Cast",
+      "Destroy",
+      "Purge",
+      "Reject"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 24:17",
+    "question": "Whose cloak was not to be taken in a pledge (Deut. 24:17)?",
+    "options": [
+      "The orphan",
+      "The alien",
+      "The poor",
+      "The widow"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 24:20",
+    "question": "Olives were gotten from the trees by (Deut. 24:20)",
+    "options": [
+      "Beating them",
+      "Shaking the tree",
+      "Sickle",
+      "Pruning hooks"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 25:1",
+    "question": "If people have a dispute, who was to decide the case (Deut. 25:1)?",
+    "options": [
+      "The prophets",
+      "The priests",
+      "The judges",
+      "The elders of the city"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 25:1",
+    "question": "What two decisions were the judges to render (Deut. 25:1)?",
+    "options": [
+      "Acquitting the innocent and condemning the guilty",
+      "Helping the poor and staying the hand of the mighty",
+      "Freeing the slaves and sending the guilty to jail",
+      "Bringing the guilty to justice and forgiving those that repent"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 25:2",
+    "question": "A person was not to be flogged with more than ____ lashes (Deut. 25:2)",
+    "options": [
+      "Ten",
+      "Twenty",
+      "Thirty",
+      "Forty"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 25:4",
+    "question": "What was not to be muzzled (Deut. 25:4)?",
+    "options": [
+      "The family dog when barking to protect the family",
+      "The ox while treading out the grain",
+      "A donkey carrying a load of grain to market",
+      "A camel while in the desert"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 25:13",
+    "question": "What was one not to have in their bag in Israel (Deut. 25:13)?",
+    "options": [
+      "Two differing weights",
+      "Gold mixed with silver",
+      "A knife",
+      "Their neighbor's seed"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 25:16",
+    "question": "The LORD _________ anyone who deals dishonesty (Deut. 25:16)",
+    "options": [
+      "Hates",
+      "Detests",
+      "Forgives",
+      "Judges"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 25:19",
+    "question": "The memory of Amalek was to be _________ by Israel (Deut. 25:19)",
+    "options": [
+      "Forgotten",
+      "Remembered",
+      "Written down",
+      "Blotted out"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 26:2",
+    "question": "Where were the firstfruits to be brought (Deut. 26:2)?",
+    "options": [
+      "To the place God will choose as a dwelling for his Name",
+      "To the place where the Spirit of God dwells among them",
+      "To the place where the Tent of Meeting was",
+      "To the place where God would show them"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 26:4",
+    "question": "Where was the basket of firstfruits to be set by the priest (Deut. 26:4)?",
+    "options": [
+      "Before the atonement cover",
+      "In front of the altar of the LORD",
+      "At the entrance of the Tent of Meeting",
+      "Next to the bread of the presence"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 26:19",
+    "question": "If Israel kept God's commands, he would set them (Deut. 26:19)",
+    "options": [
+      "On the mountain of his holiness",
+      "To rule over all the earth",
+      "As an example to the other nations",
+      "In honor high above all the nations he had made"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut 1:1",
+    "question": "When Israel crossed the Jordan, a special altar was to be built of",
+    "options": [
+      "Unshaped fieldstones",
+      "Bronze",
+      "Stone overlaid with gold",
+      "Carefully crafted stone"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 27:25",
+    "question": "One was cursed if they (Deut. 27:25)",
+    "options": [
+      "Killed a neighbor unintentionally",
+      "Accepted a bribe to kill an innocent person",
+      "Killed a priest",
+      "Left a baby to die"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 28:15",
+    "question": "The curses would come on Israel if they did what (Deut. 28:15)?",
+    "options": [
+      "Did not follow the LORD with a full heart",
+      "Did not obey the LORD",
+      "Did not set up the tabernacle in the land",
+      "Did not thank God for giving them their cities"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 28:32",
+    "question": "Under the curse, what would happen to their children (Deut. 28:32)?",
+    "options": [
+      "They would be given to another nation",
+      "They would be food for birds",
+      "They would die at birth",
+      "They would starve to death"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 28:34",
+    "question": "Under the curse, what would drive them mad (Deut. 28:34)",
+    "options": [
+      "Disease",
+      "The sights they would see",
+      "The lack of food",
+      "Their foreign gods"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 28:36",
+    "question": "Who would God drive to a nation unknown to them (Deut. 28:36)?",
+    "options": [
+      "Their priests",
+      "Their prophets",
+      "Their king",
+      "Their elders"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 28:39",
+    "question": "Under the curse, what would devour their vineyards (Deut. 28:39)?",
+    "options": [
+      "Their enemies",
+      "Birds",
+      "Worms",
+      "Locusts"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 28:44",
+    "question": "Under the curse, they would become the (Deut. 28:44)",
+    "options": [
+      "The foot not the arm",
+      "The head not the heart",
+      "The tail not the head",
+      "The ears not the eyes"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 28:68",
+    "question": "Under the curse Israel would offer themselves (Deut. 28:68)",
+    "options": [
+      "For sale as slaves but no one would buy them",
+      "As Servants of kings of foreign lands",
+      "As cattle for the slaughter",
+      "For service of foreign gods"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 29:9",
+    "question": "Moses warned them their prosperity depended on their (Deut. 29:9)",
+    "options": [
+      "Their being holy as He is holy",
+      "Their keeping the terms of the covenant",
+      "Their not returning to Egypt",
+      "Their loving God with all their hearts"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 29:23",
+    "question": "Under the covenant curses the land would become (Deut. 29:23)",
+    "options": [
+      "Smoke and fire",
+      "Dust and ashes",
+      "No milk and no honey",
+      "Salt and sulfur"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 29:29",
+    "question": "Moses said what things belonged unto the LORD (Deut. 29:29)?",
+    "options": [
+      "All things",
+      "The tithes and offerings",
+      "The secret things",
+      "The holy things"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 29:29",
+    "question": "What things belonged to \"us and our children forever\" (Deut. 29:29)?",
+    "options": [
+      "The commands of this law",
+      "The things revealed",
+      "The ways of the LORD",
+      "This land"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 30:10",
+    "question": "Where were God's decrees written (Deut. 30:10)?",
+    "options": [
+      "On the stone tablets",
+      "On their hearts",
+      "On the walls of their homes",
+      "In the book of the law"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 30:14",
+    "question": "The word Moses was commanding them was in their (Deut. 30:14)",
+    "options": [
+      "Ears",
+      "Way",
+      "Mouth",
+      "Mind"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 30:20",
+    "question": "Moses said the \"the __________ is your life\" (Deut. 30:20)",
+    "options": [
+      "Word of God",
+      "Lord",
+      "way of the LORD",
+      "land"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 31:2",
+    "question": "The LORD told Moses that he was not allowed to cross (Deut. 31:2)",
+    "options": [
+      "The Jordan River",
+      "The Mount of Pisgah",
+      "The Salt Sea",
+      "The boundary of Moab"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 31:6",
+    "question": "God said he would never leave or _________ the Israelites (Deut. 31:6)",
+    "options": [
+      "Forsake",
+      "Reject",
+      "Punish",
+      "Judge"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 31:7",
+    "question": "Moses told Joshua he was to be (Deut. 31:7)",
+    "options": [
+      "True and faithful",
+      "Wise and understanding",
+      "Humble and gracious",
+      "Strong and courageous"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 31:7",
+    "question": "Moses told Joshua one of his major tasks would be (Deut. 31:7)",
+    "options": [
+      "To defeat the giants",
+      "To rescue the poor and fatherless",
+      "To divide the land among the tribes for an inheritance",
+      "To guide Israel in the ways of the LORD"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 31:9",
+    "question": "Moses wrote down the law and gave it to whom (Deut. 31:9)?",
+    "options": [
+      "The priests who carried the ark of the covenant",
+      "The priests who sacrificed before the LORD",
+      "To Eleazar the high priest",
+      "To Joshua son of Nun"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 31:13",
+    "question": "Who must hear the law because they did not know it (Deut. 31:13)?",
+    "options": [
+      "All Israel",
+      "The children",
+      "The aliens in their midst",
+      "The elders of Israel"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 31:15",
+    "question": "Where did God appear as Moses was preparing to die (Deut. 31:15)?",
+    "options": [
+      "In a pillar of fire on Mount Pisgah",
+      "In a still small voice from between the cherubim",
+      "In a pillar of cloud over the entrance to the Tent",
+      "As a pillar of cloud on the shoulder of Joshua"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 32:10",
+    "question": "In the Song of Moses, Moses said God guarded Israel as (Deut. 32:10)",
+    "options": [
+      "A prized jewel",
+      "The tree of life",
+      "The apple of his eye",
+      "A special treasure"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 32:43",
+    "question": "In the Song of Moses, whose blood would God avenge (Deut. 32:43)?",
+    "options": [
+      "His servants'",
+      "The righteous",
+      "The children",
+      "His holy ones'"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 32:50",
+    "question": "Aaron died on what mountain (Deut. 32:50)?",
+    "options": [
+      "Sinai",
+      "Horeb",
+      "Hor",
+      "Nebo"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 33:5",
+    "question": "When Moses blessed the tribes, he described God as (Deut. 33:5)",
+    "options": [
+      "The king over Jeshurun",
+      "The eternal Father",
+      "The Mighty God",
+      "The shade of Israel"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 33:16",
+    "question": "In the blessing on Joseph, God was said to dwell (Deut. 33:16)",
+    "options": [
+      "On his holy mountain",
+      "In his sanctuary",
+      "In the burning bush",
+      "In Israel"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 34:1",
+    "question": "When Moses was about to die, what mountain did he climb (Deut. 34:1)?",
+    "options": [
+      "Mount Sinai",
+      "Mount Horeb",
+      "Mount Nebo",
+      "Mount Moriah"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut 1:1",
+    "question": "The mountain where Moses died was next to the plains of",
+    "options": [
+      "Ammon",
+      "Moab",
+      "Amelek",
+      "Edom"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 34:1",
+    "question": "The mountain where Moses died was across from what city (Deut. 34:1)?",
+    "options": [
+      "Jericho",
+      "Jerusalem",
+      "Shiloh",
+      "Bethel"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 34:1",
+    "question": "What did the LORD show Moses just before he died (Deut. 34:1)?",
+    "options": [
+      "His glory",
+      "His face",
+      "The whole land",
+      "The future"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 34:3",
+    "question": "Jericho is also called the city of (Deut. 34:3)",
+    "options": [
+      "Olives",
+      "Springs",
+      "The wall",
+      "Palms"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 34:5",
+    "question": "Moses was called the ________ of the LORD (Deut. 34:5)",
+    "options": [
+      "Servant",
+      "Prophet",
+      "Friend",
+      "Messenger"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 34:6",
+    "question": "Moses was buried in the valley opposite _______ (Deut. 34:6)",
+    "options": [
+      "Medaba",
+      "Beth Peor",
+      "Jerusalem",
+      "Shiloh"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Deut. 34:7",
+    "question": "How old was Moses when he died (Deut. 34:7)?",
+    "options": [
+      "100",
+      "120",
+      "140",
+      "180"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Deut. 34:9",
+    "question": "Moses was a unique prophet in what way (Deut. 34:9)?",
+    "options": [
+      "He knew God as a friend",
+      "He knew God face to face",
+      "He was a servant of the LORD",
+      "He spoke God's word"
+    ],
+    "answer": 1,
+    "level": "B"
+  }
+]

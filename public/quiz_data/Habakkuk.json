@@ -1,0 +1,650 @@
+[
+  {
+    "ref": "Hab 1:1",
+    "question": "What did Habakkuk receive (Hab 1:1)?",
+    "options": [
+      "A prophecy",
+      "A vision",
+      "An oracle",
+      "A message"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:2",
+    "question": "What does Habakkuk say was God’s response to his call for help (Hab 1:2)?",
+    "options": [
+      "He heard his cry",
+      "He did not listen",
+      "He answered his prayer",
+      "He ignored his plea"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:2",
+    "question": "What did Habakkuk cry out to God (Hab 1:2)?",
+    "options": [
+      "Help",
+      "Save",
+      "Why",
+      "Violence"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:3",
+    "question": "What did Habakkuk complain that God made him look at (Hab 1:3)?",
+    "options": [
+      "Violence",
+      "Injustice",
+      "Wickedness",
+      "Uncleanness"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:3",
+    "question": "What did Habakkuk complain that God had tolerated (Hab 1:3)?",
+    "options": [
+      "Unrighteousness",
+      "Folly",
+      "Wrong",
+      "Violence"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:4",
+    "question": "What does Habakkuk complain never prevails (Hab 1:4)?",
+    "options": [
+      "Righteousness",
+      "Justice",
+      "Wisdom",
+      "Forgiveness"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:4",
+    "question": "What does Habakkuk complain has happened to justice (Hab 1:4)?",
+    "options": [
+      "It is silent",
+      "It is nowhere to be found",
+      "It hides",
+      "It is perverted"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:6",
+    "question": "Who did God say he was going to raise up (Hab 1:6)?",
+    "options": [
+      "The Babylonians",
+      "The Assyrians",
+      "The Persians",
+      "The Egyptians"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:8",
+    "question": "To what is the Babylonian cavalry likened (Hab 1:8)?",
+    "options": [
+      "Locusts devouring everything in their path",
+      "Flying like a vulture swooping to devour",
+      "Running like a lion catching a deer",
+      "Fast as a desert storm"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:10",
+    "question": "Whom do the Babylonians deride (Hab 1:10)?",
+    "options": [
+      "Other nations",
+      "Kings",
+      "Foreign gods",
+      "The captives"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:10",
+    "question": "How do the Babylonians capture cities (Hab 1:10)?",
+    "options": [
+      "They lay siege to them",
+      "They burn down their gates",
+      "They build earthen ramps",
+      "They shoot fiery arrows into the city"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:12",
+    "question": "Habakkuk calls “My God” ___________ (Hab 1:12)",
+    "options": [
+      "My Shepherd",
+      "The Ancient of Days",
+      "Rock",
+      "Master"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:13",
+    "question": "What does Habakkuk say God’s relationship with evil cannot be (Hab 1:13)?",
+    "options": [
+      "His hands will surely not allow it",
+      "His ears cannot hear of it",
+      "His heart is too righteous to tolerate it",
+      "His eyes are too pure to look upon it"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:13",
+    "question": "Habakkuk saying God cannot tolerate wrong asks him how he can tolerate _____ (Hab 1:13)",
+    "options": [
+      "Injustice",
+      "The Unrighteous",
+      "The treacherous",
+      "The wicked"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:13",
+    "question": "What happens when God is silent (Hab 1:13)?",
+    "options": [
+      "The strong take advantage of the weak",
+      "The wicked swallow up the more righteous than themselves",
+      "The violent abuse their victims",
+      "The treacherous ensnare the unsuspecting"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:14",
+    "question": "Like what does Habakkuk say God has made humans (Hab 1:14)?",
+    "options": [
+      "Like fish in the sea that have no ruler",
+      "Like sheep to the slaughter",
+      "Like ants which work for so little",
+      "Like vultures devouring anything that is dying"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:15",
+    "question": "The wicked catches others up with all of the following methods EXCEPT (Hab 1:15)",
+    "options": [
+      "Hooks",
+      "Nets",
+      "Spears",
+      "Drag nets"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:16",
+    "question": "By what does the wicked’s net provide (Hab 1:16)?",
+    "options": [
+      "Luxury",
+      "Plunder",
+      "Slaves",
+      "Captives"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 1:17",
+    "question": "Habakkuk asks God if the wicked are to keep on emptying there nets resulting in what (Hab 1:17)?",
+    "options": [
+      "No fish left in the sea",
+      "Destroying nations without mercy",
+      "Exiling the people of Israel",
+      "Plunder piled over top of their walls"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:1",
+    "question": "Where does Habakkuk say he will station himself to see how God will answer him (Hab 2:1)?",
+    "options": [
+      "On the city walls",
+      "At the city gate",
+      "On the ramparts",
+      "On the mountain top"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:2",
+    "question": "What was Habakkuk asked to do with God’s revelation (Hab 2:2)?",
+    "options": [
+      "Eat the message",
+      "Rehearse it in the ears of the people",
+      "Carve it into stone",
+      "Write it down"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:1",
+    "question": "Why did Habakkuk stand at his watch (Hab 2:1)?",
+    "options": [
+      "To see what God would say to him",
+      "To express his complaint",
+      "To see the Babylonians coming",
+      "To guard his people as a watchman"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:2",
+    "question": "Why was Habakkuk to write the revelation on tablets (Hab 2:2)?",
+    "options": [
+      "So that all could read it",
+      "So that a herald may run with it",
+      "So that those at the temple may read it",
+      "So that it may be placed in the ark of the covenant"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:3",
+    "question": "While the revelation may linger what is Habakkuk to do (Hab 2:3)?",
+    "options": [
+      "Proclaim it",
+      "Read it to the king",
+      "Preach it in the city gate",
+      "Wait for it"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:4",
+    "question": "How will the righteous live (Hab 2:4)?",
+    "options": [
+      "By faith",
+      "By hope",
+      "By the word of the Lord",
+      "By grace"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:5",
+    "question": "What does he [Babylon] do to all people (Hab 2:5)?",
+    "options": [
+      "Takes them captive",
+      "Enslaves them",
+      "Destroys them",
+      "Sheds their blood"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:5",
+    "question": "What does he [Babylon] gather to himself (Hab 2:5)?",
+    "options": [
+      "Silver and gold",
+      "All the nations",
+      "Foreign plunder",
+      "Idols of each city"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:8",
+    "question": "Babylon is accused of doing all of the following EXCEPT (Hab 2:8)",
+    "options": [
+      "Plundering many nations",
+      "Shedding people’s blood",
+      "Toppling fortresses and towers",
+      "Destroying land and cities"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:9",
+    "question": "What will they do to escape the clutches of ruin (Hab 2:9)?",
+    "options": [
+      "Set his nest on high",
+      "Fortified his walls",
+      "Reinforced his gates",
+      "Dwelt on a mountain top"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:11",
+    "question": "What will cry out against the Babylonians (Hab 2:11)?",
+    "options": [
+      "The cedars of Lebanon",
+      "Those they have enslaved",
+      "Stones of the wall",
+      "The children"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:12",
+    "question": "Who receives a “woe” (Hab 2:12)?",
+    "options": [
+      "One who builds a city with bloodshed",
+      "One who exiles their neighbors who trusted them",
+      "One who makes an empire of slaves",
+      "One who builds temples to idols"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:14",
+    "question": "Like what will the knowledge of the glory of the Lord fill the earth (Hab 2:14)?",
+    "options": [
+      "As the waters cover the sea",
+      "As the sand on the seashore",
+      "As the stars of the heaven",
+      "As the sun lights up the sky"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:15",
+    "question": "Why does one keep pouring from a wineskin until their companion is drunk (Hab 2:15)?",
+    "options": [
+      "So they will not oppose them",
+      "So they can lead them away into exile",
+      "So they can gaze on their naked bodies",
+      "So they can oppress the needy"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:16",
+    "question": "What is coming around to the Babylonians (Hab 2:16)?",
+    "options": [
+      "A whirlwind blinding their eyes",
+      "The cup from the Lord’s right hand",
+      "The robe of the Lord’s wrath",
+      "What they had done to others"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:17",
+    "question": "What will terrify the Babylonians (Hab 2:17)?",
+    "options": [
+      "A shadow of darkness that will come over the land",
+      "The Medes and the Persians",
+      "The sun will be turned to blood",
+      "Their destruction of the animals"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:18",
+    "question": "What does God point to that the Babylonian idols cannot do (Hab 2:18)?",
+    "options": [
+      "Speak",
+      "Walk",
+      "Listen",
+      "Raise their hand"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:19",
+    "question": "What does an idol not have (Hab 2:19)?",
+    "options": [
+      "Life",
+      "Breathe",
+      "Sight",
+      "Hands"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 2:20",
+    "question": "When God is in his holy temple what should the response of the world be (Hab 2:20)?",
+    "options": [
+      "Hiding from his wrath",
+      "Covering their lips",
+      "Bowing to the ground before him",
+      "Silent before him"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:1",
+    "question": "On what does Habakkuk offer his prayer (Hab 3:1)?",
+    "options": [
+      "On Alamoth",
+      "On Gittith",
+      "On Miktam",
+      "On Shigionoth"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Hab 3:2",
+    "question": "What does Habakkuk pray God would remember in wrath (Hab 3:2)?",
+    "options": [
+      "Forgiveness",
+      "Love",
+      "Mercy",
+      "Redemption"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:2",
+    "question": "What does Habakkuk ask God to renew in his day (Hab 3:2)?",
+    "options": [
+      "His presence in the temple",
+      "Deliverance from bondage",
+      "His covenant",
+      "His deeds"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:3",
+    "question": "What does God’s praise fill (Hab 3:3)?",
+    "options": [
+      "The earth",
+      "The heavens",
+      "The land of Israel",
+      "Mount Zion"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:3",
+    "question": "From what mount does the Holy One come from (Hab 3:3)?",
+    "options": [
+      "Sinai",
+      "Zion",
+      "Paran",
+      "Nebo"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:4",
+    "question": "What does Habakkuk say God’s splendor is like (Hab 3:4)?",
+    "options": [
+      "The lofty mountains of Sinai",
+      "A thunder storm in the desert",
+      "The sunrise with rays flashing",
+      "A gentle rain in the summer"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:6",
+    "question": "What happened when God stood (Hab 3:6)?",
+    "options": [
+      "The earth shook",
+      "The mountains clapped their hands",
+      "The sun was darkened",
+      "The moon turned to blood"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:6",
+    "question": "Whose tents did Habakkuk see in distress (Hab 3:6)?",
+    "options": [
+      "Egypt",
+      "Aram",
+      "Gilead",
+      "Cushan"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Hab 3:7",
+    "question": "Whose dwellings did Habakkuk see in anguish (Hab 3:7)?",
+    "options": [
+      "Egypt",
+      "Midian",
+      "Aram",
+      "Gilead"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Hab 3:7",
+    "question": "What does Habakkuk portray God riding on (Hab 3:7)?",
+    "options": [
+      "On horses and his victorious chariots",
+      "On the clouds of the heavens",
+      "On the wings of the dawn",
+      "On eagles wings swooping down to devour"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:11",
+    "question": "Habakkuk describes lightning flashing from _____ (Hab 3:11)",
+    "options": [
+      "God’s eyes",
+      "The voice of the Lord",
+      "Mount Zion",
+      "God’s flashing spear"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:13",
+    "question": "Who did God come out to save (Hab 3:13)?",
+    "options": [
+      "His remnant",
+      "His sheep",
+      "His anointed one",
+      "His beloved"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:16",
+    "question": "For what will Habakkuk wait patiently (Hab 3:16)?",
+    "options": [
+      "The day of calamity coming on the nation invading Israel",
+      "The Day of the Lord coming with the clouds of heaven",
+      "The great day coming on all the unrighteous",
+      "The time of the end when injustice will be swept away forever"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:19",
+    "question": "Habakkuk says the Lord is ________ (Hab 3:19)",
+    "options": [
+      "His salvation",
+      "His rock",
+      "His Father",
+      "His strength"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:19",
+    "question": "What does God do for Habakkuk (Hab 3:19)?",
+    "options": [
+      "Makes his heart like a lion",
+      "Makes his feet like the feet of a deer",
+      "Makes him as strong as a bear",
+      "Gives him courage"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Hab 3:19",
+    "question": "Who is given directions at the end of Habakkuk’s prayer (Hab 3:19)?",
+    "options": [
+      "The king",
+      "The righteous",
+      "The people on Zion",
+      "The director of music"
+    ],
+    "answer": 3,
+    "level": "B"
+  }
+]

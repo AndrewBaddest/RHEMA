@@ -1,0 +1,3818 @@
+[
+  {
+    "ref": "Jn 1:1",
+    "question": "What was in the beginning with God (Jn 1:1)?",
+    "options": [
+      "The world",
+      "Wisdom",
+      "The Word",
+      "The heavenly hosts"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:1",
+    "question": "What was the Word (Jn 1:1)?",
+    "options": [
+      "God",
+      "Wisdom",
+      "The good news",
+      "Repent, for the kingdom is near"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:3",
+    "question": "How were all things made (Jn 1:3)?",
+    "options": [
+      "Through the Father",
+      "In six days",
+      "Through the Word",
+      "By God speaking"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:4",
+    "question": "What was the life that was in the Word (Jn 1:4)?",
+    "options": [
+      "The light of humanity",
+      "The hope of humanity",
+      "The fulfillment of the Scriptures",
+      "The destiny of humanity"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:5",
+    "question": "What has not overcome the light (Jn 1:5)?",
+    "options": [
+      "The wind",
+      "The darkness",
+      "The shadow of death",
+      "Evil"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:5",
+    "question": "Where did the light shine (Jn 1:5)?",
+    "options": [
+      "In the world",
+      "On a candle stick",
+      "In the darkness",
+      "From a city on a hill"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:7",
+    "question": "Why did John come (Jn 1:7)?",
+    "options": [
+      "To call the people to repentance",
+      "To announce the kingdom",
+      "As a forerunner",
+      "As a witness to the light"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:7",
+    "question": "Why did John testify concerning the light (Jn 1:7)?",
+    "options": [
+      "So that the light would not be extinguished",
+      "So that all people might have life",
+      "So that all people might believe",
+      "So that all may know the light"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:9",
+    "question": "To what does the true light give light (Jn 1:9)?",
+    "options": [
+      "To those who follow the light into the world",
+      "To everyone coming into the world",
+      "To all who believe",
+      "To those who open their eyes to see the light"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:11",
+    "question": "To what did he come (Jn 1:11)?",
+    "options": [
+      "The world",
+      "That which was his own",
+      "Those who would believe in him",
+      "Those who see the light"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:11",
+    "question": "What was the Word’s relationship to his own (Jn 1:11)?",
+    "options": [
+      "They despised and rejected him",
+      "They did not listen to him",
+      "They did not receive him",
+      "They ignored him"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:12",
+    "question": "What did the Word give to those believing in his name (Jn 1:12)?",
+    "options": [
+      "Eternal life",
+      "To overcome the world",
+      "The ability to follow the lamb wherever he goes",
+      "The right to become children of God"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:14",
+    "question": "What did the Word become (Jn 1:14)?",
+    "options": [
+      "A baby",
+      "Flesh",
+      "A son of man",
+      "The light of the world"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:14",
+    "question": "Whose glory have we seen (Jn 1:14)?",
+    "options": [
+      "The Word",
+      "The one and only Son",
+      "The Light of the world",
+      "The Son of David"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:15",
+    "question": "Who said, “He who comes after me has surpassed me” (Jn 1:15)?",
+    "options": [
+      "David",
+      "Simon Peter",
+      "Isaiah",
+      "John the Baptist"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:17",
+    "question": "Through whom did the law come (Jn 1:17)?",
+    "options": [
+      "The mouth of the Lord",
+      "Moses",
+      "David",
+      "The Word"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:17",
+    "question": "As the law came through Moses, what came through Jesus Christ (Jn 1:17)?",
+    "options": [
+      "Righteousness and justice",
+      "Glory and holiness",
+      "Grace and truth",
+      "Light and life"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:18",
+    "question": "Who has no one ever seen (Jn 1:18)?",
+    "options": [
+      "The Son",
+      "The Spirit",
+      "The wind",
+      "God"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:19",
+    "question": "Who did the Jewish leaders send to ask John who he was (Jn 1:19)?",
+    "options": [
+      "Servants and messengers",
+      "Priests and Levites",
+      "Centurions and temple guards",
+      "Teachers of the law and Pharisees"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 1:23",
+    "question": "What did John say about who he was, using the words of Isaiah (Jn 1:23)?",
+    "options": [
+      "The one preparing the way before the Son of David",
+      "The voice of one calling in the wilderness",
+      "Elijah who is to come in the days of the Messiah",
+      "The one running before the great king"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:24",
+    "question": "Who asked John why he baptized if he were not the Messiah (Jn 1:24)?",
+    "options": [
+      "The chief priests",
+      "The leaders of the synagogue",
+      "The teachers of the law",
+      "The Pharisees"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 1:26",
+    "question": "With what did John say he baptized (Jn 1:26)?",
+    "options": [
+      "Water",
+      "The Holy Spirit",
+      "Power",
+      "Righteousness and justice"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:27",
+    "question": "How did John describe Jesus (Jn 1:27)?",
+    "options": [
+      "One in whom the nations will trust",
+      "One who comes after me",
+      "One who baptizes with power",
+      "The one who the prophets spoke about"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:27",
+    "question": "What did John say he was not worthy to do for the one coming after him (Jn 1:27)?",
+    "options": [
+      "Tie a belt around his waist",
+      "Anoint him with oil",
+      "Untie the straps of his sandals",
+      "Kiss his hands"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:33",
+    "question": "What had the one who sent John told him how to identify the One coming (Jn 1:33)?",
+    "options": [
+      "The man who would seek to be baptized by you in the Jordan River",
+      "The man on whom you see the Spirit come down and remain on",
+      "The man who would heal the sick and give sight to the blind",
+      "The man who declared the kingdom of heaven was coming"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:33",
+    "question": "What did the one who sent John say the one coming would do (Jn 1:33)?",
+    "options": [
+      "Set his people free",
+      "Come with healing in his wings",
+      "Baptize with the Holy Spirit",
+      "Suffer at the hands of men"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:38",
+    "question": "What does “Rabbi” mean (Jn 1:38)?",
+    "options": [
+      "Master",
+      "Lord",
+      "Teacher",
+      "Dear Leader"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:39",
+    "question": "What hour was it when John’s disciple spent the day with Jesus (Jn 1:39)?",
+    "options": [
+      "Fifth",
+      "Seventh",
+      "Tenth",
+      "Twelfth"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 1:40",
+    "question": "Who was Andrew’s brother (Jn 1:40)?",
+    "options": [
+      "James",
+      "Simon Peter",
+      "John son of Zebedee",
+      "Thomas"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:41",
+    "question": "What does the Hebrew term “Messiah” mean in Greek (Jn 1:41)?",
+    "options": [
+      "King",
+      "Christ",
+      "Servant",
+      "Coming One"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:42",
+    "question": "Jesus identified Peter as the son of ________ (Jn 1:42)",
+    "options": [
+      "Zebedee",
+      "Zeruiah",
+      "John",
+      "Joseph"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 1:42",
+    "question": "What name did Jesus give to Simon (Jn 1:42)?",
+    "options": [
+      "Alphaeus",
+      "Justus",
+      "Alnathan",
+      "Cephas"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:44",
+    "question": "What town were Peter, Andrew and Philip from (Jn 1:44)?",
+    "options": [
+      "Capernaum",
+      "Gergasa",
+      "Tiberius",
+      "Bethsaida"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 1:45",
+    "question": "Who did Philip find and tell him about Jesus of Nazareth (Jn 1:45)?",
+    "options": [
+      "Nathanael",
+      "Bartholomew",
+      "Matthew",
+      "Judas the Zealot"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:46",
+    "question": "What objection did Nathanael make to Philip about Jesus (Jn 1:46)?",
+    "options": [
+      "Must not he be from Jerusalem?",
+      "How can he be from Galilee of the Gentiles?",
+      "Can any good thing come out of Nazareth?",
+      "Must not the Messiah come from Bethlehem of Judea?"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:47",
+    "question": "What did Jesus first say of Nathanael as he approached Jesus (Jn 1:47)?",
+    "options": [
+      "Here is a true Israelite, in whom there is nothing false",
+      "Here is a man who fears God and shuns evil",
+      "Here is a fisherman who will catch people from now on",
+      "Here is Israelite seeking eternal life in truth"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 1:51",
+    "question": "What did Jesus tell Nathanael that he would see (Jn 1:51)?",
+    "options": [
+      "The Spirit descending like a dove",
+      "A bush burning that doesn’t burn up",
+      "The Son of Man seated at the right hand of the Father",
+      "Angels ascending and descending on the Son of Man"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:1",
+    "question": "On what day did the wedding at Cana take place (Jn 2:1)?",
+    "options": [
+      "The first day",
+      "The third day",
+      "The fifth day",
+      "The sixth day"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:1",
+    "question": "Where did Jesus attend a wedding in Galilee (Jn 2:1)?",
+    "options": [
+      "Capernaum",
+      "Nazareth",
+      "Bethsaida",
+      "Cana"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:1",
+    "question": "Besides Jesus and his disciples, who was also at the wedding at Cana (Jn 2:1)?",
+    "options": [
+      "The chief priests",
+      "Nicodemus",
+      "Mary, Jesus’ mother",
+      "Zacchaeus"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:6",
+    "question": "How many stone water jars were present at the wedding at Cana (Jn 2:6)?",
+    "options": [
+      "Three",
+      "Four",
+      "Five",
+      "Six"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 2:8",
+    "question": "After filling the water jars with water, what did Jesus tell the servants to do (Jn 2:8)?",
+    "options": [
+      "Taste it to see if it was good",
+      "Draw some out and take it to the master of the banquet",
+      "Draw some out and give it to his mother Mary and his disciples",
+      "Draw some out and give it to the wedding guests"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:13",
+    "question": "When did Jesus go up to Jerusalem and clear the temple courts (Jn 2:13)?",
+    "options": [
+      "Around the Passover",
+      "Around the Day of Atonement",
+      "Around Pentecost",
+      "On the Sabbath"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 2:23",
+    "question": "Why did many people in Jerusalem believe in Jesus at the Passover (Jn 2:23)?",
+    "options": [
+      "Because of the signs he was performing",
+      "Because of his teaching",
+      "Because he spoke with authority and not as the Pharisees",
+      "Because he told them everything they ever did"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:1",
+    "question": "Nicodemus was of what religious sect (Jn 3:1)?",
+    "options": [
+      "Sadducees",
+      "Pharisees",
+      "Zealots",
+      "Herodians"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:2",
+    "question": "When did Nicodemus come to Jesus (Jn 3:2)?",
+    "options": [
+      "In the morning",
+      "During the heat of the day",
+      "At sunset",
+      "At night"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:2",
+    "question": "What did Nicodemus cite as proving that Jesus was from God (Jn 3:2)?",
+    "options": [
+      "The Law and the Prophets",
+      "He spoke like no one has spoken",
+      "The signs which he did",
+      "He taught with authority and not as the scribes"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:3",
+    "question": "What did Jesus say a person could not see unless they were born again (Jn 3:3)?",
+    "options": [
+      "The throne of God",
+      "The kingdom of heaven",
+      "The reign of the Son of David",
+      "The kingdom of God"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:4",
+    "question": "What did Nicodemus say could not be done a second time (Jn 3:4)?",
+    "options": [
+      "Drink one’s mother’s milk",
+      "The Son of Man come to earth",
+      "Enter their mother’s womb",
+      "Build the temple"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:5",
+    "question": "Jesus said who alone can enter the kingdom of God (Jn 3:5)?",
+    "options": [
+      "Those born of blood and water",
+      "Those born from above and below",
+      "Those born of God and of man",
+      "Those born of water and the Spirit"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:11",
+    "question": "What did Jesus say that they speak about to Nicodemus (Jn 3:11)?",
+    "options": [
+      "That which they have believed",
+      "That which they know",
+      "That which they have heard",
+      "That which they have proclaimed"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 3:13",
+    "question": "What did Jesus say Nicodemus had not believed (Jn 3:13)?",
+    "options": [
+      "Heavenly things",
+      "Things from the Scriptures",
+      "Earthly things",
+      "Spiritual things"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:14",
+    "question": "What did Moses lift up in the desert (Jn 3:14)?",
+    "options": [
+      "A snake",
+      "His hands",
+      "A spear",
+      "Spiritual food"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:15",
+    "question": "What did Jesus say everyone who believes in the Son of Man would have (Jn 3:15)?",
+    "options": [
+      "A heavenly home",
+      "Forgiveness of sin",
+      "Justification",
+      "Eternal life"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:15",
+    "question": "Who did Jesus say would have eternal life (Jn 3:15)?",
+    "options": [
+      "Everyone who does his word",
+      "Everyone who believes in the Son of Man",
+      "Everyone who seeks the Lord while he may be found",
+      "Everyone who was called"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:16",
+    "question": "Why did God give his Son (Jn 3:16)?",
+    "options": [
+      "Because he loved the world",
+      "Because he loved his own",
+      "Because he had compassion on all",
+      "Because he wanted to redeem mankind to himself"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:16",
+    "question": "How does Jesus identify the Son of God who was given (Jn 3:16)?",
+    "options": [
+      "The beloved Son",
+      "The perfect Son",
+      "The one and only Son",
+      "The firstborn Son"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:16",
+    "question": "How does one obtain eternal life (Jn 3:16)?",
+    "options": [
+      "By doing the works of the Father",
+      "By obeying the commands of the Father",
+      "By seeking God with all one’s heart",
+      "By believing in the one and only Son of God"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:17",
+    "question": "Why did God not send his Son into the world (Jn 3:17)?",
+    "options": [
+      "To save the world",
+      "To destroy the world",
+      "To restore the world",
+      "To condemn the world"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:18",
+    "question": "What is true of the one not believing in the Son of God (Jn 3:18)?",
+    "options": [
+      "He has not heeded the word of God",
+      "He has rejected the Holy One of God",
+      "He will never be forgiven neither in this world or the world to come",
+      "He stands condemned already"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:19",
+    "question": "Why did people love darkness more than the light (Jn 3:19)?",
+    "options": [
+      "Because they extinguished their light",
+      "Because they hid their light",
+      "Because their deeds were evil",
+      "Because they did not go to the light"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:20",
+    "question": "Why do people love darkness more than light (Jn 3:20)?",
+    "options": [
+      "So they can do evil all they want",
+      "So that they will not be blinded by the light",
+      "For the darkness will protect them",
+      "For fear that their deeds will be exposed"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:21",
+    "question": "Why will one who lives by the truth come into the light (Jn 3:21)?",
+    "options": [
+      "So that all may come to believe in the one and only Son of God",
+      "So that he may testify of the truth",
+      "So it will be seen that what he has done has been done through God",
+      "So the light may make his works shine like the sun"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:23",
+    "question": "Where was John baptizing (Jn 3:23)?",
+    "options": [
+      "At Bethel",
+      "At Aenon",
+      "At Jericho",
+      "At Adam"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 3:23",
+    "question": "Where is Aenon where John was baptizing (Jn 3:23)?",
+    "options": [
+      "By Bethany",
+      "By Jericho",
+      "By Salim",
+      "By Gilgal"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 3:28",
+    "question": "What explicit claim did John make concerning himself (Jn 3:28)?",
+    "options": [
+      "He was not the Son of David",
+      "He was not Elijah",
+      "He was not the Christ",
+      "He was not the Son of Man"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:30",
+    "question": "How did John characterize his relationship with Christ (Jn 3:30)?",
+    "options": [
+      "He is the Christ, I am Elijah who is to come",
+      "He must become greater, I must become less",
+      "I am the trumpet announcing the coming of the Lord",
+      "He comes into his temple, I am the servant of my Lord"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:31",
+    "question": "According to John the Baptist, who is above all (Jn 3:31)",
+    "options": [
+      "The one coming after me",
+      "The one with healing in his wings",
+      "The one who comes from above",
+      "The one who was born of a virgin"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:34",
+    "question": "Who speaks God’s words (Jn 3:34)?",
+    "options": [
+      "The Son of Man",
+      "The one God has sent",
+      "The one God has chosen",
+      "The Son of David"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 3:34",
+    "question": "What was given to the one whom God has sent (Jn 3:34)?",
+    "options": [
+      "God’s word",
+      "The Spirit without limit",
+      "The right to rule over God’s people",
+      "The way, the truth and the life"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:36",
+    "question": "Who has eternal life (Jn 3:36)?",
+    "options": [
+      "Whoever has been chosen",
+      "Whoever heeds God’s call",
+      "All those who love God",
+      "Whoever believe in the Son"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:36",
+    "question": "What will happen to the one who rejects the Son (Jn 3:36)?",
+    "options": [
+      "He will not see life",
+      "He will pass from life to death",
+      "He will be cast out of the kingdom of God",
+      "He will not receive forgiveness"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 3:36",
+    "question": "What will happen to the one who rejects the Son (Jn 3:36)?",
+    "options": [
+      "God will condemn him",
+      "God’s wrath remains on him",
+      "He will be thrown out into outer darkness",
+      "He will be rejected by God"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:1",
+    "question": "What did Jesus learn that the Pharisees had heard (Jn 4:1)?",
+    "options": [
+      "That he was a friend of tax-collectors and sinners",
+      "That he was coming to Jerusalem to denounce the temple",
+      "That he had healed a blind man on the Sabbath",
+      "That he was baptizing more disciples than John"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:4",
+    "question": "In order to go from Judea to Galilee, what region did Jesus pass through (Jn 4:4)?",
+    "options": [
+      "Decapolis",
+      "Samaria",
+      "Gilead",
+      "Jezreel"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:5",
+    "question": "What was the town called where Jacob gave Joseph a plot of land (Jn 4:5)?",
+    "options": [
+      "Tirzah",
+      "Sychar",
+      "Shiloh",
+      "Bethel"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 4:6",
+    "question": "What did Jesus do in Samaria because he was tired of the journey (Jn 4:6)?",
+    "options": [
+      "He went and sat under a tree",
+      "He found a cave and laid down there",
+      "He sat by a well",
+      "He rested in an open field"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:6",
+    "question": "What well was located near the town of Sychar in the region of Samaria (Jn 4:6)?",
+    "options": [
+      "Abraham’s well",
+      "Judah’s well",
+      "Joseph’s well",
+      "Jacob’s well"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:8",
+    "question": "Where were Jesus’ disciples when he asked the woman of Samaria for a drink (Jn 4:8)?",
+    "options": [
+      "They had gone into the town to buy food",
+      "They had gone to the city gate to get a donkey",
+      "They had walked through the fields picking grain",
+      "They were asleep"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:7",
+    "question": "What did Jesus initially ask the Samaritan woman (Jn 4:7)?",
+    "options": [
+      "Why are you drawing water at noon?",
+      "Will you give me a drink?",
+      "Where do you live?",
+      "Would you like living water?"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:9",
+    "question": "Why did the Samaritan woman ask Jesus how he could ask a drink from her (Jn 4:9)?",
+    "options": [
+      "Because it was improper for men to make such requests of women",
+      "Because she was drawing water only for her family",
+      "Because Jesus was a Jew and she was a Samaritan",
+      "Because it was raining"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:10",
+    "question": "Jesus told the Samaritan woman she should have asked for what from him (Jn 4:10)?",
+    "options": [
+      "Living water",
+      "Fresh water",
+      "Sweet wine",
+      "The forgiveness of sins"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:12",
+    "question": "After offering the woman of Samaria water, what did the woman ask Jesus (Jn 4:12)?",
+    "options": [
+      "Are you greater than our father Abraham who drank at this well",
+      "Are you greater than John the Baptist who used this water",
+      "Are you greater than our father Jacob who gave us this well",
+      "Are you greater than Joseph who dug this well"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:14",
+    "question": "Jesus said he could give water that would have what result (Jn 4:14)?",
+    "options": [
+      "The one drinking would never thirst again",
+      "The one drinking would never have to return to this well",
+      "The one drinking would find satisfaction to their soul",
+      "The one drinking would never thirst for the Spirit of God"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:14",
+    "question": "What would the water Jesus would give the woman of Samaria result in (Jn 4:14)?",
+    "options": [
+      "The forgiveness of sins",
+      "A spring of water to eternal life",
+      "The true light shining into the world",
+      "Flowing rivers of righteousness"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:17",
+    "question": "When asked about her husband, what did the woman of Samaria say (Jn 4:17)?",
+    "options": [
+      "She was not married",
+      "She had no husband",
+      "He was on a long trip",
+      "He was at home while she drew water"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:20",
+    "question": "Where did the Jews consider their place of worship (Jn 4:20)?",
+    "options": [
+      "Shiloh",
+      "Bethel",
+      "Gilgal",
+      "Jerusalem"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:23",
+    "question": "What does the Father seek (Jn 4:23)?",
+    "options": [
+      "Those who worship him in spirit and in truth",
+      "Those who do what is right and love mercy",
+      "Those who seek him",
+      "Those who have compassion on others"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:29",
+    "question": "What did the Samaritan woman tell the people of the town (Jn 4:29)?",
+    "options": [
+      "Come, follow me and I will show you the Christ",
+      "Come, see a man who told me everything I ever did",
+      "I have met a Jew who knows how to worship God in truth",
+      "Come, and I will show you the kingdom of God this day"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:36",
+    "question": "Jesus said the reaper harvests the crop for _________ (Jn 4:36)?",
+    "options": [
+      "The day of salvation",
+      "The day of the Lord",
+      "Eternal life",
+      "The coming of the Son of Man"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 4:38",
+    "question": "What have the disciples reaped according to Jesus (Jn 4:38)?",
+    "options": [
+      "The benefits of other’s labor",
+      "What God had planted",
+      "The gift of God",
+      "Food for eternal life"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:39",
+    "question": "Why did many from the town of Sychar believe in Jesus (Jn 4:39)?",
+    "options": [
+      "When they saw the miracles that Jesus did",
+      "Because of the woman’s testimony",
+      "Because Jesus accepted the Samaritans",
+      "When they realized he was from Galilee and not Judea"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:44",
+    "question": "What had Jesus pointed out about a prophet’s honor (Jn 4:44)?",
+    "options": [
+      "They have no honor in their own country",
+      "They have no honor if they speak God’s word",
+      "They only have honor is they are false prophets",
+      "They have no honor if they show no signs"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:45",
+    "question": "Why did the Galileans welcome Jesus (Jn 4:45)?",
+    "options": [
+      "They had heard him teach with authority when in Jerusalem",
+      "They had seen all he had done in Jerusalem at the Passover",
+      "They had seen him heal the sick and raise the dead",
+      "They had heard him tell the Pharisees he would destroy the temple"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:48",
+    "question": "What did Jesus complain was the only way they would believe (Jn 4:48)?",
+    "options": [
+      "Unless they saw him rise from the dead",
+      "Unless they saw him do signs and wonders",
+      "Unless he agreed with their traditions",
+      "Unless he fed them by multiplying food"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:53",
+    "question": "How did the father know that Jesus had healed his son of a high fever (Jn 4:53)?",
+    "options": [
+      "The fever left the moment Jesus touched him",
+      "The fever left at the exact time when Jesus told him his son would live",
+      "The fever left after his son was dipped seven times in the water",
+      "The fever left after his son was anointed by oil"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 4:52",
+    "question": "At what hour did the royal official’s son have his fever broken (Jn 4:52)?",
+    "options": [
+      "The fifth hour",
+      "The seventh hour",
+      "The tenth hour",
+      "The twelfth hour"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 4:53",
+    "question": "What was the result of the royal official’s son being healed by Jesus (Jn 4:53)?",
+    "options": [
+      "He praised God",
+      "He invited Jesus and his disciples to stay with him",
+      "He and his household believed",
+      "He spread the news of what Jesus had done through all Galilee"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:2",
+    "question": "Where is the pool of Bethesda (Jn 5:2)?",
+    "options": [
+      "By the Lion’s Gate in Jerusalem",
+      "By the Damascus Gate in Jerusalem",
+      "By the Sheep Gate in Jerusalem",
+      "By the Jaffa Gate in Capernaum"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:2",
+    "question": "With what is the Bethesda surrounded (Jn 5:2)?",
+    "options": [
+      "Three large foot washing pools",
+      "Ten large pillars",
+      "Twenty-five beds for sick to lie on",
+      "Five covered colonnades"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:6",
+    "question": "Who did Jesus address at the pool of Bethesda (Jn 5:6)?",
+    "options": [
+      "An invalid of thirty-eight years",
+      "A crowd hoping to see a miracle",
+      "A man who was born blind",
+      "The chief priests trying to see if he would heal on the Sabbath"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:9",
+    "question": "On what day did Jesus heal the invalid at the pool of Bethesda (Jn 5:9)?",
+    "options": [
+      "The first day of the week",
+      "On the Passover",
+      "On the Sabbath",
+      "On the Feast of Trumpets"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:16",
+    "question": "Why did the Jewish leaders begin to persecute Jesus (Jn 5:16)?",
+    "options": [
+      "Because Jesus did not wash his hands before eating the holy bread",
+      "Because Jesus did miracles on the Sabbath",
+      "Because Jesus turned over the tables of the money changers",
+      "Because Jesus said the temple would be destroyed"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:25",
+    "question": "What time is coming and has now come according to Jesus (Jn 5:25)?",
+    "options": [
+      "When the righteous will receive their reward",
+      "When heaven and earth will bow before the majesty on high",
+      "When the Son of Man will be revealed and the kingdom will come",
+      "When the dead will hear the voice of the Son of God and live"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:29",
+    "question": "To what will those who have done evil rise (Jn 5:29)?",
+    "options": [
+      "To eternal death",
+      "To the fires of hell",
+      "To shame and disgrace",
+      "To be condemned"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:33",
+    "question": "Who did Jesus say testified to the truth (Jn 5:33)?",
+    "options": [
+      "The Father",
+      "John",
+      "The Scriptures",
+      "The apostles"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:36",
+    "question": "To what does the work that Jesus was given to finish testify of (Jn 5:36)?",
+    "options": [
+      "That he is the Son of God with power",
+      "That he is doing the Father’s bidding",
+      "That the Father has sent me",
+      "That he is the Son of Man"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:39",
+    "question": "What did Jesus say testifies concerning him (Jn 5:39)?",
+    "options": [
+      "The witness of the apostles",
+      "The community",
+      "The rocks",
+      "The Scriptures"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:42",
+    "question": "What did Jesus say he knew about his opponents (Jn 5:42)?",
+    "options": [
+      "They followed the traditions of men",
+      "They did not have the love of God in their hearts",
+      "They loved the praise of men",
+      "They hated him because he told them the truth"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 5:45",
+    "question": "Who did Jesus say would be his opponents accuser before the Father (Jn 5:45)?",
+    "options": [
+      "Isaiah",
+      "David",
+      "Moses",
+      "Their children"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:1",
+    "question": "The Sea of Galilee is also called ________ (Jn 6:1)",
+    "options": [
+      "Sea of Caesarea",
+      "Sea of Augustus",
+      "Sea of Tiberius",
+      "Sea of Capernaum"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:2",
+    "question": "Why did the crowds follow Jesus (Jn 6:2)?",
+    "options": [
+      "They believed in him",
+      "They saw the signs he performed by healing",
+      "They hoped that he was the one to bring in the kingdom",
+      "They thought he was John come back to life"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:3",
+    "question": "When did Jesus cross the lake and go up on a mountain with his disciples (Jn 6:3f)?",
+    "options": [
+      "Early the next morning",
+      "In the evening before the sunset",
+      "When was seeking a desolate place to pray",
+      "Near the Jewish Passover"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 6:6",
+    "question": "Why did Jesus ask Philip about where they would buy bread for the crowds (Jn 6:6)?",
+    "options": [
+      "To strength his faith by giving him a sign",
+      "To test him for he knew what he was going to do",
+      "To get him to see the kingdom of God come on earth",
+      "To get him to believe in Jesus unto eternal life"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:9",
+    "question": "What did Andrew tell Jesus was available for food for the crowd (Jn 6:9)?",
+    "options": [
+      "Five small barley loaves and two small fish",
+      "Twelve wheat loaves and four fish",
+      "Ten loaves and a jug of olive oil",
+      "A cluster of figs and twelve loaves of bread"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:10",
+    "question": "How many sat down on the grass to be fed by Jesus (Jn 6:10)?",
+    "options": [
+      "500",
+      "1,000",
+      "4,000",
+      "5,000"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:14",
+    "question": "After the five thousand ate, what did they conclude about Jesus (Jn 6:14)?",
+    "options": [
+      "He was the Christ promised by Isaiah",
+      "He was the Prophet who is to come into the world",
+      "He was the Son of God who would come with healing in his wings",
+      "He was the Son of David whose dynasty was to rule over Israel"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:20",
+    "question": "What did Jesus say to the disciples as he was walking on the water (Jn 6:20)?",
+    "options": [
+      "Come to me",
+      "O you of little faith",
+      "Be still –and the wind died down",
+      "It is I, don’t be afraid"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:21",
+    "question": "What happened when Jesus got into the boat after walking on the water (Jn 6:21)?",
+    "options": [
+      "Immediately they reached the shore where they were going",
+      "Immediately the storm stopped",
+      "Immediately the boat was emptied of water",
+      "Immediately Peter wanted to come to Jesus on the water"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:26",
+    "question": "Why did Jesus tell the people they were looking for him (Jn 6:26)?",
+    "options": [
+      "Because they were seeking eternal life",
+      "Because many of them needed healing",
+      "Because they ate the loaves and had their fill",
+      "Because they thought he was a king who would defeat the Romans"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:27",
+    "question": "What has God the Father placed on the Son of Man (Jn 6:27)?",
+    "options": [
+      "His crown of righteousness",
+      "His anointing by the Holy Spirit",
+      "His seal of approval",
+      "His full confidence"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:32",
+    "question": "What did Jesus correct in the crowd’s understanding of manna (Jn 6:32)?",
+    "options": [
+      "Moses didn’t give it to them but the Father",
+      "Manna was only temporary",
+      "Moses could do nothing by himself",
+      "Manna was a sign the Moses was the servant of the Lord"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:34",
+    "question": "How did Jesus respond to the request “give us this bread” (Jn 6:34f)?",
+    "options": [
+      "What does the Scriptures say?",
+      "Believe on the Lord Jesus Christ and you will have the bread of life",
+      "Whoever believes in me will never hunger",
+      "I am the bread of life"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:35",
+    "question": "Jesus said, who will never be thirsty (Jn 6:35)?",
+    "options": [
+      "Whoever believes in me",
+      "Whoever drinks my blood",
+      "Whoever takes the cup",
+      "Whoever does the will of the Father"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:37",
+    "question": "What will happen to those whom the Father gives to Jesus (Jn 6:37)?",
+    "options": [
+      "Jesus will never let them go",
+      "Jesus will treasure them forever",
+      "Jesus will never drive them away",
+      "They will be secure forever in his hands"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:38",
+    "question": "Why did Jesus come down from heaven (Jn 6:38)?",
+    "options": [
+      "To rule over the house of Israel",
+      "To save my people from their sins",
+      "To offer my life a sacrifice for many",
+      "To do the will of him who sent him"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:39",
+    "question": "What will Jesus do for those he has been given from the Father (Jn 6:39)?",
+    "options": [
+      "Jesus will raise them on the last day",
+      "Jesus will treasure them close to his heart",
+      "Jesus will bring them into glory",
+      "Jesus will forgive their sins"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:44",
+    "question": "Who are the only ones who can come to Jesus (Jn 6:44)?",
+    "options": [
+      "Only those who eat the bread of life",
+      "Only those who believe and follow him",
+      "Only those who the Father draws them",
+      "Only those who hear the call of the Father"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:47",
+    "question": "Who did Jesus say has everlasting life (Jn 6:47)?",
+    "options": [
+      "Whoever hears my words",
+      "Whoever hears my words and does them",
+      "Whoever comes and follows me",
+      "Whoever believes"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:50",
+    "question": "Which person will not die (Jn 6:50)?",
+    "options": [
+      "One who hears my words and does them",
+      "One who eats the bread come down from heaven",
+      "One who eats my flesh and drinks my blood",
+      "One who believes that the Father has sent me"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:51",
+    "question": "What does Jesus say his bread is (Jn 6:51)?",
+    "options": [
+      "The manna from heaven",
+      "His word",
+      "His works",
+      "His flesh"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:53",
+    "question": "What does one have to do in order to get life (Jn 6:53)?",
+    "options": [
+      "Eat the flesh and drink the blood of the Son of Man",
+      "Follow Jesus and believe in his works",
+      "Look to the Son of David to rule over Israel",
+      "Believe on the Son of Man and do the works that he does"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:56",
+    "question": "What does one need to do to remain in Jesus (Jn 6:56)?",
+    "options": [
+      "Believe in him",
+      "Keep his word",
+      "Eat his flesh and drink his blood",
+      "Be obedient to the Father of lights"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:59",
+    "question": "Where did Jesus give his teaching on the living bread come from heaven (Jn 6:59)?",
+    "options": [
+      "The synagogue at Bethsaida",
+      "The synagogue at Capernaum",
+      "On the side of a mountain",
+      "In the temple courts"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 6:63",
+    "question": "What did Jesus claim his words were (Jn 6:63)?",
+    "options": [
+      "Spirit and life",
+      "Truth and life",
+      "Holy, righteous and true",
+      "The way and the life"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:68",
+    "question": "What confession did Peter make concerning Jesus (Jn 6:68)?",
+    "options": [
+      "You speak the words of God in truth",
+      "You have the words of eternal life",
+      "You are the light of the world",
+      "You are the bread of life"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 6:70",
+    "question": "Jesus said he had chosen the Twelve but one of them was a(n) _______ (Jn 6:70)?",
+    "options": [
+      "A traitor",
+      "A betrayer",
+      "An evil one",
+      "A devil"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 7:19",
+    "question": "Who did Jesus say gave them the law (Jn 7:19)?",
+    "options": [
+      "The Spirit",
+      "The Father",
+      "The prophets of old",
+      "Moses"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 7:23",
+    "question": "What did Jesus parallel with circumcising a child on the Sabbath with (Jn 7:23)?",
+    "options": [
+      "Pulling an ox out of a ditch on the Sabbath",
+      "Harvesting crops on the Sabbath",
+      "Having a baby on the Sabbath",
+      "His making a man whole on the Sabbath"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 7:25",
+    "question": "What did some of the people of Jerusalem begin to ask (Jn 7:25)?",
+    "options": [
+      "Isn’t this the Son of David?",
+      "Will the Messiah do greater miracles than these?",
+      "Isn’t this the man they are trying to kill?",
+      "Why are the rulers so opposed to this man?"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 7:30",
+    "question": "Why could no one lay a hand on Jesus (Jn 7:30)?",
+    "options": [
+      "Because he was protected by his Father in heaven",
+      "Because he left the temple courts",
+      "They were unable to arrest him because of the crowds",
+      "Because his time had not yet come"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 7:51",
+    "question": "Who said “Does our law condemn anyone without first hearing him” (Jn 7:51)?",
+    "options": [
+      "Caiaphas",
+      "Joseph of Arimathea",
+      "Nicodemus",
+      "Pilate"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:1",
+    "question": "Where did Jesus go before he returned to the temple courts (Jn 8:1)?",
+    "options": [
+      "The spring of Gihon",
+      "The Pool of Bethesda",
+      "The City of David",
+      "The Mount of Olives"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 8:11",
+    "question": "What words of comfort did Jesus say to the woman caught in adultery (Jn 8:11)?",
+    "options": [
+      "Blessed are you among women",
+      "Your sins which were many are now forgiven",
+      "Believe in me and you will have eternal life",
+      "Neither do I condemn you"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:14",
+    "question": "What did Jesus say the Pharisees did not know about him (Jn 8:14)?",
+    "options": [
+      "They don’t know how he heals those who are blind, lame and mute",
+      "They don’t know where he came from or where he is going",
+      "They don’t know his heavenly Father",
+      "They don’t know the Scriptures or the power of God"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:17",
+    "question": "In the Law, what is needed to establish something as true (Jn 8:17)?",
+    "options": [
+      "The community must decide",
+      "The casting of lots",
+      "The judge must certify it",
+      "Two witnesses"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:18",
+    "question": "Who is the witness that testifies with Jesus (Jn 8:18)?",
+    "options": [
+      "The Spirit who witnesses for him",
+      "The Father who sent him",
+      "His disciples who are with him",
+      "The signs which he does"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:20",
+    "question": "Why did no one seize Jesus when he taught in the temple courts (Jn 8:20)?",
+    "options": [
+      "The crowds protected him",
+      "The disciples surrounded him",
+      "He slipped away",
+      "His hour had not yet come"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:23",
+    "question": "Where did Jesus say he was from, in contrast to the Jews (Jn 8:23)?",
+    "options": [
+      "I am from Galilee, you are from Jerusalem",
+      "I am from above, you are from below",
+      "I am from Bethlehem, you are from Jerusalem",
+      "I am from God, you are from the devil"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:26",
+    "question": "What does Jesus tell the world (Jn 8:26)?",
+    "options": [
+      "What the Scripture has said",
+      "What the Spirit of God has told him to say",
+      "What he has heard from the one who sent him",
+      "What he has seen in heaven"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:28",
+    "question": "What did Jesus say he speaks (Jn 8:28)?",
+    "options": [
+      "Just what the Father has taught him",
+      "Only what the Scriptures have said",
+      "What the Spirit of truth has told him",
+      "Grace and truth"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:29",
+    "question": "Who did Jesus say has not left him alone (Jn 8:29)?",
+    "options": [
+      "The Father",
+      "The one who sent him",
+      "The Spirit of truth",
+      "The angels of God"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:32",
+    "question": "What did Jesus say would set you free (Jn 8:32)?",
+    "options": [
+      "Love",
+      "The truth",
+      "Eternal life",
+      "Hope"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:36",
+    "question": "Who needs to set you free to be free indeed (Jn 8:36)?",
+    "options": [
+      "The Son",
+      "The Spirit",
+      "The Father",
+      "The Law of Moses"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:44",
+    "question": "Who did Jesus say was the father of the Jews (Jn 8:44)?",
+    "options": [
+      "Abraham",
+      "Cain",
+      "Balaam",
+      "The devil"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:44",
+    "question": "What was the devil from the beginning (Jn 8:44)?",
+    "options": [
+      "A liar",
+      "A murderer",
+      "A deceiver",
+      "Full of pride"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:44",
+    "question": "Jesus calls the devil the father of ______ (Jn 8:44)?",
+    "options": [
+      "Lies",
+      "Deception",
+      "Evil",
+      "Pride"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:50",
+    "question": "Who seeks Jesus’ glory (Jn 8:50)?",
+    "options": [
+      "The king of heaven",
+      "The Spirit",
+      "Those who believe in him",
+      "The judge"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 8:56",
+    "question": "Who saw Jesus’ day and was glad (Jn 8:56)?",
+    "options": [
+      "David",
+      "Isaiah",
+      "Abraham",
+      "Moses"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 8:58",
+    "question": "What did Jesus say that prompted the Jews to pick up stones to stone him (Jn 8:58)?",
+    "options": [
+      "I am the way, the truth, and the life",
+      "I am the bread of life",
+      "Before Abraham was born, I am",
+      "I spoke to Moses from the bush"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 9:3",
+    "question": "Why did Jesus say the man was born blind (Jn 9:3)?",
+    "options": [
+      "So that he might be a sign to those who do not believe",
+      "So that he might give glory to God the Father",
+      "So that he may teach the leaders",
+      "So that the works of God might be displayed in him"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 9:6",
+    "question": "What did Jesus do to heal the man born blind (Jn 9:6)?",
+    "options": [
+      "Spit and made mud and put it on his eyes",
+      "Spoke and the man could see",
+      "Anointed his eyes with oil",
+      "Told him to go show himself to the priest"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 9:7",
+    "question": "Where did Jesus tell the blind man with the mud on his eyes to wash (Jn 9:7)?",
+    "options": [
+      "In the spring of Gihon",
+      "In the En Rogel pool",
+      "In Solomon’s pools",
+      "In the Pool of Siloam"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 9:25",
+    "question": "In the second interview, what did the blind man say he knew (Jn 9:25)?",
+    "options": [
+      "Jesus was the Christ",
+      "He was blind but now he sees",
+      "Never a man talked like this man",
+      "I was born blind, ask my parents if you don’t believe me"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 10:1",
+    "question": "Who does not enter the sheep gate by the gate (Jn 10:1)?",
+    "options": [
+      "The evil shepherd",
+      "A sheep dog",
+      "The wolf",
+      "A thief"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 10:2",
+    "question": "Who enters the sheep pen by the gate (Jn 10:2)?",
+    "options": [
+      "All who care for the sheep",
+      "The shepherd",
+      "The owner",
+      "The priest"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 10:3",
+    "question": "What does the shepherd do (Jn 10:3)?",
+    "options": [
+      "He counts his sheep",
+      "He pursues the lost sheep",
+      "He calls his own sheep by name",
+      "He leads the sheep to gentle pastures"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 10:10",
+    "question": "While thieves come to destroy, why did Jesus say he had come (Jn 10:10)?",
+    "options": [
+      "That they might have heavenly manna",
+      "That they might find pasture in heaven",
+      "That all people might believe in the one who sent him",
+      "That they might have life and have it to the full"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 10:11",
+    "question": "In reference to the sheep pen, what did Jesus say he was (Jn 10:11)?",
+    "options": [
+      "The good shepherd",
+      "The lead sheep",
+      "The pen owner",
+      "The shearer of the sheep"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 10:11",
+    "question": "What does the good shepherd do for the sheep (Jn 10:11)?",
+    "options": [
+      "Guards the sheep",
+      "Lays down his life for the sheep",
+      "Searches for the lost sheep",
+      "Leads the sheep to quiet streams"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 10:16",
+    "question": "What sheep did Jesus say he had (Jn 10:16)?",
+    "options": [
+      "White, black and speckled",
+      "Other sheep that are not of this pen",
+      "Sheep who have wandered astray",
+      "Sheep that provide wool to all"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 10:23",
+    "question": "At the Feast of Dedication where was Jesus walking (Jn 10:23)?",
+    "options": [
+      "On the Mount of Olives just outside the town of Bethany",
+      "In the temple area court of the Gentiles",
+      "In the temple area in the Royal Stoa",
+      "In the temple area walking in Solomon’s Colonnade"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 10:25",
+    "question": "What did Jesus say spoke for him to the Jews who were in the temple area (Jn 10:25)?",
+    "options": [
+      "The miracles he did in his Father’s name",
+      "The prophecies in the Scriptures",
+      "The people",
+      "The whole system of sacrifices pointed to him as the lamb of God"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 10:28",
+    "question": "What did Jesus say no one could do to his sheep (Jn 10:28)?",
+    "options": [
+      "No one can lead his sheep away",
+      "No one can snatch them out of his hand",
+      "No one can harm those he has called unto himself",
+      "No one can steal his sheep away"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 10:35",
+    "question": "What did Jesus say cannot be broken (Jn 10:35)?",
+    "options": [
+      "His word",
+      "The plan of God",
+      "The path of righteousness",
+      "The Scriture"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 10:38",
+    "question": "How did Jesus understand his relationship to the Father (Jn 10:38)?",
+    "options": [
+      "He does whatever the Father commands",
+      "The Father has blessed him and called him to do his work",
+      "The Father is in him and he is in the Father",
+      "He has been given all things from the Father’s hand"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:1",
+    "question": "Where did Lazarus and Mary live (Jn 11:1)?",
+    "options": [
+      "Bethsaida",
+      "Bethany",
+      "Bethlehem",
+      "Bethel"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:1",
+    "question": "Who were the two sisters of Lazarus (Jn 11:1f)?",
+    "options": [
+      "Priscilla and Aquila",
+      "Mary and Salome",
+      "Mary and Martha",
+      "Salome and Tamar"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:2",
+    "question": "How is Mary, the sister of Lazarus, identified (Jn 11:2)?",
+    "options": [
+      "The one from whom Jesus cast a demon",
+      "The one who had an issue of blood whom Jesus healed",
+      "The one whose donkey Jesus road into Jerusalem",
+      "The one who poured perfume on the Lord"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:4",
+    "question": "What rationale did Jesus give for Lazarus’ sickness (Jn 11:4)?",
+    "options": [
+      "It was so that all might know that I and the Father are one",
+      "It was so that the God’s Son may be glorified through it",
+      "It was to establish the faith of Mary and Martha",
+      "It was a preview of what will happen to the Son of Man"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:16",
+    "question": "What was Thomas also known as (Jn 11:16)?",
+    "options": [
+      "Alphaeus",
+      "Zechariah",
+      "Justus",
+      "Didymus"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 11:17",
+    "question": "How many days was Lazarus already in the tomb when Jesus arrived (Jn 11:17)?",
+    "options": [
+      "Two days",
+      "Three days",
+      "Four days",
+      "Five days"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:20",
+    "question": "Who went out to meet Jesus as he approach Bethany the town of Lazarus (Jn 11:20)?",
+    "options": [
+      "Lazarus",
+      "Mary",
+      "Martha",
+      "Thomas"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:35",
+    "question": "When Jesus went to the tomb of Lazarus what was his response (Jn 11:35)?",
+    "options": [
+      "He shut the door to be alone with Peter, James and John",
+      "He began to teach them about the resurrection",
+      "He comforted Mary and Martha",
+      "He wept"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:36",
+    "question": "What comment did the Jews make when they saw Jesus weep (Jn 11:36)?",
+    "options": [
+      "See how Jesus loved him",
+      "He was like a father to Jesus",
+      "Even he is acquainted with grief",
+      "Will not the Son of David also endure suffering"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:39",
+    "question": "Why did Martha object to taking the stone away from Lazarus’ tomb (Jn 11:39)?",
+    "options": [
+      "The tomb had been sealed by the rabbi",
+      "The tomb diggers had covered up his body with dirt",
+      "There would be a bad odor as he had been in their four days",
+      "He would have started to decay and it wasn’t right to disturb the dead"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:43",
+    "question": "What did Jesus call out in a loud voice to get Lazarus out of the tomb (Jn 11:43)?",
+    "options": [
+      "Lazarus, arise and come to me",
+      "Lazarus, come out!",
+      "Lazarus, stand up",
+      "Lazarus, hear my voice"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:44",
+    "question": "After Lazarus came out of the tomb, what did Jesus tell them to do (Jn 11:44)?",
+    "options": [
+      "Give him something to drink",
+      "Prepare the table for him",
+      "Take off his grave clothes",
+      "Ask him what he had seen"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:49",
+    "question": "Who was the high priest the year that Lazarus was raised (Jn 11:49)?",
+    "options": [
+      "Ananias",
+      "Zadok",
+      "Caiaphas",
+      "Zechariah"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:54",
+    "question": "Because the Jews were plotting to kill him, what was Jesus’ response (Jn 11:54)?",
+    "options": [
+      "He went into hiding at the spring of En Gedi",
+      "He spoke only with his disciples secretly",
+      "He spoke to the people only in large crowds",
+      "He withdrew to a village near the desert called Ephraim"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 12:1",
+    "question": "Who lived in Bethany in Judea (Jn 12:1)?",
+    "options": [
+      "Joseph of Arimathea",
+      "Nicodemus",
+      "Lazarus",
+      "Zacchaeus"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:2",
+    "question": "While they were at the home of Lazarus, who served them (Jn 12:2)?",
+    "options": [
+      "Mary",
+      "Martha",
+      "Salome",
+      "Lazarus himself"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:3",
+    "question": "What did Mary do when Lazarus reclined at dinner with Jesus (Jn 12:3)?",
+    "options": [
+      "Poured expensive perfume on Jesus’ feet",
+      "Served them the Passover lamb",
+      "Brought in the news about Jerusalem",
+      "Sat at Jesus’ feet as he taught his disciples"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:3",
+    "question": "What did Mary do when Lazarus reclined at dinner with Jesus (Jn 12:3)?",
+    "options": [
+      "Served them the Passover lamb",
+      "Brought in the news about Jerusalem",
+      "Wiped Jesus perfumed feet with her hair",
+      "Sat at Jesus’ feet as he taught his disciples"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:4",
+    "question": "Who objected to Mary’s pouring perfume on Jesus’ feet (Jn 12:4)?",
+    "options": [
+      "Peter",
+      "Thomas",
+      "John",
+      "Judas"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:6",
+    "question": "What does the narrator tell us about Judas and his role among the disciples (Jn 12:6)?",
+    "options": [
+      "He cared deeply for the poor, the fatherless, and widows",
+      "He wanted the perfume so he could use it to gain favors from others",
+      "He cared more about money than he did about Jesus",
+      "He was a thief and took care of the money bag"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:8",
+    "question": "Who did Jesus say you will always have with you (Jn 12:8)?",
+    "options": [
+      "Those seeking their own things",
+      "The poor",
+      "The rich",
+      "Those who have things of this world"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:10",
+    "question": "What plans were the chief priests making for Lazarus (Jn 12:10)?",
+    "options": [
+      "To kill him as well",
+      "To put him in prison",
+      "To order him to be silent",
+      "To drive him out of the region"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:15",
+    "question": "What passage of Scripture did Jesus fulfill as he entered Jerusalem (Jn 12:15)?",
+    "options": [
+      "Your king comes to you riding on a white horse",
+      "Your king comes as the servant of the Lord walking on the dusty road",
+      "Your king is coming seated on a donkey’s colt",
+      "He was brought like a sheep before its shearers is silent"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 11:18",
+    "question": "Who, in particular, went out to meet Jesus from Jerusalem (Jn 11:18)?",
+    "options": [
+      "Those who heard that a great prophet was coming",
+      "Those who heard the sign of raising Lazarus",
+      "Those who had heard the Jews were trying to kill the king of Israel",
+      "Those who heard the children praising Jesus in the streets"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:23",
+    "question": "What hour did Jesus tell Philip and Andrew had come (Jn 12:23)?",
+    "options": [
+      "The hour for the redemption of Israel",
+      "The hour of the Son of Man to be glorified",
+      "The hour for the kingdom of God to be made manifest",
+      "The hour of the Son of God to be raised up"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:24",
+    "question": "Jesus said what must die in order to produce many seeds (Jn 12:24)?",
+    "options": [
+      "A mustard seed",
+      "A thistle",
+      "A kernel of wheat",
+      "An olive branch"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:28",
+    "question": "When considering his hour, what statement did Jesus make (Jn 12:28)?",
+    "options": [
+      "Father, may your will be done",
+      "Father, into your hands I commit my spirit",
+      "Father, I have come to do your will",
+      "Father, glorify your name"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:29",
+    "question": "When the voice from heaven spoke to Jesus, what did some think it was (Jn 12:29)?",
+    "options": [
+      "The sound of a gun going off",
+      "The sound of thunder",
+      "The sound of many waters",
+      "The rumble of a large crowd"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:29",
+    "question": "When the voice from heaven spoke to Jesus, what did some think it was (Jn 12:29)?",
+    "options": [
+      "The voice of God speaking to him",
+      "The sound of many waters",
+      "An angel talking to him",
+      "The rumble of a large crowd"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:31",
+    "question": "After hearing the voice from heaven, Jesus said what time had come (Jn 12:31)?",
+    "options": [
+      "The judgment on this world",
+      "The kingdom of God to come",
+      "The redemption of Israel",
+      "The reconciliation of all mankind"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:32",
+    "question": "What did Jesus say he would do when he was lifted up (Jn 12:32)?",
+    "options": [
+      "He would see the salvation of his soul",
+      "He would redeem his people from their sins",
+      "He would draw all men unto him self",
+      "He would become a light for the Gentiles"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:38",
+    "question": "Which prophet said “Lord, who has believe our message” (Jn 12:38)?",
+    "options": [
+      "Isaiah",
+      "Jeremiah",
+      "Daniel",
+      "Zechariah"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:40",
+    "question": "What had Isaiah predicted (Jn 12:40)?",
+    "options": [
+      "He will heal the blind and the lame so that all can see the light",
+      "Look, your king comes to you riding on a donkey",
+      "He has blinded their eyes and deadened their hearts",
+      "He shall be called a false prophet and condemned by many"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:46",
+    "question": "Why did Jesus come as a light into the world (Jn 12:46)?",
+    "options": [
+      "So that no one who believes in him should stay in darkness",
+      "So that all the world might see the glory of the Father",
+      "So that that light might shine unto the ends of the earth",
+      "So that all who come to him might not be overcome by the darkness"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 12:47",
+    "question": "Why did Jesus say he had come into the world (Jn 12:47)?",
+    "options": [
+      "Not to judge the world by to save it",
+      "In order that all might believe in him",
+      "To let his light shine and overcome the darkness",
+      "To take away the sin of the world"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:1",
+    "question": "Where did the text say Jesus was going when he left this world (Jn 13:1)?",
+    "options": [
+      "To the clouds in heaven",
+      "To the right hand of God Almighty",
+      "To his Father",
+      "To the New Jerusalem"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:2",
+    "question": "Who prompted Judas to betray Jesus (Jn 13:2)?",
+    "options": [
+      "Pilate",
+      "Caiaphas",
+      "The devil",
+      "An evil spirit"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:8",
+    "question": "How did Jesus respond when Peter said he would never wash Peter’s feet (Jn 13:8)?",
+    "options": [
+      "Unless I wash you, you will remain in the world",
+      "Unless I wash you, you have no part with me",
+      "Unless I wash your feet you cannot see the kingdom of God",
+      "Unless I wash you, your sins will remain"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:16",
+    "question": "Who did Jesus say was not greater than his master (Jn 13:16)?",
+    "options": [
+      "A servant",
+      "A student",
+      "A hired hand",
+      "A farmer"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:18",
+    "question": "Citing Scripture, who did Jesus say would share bread with him (Jn 13:18)?",
+    "options": [
+      "He who has lifted up his heel against me",
+      "He who has had his feet washed",
+      "He who was a friend",
+      "He who was with me from the beginning"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:19",
+    "question": "Why did Jesus say he was telling the disciples what was about to happen (Jn 13:19)?",
+    "options": [
+      "So that they would know I am the prophet",
+      "So that they might believe that I am he",
+      "So that they might know that the Son of Man has come",
+      "So they might know the Father has sent me"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:21",
+    "question": "What did Jesus say when he was troubled in his spirit (Jn 13:21)?",
+    "options": [
+      "Father, take this cup from me",
+      "The yoke of sin is heavy",
+      "One of you is a devil",
+      "One of you is going to betray me"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:23",
+    "question": "At the last supper, who was reclining next to Jesus (Jn 13:23)?",
+    "options": [
+      "The disciple whom Jesus loved",
+      "The disciple who would betray Jesus",
+      "The disciple who was with Jesus from the beginning",
+      "The disciple who would deny Jesus"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:26",
+    "question": "After Jesus dipped the piece of bread, who did he give it to (Jn 13:26)?",
+    "options": [
+      "Thomas",
+      "Andrew",
+      "Bartholomew",
+      "Judas"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:27",
+    "question": "What happened when Judas took the bread (Jn 13:27)?",
+    "options": [
+      "He left to go and betray Jesus",
+      "Satan entered into him",
+      "He dropped his head in shame",
+      "He ate it and took some more"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:30",
+    "question": "What time was it when Judas went out to betray Jesus (Jn 13:30)?",
+    "options": [
+      "It was noon",
+      "It was early in the morning",
+      "It was at sunset",
+      "It was night"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:31",
+    "question": "When Judas left to betray Jesus, what did Jesus say right after his leaving (Jn 13:31)?",
+    "options": [
+      "Now the Son of Man is glorified",
+      "Now is judgment come onto the earth",
+      "The Son of Man is betrayed into the hands of sinners",
+      "Come, let us go to the Garden of Gethsemane"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 13:34",
+    "question": "What new command did Jesus give his disciples after Judas left (Jn 13:34)?",
+    "options": [
+      "Look unto me and live",
+      "Follow me and I will give you eternal life",
+      "Love those that persecute you",
+      "Love one another as I have loved you"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 13:38",
+    "question": "Jesus told Peter he would deny him three times before what happened (Jn 13:38)?",
+    "options": [
+      "The sun set",
+      "The gate of the city was shut",
+      "The moon came out",
+      "The rooster crowed"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:1",
+    "question": "Jesus said that their hearts should not be _______ (Jn 14:1)?",
+    "options": [
+      "Anxious",
+      "Troubled",
+      "Heavy",
+      "Perplexed"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:2",
+    "question": "What did Jesus say was in his Father’s house (Jn 14:2)?",
+    "options": [
+      "Streets of gold",
+      "Gates made of pearls",
+      "Greater glory than this temple",
+      "Many rooms"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:3",
+    "question": "Why did Jesus say he would come back (Jn 14:3)?",
+    "options": [
+      "So that all may come into glory",
+      "So that he may receive those whom he has called into glory",
+      "So that they may live forever more in the presence of his Father",
+      "So that they may be where he is"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:4",
+    "question": "What did Jesus say the disciples knew which they apparently did not know (Jn 14:4)?",
+    "options": [
+      "The way to the Father’s house above",
+      "What would happen in the next few days",
+      "The way to the place where he was going",
+      "How the kingdom will come to this earth"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:5",
+    "question": "Who told Jesus he didn’t know where he was going (Jn 14:5)?",
+    "options": [
+      "Andrew",
+      "Thomas",
+      "Philip",
+      "Peter"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:6",
+    "question": "Jesus said what was the only way to the Father (Jn 14:6)?",
+    "options": [
+      "Through the way of suffering",
+      "Through him",
+      "Through the path of righteousness",
+      "Through believing in the Son of Man"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:7",
+    "question": "Jesus said who would the disciples know if they knew him (Jn 14:7)?",
+    "options": [
+      "The truth",
+      "The Spirit in heaven",
+      "The Father",
+      "The Son of Man"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:12",
+    "question": "What will those believing in Jesus do (Jn 14:12)?",
+    "options": [
+      "Preach the good news to all nations",
+      "Be messengers of the Father",
+      "Show love to one anothre",
+      "Greater miracles than Jesus had done"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:13",
+    "question": "Why will Jesus do whatever they ask in his name (Jn 14:13)?",
+    "options": [
+      "So that the Son may bring glory to the Father",
+      "So that he might draw all people unto himself",
+      "So that all might believe",
+      "So that the world may know the Son of Man"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:14",
+    "question": "How must one ask and Jesus will do it (Jn 14:14)?",
+    "options": [
+      "According to the will of the Father",
+      "By the Spirit of truth",
+      "In Jesus’ name",
+      "By the power of the Spirit"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:15",
+    "question": "What did Jesus say one would do if they loved him (Jn 14:15)?",
+    "options": [
+      "You will love one another",
+      "You will obey what he commands",
+      "You will listen to the Father of lights",
+      "You will believe the scriptures"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:17",
+    "question": "Jesus calls the Spirit the Spirit of ______ (Jn 14:17)",
+    "options": [
+      "Holiness",
+      "Righteousness",
+      "Justice",
+      "Truth"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:18",
+    "question": "How did Jesus say he would not leave the disciples (Jn 14:18)?",
+    "options": [
+      "As widows",
+      "As chaff",
+      "As orphans",
+      "As those left behind"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:21",
+    "question": "What will be true of the one who loves Jesus (Jn 14:21)?",
+    "options": [
+      "He will receive eternal life",
+      "He will be loved by the Father",
+      "He will be forgiven",
+      "He will walk in his ways"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:23",
+    "question": "What did Jesus say will happen for those whom the Father loves (Jn 14:23)?",
+    "options": [
+      "They will find life in the resurrection from the dead",
+      "They will receive the Counselor whom Jesus will send from the Father",
+      "They will know eternal life",
+      "We will come to him and make our home with him"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:26",
+    "question": "What will be the role of the Holy Spirit whom the Father will send (Jn 14:26)?",
+    "options": [
+      "He will teach the disciples all things and remind them of what Jesus said",
+      "He will advise them what they should do as a Counselor to the truth",
+      "He will give those who believe in Jesus the right to become the sons of God",
+      "He will live with those who believe and do mighty miracles in them"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:27",
+    "question": "Jesus said that the disciples hearts should not be _________ (Jn 14:27)",
+    "options": [
+      "Upset when troubles come upon them",
+      "Perplexed at what he was saying",
+      "Troubled or afraid",
+      "Worried about tomorrow"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:28",
+    "question": "How did Jesus describe his relationship to the Father (Jn 14:28)?",
+    "options": [
+      "He is the holy One of Israel",
+      "He has told me what I must do",
+      "He is greater than I",
+      "He loves me"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:29",
+    "question": "Why did Jesus tell the disciples things before they happen (Jn 14:29)?",
+    "options": [
+      "So that the world will know who the Son of Man is",
+      "So when they happen they will believe",
+      "So that they would not be troubled",
+      "So that would understand"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 14:30",
+    "question": "Who did Jesus say has no hold on him (Jn 14:30)?",
+    "options": [
+      "Satan",
+      "The devil",
+      "The prince of this world",
+      "The ruler of darkness"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 15:1",
+    "question": "When Jesus said God was the gardener, what did he say he was (Jn 15:1)?",
+    "options": [
+      "The servant of the Lord",
+      "The vine",
+      "The olive tree",
+      "The wheat"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 15:2",
+    "question": "What does the gardener cut off (Jn 15:2)?",
+    "options": [
+      "The branches that bear no fruit",
+      "The fruit",
+      "The root of the tares",
+      "The twisted branches"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 15:5",
+    "question": "When Jesus said he was the vine, what did he say the disciples were (Jn 15:5)?",
+    "options": [
+      "Grapes",
+      "The fruit of the vine",
+      "The branches",
+      "The leaves of the vine"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 15:6",
+    "question": "What is one that does not remain in Jesus like (Jn 15:6)?",
+    "options": [
+      "A branch that is withers and is thrown into the fire",
+      "A branch that does not bear fruit",
+      "A rotten cluster of grapes",
+      "A plant which bears not fruit and so is cut down"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 15:8",
+    "question": "What will bearing much fruit demonstrate (Jn 15:8)?",
+    "options": [
+      "That all should turn and come to Jesus",
+      "That they continue to remain in Jesus",
+      "That they are children of their Father in heaven",
+      "That they are Jesus’ disciples"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 15:12",
+    "question": "What is Jesus’ command (Jn 15:12)?",
+    "options": [
+      "Love God with all your heart, soul, and mind",
+      "Keep my commandments as I have kept the Father’s",
+      "Love your neighbor as yourself",
+      "Love each other as I have loved you"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 15:13",
+    "question": "Of what does Jesus say there is no greater love than (Jn 15:13)?",
+    "options": [
+      "That one gives up everything to follow him",
+      "That one suffer in behalf of those he loves",
+      "That one lay down his life for one’s friends",
+      "That one love their enemies"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 15:16",
+    "question": "Why did Jesus choose them (Jn 15:16)?",
+    "options": [
+      "Because they were with him from the beginning",
+      "Because they had chosen him",
+      "That they might bear fruit that will last",
+      "That they might be branches of the vine"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 15:19",
+    "question": "Out of what did Jesus say he had chosen them (Jn 15:19)?",
+    "options": [
+      "The grasp of the evil one",
+      "Futility",
+      "The world",
+      "Sin"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 15:23",
+    "question": "Who does the one hating Jesus also hate (Jn 15:23)?",
+    "options": [
+      "Those who walk in his ways",
+      "The prophets",
+      "His Father",
+      "Those who do what is right"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 15:25",
+    "question": "The fact that they hated Jesus has fulfilled the Scripture that said _____ (Jn 15:25)?",
+    "options": [
+      "They hated me without a reason",
+      "Esau have they hated",
+      "They hated me for glorifying you, O Lord",
+      "They despised and rejected the Servant of the Lord"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 16:1",
+    "question": "Why did Jesus tell the disciples all this (Jn 16:1)?",
+    "options": [
+      "So they would not go astray",
+      "So they would be warned ahead of time",
+      "So they could flee to the mountains",
+      "So they could understand it when it happens"
+    ],
+    "answer": 0,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 16:2",
+    "question": "What did Jesus warn the disciples would happen to them (Jn 16:2)?",
+    "options": [
+      "They would be put out of the temple area",
+      "They would be put out of the synagogue",
+      "They would not be allowed in Jerusalem",
+      "They would be put out of their homes"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 16:2",
+    "question": "Who will think that they do God a service in the future (Jn 16:2)?",
+    "options": [
+      "Those who beat the disciples",
+      "Those who drive the disciples out of the synagogues",
+      "Those who kill the disciples",
+      "Those who expel the disciples from Jerusalem"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 16:7",
+    "question": "When Jesus goes away, what will he do (Jn 16:7)?",
+    "options": [
+      "Intercede with the Father for them",
+      "Prepare to come again",
+      "Sit at the right hand of the Father",
+      "Send the Counselor to them"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 16:9",
+    "question": "Why will the Counselor convict the world with regard to sin (Jn 16:9)?",
+    "options": [
+      "Because I will come again and receive you to myself",
+      "Because the prince of the world now stands condemned",
+      "Because I am going to the Father",
+      "Because people do not believe in Jesus"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 16:9",
+    "question": "Why will the Counselor convict the world with regard to righteousness (Jn 16:9)?",
+    "options": [
+      "Because I will come again and receive you to myself",
+      "Because the prince of the world now stands condemned",
+      "Because I am going to the Father",
+      "Because people do not believe in me"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 16:9",
+    "question": "Why will the Counselor convict the world with regard to judgment (Jn 16:9)?",
+    "options": [
+      "Because I will come again and receive you to myself",
+      "Because the prince of the world now stands condemned",
+      "Because I am going to the Father",
+      "Because people do not believe in me"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 16:13",
+    "question": "What did Jesus say the Spirit will tell the disciples (Jn 16:13)?",
+    "options": [
+      "The mysteries of the Kingdom of God",
+      "What is yet to come",
+      "All the Father has spoken",
+      "Why all these things have happened"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 16:20",
+    "question": "When did Jesus say the disciples would weep and mourn (Jn 16:20)?",
+    "options": [
+      "When he would depart to be with his Father",
+      "When they understood",
+      "When the world rejoices",
+      "When he goes to prepare a place for them"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 16:23",
+    "question": "What did Jesus say the Father would give them (Jn 16:23)?",
+    "options": [
+      "The light of life so that they would never to walk in darkness again",
+      "Whatever they ask for in his name",
+      "Joy everlasting",
+      "The keys to the kingdom of heaven"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 16:27",
+    "question": "Why did Jesus say the Father loves them (Jn 16:27)?",
+    "options": [
+      "Because they had loved Jesus",
+      "Because they had not turned away",
+      "Because he had chosen them",
+      "Because they had obeyed his commands"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 16:33",
+    "question": "What did Jesus tell his disciples they had in this world (Jn 16:33)?",
+    "options": [
+      "Injustice",
+      "Trouble",
+      "Persecution",
+      "Opposition"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 17:2",
+    "question": "What authority had the Father granted to the Son (Jn 17:2)?",
+    "options": [
+      "That he might do the works of his Father in heaven so all might believe",
+      "That he might give eternal life to all those the Father had given him",
+      "That he might walk in the light and show others the light of life",
+      "That he might draw all people unto himself"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 17:9",
+    "question": "For whom does Jesus say he does not pray (Jn 17:9)?",
+    "options": [
+      "The ones who have rejected him",
+      "The world",
+      "The ones following the Prince of Darkness",
+      "The hypocrites"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 17:15",
+    "question": "What did Jesus say that he did not pray for them (Jn 17:15)?",
+    "options": [
+      "That they would be able to stand against the devil",
+      "That the Father take them out of the world",
+      "That the Father would bless them with the wealth of this world",
+      "That the Father protect them from the evil one"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 17:17",
+    "question": "What did Jesus say to the Father was the truth (Jn 17:17)?",
+    "options": [
+      "All things Jesus had said",
+      "That they had believed in him",
+      "Your word",
+      "The works which the Father had given him to do"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 17:24",
+    "question": "What did Jesus ask the Father that his followers would see (Jn 17:24)?",
+    "options": [
+      "See his power",
+      "See his holiness",
+      "See his glory",
+      "See his justice"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 18:1",
+    "question": "After Jesus finished praying, what valley did he and his disciples cross (Jn 18:1)?",
+    "options": [
+      "The Hinnom Valley",
+      "The Tyropoeon Valley",
+      "The Kidron Valley",
+      "The Jezreel Valley"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 18:2",
+    "question": "How did Judas know the place where Jesus would be in the olive grove (Jn 18:2)?",
+    "options": [
+      "Jesus had frequently met there with his disciples",
+      "Jesus told the disciples to meet him there",
+      "Jesus knew the owner of the olive grove",
+      "This olive grove was the place pilgrims would go"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 18:10",
+    "question": "Whose ear did Peter cut off (Jn 18:10)?",
+    "options": [
+      "A Pharisee who had slapped Jesus",
+      "The friend of Judas",
+      "The servant of of the high priest",
+      "The centurion"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 18:13",
+    "question": "Who was the high priest the year Jesus was arrested (Jn 18:13)?",
+    "options": [
+      "Joseph of Arimathea",
+      "Simon",
+      "Caiaphas",
+      "Annas"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 18:16",
+    "question": "How did Peter get into the high priest’s courtyard (Jn 18:16)?",
+    "options": [
+      "He followed the crowd in that had arrested Jesus",
+      "He was friends with the servant guarding the gate",
+      "The other disciple spoke to the girl on duty and she let him in",
+      "He climbed over the wall"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 18:22",
+    "question": "Why was Jesus struck in the face after answering the high priest (Jn 18:22)?",
+    "options": [
+      "How come you are leading the crowds into rebellion?",
+      "Is this the way you answer the high priest?",
+      "Why will you not speak to us?",
+      "Why do you teach blasphemy?"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 18:27",
+    "question": "What happened when Peter denied Jesus the third time (Jn 18:27)?",
+    "options": [
+      "The rooster crowed",
+      "The temple trumpet sounded",
+      "The sun went dark",
+      "Peter warmed himself by a fire"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 18:28",
+    "question": "Why did the Jews not enter the palace of the Roman governor (Jn 18:28)?",
+    "options": [
+      "They hated the Romans",
+      "They wanted to avoid ceremonial uncleanness",
+      "They were afraid they would be imprisoned by the Roman governor",
+      "They did not want to be associated with this illegal action"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 18:31",
+    "question": "What suggestion did Pilate initially make for the Jews to follow (Jn 18:31)?",
+    "options": [
+      "Let him be crucified",
+      "Let him be released",
+      "Judge him by the Jews own laws",
+      "Sent him to Caesar"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 18:39",
+    "question": "What custom did Pilate cite that was observed at Passover (Jn 18:39)?",
+    "options": [
+      "A lamb was slain in place of a criminal",
+      "One of criminals was sent to Caesar",
+      "A prisoner was released",
+      "A prisoner was crucified"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:2",
+    "question": "What did the soldiers put on Jesus’ head (Jn 19:2)?",
+    "options": [
+      "A paper crown",
+      "A crown of thorns",
+      "A dunce hat",
+      "A crown of nails"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:2",
+    "question": "With what did the soldiers clothe Jesus (Jn 19:2)?",
+    "options": [
+      "A sackcloth robe",
+      "A coat of many colors",
+      "A torn robe",
+      "A purple robe"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:8",
+    "question": "When Pilate asked Jesus where he came from what did Jesus say (Jn 19:8)?",
+    "options": [
+      "I am from above",
+      "My kingdom is not of this world",
+      "He gave no answer",
+      "Do you really want to know?"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:11",
+    "question": "Who did Jesus say was guilty of greater sin (Jn 19:11)?",
+    "options": [
+      "Judas",
+      "The one who handed me over to you",
+      "Satan",
+      "Annas, the high priest"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:12",
+    "question": "What did the Jews shout that kept Pilate from releasing Jesus (Jn 19:12)?",
+    "options": [
+      "If you let him go you are no friend of Caesar",
+      "Crucify him, crucify him",
+      "He is a blasphemer and worthy of death",
+      "If you let him go we will appeal this decision to Caesar"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:14",
+    "question": "What day was it that Pilate handed Jesus over to the Jews to be crucified (Jn 19:14)?",
+    "options": [
+      "The Passover",
+      "The day of Unleavened Bread",
+      "The Day of Atonement",
+      "The day of Preparation of Passover Week"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:17",
+    "question": "What was the place of the Skull called in Aramaic (Jn 19:17)?",
+    "options": [
+      "Gabbatha",
+      "Golgotha",
+      "Talitha",
+      "Maranatha"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:18",
+    "question": "How was Jesus crucified (Jn 19:18)?",
+    "options": [
+      "With Barabbas",
+      "With twelve others",
+      "With Simon the Cyrene and his son",
+      "With two others—one on each side"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:19",
+    "question": "What did the sign say that Pilate had installed on Jesus’ cross (Jn 19:19)?",
+    "options": [
+      "The King of the Jews",
+      "Jesus of Nazareth, the king of the Jews",
+      "This is the Christ of the Jews",
+      "The Son of God, King of Israel"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:23",
+    "question": "How many shares did the soldiers divide Jesus’ garments up into (Jn 19:23)?",
+    "options": [
+      "Two",
+      "Three",
+      "Four",
+      "Five"
+    ],
+    "answer": 2,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 19:24",
+    "question": "How did the Scripture say Jesus’ garments would be divided (Jn 19:24)?",
+    "options": [
+      "By the soldiers",
+      "By casting lots",
+      "By drawing straws",
+      "By age oldest to youngest"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:29",
+    "question": "How did they get the wine vinegar up to Jesus when he was on the cross (Jn 19:29)?",
+    "options": [
+      "In a bucket",
+      "In a cup",
+      "On a sponge",
+      "They sprayed it on him"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:30",
+    "question": "After receiving the wine vinegar, what did Jesus say on the cross (Jn 19:30)?",
+    "options": [
+      "I thirst",
+      "Father forgive them",
+      "My God, my God",
+      "It is finished"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:33",
+    "question": "Why did the soldiers not break the legs of Jesus (Jn 19:33)?",
+    "options": [
+      "Because they respected the way Jesus died",
+      "Because he was already dead",
+      "Because they saw that he was a righteous man",
+      "Because they wanted to incite the Jews"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:34",
+    "question": "What did the soldiers do instead of breaking Jesus’ legs (Jn 19:34)?",
+    "options": [
+      "They did nothing at all since he was dead",
+      "They put his robe back on him",
+      "They pierced his side with a spear",
+      "They slit his throat"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:36",
+    "question": "What had Scripture said about Jesus’ death (Jn 19:36)?",
+    "options": [
+      "They would offer him vinegar",
+      "Not one of his bones would be broken",
+      "None of his bones would be lost",
+      "His purple robe would be sold"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:39",
+    "question": "Who accompanied Joseph of Arimathea to the body of Jesus (Jn 19:39)?",
+    "options": [
+      "Simon of Cyrene",
+      "Nicodemus",
+      "Lazarus, the disciple who Jesus loved",
+      "Mary Magdalene"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:39",
+    "question": "What spices did Nicodemus bring for the burial of Jesus (Jn 19:39)?",
+    "options": [
+      "Cinnamon and ginger",
+      "Myrrh and aloes",
+      "Mint and dill",
+      "Basil and bay leaves"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 19:41",
+    "question": "What was near the tomb of Jesus (Jn 19:41)?",
+    "options": [
+      "The southern wall of Jerusalem",
+      "The gate of the city",
+      "A garden",
+      "A family tomb"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 19:41",
+    "question": "What was special about the tomb in which Jesus was buried (Jn 19:41)?",
+    "options": [
+      "It was covered with cedar from Lebanon",
+      "It was where the poor people were buried",
+      "It was Joseph’s family tomb",
+      "No one had ever been laid it in before"
+    ],
+    "answer": 3,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 20:1",
+    "question": "Who was the first to come to the tomb of Jesus on the first day of the week (Jn 20:1)?",
+    "options": [
+      "Mary, the mother of Jesus",
+      "Nicodemus",
+      "Mary Magdalene",
+      "Salome"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 20:1",
+    "question": "On what day did Mary first see the empty tomb of Jesus (Jn 20:1)?",
+    "options": [
+      "The first day of the week",
+      "The sixth day of the week",
+      "The seventh day of the week",
+      "The day of Passover"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 20:4",
+    "question": "Who ran and arrived first at the tomb of Jesus (Jn 20:4)?",
+    "options": [
+      "Simon Peter",
+      "Thomas",
+      "The disciple whom Jesus loved",
+      "Matthew"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 20:15",
+    "question": "To whom did Mary think she was talking to at the tomb of Jesus (Jn 20:15)?",
+    "options": [
+      "The angel of the Lord",
+      "A gardener",
+      "A guard",
+      "One of the disciples"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 20:16",
+    "question": "What does the Aramaic word “Rabboni” mean (Jn 20:16)?",
+    "options": [
+      "Master",
+      "Lord",
+      "Teacher",
+      "Reverend"
+    ],
+    "answer": 2,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 20:19",
+    "question": "Why were the disciples in a room with locked doors after the resurrection (Jn 20:19)?",
+    "options": [
+      "Because they were did not want the crowds to enter",
+      "Because they were afraid of the Jews",
+      "Because they were discussing what they were going to do next",
+      "Because they wanted to see if Jesus would enter"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 20:24",
+    "question": "What was Thomas also called (Jn 20:24)?",
+    "options": [
+      "Erasmus",
+      "Didymus",
+      "Alphaeus",
+      "Cephas"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 20:27",
+    "question": "What did Jesus tell Thomas after offering to be touched by him (Jn 20:27)?",
+    "options": [
+      "Stop doubting and believe",
+      "O you of little faith",
+      "Do you really believe now you have seen?",
+      "Do you not know me, Thomas?"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 20:31",
+    "question": "What did the writer say were not recorded in this book (Jn 20:31)?",
+    "options": [
+      "The parables and teachings of Jesus",
+      "Many other miraculous signs",
+      "Every time Jesus appeared to the disciples after he was raised",
+      "All the words of Jesus to his disciples"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 21:2",
+    "question": "Nathanael was from what town in Galilee (Jn 21:2)?",
+    "options": [
+      "Jezreel",
+      "Cana",
+      "Capernaum",
+      "Bethsaida"
+    ],
+    "answer": 1,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 21:6",
+    "question": "What did Jesus tell the disciples to do as they came in from fishing (Jn 21:6)?",
+    "options": [
+      "Cast their nets on the right side of the boat",
+      "Mend their nets",
+      "Bring the fish into the fire he had prepared",
+      "Come in for bread and fish"
+    ],
+    "answer": 0,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 21:6",
+    "question": "What happened when the disciples cast their nets on the other side (Jn 21:6)?",
+    "options": [
+      "They caught a bushel of fish",
+      "They were unable to haul the net in because of all the fish",
+      "They brought up a cross",
+      "They caught twelve large fish"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 21:8",
+    "question": "How far from shore were the disciples with a net full of fish (Jn 21:8)?",
+    "options": [
+      "About 50 feet",
+      "About 100 feet",
+      "About 50 yards",
+      "About 100 yards"
+    ],
+    "answer": 3,
+    "level": "A"
+  },
+  {
+    "ref": "Jn 21:15",
+    "question": "How many times did Jesus ask Peter if he loved him (Jn 21:15ff)?",
+    "options": [
+      "Twice",
+      "Three times",
+      "Four times",
+      "Five times"
+    ],
+    "answer": 1,
+    "level": "B"
+  },
+  {
+    "ref": "Jn 21:23",
+    "question": "What rumor spread about the disciple whom Jesus loved (Jn 21:23)?",
+    "options": [
+      "That this disciple would succeed Peter as head of the church",
+      "That this disciple would not die",
+      "That this disciple would be filled with the Holy Spirit",
+      "That this disciple would be taken to heaven"
+    ],
+    "answer": 1,
+    "level": "B"
+  }
+]
