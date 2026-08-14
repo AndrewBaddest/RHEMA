@@ -88,7 +88,7 @@ const ADS = [
   // Slot 6 – Integér Network
   {
     id: 2,
-    title: 'Integér Network',
+    title: 'Integer Network',
     description: 'Connecting and empowering communities.',
     link: 'https://www.integernetwork.com/',
     domain: 'integernetwork.com',
@@ -109,7 +109,7 @@ const ADS = [
   // Slot 8 – Intimate777
   {
     id: 9,
-    title: 'Intimate777',
+    title: 'Intimacy777',
     description: 'Deepen your intimacy with God through resources and community.',
     link: 'https://www.intimite777.com/',
     domain: 'intimite777.com',

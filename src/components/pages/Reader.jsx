@@ -11,6 +11,7 @@ export default function Reader() {
   const initialBook = state.book || ALL_BOOKS[0];
   const initialChapter = state.chapter || 1;
   const initialVerse = state.verse || null;
+  const fromResults = state.fromResults || false; // ✅ detect if we came from results
 
   const [book, setBook] = useState(initialBook);
   const [chapter, setChapter] = useState(initialChapter);
@@ -37,7 +38,7 @@ export default function Reader() {
       setError(null);
       try {
         const rawData = await fetchBibleData(book);
-        console.log('📖 Loaded Bible data for', book, rawData);
+        console.log('  Loaded Bible data for', book, rawData);
 
         let chapterMap = {};
         let chapterList = [];
@@ -139,7 +140,10 @@ export default function Reader() {
     }
   };
 
-  const goBack = () => navigate(-1);
+  // ── Back button: go to previous page (results or wherever) ──
+  const goBack = () => {
+    navigate(-1);
+  };
 
   if (error) {
     return (
@@ -154,8 +158,9 @@ export default function Reader() {
     <div>
       <div className="flex justify-between items-center mb-3 flex-wrap gap-2">
         <h2 className="text-primary text-2xl font-bold">Bible Reader</h2>
+        {/* ✅ Show different back button text when coming from results */}
         <button className="btn-secondary !w-auto !py-2 !px-4 text-sm" onClick={goBack}>
-          ← Back
+          {fromResults ? '← Back to Results' : '← Back'}
         </button>
       </div>
 

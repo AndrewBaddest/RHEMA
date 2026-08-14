@@ -17,7 +17,7 @@ export function useSound() {
 
     bgAudio = new Audio('/audio/bg-music.mp3');
     bgAudio.loop = true;
-    bgAudio.volume = 0.3; // even lower to blend with other audio
+    bgAudio.volume = 0.6; // even lower to blend with other audio
     bgAudio.preload = 'auto';
 
     // Preload sound effects
