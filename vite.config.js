@@ -3,10 +3,12 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    allowedHosts: ['6c7b-102-209-109-187.ngrok-free.app'],
+    host: true, // ensure it binds to all interfaces
+  },
   build: {
-    // Disable minification to avoid the crypto error on Node 18
     minify: false,
-    // Optional: generate sourcemaps for debugging (set to false for smaller builds)
     sourcemap: false,
   },
 });

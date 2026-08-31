@@ -9,7 +9,7 @@ export default function Donate() {
   return (
     <div className="py-4 max-w-3xl mx-auto">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-primary text-2xl font-bold">  Support Rhema</h1>
+        <h1 className="text-primary text-2xl font-bold"> Rhema </h1>
         <button className="btn-secondary !w-auto !py-2 !px-4 text-sm" onClick={() => navigate(-1)}>
           ← Back
         </button>
@@ -24,7 +24,7 @@ export default function Donate() {
         <ul className="list-disc list-inside pl-4 space-y-1">
           <li>Keep the app free for everyone</li>
           <li>Add more quiz questions and Bible versions</li>
-          <li>Cover hosting and development costs</li>
+          <li>Cover hosting and future development costs</li>
         </ul>
 
         <div className="bg-primary/10 border border-primary/30 rounded-xl p-5 text-center mt-4">
@@ -41,7 +41,7 @@ export default function Donate() {
             <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
               <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.29 2.73.79 4.56-.05.18-.11.37-.18.56l-.02.06c-.38 1.12-.96 2.07-1.72 2.83-.8.8-1.79 1.38-2.94 1.73-.66.2-1.37.31-2.11.31h-1.5c-.37 0-.68.27-.75.64l-.23 1.46-.01.06c-.06.34-.35.59-.7.59h-1.62c-.37 0-.68-.27-.75-.64l-.22-1.38z"/>
             </svg>
-              Support with PayPal
+              Support Rhema
           </a>
 
           <p className="text-xs text-center text-muted mt-4">

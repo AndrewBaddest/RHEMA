@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizBot - Exam Revision Tool</title>
+    <style>
+        /* ─────────── RESET & BASE ─────────── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d0d0d;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        /* main app container – phone‑first */
+        #app {
+            max-width: 420px;
+            width: 100%;
+            background: #1a1a1a;
+            border-radius: 36px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            padding: 24px 20px 32px;
+            position: relative;
+            min-height: 660px;
+            transition: all 0.25s ease;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+        }
+
+        /* ─────────── VIEW CONTAINERS ─────────── */
+        .view {
+            display: none;
+            animation: fadeUp 0.35s ease forwards;
+        }
+        .view.active {
+            display: block;
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ─────────── TYPOGRAPHY ─────────── */
+        .title-xl {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #8b83ff, #b8a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .title-lg {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #f0f0f0;
+        }
+        .title-md {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f0f0f0;
+        }
+        .text-muted {
+            color: #a0a0a0;
+            font-size: 0.92rem;
+        }
+        .text-sm {
+            font-size: 0.82rem;
+            color: #a0a0a0;
+        }
+
+        /* ─────────── BUTTONS ─────────── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            background: #2c2c2c;
+            color: #d0d0d0;
+        }
+        .btn-primary {
+            background: #6C63FF;
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(108, 99, 255, 0.35);
+        }
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 32px rgba(108, 99, 255, 0.50);
+            background: #7b73ff;
+        }
+        .btn-primary:active {
+            transform: scale(0.97);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #6C63FF;
+            color: #b8b0ff;
+        }
+        .btn-outline:hover {
+            background: #6C63FF20;
+            border-color: #8b83ff;
+        }
+        .btn-success {
+            background: #10b981;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.30);
+        }
+        .btn-success:hover {
+            transform: scale(1.02);
+            background: #16d08a;
+        }
+        .btn-danger {
+            background: #ef4444;
+            color: #fff;
+        }
+        .btn-sm {
+            padding: 8px 18px;
+            font-size: 0.85rem;
+        }
+        .btn-block {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ─────────── TOP BAR ─────────── */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #2c2c2c;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .topbar-brand {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .topbar-brand span {
+            background: linear-gradient(135deg, #8b83ff, #b8a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .topbar-actions .btn {
+            padding: 6px 16px;
+            font-size: 0.78rem;
+            border-radius: 40px;
+        }
+
+        /* ─────────── WELCOME PAGE ─────────── */
+        #welcome .topbar {
+            border-bottom: none;
+            margin-bottom: 6px;
+        }
+        .welcome-hero {
+            text-align: center;
+            padding: 28px 0 18px;
+        }
+        .welcome-hero .title-xl {
+            font-size: 3.4rem;
+        }
+        .welcome-hero .sub {
+            font-size: 1.05rem;
+            color: #c0c0c0;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+        .welcome-hero .emoji-big {
+            font-size: 4.6rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .welcome-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+        .welcome-actions .btn {
+            min-width: 180px;
+            padding: 16px 40px;
+            font-size: 1.15rem;
+        }
+
+        /* ─────────── HOME PAGE ─────────── */
+        .toggle-group {
+            display: flex;
+            background: #2a2a2a;
+            border-radius: 60px;
+            padding: 4px;
+            margin: 6px 0 18px;
+            position: relative;
+        }
+        .toggle-group .toggle-btn {
+            flex: 1;
+            padding: 10px 0;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            background: transparent;
+            color: #a0a0a0;
+        }
+        .toggle-group .toggle-btn.active {
+            background: #6C63FF;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(108, 99, 255, 0.35);
+        }
+        .toggle-group .toggle-btn:not(.active):hover {
+            color: #e0e0e0;
+        }
+
+        .level-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 10px;
+        }
+        .level-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 22px;
+            border-radius: 20px;
+            background: #222;
+            border: 2px solid #333;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .level-card:hover {
+            border-color: #6C63FF;
+            background: #2a2a3a;
+            transform: translateX(4px);
+        }
+        .level-card .icon {
+            font-size: 2.2rem;
+        }
+        .level-card .info {
+            flex: 1;
+        }
+        .level-card .info .title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #f0f0f0;
+        }
+        .level-card .arrow {
+            color: #888;
+            font-size: 1.3rem;
+        }
+
+        /* ─────────── MODAL / POPUP ─────────── */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 999;
+        }
+        .modal-overlay.open {
+            display: flex;
+        }
+        .modal-box {
+            background: #1e1e1e;
+            max-width: 400px;
+            width: 100%;
+            border-radius: 32px;
+            padding: 28px 24px 32px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            animation: modalIn 0.3s ease forwards;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid #333;
+        }
+        @keyframes modalIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.92) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .modal-box .modal-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #f0f0f0;
+            margin-bottom: 4px;
+        }
+        .modal-box .modal-sub {
+            color: #a0a0a0;
+            font-size: 0.92rem;
+            margin-bottom: 18px;
+        }
+        .modal-box label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #d0d0d0;
+            display: block;
+            margin: 14px 0 6px;
+        }
+        .modal-box select,
+        .modal-box .option-grid {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #333;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            background: #2a2a2a;
+            color: #f0f0f0;
+            outline: none;
+            transition: border 0.2s;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        .modal-box select:focus,
+        .modal-box .option-grid .opt-item.selected {
+            border-color: #6C63FF;
+        }
+        .modal-box .option-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0;
+            border: none;
+            background: transparent;
+        }
+        .modal-box .option-grid .opt-item {
+            flex: 1 0 calc(50% - 8px);
+            padding: 10px 6px;
+            border: 2px solid #333;
+            border-radius: 14px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #2a2a2a;
+            color: #e0e0e0;
+        }
+        .modal-box .option-grid .opt-item:hover {
+            border-color: #6C63FF;
+            background: #333;
+        }
+        .modal-box .option-grid .opt-item.selected {
+            border-color: #6C63FF;
+            background: #3a3a5a;
+            color: #fff;
+        }
+        .modal-box .modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 22px;
+        }
+        .modal-box .modal-actions .btn {
+            flex: 1;
+        }
+
+        /* ─────────── QUIZ PAGE ─────────── */
+        .quiz-progress {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .quiz-progress .bar-track {
+            flex: 1;
+            height: 6px;
+            border-radius: 10px;
+            background: #333;
+            overflow: hidden;
+        }
+        .quiz-progress .bar-track .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6C63FF, #b8a6ff);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        .quiz-progress .counter {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #b0b0b0;
+            min-width: 48px;
+            text-align: right;
+        }
+
+        .quiz-question {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #f0f0f0;
+            margin-bottom: 18px;
+            line-height: 1.5;
+            min-height: 60px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+        .quiz-options .qopt {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px;
+            border: 2px solid #333;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #222;
+        }
+        .quiz-options .qopt:hover {
+            border-color: #6C63FF;
+            background: #2a2a3a;
+        }
+        .quiz-options .qopt .letter {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: #b8b0ff;
+            flex-shrink: 0;
+        }
+        .quiz-options .qopt .text {
+            font-weight: 500;
+            color: #e0e0e0;
+        }
+        .quiz-options .qopt.selected {
+            border-color: #6C63FF;
+            background: #2a2a4a;
+        }
+        .quiz-options .qopt.correct {
+            border-color: #10b981;
+            background: #0a2a1a;
+        }
+        .quiz-options .qopt.correct .letter {
+            background: #10b981;
+            color: #fff;
+        }
+        .quiz-options .qopt.wrong {
+            border-color: #ef4444;
+            background: #2a0a0a;
+        }
+        .quiz-options .qopt.wrong .letter {
+            background: #ef4444;
+            color: #fff;
+        }
+        .quiz-options .qopt.disabled {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        .quiz-options .qopt.disabled.correct {
+            opacity: 1;
+        }
+        .quiz-options .qopt.disabled.wrong {
+            opacity: 1;
+        }
+
+        .quiz-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .quiz-actions .btn {
+            flex: 1;
+        }
+
+        /* ─────────── RESULTS PAGE ─────────── */
+        .result-score {
+            text-align: center;
+            padding: 16px 0 8px;
+        }
+        .result-score .big {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #f0f0f0;
+            line-height: 1;
+        }
+        .result-score .big span {
+            color: #8b83ff;
+        }
+        .result-score .label {
+            color: #b0b0b0;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .result-stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 18px 0 24px;
+        }
+        .result-stats .stat {
+            text-align: center;
+        }
+        .result-stats .stat .num {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+        .result-stats .stat .num.green {
+            color: #10b981;
+        }
+        .result-stats .stat .num.red {
+            color: #ef4444;
+        }
+        .result-stats .stat .lbl {
+            font-size: 0.78rem;
+            color: #a0a0a0;
+            font-weight: 500;
+        }
+        .result-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        .result-actions .btn {
+            flex: 1;
+        }
+
+        /* ─────────── NOTES PAGE ─────────── */
+        .notes-content {
+            background: #222;
+            border-radius: 20px;
+            padding: 18px 20px;
+            border: 1px solid #333;
+            margin: 12px 0 18px;
+            max-height: 380px;
+            overflow-y: auto;
+            line-height: 1.7;
+            color: #d0d0d0;
+            font-size: 0.95rem;
+        }
+        .notes-content h3 {
+            color: #f0f0f0;
+            margin: 12px 0 6px;
+            font-size: 1.05rem;
+        }
+        .notes-content ul {
+            padding-left: 22px;
+            margin: 8px 0;
+        }
+        .notes-content ul li {
+            margin-bottom: 4px;
+        }
+        .notes-content .highlight {
+            background: #3a3a2a;
+            padding: 2px 8px;
+            border-radius: 8px;
+            color: #f0e68c;
+        }
+
+        /* ─────────── BACK BUTTON ─────────── */
+        .back-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .back-row .btn-back {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: #b0b0b0;
+            padding: 4px 8px;
+            border-radius: 12px;
+            transition: background 0.2s;
+        }
+        .back-row .btn-back:hover {
+            background: #2a2a2a;
+        }
+        .back-row .title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #f0f0f0;
+        }
+
+        /* ─────────── UTILITY ─────────── */
+        .mt-8 {
+            margin-top: 8px;
+        }
+        .mt-12 {
+            margin-top: 12px;
+        }
+        .mt-16 {
+            margin-top: 16px;
+        }
+        .mt-20 {
+            margin-top: 20px;
+        }
+        .mb-8 {
+            margin-bottom: 8px;
+        }
+        .gap-8 {
+            gap: 8px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-center {
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ─────────── SCROLLBAR ─────────── */
+        .notes-content::-webkit-scrollbar,
+        .modal-box::-webkit-scrollbar {
+            width: 4px;
+        }
+        .notes-content::-webkit-scrollbar-track,
+        .modal-box::-webkit-scrollbar-track {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+        .notes-content::-webkit-scrollbar-thumb,
+        .modal-box::-webkit-scrollbar-thumb {
+            background: #6C63FF;
+            border-radius: 10px;
+        }
+
+        /* ─────────── RESPONSIVE ─────────── */
+        @media (max-width: 440px) {
+            #app {
+                padding: 18px 14px 24px;
+                border-radius: 28px;
+                min-height: 580px;
+            }
+            .title-xl {
+                font-size: 2.4rem;
+            }
+            .welcome-hero .title-xl {
+                font-size: 2.8rem;
+            }
+            .welcome-hero .emoji-big {
+                font-size: 3.6rem;
+            }
+            .level-card {
+                padding: 14px 16px;
+            }
+            .modal-box {
+                padding: 22px 18px 26px;
+            }
+            .result-score .big {
+                font-size: 3.2rem;
+            }
+            .quiz-question {
+                font-size: 1.05rem;
+            }
+            .topbar-brand {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .modal-box .option-grid .opt-item {
+                flex: 1 0 100%;
+            }
+            .result-stats {
+                gap: 16px;
+            }
+        }
+
+        /* ─────────── MISC ANIMATIONS ─────────── */
+        .pulse-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #10b981;
+            margin-right: 6px;
+            animation: pulse 1.2s infinite;
+        }
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: #333;
+            color: #b8b0ff;
+            margin-right: 4px;
+        }
+        .tag-green {
+            background: #0a2a1a;
+            color: #10b981;
+        }
+        .tag-orange {
+            background: #3a2a0a;
+            color: #f0c060;
+        }
+
+        /* empty state */
+        .empty-state {
+            text-align: center;
+            padding: 30px 10px;
+            color: #a0a0a0;
+        }
+        .empty-state .emoji {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* additional dark tweaks */
+        .btn-outline {
+            border-color: #6C63FF;
+            color: #b8b0ff;
+        }
+        .btn-outline:hover {
+            background: #6C63FF20;
+        }
+        .text-muted {
+            color: #a0a0a0;
+        }
+        .text-sm {
+            color: #a0a0a0;
+        }
+        select option {
+            background: #1a1a1a;
+            color: #f0f0f0;
+        }
+        .modal-box select {
+            background: #2a2a2a;
+            color: #f0f0f0;
+        }
+        .modal-box select option {
+            background: #1a1a1a;
+        }
+        .level-card .info .title {
+            color: #f0f0f0;
+        }
+        .level-card .arrow {
+            color: #888;
+        }
+        .topbar-actions .btn {
+            border-color: #6C63FF;
+            color: #b8b0ff;
+        }
+        .topbar-actions .btn:hover {
+            background: #6C63FF20;
+        }
+        .topbar-actions .btn-primary {
+            background: #6C63FF;
+            color: #fff;
+            border: none;
+        }
+        .topbar-actions .btn-primary:hover {
+            background: #7b73ff;
+        }
+        .btn-success {
+            background: #10b981;
+            color: #fff;
+        }
+        .btn-success:hover {
+            background: #16d08a;
+        }
+        .btn-danger {
+            background: #ef4444;
+            color: #fff;
+        }
+        .btn-danger:hover {
+            background: #f55a5a;
+        }
+        .welcome-hero .sub {
+            color: #c0c0c0;
+        }
+        .quiz-options .qopt .text {
+            color: #e0e0e0;
+        }
+        .result-score .label {
+            color: #b0b0b0;
+        }
+        .result-stats .stat .lbl {
+            color: #a0a0a0;
+        }
+        .notes-content {
+            color: #d0d0d0;
+        }
+        .notes-content h3 {
+            color: #f0f0f0;
+        }
+        .notes-content .highlight {
+            background: #3a3a2a;
+            color: #f0e68c;
+        }
+        .back-row .title {
+            color: #f0f0f0;
+        }
+        .back-row .btn-back {
+            color: #b0b0b0;
+        }
+        .back-row .btn-back:hover {
+            background: #2a2a2a;
+        }
+        .topbar {
+            border-bottom-color: #2c2c2c;
+        }
+        #app {
+            border-color: #2a2a2a;
+        }
+        .level-card {
+            background: #222;
+            border-color: #333;
+        }
+        .level-card:hover {
+            border-color: #6C63FF;
+            background: #2a2a3a;
+        }
+        .toggle-group {
+            background: #2a2a2a;
+        }
+        .toggle-group .toggle-btn {
+            color: #a0a0a0;
+        }
+        .toggle-group .toggle-btn.active {
+            background: #6C63FF;
+            color: #fff;
+        }
+        .toggle-group .toggle-btn:not(.active):hover {
+            color: #e0e0e0;
+        }
+        .modal-box {
+            background: #1e1e1e;
+            border-color: #333;
+        }
+        .modal-box .modal-title {
+            color: #f0f0f0;
+        }
+        .modal-box .modal-sub {
+            color: #a0a0a0;
+        }
+        .modal-box label {
+            color: #d0d0d0;
+        }
+        .modal-box select {
+            border-color: #333;
+            background: #2a2a2a;
+            color: #f0f0f0;
+        }
+        .modal-box .option-grid .opt-item {
+            border-color: #333;
+            background: #2a2a2a;
+            color: #e0e0e0;
+        }
+        .modal-box .option-grid .opt-item:hover {
+            border-color: #6C63FF;
+            background: #333;
+        }
+        .modal-box .option-grid .opt-item.selected {
+            border-color: #6C63FF;
+            background: #3a3a5a;
+            color: #fff;
+        }
+        .quiz-options .qopt {
+            border-color: #333;
+            background: #222;
+        }
+        .quiz-options .qopt:hover {
+            border-color: #6C63FF;
+            background: #2a2a3a;
+        }
+        .quiz-options .qopt .letter {
+            background: #333;
+            color: #b8b0ff;
+        }
+        .quiz-options .qopt.selected {
+            border-color: #6C63FF;
+            background: #2a2a4a;
+        }
+        .quiz-options .qopt.correct {
+            border-color: #10b981;
+            background: #0a2a1a;
+        }
+        .quiz-options .qopt.wrong {
+            border-color: #ef4444;
+            background: #2a0a0a;
+        }
+        .quiz-progress .bar-track {
+            background: #333;
+        }
+        .quiz-progress .counter {
+            color: #b0b0b0;
+        }
+        .quiz-question {
+            color: #f0f0f0;
+        }
+        .result-score .big {
+            color: #f0f0f0;
+        }
+        .result-score .big span {
+            color: #8b83ff;
+        }
+        .notes-content {
+            background: #222;
+            border-color: #333;
+        }
+        .notes-content .highlight {
+            background: #3a3a2a;
+            color: #f0e68c;
+        }
+        .btn {
+            background: #2c2c2c;
+            color: #d0d0d0;
+        }
+        .btn-primary {
+            background: #6C63FF;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #7b73ff;
+        }
+        .btn-outline {
+            background: transparent;
+            border-color: #6C63FF;
+            color: #b8b0ff;
+        }
+        .btn-outline:hover {
+            background: #6C63FF20;
+        }
+        .btn-success {
+            background: #10b981;
+            color: #fff;
+        }
+        .btn-success:hover {
+            background: #16d08a;
+        }
+        .btn-danger {
+            background: #ef4444;
+            color: #fff;
+        }
+        .btn-danger:hover {
+            background: #f55a5a;
+        }
+        .topbar-brand {
+            color: #f0f0f0;
+        }
+        .topbar-brand span {
+            background: linear-gradient(135deg, #8b83ff, #b8a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .title-xl {
+            background: linear-gradient(135deg, #8b83ff, #b8a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .title-lg {
+            color: #f0f0f0;
+        }
+        .title-md {
+            color: #f0f0f0;
+        }
+        .text-muted {
+            color: #a0a0a0;
+        }
+        .text-sm {
+            color: #a0a0a0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+
+        <!-- ════════════════════════════════════════ -->
+        <!--  WELCOME VIEW                           -->
+        <!-- ════════════════════════════════════════ -->
+        <div id="welcome" class="view active">
+            <div class="topbar">
+                <button class="btn btn-sm btn-outline" onclick="showAbout()"> About Us</button>
+                <div class="topbar-actions">
+                    <button class="btn btn-sm btn-primary" onclick="showContact()"> Contact Us</button>
+                </div>
+            </div>
+            <div class="welcome-hero">
+                <span class="emoji-big">🤖</span>
+                <div class="title-xl">QuizBot</div>
+                <p class="sub">Your smart exam revision companion</p>
+                <p class="text-muted" style="margin-top:6px; max-width:280px; margin-left:auto; margin-right:auto;">
+                    Read notes &amp; practice quizzes for Primary &amp; Secondary
+                </p>
+            </div>
+            <div class="welcome-actions">
+                <button class="btn btn-primary" onclick="goHome()">
+                    ▶ &nbsp;Play
+                </button>
+                <p class="text-sm" style="margin-top:4px;">🇺🇬 Made for Ugandan students</p>
+            </div>
+        </div>
+
+        <!-- ════════════════════════════════════════ -->
+        <!--  HOME VIEW                              -->
+        <!-- ════════════════════════════════════════ -->
+        <div id="home" class="view">
+            <div class="topbar">
+                <div class="topbar-brand">🤖 <span>QuizBot</span></div>
+                <button class="btn btn-sm btn-outline" onclick="goWelcome()">✕</button>
+            </div>
+
+            <div class="toggle-group">
+                <button class="toggle-btn active" data-mode="quiz" onclick="setMode('quiz')"> Quiz</button>
+                <button class="toggle-btn" data-mode="notes" onclick="setMode('notes')"> Notes</button>
+            </div>
+
+            <p class="text-sm" style="margin-bottom:6px;" id="modeLabel"> Quiz mode — test your knowledge</p>
+
+            <div class="level-cards">
+                <div class="level-card" onclick="openSelection('primary')">
+                    <span class="icon">📚</span>
+                    <div class="info">
+                        <div class="title">Primary Seven</div>
+                    </div>
+                    <span class="arrow">›</span>
+                </div>
+                <div class="level-card" onclick="openSelection('secondary')">
+                    <span class="icon">🎓</span>
+                    <div class="info">
+                        <div class="title">Secondary</div>
+                    </div>
+                    <span class="arrow">›</span>
+                </div>
+            </div>
+
+            <p class="text-sm text-center" style="margin-top:20px; color:#6a6a6a;">
+                ⚡ Choose a level to start
+            </p>
+        </div>
+
+        <!-- ════════════════════════════════════════ -->
+        <!--  QUIZ VIEW                              -->
+        <!-- ════════════════════════════════════════ -->
+        <div id="quiz" class="view">
+            <div class="back-row">
+                <button class="btn-back" onclick="goHome()">‹</button>
+                <span class="title" id="quizTitle">Quiz</span>
+                <span style="margin-left:auto; font-size:0.8rem; color:#888;" id="quizSubjectTag">📘</span>
+            </div>
+
+            <div class="quiz-progress">
+                <div class="bar-track">
+                    <div class="bar-fill" id="progressFill" style="width:0%"></div>
+                </div>
+                <span class="counter" id="questionCounter">1/10</span>
+            </div>
+
+            <div class="quiz-question" id="questionText">Loading question…</div>
+
+            <div class="quiz-options" id="optionsContainer">
+                <!-- options rendered by JS -->
+            </div>
+
+            <div class="quiz-actions">
+                <button class="btn btn-outline" id="prevBtn" onclick="prevQuestion()" style="flex:0.5;">‹ Back</button>
+                <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next →</button>
+            </div>
+        </div>
+
+        <!-- ════════════════════════════════════════ -->
+        <!--  RESULTS VIEW                           -->
+        <!-- ════════════════════════════════════════ -->
+        <div id="results" class="view">
+            <div class="back-row">
+                <button class="btn-back" onclick="goHome()">‹</button>
+                <span class="title"> Results</span>
+            </div>
+
+            <div class="result-score">
+                <div class="big"><span id="resultScore">0</span>%</div>
+                <div class="label" id="resultMessage">Great job!</div>
+            </div>
+
+            <div class="result-stats">
+                <div class="stat">
+                    <div class="num green" id="resultCorrect">0</div>
+                    <div class="lbl">✅ Correct</div>
+                </div>
+                <div class="stat">
+                    <div class="num red" id="resultWrong">0</div>
+                    <div class="lbl">❌ Wrong</div>
+                </div>
+                <div class="stat">
+                    <div class="num" style="color:#8b83ff;" id="resultTotal">0</div>
+                    <div class="lbl"> Total</div>
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <button class="btn btn-outline" onclick="goHome()"> Home</button>
+                <button class="btn btn-primary" onclick="retryQuiz()"> Retry</button>
+            </div>
+        </div>
+
+        <!-- ════════════════════════════════════════ -->
+        <!--  NOTES VIEW                             -->
+        <!-- ════════════════════════════════════════ -->
+        <div id="notes" class="view">
+            <div class="back-row">
+                <button class="btn-back" onclick="goHome()">‹</button>
+                <span class="title" id="notesTitle"> Notes</span>
+                <span style="margin-left:auto; font-size:0.8rem; color:#888;" id="notesSubjectTag">📘</span>
+            </div>
+            <div class="notes-content" id="notesContent">
+                <p>Select a subject to view notes.</p>
+            </div>
+            <button class="btn btn-outline btn-block" onclick="goHome()">← Back to Home</button>
+        </div>
+
+        <!-- ════════════════════════════════════════ -->
+        <!--  MODAL / SELECTION POPUP                -->
+        <!-- ════════════════════════════════════════ -->
+        <div class="modal-overlay" id="selectionModal">
+            <div class="modal-box">
+                <div class="modal-title" id="modalTitle">Select Options</div>
+                <div class="modal-sub" id="modalSub">Choose your term, class &amp; subject</div>
+
+                <!-- term -->
+                <label for="termSelect"> Term</label>
+                <select id="termSelect">
+                    <option value="Term 1">Term 1</option>
+                    <option value="Term 2">Term 2</option>
+                    <option value="Term 3">Term 3</option>
+                </select>
+
+                <!-- class (secondary only) -->
+                <div id="classGroup" style="display:none;">
+                    <label for="classSelect"> Class</label>
+                    <select id="classSelect">
+                        <option value="Senior 1">Senior 1</option>
+                        <option value="Senior 2">Senior 2</option>
+                        <option value="Senior 3">Senior 3</option>
+                        <option value="Senior 4">Senior 4</option>
+                        <option value="Senior 5">Senior 5</option>
+                        <option value="Senior 6">Senior 6</option>
+                    </select>
+                </div>
+
+                <!-- subject -->
+                <label for="subjectSelect"> Subject</label>
+                <select id="subjectSelect">
+                    <!-- filled by JS -->
+                </select>
+
+                <div class="modal-actions">
+                    <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+                    <button class="btn btn-primary" id="modalStartBtn" onclick="startFromModal()">🚀 Start</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ═══════════════════════════════════════════════════════════════════
+        //  DATA
+        // ═══════════════════════════════════════════════════════════════════
+
+        // ─── Primary 7 subjects ──────────────────────────
+        const PRIMARY_SUBJECTS = ['Mathematics', 'English', 'Science', 'Social Studies'];
+
+        // ─── Secondary subjects by class ──────────────────
+        const SECONDARY_SUBJECTS = {
+            'Senior 1': ['English', 'Mathematics', 'Biology', 'Chemistry', 'Physics', 'History', 'Geography', 'CRE'],
+            'Senior 2': ['English', 'Mathematics', 'Biology', 'Chemistry', 'Physics', 'History', 'Geography', 'CRE'],
+            'Senior 3': ['English', 'Mathematics', 'Biology', 'Chemistry', 'Physics', 'History', 'Geography', 'CRE',
+                'Entrepreneurship'
+            ],
+            'Senior 4': ['English', 'Mathematics', 'Biology', 'Chemistry', 'Physics', 'History', 'Geography', 'CRE',
+                'Entrepreneurship'
+            ],
+            'Senior 5': ['Physics', 'Chemistry', 'Biology', 'Mathematics', 'History', 'Geography', 'Economics',
+                'Literature', 'Entrepreneurship'
+            ],
+            'Senior 6': ['Physics', 'Chemistry', 'Biology', 'Mathematics', 'History', 'Geography', 'Economics',
+                'Literature', 'Entrepreneurship'
+            ]
+        };
+
+        // ─── Sample Questions ────────────────────────────
+        // Each question: { question, options: [a,b,c,d], correct: 0-3 }
+        function getQuestions(level, subject, term) {
+            // Return a small quiz (5-8 questions) per subject.
+            // For demo we return curated sets. In production, you'd expand this.
+            const bank = {};
+            // ── Primary ──
+            bank['Primary_Mathematics'] = [
+                { q: 'What is 7 × 8 ?', opts: ['48', '56', '64', '72'], ans: 1 },
+                { q: 'What is the perimeter of a rectangle with length 5cm and width 3cm?', opts: ['8cm', '15cm',
+                        '16cm', '10cm'
+                    ], ans: 2 },
+                { q: 'What is ⅓ of 90?', opts: ['20', '30', '40', '45'], ans: 1 },
+                { q: 'What is the place value of 6 in 6,342?', opts: ['6', '60', '600', '6,000'], ans: 3 },
+                { q: 'How many sides does a hexagon have?', opts: ['4', '5', '6', '8'], ans: 2 },
+                { q: 'What is 15% of 200?', opts: ['20', '25', '30', '35'], ans: 2 },
+            ];
+            bank['Primary_English'] = [
+                { q: 'What is the past tense of "go"?', opts: ['went', 'gone', 'going', 'goes'], ans: 0 },
+                { q: 'What is the synonym of "happy"?', opts: ['sad', 'joyful', 'angry', 'tired'], ans: 1 },
+                { q: 'Which is a noun?', opts: ['run', 'beautiful', 'table', 'quickly'], ans: 2 },
+                { q: 'What is the opposite of "hot"?', opts: ['warm', 'cold', 'cool', 'fire'], ans: 1 },
+                { q: 'What type of word is "slowly"?', opts: ['noun', 'verb', 'adjective', 'adverb'], ans: 3 },
+                { q: 'Which sentence is correct?', opts: ['He go to school.', 'He goes to school.',
+                        'He going to school.', 'He went to school yesterday.'
+                    ], ans: 1 },
+            ];
+            bank['Primary_Science'] = [
+                { q: 'What is the function of the heart?', opts: ['To pump blood', 'To digest food', 'To breathe',
+                        'To think'
+                    ], ans: 0 },
+                { q: 'Which of these is a source of energy?', opts: ['Water', 'Sun', 'Soil', 'Air'], ans: 1 },
+                { q: 'What gas do plants absorb?', opts: ['Oxygen', 'Carbon dioxide', 'Nitrogen', 'Hydrogen'],
+                    ans: 1 },
+                { q: 'What is the largest organ in the human body?', opts: ['Liver', 'Brain', 'Skin', 'Heart'],
+                    ans: 2 },
+                { q: 'Which animal is a mammal?', opts: ['Lizard', 'Dolphin', 'Eagle', 'Frog'], ans: 1 },
+                { q: 'What is the boiling point of water?', opts: ['50°C', '80°C', '100°C', '120°C'], ans: 2 },
+            ];
+            bank['Primary_Social Studies'] = [
+                { q: 'What is the capital city of Uganda?', opts: ['Kampala', 'Entebbe', 'Jinja', 'Mbale'], ans: 0 },
+                { q: 'Which river flows through Uganda?', opts: ['Nile', 'Congo', 'Niger', 'Zambezi'], ans: 0 },
+                { q: 'What is the currency of Uganda?', opts: ['Shilling', 'Dollar', 'Pound', 'Euro'], ans: 0 },
+                { q: 'Which lake is the largest in Uganda?', opts: ['Lake Victoria', 'Lake Kyoga', 'Lake Albert',
+                        'Lake Edward'
+                    ], ans: 0 },
+                { q: 'How many districts does Uganda have?', opts: ['56', '78', '121', '146'], ans: 2 },
+                { q: 'What is the official language of Uganda?', opts: ['English', 'Swahili', 'Luganda',
+                        'All of the above'
+                    ], ans: 0 },
+            ];
+
+            // ── Secondary ──
+            const secMap = {
+                'English': [
+                    { q: 'What is the plural of "child"?', opts: ['childs', 'children', 'childrens', 'childes'],
+                        ans: 1 },
+                    { q: 'Which word is an adjective?', opts: ['run', 'blue', 'quickly', 'under'], ans: 1 },
+                    { q: 'What is the past participle of "write"?', opts: ['wrote', 'written', 'writing',
+                            'writes'], ans: 1 },
+                    { q: 'What is the opposite of "difficult"?', opts: ['easy', 'hard', 'tough', 'simple'],
+                    ans: 0 },
+                    { q: 'Which sentence uses correct punctuation?', opts: ['How are you', 'How are you?',
+                            'How are you!', 'How are you.'
+                        ], ans: 1 },
+                ],
+                'Mathematics': [
+                    { q: 'What is √144 ?', opts: ['10', '11', '12', '13'], ans: 2 },
+                    { q: 'What is ¾ of 60?', opts: ['30', '40', '45', '50'], ans: 2 },
+                    { q: 'What is the value of x in 2x + 6 = 14?', opts: ['2', '3', '4', '5'], ans: 2 },
+                    { q: 'What is the area of a circle with radius 7cm? (use π=22/7)', opts: ['154cm²', '44cm²',
+                            '88cm²', '308cm²'
+                        ], ans: 0 },
+                    { q: 'What is 0.75 as a percentage?', opts: ['75%', '7.5%', '0.75%', '750%'], ans: 0 },
+                ],
+                'Biology': [
+                    { q: 'What is the basic unit of life?', opts: ['Cell', 'Tissue', 'Organ', 'System'], ans: 0 },
+                    { q: 'Which organelle is the "powerhouse" of the cell?', opts: ['Nucleus', 'Ribosome',
+                            'Mitochondria', 'Golgi'
+                        ], ans: 2 },
+                    { q: 'What is the largest organ in the human body?', opts: ['Liver', 'Skin', 'Brain', 'Heart'],
+                        ans: 1 },
+                    { q: 'Which of these is a function of the kidney?', opts: ['Digestion', 'Filtration of blood',
+                            'Pumping blood', 'Breathing'
+                        ], ans: 1 },
+                    { q: 'What type of blood vessel carries blood away from the heart?', opts: ['Vein', 'Artery',
+                            'Capillary', 'Nerve'
+                        ], ans: 1 },
+                ],
+                'Chemistry': [
+                    { q: 'What is the chemical symbol for water?', opts: ['H₂O', 'CO₂', 'NaCl', 'HCl'], ans: 0 },
+                    { q: 'What is the pH of pure water?', opts: ['5', '6', '7', '8'], ans: 2 },
+                    { q: 'Which of these is a noble gas?', opts: ['Oxygen', 'Nitrogen', 'Helium', 'Chlorine'],
+                        ans: 2 },
+                    { q: 'What is the atomic number of Carbon?', opts: ['4', '6', '8', '12'], ans: 1 },
+                    { q: 'What type of bond is formed by sharing electrons?', opts: ['Ionic', 'Covalent',
+                            'Metallic', 'Hydrogen'
+                        ], ans: 1 },
+                ],
+                'Physics': [
+                    { q: 'What is the SI unit of force?', opts: ['Joule', 'Newton', 'Watt', 'Pascal'], ans: 1 },
+                    { q: 'What is the speed of light approximately?', opts: ['3×10⁶ m/s', '3×10⁸ m/s',
+                            '3×10¹⁰ m/s', '3×10⁵ m/s'
+                        ], ans: 1 },
+                    { q: 'What is the law of inertia also known as?', opts: ["Newton's first law",
+                            "Newton's second law", "Newton's third law", "Law of gravitation"
+                        ], ans: 0 },
+                    { q: 'What type of energy is stored in a stretched spring?', opts: ['Kinetic', 'Potential',
+                            'Thermal', 'Sound'
+                        ], ans: 1 },
+                    { q: 'What is the unit of frequency?', opts: ['Hertz', 'Meter', 'Second', 'Joule'], ans: 0 },
+                ],
+                'History': [
+                    { q: 'Who was the first president of Uganda?', opts: ['Milton Obote', 'Idi Amin', 'Yoweri Museveni',
+                            'Apollo Milton Obote'
+                        ], ans: 0 },
+                    { q: 'What year did Uganda gain independence?', opts: ['1960', '1962', '1964', '1971'], ans: 1 },
+                    { q: 'Which kingdom is located in central Uganda?', opts: ['Buganda', 'Bunyoro', 'Tooro',
+                            'Ankole'
+                        ], ans: 0 },
+                    { q: 'Who led the Uganda People\'s Congress (UPC)?', opts: ['Milton Obote', 'Idi Amin',
+                            'Yoweri Museveni', 'John Akii-Bua'
+                        ], ans: 0 },
+                    { q: 'What was the name of the traditional parliament in Buganda?', opts: ['Lukiiko',
+                            'Kanzu', 'Namutamba', 'Ekisakaate'
+                        ], ans: 0 },
+                ],
+                'Geography': [
+                    { q: 'What is the longest river in Uganda?', opts: ['Nile', 'Congo', 'Niger', 'Zambezi'],
+                        ans: 0 },
+                    { q: 'Which mountain is the highest in Uganda?', opts: ['Mt. Rwenzori', 'Mt. Elgon',
+                            'Mt. Moroto', 'Mt. Kadam'
+                        ], ans: 0 },
+                    { q: 'What is the largest lake in Uganda?', opts: ['Lake Victoria', 'Lake Kyoga', 'Lake Albert',
+                            'Lake Edward'
+                        ], ans: 0 },
+                    { q: 'Which region of Uganda is known for the Karamojong people?', opts: ['Central', 'Western',
+                            'Eastern', 'Northern'
+                        ], ans: 2 },
+                    { q: 'What is the climate of most of Uganda?', opts: ['Tropical', 'Temperate', 'Arid',
+                            'Mediterranean'
+                        ], ans: 0 },
+                ],
+                'CRE': [
+                    { q: 'Who is the founder of Christianity?', opts: ['Moses', 'Jesus Christ', 'Mohammed',
+                            'Abraham'
+                        ], ans: 1 },
+                    { q: 'How many books are in the New Testament?', opts: ['27', '39', '46', '66'], ans: 0 },
+                    { q: 'What is the first book of the Bible?', opts: ['Exodus', 'Genesis', 'Leviticus',
+                            'Numbers'
+                        ], ans: 1 },
+                    { q: 'Who built the ark?', opts: ['Moses', 'Noah', 'Abraham', 'David'], ans: 1 },
+                    { q: 'What did Jesus call his followers?', opts: ['Sheep', 'Disciples', 'Prophets', 'Priests'],
+                        ans: 1 },
+                ],
+                'Entrepreneurship': [
+                    { q: 'What is the main purpose of a business?', opts: ['To make profit', 'To employ people',
+                            'To provide services', 'All of the above'
+                        ], ans: 0 },
+                    { q: 'What is a business plan?', opts: ['A financial report', 'A document outlining business goals',
+                            'A marketing strategy', 'A legal contract'
+                        ], ans: 1 },
+                    { q: 'What is capital in business?', opts: ['Money invested', 'The building', 'The employees',
+                            'The product'
+                        ], ans: 0 },
+                    { q: 'What is an entrepreneur?', opts: ['A person who works for a salary', 'A person who starts a business',
+                            'A government official', 'A teacher'
+                        ], ans: 1 },
+                    { q: 'What is profit?', opts: ['Revenue minus expenses', 'Total sales', 'Cost of goods sold',
+                            'Tax paid'
+                        ], ans: 0 },
+                ],
+                'Economics': [
+                    { q: 'What is scarcity in economics?', opts: ['Unlimited wants with limited resources',
+                            'Limited wants with unlimited resources', 'Too many goods', 'Too much money'
+                        ], ans: 0 },
+                    { q: 'What is GDP?', opts: ['Gross Domestic Product', 'Gross Domestic Price',
+                            'General Development Plan', 'Global Domestic Policy'
+                        ], ans: 0 },
+                    { q: 'What is inflation?', opts: ['Rise in general price level', 'Fall in prices',
+                            'Increase in employment', 'Decrease in money supply'
+                        ], ans: 0 },
+                    { q: 'What is a market?', opts: ['A place where goods are sold', 'A place where people meet',
+                            'A place for entertainment', 'A government office'
+                        ], ans: 0 },
+                    { q: 'What is supply?', opts: ['Quantity of goods available for sale', 'Quantity of goods demanded',
+                            'Price of goods', 'Quality of goods'
+                        ], ans: 0 },
+                ],
+                'Literature': [
+                    { q: 'Who wrote "Things Fall Apart"?', opts: ['Chinua Achebe', 'Wole Soyinka', 'Ngũgĩ wa Thiong\'o',
+                            'Peter Abrahams'
+                        ], ans: 0 },
+                    { q: 'What is a metaphor?', opts: ['A direct comparison', 'An indirect comparison',
+                            'A sound device', 'A type of rhyme'
+                        ], ans: 0 },
+                    { q: 'What is the theme of a story?', opts: ['The main idea', 'The plot', 'The setting',
+                            'The characters'
+                        ], ans: 0 },
+                    { q: 'Who is the protagonist in "The River Between"?', opts: ['Waiyaki', 'Nyambura', 'Joshua',
+                            'Muthoni'
+                        ], ans: 0 },
+                    { q: 'What is a sonnet?', opts: ['A 14-line poem', 'A short story', 'A novel', 'A play'],
+                        ans: 0 },
+                ],
+            };
+
+            // Build composite key
+            let key = level + '_' + subject;
+            if (bank[key]) return shuffleArray([...bank[key]]);
+
+            // For secondary, use the secMap
+            if (secMap[subject]) return shuffleArray([...secMap[subject]]);
+
+            // fallback: generic questions
+            return [
+                { q: 'What is the capital of Uganda?', opts: ['Kampala', 'Entebbe', 'Jinja', 'Mbale'], ans: 0 },
+                { q: 'Which planet is known as the Red Planet?', opts: ['Venus', 'Mars', 'Jupiter', 'Saturn'],
+                    ans: 1 },
+                { q: 'What is 5 + 5 ?', opts: ['9', '10', '11', '12'], ans: 1 },
+            ];
+        }
+
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // ─── Notes content ──────────────────────────────
+        function getNotes(level, subject, term) {
+            const notes = {
+                'Primary_Mathematics': `
+              <h3>📐 Primary 7 Mathematics — ${term}</h3>
+              <p><strong>Topic:</strong> Multiplication &amp; Fractions</p>
+              <ul>
+                <li><span class="highlight">Multiplication:</span> 7 × 8 = 56. Practice times tables up to 12.</li>
+                <li><span class="highlight">Fractions:</span> ⅓ of 90 = 30. To find a fraction of a number, divide by the denominator and multiply by the numerator.</li>
+                <li><span class="highlight">Perimeter:</span> Perimeter of a rectangle = 2(length + width).</li>
+                <li><span class="highlight">Place value:</span> In 6,342, the 6 is in the thousands place = 6,000.</li>
+              </ul>
+              <p>💡 <strong>Tip:</strong> Practice word problems daily.</p>
+            `,
+                'Primary_English': `
+              <h3>📝 Primary 7 English — ${term}</h3>
+              <p><strong>Grammar:</strong> Tenses, Synonyms &amp; Antonyms</p>
+              <ul>
+                <li><span class="highlight">Past tense:</span> go → went, eat → ate, write → wrote.</li>
+                <li><span class="highlight">Synonyms:</span> happy = joyful, big = large.</li>
+                <li><span class="highlight">Adverbs:</span> slowly, quickly, carefully — describe how an action is done.</li>
+                <li><span class="highlight">Nouns:</span> table, school, book — names of things.</li>
+              </ul>
+              <p>📖 Read stories to improve comprehension.</p>
+            `,
+                'Primary_Science': `
+              <h3>🔬 Primary 7 Science — ${term}</h3>
+              <p><strong>Human Body &amp; Energy</strong></p>
+              <ul>
+                <li><span class="highlight">Heart:</span> Pumps blood around the body.</li>
+                <li><span class="highlight">Energy sources:</span> Sun, wind, water, and fossil fuels.</li>
+                <li><span class="highlight">Plants:</span> Absorb carbon dioxide and release oxygen.</li>
+                <li><span class="highlight">Skin:</span> The largest organ — protects the body.</li>
+              </ul>
+              <p>🌱 <strong>Ecology:</strong> Animals like dolphins are mammals — they give birth to live young.</p>
+            `,
+                'Primary_Social Studies': `
+              <h3>🌍 Primary 7 Social Studies — ${term}</h3>
+              <p><strong>Uganda — Our Country</strong></p>
+              <ul>
+                <li><span class="highlight">Capital:</span> Kampala.</li>
+                <li><span class="highlight">Currency:</span> Ugandan Shilling (UGX).</li>
+                <li><span class="highlight">Largest lake:</span> Lake Victoria.</li>
+                <li><span class="highlight">Official language:</span> English.</li>
+                <li><span class="highlight">Districts:</span> Over 121 districts.</li>
+              </ul>
+              <p>🗺️ <strong>Rivers:</strong> The Nile flows through Uganda.</p>
+            `,
+                'Secondary_English': `
+              <h3>📝 English — ${term}</h3>
+              <p><strong>Grammar &amp; Literature</strong></p>
+              <ul>
+                <li><span class="highlight">Plurals:</span> child → children, mouse → mice.</li>
+                <li><span class="highlight">Adjectives:</span> Words that describe nouns — e.g., blue, happy, large.</li>
+                <li><span class="highlight">Punctuation:</span> Use question marks for questions, full stops for statements.</li>
+                <li><span class="highlight">Literature:</span> Study characters, themes, and plot.</li>
+              </ul>
+              <p>📚 Read widely to improve vocabulary.</p>
+            `,
+                'Secondary_Mathematics': `
+              <h3>📐 Mathematics — ${term}</h3>
+              <p><strong>Algebra, Geometry &amp; Statistics</strong></p>
+              <ul>
+                <li><span class="highlight">Square roots:</span> √144 = 12.</li>
+                <li><span class="highlight">Fractions:</span> ¾ of 60 = 45.</li>
+                <li><span class="highlight">Area of circle:</span> πr², with π ≈ 22/7.</li>
+                <li><span class="highlight">Percentage:</span> 0.75 = 75%.</li>
+              </ul>
+              <p>🧮 Practice solving for x in equations.</p>
+            `,
+                'Secondary_Biology': `
+              <h3>🧬 Biology — ${term}</h3>
+              <p><strong>Cell Biology &amp; Human Systems</strong></p>
+              <ul>
+                <li><span class="highlight">Cell:</span> The basic unit of life.</li>
+                <li><span class="highlight">Mitochondria:</span> Powerhouse of the cell — produces energy.</li>
+                <li><span class="highlight">Skin:</span> Largest organ — protects against pathogens.</li>
+                <li><span class="highlight">Kidneys:</span> Filter blood and produce urine.</li>
+              </ul>
+              <p>🧪 Understand the structure and function of cells.</p>
+            `,
+                'Secondary_Chemistry': `
+              <h3>🧪 Chemistry — ${term}</h3>
+              <p><strong>Elements, Compounds &amp; Bonds</strong></p>
+              <ul>
+                <li><span class="highlight">Water:</span> H₂O — two hydrogen atoms, one oxygen.</li>
+                <li><span class="highlight">pH:</span> Pure water has pH 7 (neutral).</li>
+                <li><span class="highlight">Noble gases:</span> Helium, Neon, Argon — stable elements.</li>
+                <li><span class="highlight">Covalent bonds:</span> Atoms share electrons.</li>
+              </ul>
+              <p>⚗️ Study the periodic table and chemical reactions.</p>
+            `,
+                'Secondary_Physics': `
+              <h3>⚡ Physics — ${term}</h3>
+              <p><strong>Forces, Energy &amp; Motion</strong></p>
+              <ul>
+                <li><span class="highlight">Newton:</span> SI unit of force.</li>
+                <li><span class="highlight">Speed of light:</span> 3×10⁸ m/s.</li>
+                <li><span class="highlight">Inertia:</span> Newton's first law — an object remains at rest unless acted upon.</li>
+                <li><span class="highlight">Potential energy:</span> Stored energy, e.g., in a stretched spring.</li>
+              </ul>
+              <p>🔋 Understand the laws of motion and energy conservation.</p>
+            `,
+                'Secondary_History': `
+              <h3>📜 History — ${term}</h3>
+              <p><strong>Uganda's Political History</strong></p>
+              <ul>
+                <li><span class="highlight">First President:</span> Milton Obote.</li>
+                <li><span class="highlight">Independence:</span> 1962.</li>
+                <li><span class="highlight">Buganda Kingdom:</span> Central Uganda — traditional parliament called Lukiiko.</li>
+                <li><span class="highlight">UPC:</span> Uganda People's Congress led by Obote.</li>
+              </ul>
+              <p>🏛️ Study Uganda's journey to independence.</p>
+            `,
+                'Secondary_Geography': `
+              <h3>🌍 Geography — ${term}</h3>
+              <p><strong>Physical &amp; Political Geography of Uganda</strong></p>
+              <ul>
+                <li><span class="highlight">Longest river:</span> River Nile.</li>
+                <li><span class="highlight">Highest mountain:</span> Mt. Rwenzori.</li>
+                <li><span class="highlight">Largest lake:</span> Lake Victoria.</li>
+                <li><span class="highlight">Climate:</span> Tropical — warm and humid.</li>
+              </ul>
+              <p>🗺️ Study the geography of East Africa.</p>
+            `,
+                'Secondary_CRE': `
+              <h3>✝️ Christian Religious Education — ${term}</h3>
+              <p><strong>Foundations of Christianity</strong></p>
+              <ul>
+                <li><span class="highlight">Founder:</span> Jesus Christ.</li>
+                <li><span class="highlight">New Testament:</span> 27 books.</li>
+                <li><span class="highlight">First book:</span> Genesis — creation story.</li>
+                <li><span class="highlight">Ark builder:</span> Noah.</li>
+              </ul>
+              <p>📖 Study the life and teachings of Jesus.</p>
+            `,
+                'Secondary_Entrepreneurship': `
+              <h3>💼 Entrepreneurship — ${term}</h3>
+              <p><strong>Business Basics</strong></p>
+              <ul>
+                <li><span class="highlight">Goal:</span> Make profit.</li>
+                <li><span class="highlight">Business plan:</span> A document outlining goals and strategies.</li>
+                <li><span class="highlight">Capital:</span> Money invested in the business.</li>
+                <li><span class="highlight">Entrepreneur:</span> A person who starts and runs a business.</li>
+              </ul>
+              <p>📊 Profit = Revenue − Expenses.</p>
+            `,
+                'Secondary_Economics': `
+              <h3>📊 Economics — ${term}</h3>
+              <p><strong>Key Economic Concepts</strong></p>
+              <ul>
+                <li><span class="highlight">Scarcity:</span> Unlimited wants, limited resources.</li>
+                <li><span class="highlight">GDP:</span> Gross Domestic Product — total value of goods and services.</li>
+                <li><span class="highlight">Inflation:</span> Rise in general price level.</li>
+                <li><span class="highlight">Market:</span> Where buyers and sellers interact.</li>
+              </ul>
+              <p>📈 Understand supply, demand, and market equilibrium.</p>
+            `,
+                'Secondary_Literature': `
+              <h3>📖 Literature — ${term}</h3>
+              <p><strong>Novels, Poetry &amp; Drama</strong></p>
+              <ul>
+                <li><span class="highlight">"Things Fall Apart":</span> Chinua Achebe.</li>
+                <li><span class="highlight">Metaphor:</span> A direct comparison.</li>
+                <li><span class="highlight">Theme:</span> The main idea of a story.</li>
+                <li><span class="highlight">Sonnet:</span> A 14-line poem.</li>
+              </ul>
+              <p>📚 Analyse characters, themes, and literary devices.</p>
+            `
+            };
+
+            let key = level + '_' + subject;
+            if (notes[key]) return notes[key];
+            // fallback
+            return `
+            <h3>📘 ${subject} — ${term}</h3>
+            <p>Study notes for ${subject} will appear here. Please select a valid subject.</p>
+            <ul>
+              <li>Review your class notes.</li>
+              <li>Practice with past papers.</li>
+              <li>Ask your teacher for clarification.</li>
+            </ul>
+          `;
+        }
+
+        // ═══════════════════════════════════════════════════════════════════
+        //  APP STATE
+        // ═══════════════════════════════════════════════════════════════════
+
+        const state = {
+            view: 'welcome', // welcome | home | quiz | results | notes
+            mode: 'quiz', // quiz | notes
+            level: null, // primary | secondary
+            term: 'Term 1',
+            subject: null,
+            class: null, // for secondary
+            questions: [],
+            currentIndex: 0,
+            selectedAnswers: [], // array of selected option indices
+            score: 0,
+            totalQuestions: 0,
+        };
+
+        // ═══════════════════════════════════════════════════════════════════
+        //  DOM REFS
+        // ═══════════════════════════════════════════════════════════════════
+
+        const $ = id => document.getElementById(id);
+        const views = {
+            welcome: $('welcome'),
+            home: $('home'),
+            quiz: $('quiz'),
+            results: $('results'),
+            notes: $('notes'),
+        };
+        const modal = $('selectionModal');
+
+        // ═══════════════════════════════════════════════════════════════════
+        //  NAVIGATION
+        // ═══════════════════════════════════════════════════════════════════
+
+        function showView(name) {
+            Object.keys(views).forEach(k => views[k].classList.toggle('active', k === name));
+            state.view = name;
+        }
+
+        function goWelcome() {
+            showView('welcome');
+        }
+
+        function goHome() {
+            showView('home');
+            updateModeLabel();
+        }
+
+        function showAbout() {
+            alert(
+                '📖 About QuizBot\n\nQuizBot is a student exam revision tool designed for Ugandan students. ' +
+                'It helps you prepare for exams by offering subject notes and practice quizzes for Primary Seven ' +
+                'and Secondary (Senior 1–6).\n\nMade with ❤️ for Ugandan students.'
+            );
+        }
+
+        function showContact() {
+            alert(
+                '📬 Contact Us\n\n📧 Email: support@quizbot.ug\n📱 Phone: +256 700 000 000\n\n' +
+                '📞 WhatsApp: +256 700 000 000\n' +
+                '🐦 Twitter: @QuizBotUG\n' +
+                '📸 Instagram: @QuizBotUG\n\nWe\'d love to hear from you!'
+            );
+        }
+
+        // ═══════════════════════════════════════════════════════════════════
+        //  MODE TOGGLE
+        // ═══════════════════════════════════════════════════════════════════
+
+        function setMode(mode) {
+            state.mode = mode;
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.mode === mode);
+            });
+            updateModeLabel();
+        }
+
+        function updateModeLabel() {
+            const label = $('modeLabel');
+            if (state.mode === 'quiz') {
+                label.textContent = '🔍 Quiz mode — test your knowledge';
+            } else {
+                label.textContent = '📖 Notes mode — read and revise';
+            }
+        }
+
+        // ═══════════════════════════════════════════════════════════════════
+        //  SELECTION MODAL
+        // ═══════════════════════════════════════════════════════════════════
+
+        let modalLevel = null;
+
+        function openSelection(level) {
+            modalLevel = level;
+            const title = $('modalTitle');
+            const sub = $('modalSub');
+            const classGroup = $('classGroup');
+            const subjectSelect = $('subjectSelect');
+
+            if (level === 'primary') {
+                title.textContent = '📚 Primary Seven';
+                sub.textContent = 'Choose your term and subject.';
+                classGroup.style.display = 'none';
+                // populate subjects
+                subjectSelect.innerHTML = PRIMARY_SUBJECTS.map(s =>
+                    `<option value="${s}">${s}</option>`
+                ).join('');
+            } else {
+                title.textContent = '🎓 Secondary';
+                sub.textContent = 'Choose term, class &amp; subject.';
+                classGroup.style.display = 'block';
+                // populate class
+                const classSelect = $('classSelect');
+                const classes = ['Senior 1', 'Senior 2', 'Senior 3', 'Senior 4', 'Senior 5', 'Senior 6'];
+                classSelect.innerHTML = classes.map(c =>
+                    `<option value="${c}">${c}</option>`
+                ).join('');
+                // populate subjects for the first class
+                updateSecondarySubjects('Senior 1');
+                // listen to class change
+                classSelect.onchange = function() {
+                    updateSecondarySubjects(this.value);
+                };
+            }
+
+            // reset term
+            $('termSelect').value = 'Term 1';
+            modal.classList.add('open');
+        }
+
+        function updateSecondarySubjects(className) {
+            const subjects = SECONDARY_SUBJECTS[className] || ['English', 'Mathematics'];
+            const subjectSelect = $('subjectSelect');
+            subjectSelect.innerHTML = subjects.map(s =>
+                `<option value="${s}">${s}</option>`
+            ).join('');
+        }
+
+        function closeModal() {
+            modal.classList.remove('open');
+        }
+
+        function startFromModal() {
+            const term = $('termSelect').value;
+            const subject = $('subjectSelect').value;
+            let className = null;
+            if (modalLevel === 'secondary') {
+                className = $('classSelect').value;
+            }
+
+            if (!subject) {
+                alert('Please select a subject.');
+                return;
+            }
+
+            state.level = modalLevel;
+            state.term = term;
+            state.subject = subject;
+            state.class = className;
+
+            closeModal();
+
+            if (state.mode === 'quiz') {
+                startQuiz();
+            } else {
+                showNotesView();
+            }
+        }
+
+        // close modal on overlay click
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // ═══════════════════════════════════════════════════════════════════
+        //  QUIZ ENGINE
+        // ═══════════════════════════════════════════════════════════════════
+
+        function startQuiz() {
+            const levelLabel = state.level === 'primary' ? 'Primary' : state.class || 'Secondary';
+            const subjectLabel = state.subject;
+            const termLabel = state.term;
+
+            // Get questions
+            const qs = getQuestions(state.level, state.subject, state.term);
+            if (!qs || qs.length === 0) {
+                alert('No questions available for this selection. Please try another subject.');
+                return;
+            }
+
+            state.questions = qs;
+            state.currentIndex = 0;
+            state.selectedAnswers = new Array(qs.length).fill(null);
+            state.score = 0;
+            state.totalQuestions = qs.length;
+
+            // Update UI
+            $('quizTitle').textContent = `📝 ${subjectLabel} Quiz`;
+            $('quizSubjectTag').textContent = `${levelLabel} · ${termLabel}`;
+
+            showView('quiz');
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const idx = state.currentIndex;
+            const qs = state.questions;
+            if (!qs || qs.length === 0) return;
+
+            const q = qs[idx];
+            const total = qs.length;
+
+            // progress
+            $('progressFill').style.width = ((idx + 1) / total * 100) + '%';
+            $('questionCounter').textContent = `${idx+1}/${total}`;
+
+            // question text
+            $('questionText').textContent = q.q;
+
+            // options
+            const container = $('optionsContainer');
+            const letters = ['A', 'B', 'C', 'D'];
+            const selected = state.selectedAnswers[idx];
+
+            container.innerHTML = q.opts.map((opt, i) => {
+                let cls = 'qopt';
+                if (selected !== null) {
+                    cls += ' disabled';
+                    if (i === q.ans) cls += ' correct';
+                    if (i === selected && i !== q.ans) cls += ' wrong';
+                    if (i === selected) cls += ' selected';
+                }
+                return `
+              <div class="${cls}" data-index="${i}" onclick="selectAnswer(${i})">
+                <span class="letter">${letters[i]}</span>
+                <span class="text">${opt}</span>
+              </div>
+            `;
+            }).join('');
+
+            // update buttons
+            const prevBtn = $('prevBtn');
+            const nextBtn = $('nextBtn');
+            prevBtn.style.display = idx === 0 ? 'none' : 'inline-flex';
+            nextBtn.textContent = idx === total - 1 ? '📊 See Results' : 'Next →';
+            nextBtn.disabled = selected === null;
+
+            // if all questions answered, show results
+            if (state.selectedAnswers.every(a => a !== null) && idx === total - 1) {
+                // already answered all
+            }
+        }
+
+        function selectAnswer(index) {
+            const idx = state.currentIndex;
+            if (state.selectedAnswers[idx] !== null) return; // already answered
+
+            state.selectedAnswers[idx] = index;
+            renderQuestion();
+
+            // auto advance after a short delay if not last
+            if (idx < state.questions.length - 1) {
+                setTimeout(() => {
+                    if (state.view === 'quiz') nextQuestion();
+                }, 600);
+            } else {
+                // enable results button
+                $('nextBtn').disabled = false;
+            }
+        }
+
+        function nextQuestion() {
+            const idx = state.currentIndex;
+            const total = state.questions.length;
+
+            // if last question, show results
+            if (idx === total - 1) {
+                // check if all answered
+                if (state.selectedAnswers.every(a => a !== null)) {
+                    showResults();
+                } else {
+                    alert('Please answer all questions before viewing results.');
+                }
+                return;
+            }
+
+            if (state.selectedAnswers[idx] === null) {
+                alert('Please select an answer first.');
+                return;
+            }
+
+            state.currentIndex = idx + 1;
+            renderQuestion();
+        }
+
+        function prevQuestion() {
+            if (state.currentIndex > 0) {
+                state.currentIndex--;
+                renderQuestion();
+            }
+        }
+
+        function showResults() {
+            const qs = state.questions;
+            let correct = 0;
+            qs.forEach((q, i) => {
+                if (state.selectedAnswers[i] === q.ans) correct++;
+            });
+            state.score = correct;
+            const total = qs.length;
+            const pct = Math.round((correct / total) * 100);
+
+            $('resultScore').textContent = pct;
+            $('resultCorrect').textContent = correct;
+            $('resultWrong').textContent = total - correct;
+            $('resultTotal').textContent = total;
+
+            let msg = 'Great job! 🎉';
+            if (pct < 40) msg = 'Keep practicing! 💪';
+            else if (pct < 70) msg = 'Good effort! 🌟';
+            else if (pct < 90) msg = 'Well done! 👏';
+            else msg = 'Excellent! 🏆';
+
+            $('resultMessage').textContent = msg;
+
+            showView('results');
+        }
+
+        function retryQuiz() {
+            // reset and restart with same settings
+            const level = state.level;
+            const subject = state.subject;
+            const term = state.term;
+            const cls = state.class;
+
+            state.questions = getQuestions(level, subject, term);
+            state.currentIndex = 0;
+            state.selectedAnswers = new Array(state.questions.length).fill(null);
+            state.score = 0;
+            state.totalQuestions = state.questions.length;
+
+            showView('quiz');
+            renderQuestion();
+        }
+
+        // ═══════════════════════════════════════════════════════════════════
+        //  NOTES VIEW
+        // ═══════════════════════════════════════════════════════════════════
+
+        function showNotesView() {
+            const levelLabel = state.level === 'primary' ? 'Primary' : state.class || 'Secondary';
+            const subjectLabel = state.subject;
+            const termLabel = state.term;
+
+            $('notesTitle').textContent = `📖 ${subjectLabel} Notes`;
+            $('notesSubjectTag').textContent = `${levelLabel} · ${termLabel}`;
+
+            const notesHtml = getNotes(state.level, state.subject, state.term);
+            $('notesContent').innerHTML = notesHtml;
+
+            showView('notes');
+        }
+
+        // ═══════════════════════════════════════════════════════════════════
+        //  KEYBOARD SHORTCUTS
+        // ═══════════════════════════════════════════════════════════════════
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (modal.classList.contains('open')) closeModal();
+            }
+            // number keys 1-4 for quiz options
+            if (state.view === 'quiz') {
+                const num = parseInt(e.key);
+                if (num >= 1 && num <= 4) {
+                    const idx = num - 1;
+                    const container = $('optionsContainer');
+                    const opts = container.querySelectorAll('.qopt:not(.disabled)');
+                    if (opts[idx]) opts[idx].click();
+                }
+                if (e.key === 'Enter') {
+                    const nextBtn = $('nextBtn');
+                    if (!nextBtn.disabled) nextBtn.click();
+                }
+                if (e.key === 'ArrowLeft') $('prevBtn').click();
+                if (e.key === 'ArrowRight') { if (!$('nextBtn').disabled) $('nextBtn').click(); }
+            }
+        });
+
+        // ═══════════════════════════════════════════════════════════════════
+        //  INIT
+        // ═══════════════════════════════════════════════════════════════════
+
+        // Start on welcome
+        showView('welcome');
+
+        // pre-populate secondary subjects on first load
+        updateSecondarySubjects('Senior 1');
+
+        console.log('🤖 QuizBot loaded — ready for revision!');
+        console.log('📚 Primary subjects:', PRIMARY_SUBJECTS);
+        console.log('🎓 Secondary subjects:', SECONDARY_SUBJECTS);
+    </script>
+
+</body>
+</html>

@@ -4,8 +4,11 @@ import { useUIStore, useStore } from '../../lib/store';
 import { ALL_BOOKS, BOOKS_OT } from '../../lib/utils';
 import { fetchAllQuizQuestions } from '../../lib/api';
 import BookGrid from '../shared/BookGrid';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Home() {
+  console.log('🏠 Home component rendering...');
+
   const [mode, setMode] = useState('quiz');
   const navigate = useNavigate();
   const setCurrentHomeTab = useUIStore((state) => state.setCurrentHomeTab);
@@ -13,15 +16,25 @@ export default function Home() {
   const allQuizQuestions = useStore((s) => s.allQuizQuestions || []);
   const playedQuestions = useStore((s) => s.playedQuestions || []);
 
-  // Preload all quiz questions in the background (still useful for daily quiz)
+  const { user, loading } = useAuth();
+  console.log('👤 Auth state:', { user, loading });
+
   useEffect(() => {
+    if (!loading) {
+      console.log('✅ User authenticated:', user?.id);
+    }
+  }, [user, loading]);
+
+  useEffect(() => {
+    console.log('📦 allQuizQuestions length:', allQuizQuestions.length);
     if (allQuizQuestions.length === 0) {
+      console.log('🔄 Starting preload...');
       const load = async () => {
         try {
-          console.log('🔄 Preloading quiz questions in background...');
+          console.log('🔄 Fetching quiz questions...');
           const qs = await fetchAllQuizQuestions();
-          setAllQuizQuestions(qs);
           console.log(`✅ Preloaded ${qs.length} questions.`);
+          setAllQuizQuestions(qs);
         } catch (err) {
           console.warn('⚠️ Failed to preload quiz questions:', err);
         }
@@ -39,7 +52,6 @@ export default function Home() {
     setCurrentHomeTab(tab);
   };
 
-  // Always navigate to quiz – let QuizPlay handle missing data
   const handleBookClick = (book) => {
     if (mode === 'quiz') {
       navigate('/quiz', { state: { book } });
@@ -49,16 +61,10 @@ export default function Home() {
   };
 
   const startDailyQuiz = () => {
-    // If preloaded data exists, we trust it; otherwise, QuizPlay will fetch on demand.
-    // But we still navigate regardless.
     navigate('/quiz', { state: { daily: true } });
   };
 
   const startGlobalChallenge = () => {
-    if (allQuizQuestions.length === 0) {
-      // If no data, we could show a warning, but we'll still navigate.
-      // QuizPlay will handle loading.
-    }
     navigate('/challenge');
   };
 

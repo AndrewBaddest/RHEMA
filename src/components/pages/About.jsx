@@ -155,7 +155,7 @@ export default function About() {
         <div className="text-center text-muted text-sm mt-3 py-2 bg-[#1a1a1a] rounded-lg">
           {installStatus || (isStandalone
             ? '  Rhema is installed on your device.'
-            : 'Tap "Install App" to add Rhema to your home screen for offline access.')}
+            : 'Tap "Install App" to add Rhema to your home screen.')}
         </div>
       </div>
     </div>

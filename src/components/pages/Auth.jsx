@@ -1,11 +1,9 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStore, useUIStore } from '../../lib/store';
 import { generateDeviceCode } from '../../lib/utils';
 import { useSound } from '../../hooks/useSound';
 
 export default function Auth() {
-  const [username, setUsername] = useState('');
   const navigate = useNavigate();
   const setUsernameStore = useStore((state) => state.setUsername);
   const setPlayerId = useStore((state) => state.setPlayerId);
@@ -14,7 +12,7 @@ export default function Auth() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const name = username.trim() || 'Player';
+    const name = 'Player';
     const code = generateDeviceCode();
     const playerId = name + ' ' + code;
     setUsernameStore(name);
@@ -37,19 +35,10 @@ export default function Auth() {
         </div>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter your name (e.g., Noah)"
-            className="w-full p-3 rounded-lg border border-[#333] bg-surface text-text text-base focus:outline-none focus:border-primary"
-          />
-        </div>
         <button type="submit" className="btn">▶ Play</button>
       </form>
       <div className="mt-3 text-center text-muted text-xs">
-        Your progress will be saved locally. Create an account to save across devices.
+        Play and create an account to save your progress.
       </div>
     </div>
   );

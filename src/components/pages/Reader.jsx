@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useStore } from '../../lib/store';
 import { fetchBibleData } from '../../lib/api';
 import { ALL_BOOKS } from '../../lib/utils';
+import { useAuth } from '../../context/AuthContext';
+import { useUpdateProgress } from '../../hooks/useProgress';
 
 export default function Reader() {
   const location = useLocation();
@@ -11,7 +13,7 @@ export default function Reader() {
   const initialBook = state.book || ALL_BOOKS[0];
   const initialChapter = state.chapter || 1;
   const initialVerse = state.verse || null;
-  const fromResults = state.fromResults || false; // ✅ detect if we came from results
+  const fromResults = state.fromResults || false;
 
   const [book, setBook] = useState(initialBook);
   const [chapter, setChapter] = useState(initialChapter);
@@ -21,10 +23,11 @@ export default function Reader() {
   const [error, setError] = useState(null);
   const [highlightVerse, setHighlightVerse] = useState(initialVerse);
 
-  const updateScripture = useStore((s) => s.updateScripture);
+  const { user } = useAuth();
+  const updateProgress = useUpdateProgress();
   const contentRef = useRef(null);
+  const updateScripture = useStore((state) => state.updateScripture);
 
-  // Scroll to top when chapter changes
   useEffect(() => {
     if (!isLoading && contentRef.current) {
       contentRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -38,12 +41,10 @@ export default function Reader() {
       setError(null);
       try {
         const rawData = await fetchBibleData(book);
-        console.log('  Loaded Bible data for', book, rawData);
-
         let chapterMap = {};
         let chapterList = [];
 
-        // Detect data structure
+        // Parse data (same as before)
         if (Array.isArray(rawData)) {
           rawData.forEach((item) => {
             if (item.chapter && Array.isArray(item.verses)) {
@@ -88,7 +89,27 @@ export default function Reader() {
         const verseList = chapterMap[targetChapter] || [];
         setVerses(verseList);
 
-        if (verseList.length > 0) {
+        // ─── Save progress asynchronously ────────────────────────────
+        if (user && verseList.length > 0) {
+          // Use `mutate` (non‑blocking) so the UI doesn't hang
+          updateProgress.mutate({
+            userId: user.id,
+            book_name: book,
+            chapter: targetChapter,
+            verse: verseList.length,
+            status: 'read',
+          }, {
+            onSuccess: () => {
+              console.log('✅ Progress saved to Supabase');
+            },
+            onError: (err) => {
+              console.warn('⚠️ Failed to save progress to Supabase:', err);
+              // Fallback to localStorage
+              updateScripture(book, targetChapter, verseList.length);
+            }
+          });
+        } else if (verseList.length > 0) {
+          // No user – use localStorage
           updateScripture(book, targetChapter, verseList.length);
         }
 
@@ -100,7 +121,7 @@ export default function Reader() {
           }, 200);
         }
       } catch (err) {
-        console.error('❌ Failed to load Bible data:', err);
+        console.error('❌ ERROR in loadChapter:', err);
         setError(err.message);
         setVerses([]);
         setChapters([]);
@@ -110,7 +131,9 @@ export default function Reader() {
     };
 
     loadChapter();
-  }, [book, chapter, initialVerse]);
+  }, [book, chapter, initialVerse, user]);
+
+  // ... rest of handlers and render (unchanged) ...
 
   const handleBookChange = (e) => {
     const newBook = e.target.value;
@@ -140,7 +163,6 @@ export default function Reader() {
     }
   };
 
-  // ── Back button: go to previous page (results or wherever) ──
   const goBack = () => {
     navigate(-1);
   };
@@ -158,7 +180,6 @@ export default function Reader() {
     <div>
       <div className="flex justify-between items-center mb-3 flex-wrap gap-2">
         <h2 className="text-primary text-2xl font-bold">Bible Reader</h2>
-        {/* ✅ Show different back button text when coming from results */}
         <button className="btn-secondary !w-auto !py-2 !px-4 text-sm" onClick={goBack}>
           {fromResults ? '← Back to Results' : '← Back'}
         </button>

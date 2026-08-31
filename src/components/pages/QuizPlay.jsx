@@ -4,6 +4,8 @@ import { useStore } from '../../lib/store';
 import { useSound } from '../../hooks/useSound';
 import { fetchQuizData, fetchAllQuizQuestions } from '../../lib/api';
 import { shuffle } from '../../lib/utils';
+import { useAuth } from '../../context/AuthContext';
+import { useSaveQuizAttempt } from '../../hooks/useQuiz';
 
 export default function QuizPlay() {
   const location = useLocation();
@@ -16,11 +18,10 @@ export default function QuizPlay() {
   const soundEffectsEnabled = settings.sound.soundEffects !== false;
 
   const { playEffect } = useSound();
+  const { user } = useAuth(); // just get it; no waiting
+  const saveQuizAttempt = useSaveQuizAttempt();
 
   const allQuizQuestions = useStore((s) => s.allQuizQuestions || []);
-  const addQuizResult = useStore((s) => s.addQuizResult);
-  const addDailyQuizResult = useStore((s) => s.addDailyQuizResult);
-  const markQuestionsPlayed = useStore((s) => s.markQuestionsPlayed);
   const playedQuestions = useStore((s) => s.playedQuestions || []);
 
   const [questions, setQuestions] = useState([]);
@@ -35,14 +36,14 @@ export default function QuizPlay() {
   const [isGlobal, setIsGlobal] = useState(false);
   const timerRef = useRef(null);
   const questionFinishedRef = useRef(false);
-  const questionSetRef = useRef([]); // store the full question set for results
+  const questionSetRef = useRef([]);
 
+  // ─── Load questions immediately ──────────────────────────────
   useEffect(() => {
     const loadQuestions = async () => {
       setIsLoading(true);
       setError(null);
       let qs = [];
-      let refs = [];
 
       if (daily) {
         let allQ = allQuizQuestions;
@@ -50,7 +51,6 @@ export default function QuizPlay() {
         const available = allQ.filter(q => !playedQuestions.includes(q.ref));
         const selected = available.length >= 15 ? shuffle(available).slice(0, 15) : shuffle(allQ).slice(0, 15);
         qs = selected;
-        refs = selected.map(q => q.ref);
         setIsDaily(true);
       } else if (book) {
         try {
@@ -61,9 +61,7 @@ export default function QuizPlay() {
             return;
           }
           const count = Math.min(questionsPerBook, data.length);
-          const selected = shuffle(data).slice(0, count);
-          qs = selected;
-          refs = selected.map(q => q.ref);
+          qs = shuffle(data).slice(0, count);
         } catch (err) {
           setError(`📚 "${book}" coming soon!`);
           setIsLoading(false);
@@ -72,9 +70,7 @@ export default function QuizPlay() {
       } else {
         let allQ = allQuizQuestions;
         if (allQ.length === 0) allQ = await fetchAllQuizQuestions();
-        const selected = shuffle(allQ).slice(0, 10);
-        qs = selected;
-        refs = selected.map(q => q.ref);
+        qs = shuffle(allQ).slice(0, 10);
       }
 
       if (qs.length === 0 && !error) {
@@ -97,6 +93,7 @@ export default function QuizPlay() {
     return () => clearInterval(timerRef.current);
   }, [book, daily, allQuizQuestions, timerDuration, questionsPerBook]);
 
+  // ─── Timer effect ─────────────────────────────────────────────
   useEffect(() => {
     if (isLoading || questions.length === 0) return;
     clearInterval(timerRef.current);
@@ -116,6 +113,7 @@ export default function QuizPlay() {
     return () => clearInterval(timerRef.current);
   }, [currentIndex, isLoading, questions, timerDuration]);
 
+  // ─── Handlers ─────────────────────────────────────────────────
   const handleSelectOption = (index) => {
     if (questionFinishedRef.current) return;
     setSelectedOption(index);
@@ -148,27 +146,27 @@ export default function QuizPlay() {
         setTimer(timerDuration);
       }, 500);
     } else {
-      // Quiz finished – save results and navigate
+      // ─── QUIZ FINISHED ──────────────────────────────────────────
       const finalScore = score + (isCorrect ? 1 : 0);
-      // Save to store
-      const refs = questions.map(q => q.ref);
-      markQuestionsPlayed(refs);
-      const result = {
-        book: book || (daily ? 'Daily Quiz' : 'Mixed'),
-        score: finalScore,
-        total: questions.length,
-        date: new Date().toISOString(),
-      };
-      if (isDaily) {
-        addDailyQuizResult(result);
-      } else if (isGlobal) {
-        // handle global separately if needed
+      let quizId = book || (daily ? 'daily' : 'mixed');
+      if (isDaily) quizId = 'daily';
+      if (isGlobal) quizId = 'global';
+
+      // Save only if user exists – otherwise just log
+      if (user) {
+        saveQuizAttempt.mutate({
+          userId: user.id,
+          quizId,
+          score: finalScore,
+          totalQuestions: questions.length,
+          answers: newUserAnswers,
+        });
+        console.log('✅ Quiz result saved to Supabase!');
       } else {
-        addQuizResult(result);
+        console.warn('⚠️ No user – quiz result not saved.');
       }
 
       if (soundEffectsEnabled) playEffect('gameover');
-
       navigate('/results', {
         state: {
           questions: questionSetRef.current,
@@ -181,7 +179,7 @@ export default function QuizPlay() {
     }
   };
 
-  // ── Render states ─────────────────────────────────────────────
+  // ─── Render ─────────────────────────────────────────────────────
   if (error) {
     return (
       <div className="text-center py-10">
@@ -209,7 +207,6 @@ export default function QuizPlay() {
     );
   }
 
-  // ─── Active Quiz ──────────────────────────────────────────────
   const q = questions[currentIndex];
   const total = questions.length;
   const questionNum = currentIndex + 1;
@@ -219,7 +216,7 @@ export default function QuizPlay() {
     <div>
       <div className="quiz-header flex justify-between items-center mb-5 font-bold flex-wrap gap-2">
         <div>
-          {isDaily ? '  ' : ''}{book ? `  ${book}` : 'Quiz'} Question {questionNum}/{total}
+          {isDaily ? '📅 Daily Quiz' : book ? `${book} Quiz` : 'Quick Quiz'} – {questionNum}/{total}
         </div>
         <div className="timer text-primary text-xl bg-[#2a2205] px-3 py-1 rounded-full border border-primary">
           {timer}s
