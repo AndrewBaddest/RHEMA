@@ -2,7 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useStore } from '../../lib/store';
 import { useSound } from '../../hooks/useSound';
-import { fetchQuizData, fetchAllQuizQuestions } from '../../lib/api';
+import {
+  fetchQuizData,
+  fetchAllQuizQuestions,
+  fetchQuizQuestionsFromDB,
+  fetchGlobalChallengeQuestionsFromDB,
+} from '../../lib/api';
 import { shuffle } from '../../lib/utils';
 import { useAuth } from '../../context/AuthContext';
 import { useSaveQuizAttempt } from '../../hooks/useQuiz';
@@ -18,7 +23,7 @@ export default function QuizPlay() {
   const soundEffectsEnabled = settings.sound.soundEffects !== false;
 
   const { playEffect } = useSound();
-  const { user } = useAuth(); // just get it; no waiting
+  const { user } = useAuth();
   const saveQuizAttempt = useSaveQuizAttempt();
 
   const allQuizQuestions = useStore((s) => s.allQuizQuestions || []);
@@ -38,7 +43,7 @@ export default function QuizPlay() {
   const questionFinishedRef = useRef(false);
   const questionSetRef = useRef([]);
 
-  // ─── Load questions immediately ──────────────────────────────
+  // ─── Load questions ──────────────────────────────────────────────
   useEffect(() => {
     const loadQuestions = async () => {
       setIsLoading(true);
@@ -46,31 +51,51 @@ export default function QuizPlay() {
       let qs = [];
 
       if (daily) {
-        let allQ = allQuizQuestions;
-        if (allQ.length === 0) allQ = await fetchAllQuizQuestions();
-        const available = allQ.filter(q => !playedQuestions.includes(q.ref));
-        const selected = available.length >= 15 ? shuffle(available).slice(0, 15) : shuffle(allQ).slice(0, 15);
-        qs = selected;
+        // For daily, try DB first for random questions from all books
+        let dbQs = await fetchGlobalChallengeQuestionsFromDB(15);
+        if (dbQs && dbQs.length > 0) {
+          qs = dbQs;
+        } else {
+          // Fallback: use JSON cache
+          let allQ = allQuizQuestions;
+          if (allQ.length === 0) allQ = await fetchAllQuizQuestions();
+          const available = allQ.filter(q => !playedQuestions.includes(q.ref));
+          const selected = available.length >= 15 ? shuffle(available).slice(0, 15) : shuffle(allQ).slice(0, 15);
+          qs = selected;
+        }
         setIsDaily(true);
       } else if (book) {
-        try {
-          const data = await fetchQuizData(book);
-          if (!data || data.length === 0) {
+        // For a specific book, try DB first
+        let dbQs = await fetchQuizQuestionsFromDB(book, questionsPerBook);
+        if (dbQs && dbQs.length > 0) {
+          qs = dbQs;
+        } else {
+          // Fallback: JSON
+          try {
+            const data = await fetchQuizData(book);
+            if (!data || data.length === 0) {
+              setError(`📚 "${book}" coming soon!`);
+              setIsLoading(false);
+              return;
+            }
+            const count = Math.min(questionsPerBook, data.length);
+            qs = shuffle(data).slice(0, count);
+          } catch (err) {
             setError(`📚 "${book}" coming soon!`);
             setIsLoading(false);
             return;
           }
-          const count = Math.min(questionsPerBook, data.length);
-          qs = shuffle(data).slice(0, count);
-        } catch (err) {
-          setError(`📚 "${book}" coming soon!`);
-          setIsLoading(false);
-          return;
         }
       } else {
-        let allQ = allQuizQuestions;
-        if (allQ.length === 0) allQ = await fetchAllQuizQuestions();
-        qs = shuffle(allQ).slice(0, 10);
+        // Mixed/quick quiz – try DB first
+        let dbQs = await fetchGlobalChallengeQuestionsFromDB(10);
+        if (dbQs && dbQs.length > 0) {
+          qs = dbQs;
+        } else {
+          let allQ = allQuizQuestions;
+          if (allQ.length === 0) allQ = await fetchAllQuizQuestions();
+          qs = shuffle(allQ).slice(0, 10);
+        }
       }
 
       if (qs.length === 0 && !error) {
@@ -93,7 +118,7 @@ export default function QuizPlay() {
     return () => clearInterval(timerRef.current);
   }, [book, daily, allQuizQuestions, timerDuration, questionsPerBook]);
 
-  // ─── Timer effect ─────────────────────────────────────────────
+  // ─── Timer effect (unchanged) ──────────────────────────────────
   useEffect(() => {
     if (isLoading || questions.length === 0) return;
     clearInterval(timerRef.current);
@@ -113,7 +138,7 @@ export default function QuizPlay() {
     return () => clearInterval(timerRef.current);
   }, [currentIndex, isLoading, questions, timerDuration]);
 
-  // ─── Handlers ─────────────────────────────────────────────────
+  // ─── Handlers ──────────────────────────────────────────────────
   const handleSelectOption = (index) => {
     if (questionFinishedRef.current) return;
     setSelectedOption(index);
@@ -146,13 +171,11 @@ export default function QuizPlay() {
         setTimer(timerDuration);
       }, 500);
     } else {
-      // ─── QUIZ FINISHED ──────────────────────────────────────────
       const finalScore = score + (isCorrect ? 1 : 0);
       let quizId = book || (daily ? 'daily' : 'mixed');
       if (isDaily) quizId = 'daily';
       if (isGlobal) quizId = 'global';
 
-      // Save only if user exists – otherwise just log
       if (user) {
         saveQuizAttempt.mutate({
           userId: user.id,
@@ -161,7 +184,6 @@ export default function QuizPlay() {
           totalQuestions: questions.length,
           answers: newUserAnswers,
         });
-        console.log('✅ Quiz result saved to Supabase!');
       } else {
         console.warn('⚠️ No user – quiz result not saved.');
       }

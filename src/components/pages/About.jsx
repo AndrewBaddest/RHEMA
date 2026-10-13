@@ -142,12 +142,12 @@ export default function About() {
             <Share2 size={18} /> Share
           </button>
 
-          {/* Support Button */}
+          {/* Donate Button */}
           <button
             className="btn !w-auto px-6 flex items-center gap-2"
             onClick={handleDonate}
           >
-            <Heart size={18} /> Support
+            <Heart size={18} /> Donate
           </button>
         </div>
 

@@ -7,3 +7,8 @@ console.log('🔍 Supabase URL:', supabaseUrl);
 console.log('🔍 Supabase Anon Key (first 10 chars):', supabaseAnonKey?.slice(0, 10));
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+// DEV-only: expose client for console debugging
+if (import.meta.env.DEV) {
+  window.supabase = supabase;
+}
