@@ -1,19 +1,17 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Settings } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import { initDevice } from '../../lib/utils';
 
 export default function Header() {
   const location = useLocation();
   const path = location.pathname;
   const { user, isAnonymous, loading, profile } = useAuth();
 
-  const deviceCode = profile.deviceCode || initDevice();
-  const namePart = profile.displayName || 'Player';
+  // Display name comes from the DB, verbatim. No composing.
+  const displayName = profile.displayName || 'Player';
   const showBadge = !loading && !!user;
 
-  const badgeText =
-    path === '/home' ? 'Progress' : `${namePart} ${deviceCode}`;
+  const badgeText = path === '/home' ? 'Progress' : displayName;
 
   return (
     <header className="bg-surface border-b-2 border-primary px-4 py-3 flex justify-between items-center sticky top-0 z-50">
@@ -43,7 +41,11 @@ export default function Header() {
           <Link to="/donate" className="header-btn">Donate</Link>
         ) : (
           <>
-            <Link to="/settings" className="header-btn p-2 rounded-full" aria-label="Settings">
+            <Link
+              to="/settings"
+              className="header-btn p-2 rounded-full"
+              aria-label="Settings"
+            >
               <Settings size={18} />
             </Link>
             {showBadge && (

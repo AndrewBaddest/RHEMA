@@ -58,6 +58,7 @@ export default function Challenge() {
   // ─── Multiplayer Duel ──────────────────────────────────────────
   const [isMultiplayerModalOpen, setIsMultiplayerModalOpen] = useState(false);
   const [opponentId, setOpponentId] = useState('');
+  const [opponentName, setOpponentName] = useState('');   // ← resolved display name
   const [questionCount, setQuestionCount] = useState(10);
   const [timerSeconds, setTimerSeconds] = useState(30);
   const [multiplayerStatus, setMultiplayerStatus] = useState('idle');
@@ -71,7 +72,6 @@ export default function Challenge() {
   const [connectionStatus, setConnectionStatus] = useState(false);
   const [activeQuestionTimer, setActiveQuestionTimer] = useState(30);
 
-  // ─── Presence & Rematch ───────────────────────────────────────
   const [isOpponentPresent, setIsOpponentPresent] = useState(false);
   const [isRematchRequested, setIsRematchRequested] = useState(false);
 
@@ -112,10 +112,14 @@ export default function Challenge() {
   const getUserDisplayName = async (userId) => {
     const { data } = await supabase
       .from('users')
-      .select('display_name')
+      .select('display_name, username, device_code')
       .eq('id', userId)
-      .single();
-    return data?.display_name || userId.slice(0, 8);
+      .maybeSingle();
+    if (data?.display_name) return data.display_name;
+    if (data?.username && data?.device_code) {
+      return `${data.username} ${data.device_code}`;
+    }
+    return userId.slice(0, 8);
   };
 
   const findOpponent = async (identifier) => {
@@ -141,7 +145,25 @@ export default function Challenge() {
     return data?.id || null;
   };
 
-  // ─── Incoming Challenges ──────────────────────────────────────
+  // ─── Resolve opponent's display name whenever challenge changes ─
+  useEffect(() => {
+    if (!currentChallenge || !user?.id) {
+      setOpponentName('');
+      return;
+    }
+    const otherId =
+      user.id === currentChallenge.challenger_id
+        ? currentChallenge.opponent_id
+        : currentChallenge.challenger_id;
+    let cancelled = false;
+    (async () => {
+      const name = await getUserDisplayName(otherId);
+      if (!cancelled) setOpponentName(name);
+    })();
+    return () => { cancelled = true; };
+  }, [currentChallenge?.id, user?.id]);
+
+  // ─── Incoming Challenges (global stream) ──────────────────────
   useEffect(() => {
     if (!user) return;
 
@@ -413,7 +435,7 @@ export default function Challenge() {
   const handleSendChallenge = () => {
     requireAuth(async () => {
       if (!opponentId.trim()) {
-        alert("Please enter your opponent's User ID or Display Name.");
+        alert("Please enter your opponent's name or User ID.");
         return;
       }
 
@@ -427,6 +449,10 @@ export default function Challenge() {
         alert('Connection not ready. Please wait.');
         return;
       }
+
+      // Resolve display name now so it appears immediately in "pending" UI
+      const targetName = await getUserDisplayName(targetUid);
+      setOpponentName(targetName);
 
       const questions = await fetchGlobalChallengeQuestionsFromDB(questionCount);
       const fallbacks =
@@ -567,6 +593,7 @@ export default function Challenge() {
   const resetMultiplayer = () => {
     setIsMultiplayerModalOpen(false);
     setOpponentId('');
+    setOpponentName('');
     setMultiplayerStatus('idle');
     setNotification(null);
     setQuizQuestions([]);
@@ -909,7 +936,7 @@ export default function Challenge() {
         ← Back to Home
       </button>
 
-      {/* ─── Multiplayer Modal (form, countdown, results) ─────── */}
+      {/* ─── Multiplayer Modal ────────────────────────────────── */}
       {isMultiplayerModalOpen && multiplayerStatus !== 'quiz' && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="bg-surface rounded-xl p-6 max-w-md w-full max-h-[90vh] overflow-y-auto border border-[#2a2a2a]">
@@ -922,11 +949,14 @@ export default function Challenge() {
                       isOpponentPresent ? 'bg-green-500' : 'bg-slate-600'
                     }`}
                   ></span>
-                  {isOpponentPresent ? 'Opponent Active' : 'Opponent Away'}
+                  {opponentName || 'Opponent'}{' '}
+                  {isOpponentPresent ? 'active' : 'away'}
                 </span>
               )}
             </div>
-            <p className="text-sm text-muted mb-4">Challenge a friend to a 1v1 match</p>
+            <p className="text-sm text-muted mb-4">
+              Challenge another player to a 1v1 match
+            </p>
 
             <div className="flex items-center gap-2 mb-4 text-sm">
               <span
@@ -943,17 +973,17 @@ export default function Challenge() {
               <>
                 <div className="mb-4">
                   <label className="block text-sm text-muted mb-1">
-                    Opponent User ID or Display Name
+                    Opponent name
                   </label>
                   <input
                     type="text"
                     value={opponentId}
                     onChange={(e) => setOpponentId(e.target.value)}
-                    placeholder="Enter opponent's User ID or Display Name"
+                    placeholder="e.g. Emma or Emma 4821"
                     className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary"
                   />
                   <div className="text-xs text-muted mt-1">
-                    You can find your opponent's User ID on their Progress page.
+                    Ask your friend for their name from their Progress page.
                   </div>
                 </div>
 
@@ -1002,7 +1032,13 @@ export default function Challenge() {
             {multiplayerStatus === 'pending' && (
               <div className="text-center py-8">
                 <div className="text-2xl mb-2">⏳</div>
-                <p className="text-text">Challenge sent! Waiting for opponent to accept...</p>
+                <p className="text-text">
+                  Challenge sent to{' '}
+                  <strong className="text-primary">
+                    {opponentName || 'opponent'}
+                  </strong>
+                  . Waiting for them to accept...
+                </p>
                 <button onClick={resetMultiplayer} className="mt-4 btn-secondary">
                   Cancel
                 </button>
@@ -1027,7 +1063,7 @@ export default function Challenge() {
                     </span>
                   </div>
                   <div className="flex justify-between border-b border-[#2a2a2a] py-1">
-                    <span>Opponent</span>
+                    <span>{opponentName || 'Opponent'}</span>
                     <span className="text-primary font-bold">
                       {opponentScore}/{quizQuestions.length}
                     </span>
@@ -1035,7 +1071,8 @@ export default function Challenge() {
                 </div>
                 <div className="mt-3 text-center text-sm">
                   {myScore > opponentScore && '🎉 You won!'}
-                  {myScore < opponentScore && '😞 Opponent won!'}
+                  {myScore < opponentScore &&
+                    `😞 ${opponentName || 'Opponent'} won!`}
                   {myScore === opponentScore && "🤝 It's a draw!"}
                 </div>
 
@@ -1066,13 +1103,11 @@ export default function Challenge() {
       {isMultiplayerModalOpen && multiplayerStatus === 'quiz' && quizQuestions.length > 0 && (
         <div className="fixed inset-0 z-[70] bg-bg overflow-y-auto">
           <div className="max-w-2xl mx-auto p-5">
-            <div className="quiz-header flex justify-between items-center mb-5 font-bold flex-wrap gap-2">
+            <div className="quiz-header">
               <div>
                 ⚔️ Duel – {currentQuestionIndex + 1}/{quizQuestions.length}
               </div>
-              <div className="timer text-primary text-xl bg-[#2a2205] px-3 py-1 rounded-full border border-primary">
-                {activeQuestionTimer}s
-              </div>
+              <div className="timer">{activeQuestionTimer}s</div>
               <button className="quit-btn" onClick={resetMultiplayer}>
                 ✕ Quit
               </button>
@@ -1081,7 +1116,7 @@ export default function Challenge() {
             <div className="flex justify-between text-sm mb-3 font-bold">
               <span className="text-primary">You: {myScore}</span>
               <span className="text-muted flex items-center gap-1">
-                Opponent: {opponentScore}
+                {opponentName || 'Opponent'}: {opponentScore}
                 <span
                   className={`inline-block w-2 h-2 rounded-full ${
                     isOpponentPresent ? 'bg-green-500' : 'bg-slate-600'
@@ -1090,14 +1125,14 @@ export default function Challenge() {
               </span>
             </div>
 
-            <div className="question-box bg-surface p-5 rounded-xl border-l-4 border-primary mb-5 text-lg leading-relaxed">
+            <div className="question-box">
               {quizQuestions[currentQuestionIndex].question}
               <div className="text-xs text-muted mt-2">
                 From {quizQuestions[currentQuestionIndex].book}
               </div>
             </div>
 
-            <div className="options-list flex flex-col gap-3">
+            <div className="options-list">
               {quizQuestions[currentQuestionIndex].options.map((opt, idx) => (
                 <button
                   key={idx}
@@ -1142,7 +1177,7 @@ export default function Challenge() {
         </div>
       )}
 
-      {/* ─── GLOBAL CHALLENGE countdown popup ──────────────────── */}
+      {/* ─── GLOBAL CHALLENGE Popups ──────────────── */}
       {showGlobalPopup && globalChallengeStatus === 'countdown' && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
           <div className="bg-surface rounded-xl p-8 max-w-sm w-full text-center border border-primary/50">
@@ -1163,27 +1198,24 @@ export default function Challenge() {
         </div>
       )}
 
-      {/* ─── GLOBAL CHALLENGE Quiz – Full Screen ──────────────── */}
       {globalChallengeStatus === 'playing' && globalQuizQuestions.length > 0 && (
         <div className="fixed inset-0 z-[70] bg-bg overflow-y-auto">
           <div className="max-w-2xl mx-auto p-5">
-            <div className="quiz-header flex justify-between items-center mb-5 font-bold flex-wrap gap-2">
+            <div className="quiz-header">
               <div>
                 🌍 Global – {globalCurrentQuestionIndex + 1}/{globalQuizQuestions.length}
               </div>
-              <div className="timer text-primary text-xl bg-[#2a2205] px-3 py-1 rounded-full border border-primary">
-                {globalQuestionTimer}s
-              </div>
+              <div className="timer">{globalQuestionTimer}s</div>
             </div>
 
-            <div className="question-box bg-surface p-5 rounded-xl border-l-4 border-primary mb-5 text-lg leading-relaxed">
+            <div className="question-box">
               {globalQuizQuestions[globalCurrentQuestionIndex].question}
               <div className="text-xs text-muted mt-2">
                 From {globalQuizQuestions[globalCurrentQuestionIndex].book}
               </div>
             </div>
 
-            <div className="options-list flex flex-col gap-3">
+            <div className="options-list">
               {globalQuizQuestions[globalCurrentQuestionIndex].options.map((opt, idx) => (
                 <button
                   key={idx}
@@ -1204,7 +1236,6 @@ export default function Challenge() {
         </div>
       )}
 
-      {/* ─── GLOBAL CHALLENGE Results ─────────────────────────── */}
       {globalChallengeStatus === 'finished' && globalQuizResults && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
           <div className="bg-surface rounded-xl p-6 max-w-md w-full max-h-[90vh] overflow-y-auto border border-[#2a2a2a]">

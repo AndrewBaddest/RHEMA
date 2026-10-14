@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isAnonymous, setIsAnonymous] = useState(true);
   const [profile, setProfile] = useState({
+    username: '',
     displayName: '',
     deviceCode: '',
     email: '',
@@ -27,37 +28,73 @@ export const AuthProvider = ({ children }) => {
 
   // ─── Load or create the public.users row ──────────────────────
   const loadOrCreateProfile = async (userId) => {
-    const { data } = await supabase
+    const { data, error: fetchError } = await supabase
       .from('users')
-      .select('display_name, device_code, email')
+      .select('username, display_name, device_code, email')
       .eq('id', userId)
       .maybeSingle();
 
+    if (fetchError) {
+      console.warn('loadOrCreateProfile fetch error:', fetchError.message);
+    }
+
     if (data) {
       return {
+        username: data.username || '',
         displayName: data.display_name || '',
         deviceCode: data.device_code || '',
         email: data.email || '',
       };
     }
 
-    const deviceCode = generateDeviceCode();
-    const displayName = `Player ${deviceCode}`;
+    // Fresh user — insert with retry on device_code collision.
+    for (let attempt = 0; attempt < 6; attempt++) {
+      const deviceCode = generateDeviceCode();
+      const username = 'Player';
+      const displayName = `${username} ${deviceCode}`;
 
-    const { error: insertError } = await supabase
-      .from('users')
-      .insert({
-        id: userId,
-        display_name: displayName,
-        device_code: deviceCode,
-        created_at: new Date().toISOString(),
-      });
+      const { error } = await supabase
+        .from('users')
+        .insert({
+          id: userId,
+          username,
+          display_name: displayName,
+          device_code: deviceCode,
+          created_at: new Date().toISOString(),
+        });
 
-    if (insertError && insertError.code !== '23505') {
-      console.warn('loadOrCreateProfile insert error:', insertError.message);
+      if (!error) {
+        return { username, displayName, deviceCode, email: '' };
+      }
+
+      if (error.code === '23505') continue;
+
+      console.error(
+        `loadOrCreateProfile insert error (attempt ${attempt + 1}):`,
+        error
+      );
+      break;
     }
 
-    return { displayName, deviceCode, email: '' };
+    // Fallback with a UUID-derived numeric code
+    const hex = userId.replace(/-/g, '');
+    const numeric = String(parseInt(hex.slice(-6), 16) % 10000).padStart(4, '0');
+    const username = 'Player';
+    const displayName = `${username} ${numeric}`;
+
+    const { error: fbError } = await supabase.from('users').insert({
+      id: userId,
+      username,
+      display_name: displayName,
+      device_code: numeric,
+      created_at: new Date().toISOString(),
+    });
+
+    if (fbError && fbError.code !== '23505') {
+      console.error('loadOrCreateProfile fallback insert failed:', fbError);
+    }
+
+    return { username, displayName, deviceCode: numeric, email: '' };
   };
 
   // ─── Sync auth metadata into public.users ─────────────────────
@@ -65,21 +102,29 @@ export const AuthProvider = ({ children }) => {
     if (!authUser) return;
     const { id, email, user_metadata } = authUser;
 
-    let displayName = user_metadata?.full_name || user_metadata?.name || null;
-    if (!displayName && email) displayName = email.split('@')[0];
+    let googleName = user_metadata?.full_name || user_metadata?.name || null;
+    if (!googleName && email) googleName = email.split('@')[0];
 
     const updates = {};
     if (email) updates.email = email;
 
     const { data: current } = await supabase
       .from('users')
-      .select('display_name')
+      .select('username, display_name, device_code')
       .eq('id', id)
       .maybeSingle();
 
-    const isDefaultName =
+    const isDefaultUsername = !current?.username || current.username === 'Player';
+    const isDefaultDisplay =
       !current?.display_name || /^Player \d+$/.test(current.display_name);
-    if (displayName && isDefaultName) updates.display_name = displayName;
+
+    if (googleName && isDefaultUsername) {
+      updates.username = googleName;
+      const code = current?.device_code || '';
+      updates.display_name = code ? `${googleName} ${code}` : googleName;
+    } else if (googleName && isDefaultDisplay) {
+      updates.display_name = googleName;
+    }
 
     if (Object.keys(updates).length === 0) return;
 
@@ -94,11 +139,32 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
     setIsAnonymous(detectAnonymous(userData));
     if (!userData) {
-      setProfile({ displayName: '', deviceCode: '', email: '' });
+      setProfile({ username: '', displayName: '', deviceCode: '', email: '' });
     }
   };
 
-  // ─── Google upgrade (OAuth redirect, in-place, preserves UID) ──
+  // ─── Rename display name (device code stays fixed) ────────────
+  const updateDisplayName = async (newUsername) => {
+    if (!user?.id) throw new Error('Not signed in');
+    const trimmed = String(newUsername || '').trim();
+    if (!trimmed) throw new Error('Name cannot be empty');
+    if (trimmed.length > 20) throw new Error('Name is too long');
+
+    const code = profile.deviceCode;
+    const displayName = code ? `${trimmed} ${code}` : trimmed;
+
+    const { error } = await supabase
+      .from('users')
+      .update({ username: trimmed, display_name: displayName })
+      .eq('id', user.id);
+
+    if (error) throw error;
+
+    setProfile((p) => ({ ...p, username: trimmed, displayName }));
+    return displayName;
+  };
+
+  // ─── Google upgrade (OAuth redirect) ──────────────────────────
   const signInWithGoogle = async () => {
     const { error } = await supabase.auth.linkIdentity({
       provider: 'google',
@@ -108,17 +174,18 @@ export const AuthProvider = ({ children }) => {
   };
   const linkWithGoogle = signInWithGoogle;
 
-  // ─── Google One Tap: sign in with an ID token (JWT) ───────────
-  // One Tap returns a signed JWT credential. Supabase verifies it and
-  // issues a session. Because the user already had an anonymous session,
-  // Supabase links the Google identity to the SAME user_id — so local
-  // progress + merge flow continues to work.
-  const signInWithGoogleIdToken = async (credential) => {
+  // ─── Google One Tap ───────────────────────────────────────────
+  // The nonce is required: Google embeds SHA-256(rawNonce) into the ID
+  // token as the "nonce" claim, and Supabase hashes the raw nonce we
+  // pass here to compare. Both must be present or Supabase rejects.
+  const signInWithGoogleIdToken = async (credential, nonce) => {
     if (!credential) throw new Error('Missing Google credential');
+    if (!nonce) throw new Error('Missing nonce — One Tap must supply it');
 
     const { data, error } = await supabase.auth.signInWithIdToken({
       provider: 'google',
       token: credential,
+      nonce,
     });
     if (error) throw error;
     return data;
@@ -167,7 +234,7 @@ export const AuthProvider = ({ children }) => {
     return () => listener?.subscription.unsubscribe();
   }, []);
 
-  // ─── Refresh profile whenever user changes (incl. after upgrade) ──
+  // ─── Refresh profile on user change / upgrade ─────────────────
   useEffect(() => {
     if (loading || !user?.id) return;
     let cancelled = false;
@@ -183,7 +250,7 @@ export const AuthProvider = ({ children }) => {
     return () => { cancelled = true; };
   }, [user?.id, isAnonymous, loading]);
 
-  // ─── One-shot: merge local progress after upgrade ─────────────
+  // ─── Merge local progress after upgrade ───────────────────────
   useEffect(() => {
     if (loading || !user || isAnonymous) return;
 
@@ -205,9 +272,10 @@ export const AuthProvider = ({ children }) => {
         loading,
         isAnonymous,
         profile,
-        signInWithGoogle,        // OAuth redirect fallback
-        signInWithGoogleIdToken, // Google One Tap (JWT)
-        linkWithGoogle,          // alias for signInWithGoogle
+        updateDisplayName,
+        signInWithGoogle,
+        signInWithGoogleIdToken,
+        linkWithGoogle,
       }}
     >
       {children}

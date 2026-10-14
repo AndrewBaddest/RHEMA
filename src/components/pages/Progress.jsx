@@ -8,20 +8,28 @@ import SignInPrompt from '../shared/SignInPrompt';
 
 export default function Progress() {
   const navigate = useNavigate();
-  const { user, loading, isAnonymous, profile } = useAuth();
+  const { user, loading, isAnonymous, profile, updateDisplayName } = useAuth();
   const { requireAuth, promptOpen, reason, closePrompt } = useRequireAuth();
 
-  // Store actions
   const loadProgress = useStore((s) => s.loadProgress);
   const resetProgress = useStore((s) => s.resetProgress);
 
-  // Store data (works for both guest and signed-in)
   const quizzes = useStore((s) => s.quizzes || []);
-  const scripture = useStore((s) => s.scripture || { booksRead: [], chaptersRead: [], versesRead: 0 });
+  const scripture = useStore((s) => s.scripture || {
+    booksRead: [],
+    chaptersRead: [],
+    versesRead: 0,
+  });
   const globalChallenges = useStore((s) => s.globalChallenges || []);
   const dailyQuizHistory = useStore((s) => s.dailyQuizHistory || []);
 
   const [logoutLoading, setLogoutLoading] = useState(false);
+
+  // Rename UI
+  const [renaming, setRenaming] = useState(false);
+  const [renameValue, setRenameValue] = useState('');
+  const [renameBusy, setRenameBusy] = useState(false);
+  const [renameMsg, setRenameMsg] = useState('');
 
   // ─── Load remote progress for signed-in users ────────────────
   useEffect(() => {
@@ -40,7 +48,6 @@ export default function Progress() {
       if (progressRes.error) throw progressRes.error;
       if (attemptsRes.error) throw attemptsRes.error;
 
-      // Preserve local-only arrays that don't have DB equivalents yet
       const current = useStore.getState();
 
       const loadedProgress = {
@@ -85,6 +92,27 @@ export default function Progress() {
     }
   };
 
+  // ─── Rename handlers ─────────────────────────────────────────
+  const openRename = () => {
+    setRenameValue(profile.username || 'Player');
+    setRenameMsg('');
+    setRenaming(true);
+  };
+
+  const saveRename = async () => {
+    setRenameBusy(true);
+    setRenameMsg('');
+    try {
+      const result = await updateDisplayName(renameValue);
+      setRenameMsg(`✅ Updated to "${result}"`);
+      setTimeout(() => setRenaming(false), 900);
+    } catch (err) {
+      setRenameMsg(`❌ ${err.message || 'Could not update name'}`);
+    } finally {
+      setRenameBusy(false);
+    }
+  };
+
   // ─── Stats ───────────────────────────────────────────────────
   const totalCorrect =
     quizzes.reduce((acc, q) => acc + (q.score || 0), 0) +
@@ -92,14 +120,17 @@ export default function Progress() {
   const totalQuestions =
     quizzes.reduce((acc, q) => acc + (q.total || 0), 0) +
     dailyQuizHistory.reduce((acc, q) => acc + (q.total || 0), 0);
-  const accuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+  const accuracy =
+    totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
   const booksRead = (scripture.booksRead || []).length;
   const versesRead = scripture.versesRead || 0;
   const gcAttempts = globalChallenges.length;
   let gcBest = 0;
   if (gcAttempts > 0) {
     gcBest = Math.max(
-      ...globalChallenges.map((g) => Math.round(((g.score || 0) / (g.total || 1)) * 100))
+      ...globalChallenges.map((g) =>
+        Math.round(((g.score || 0) / (g.total || 1)) * 100)
+      )
     );
   }
 
@@ -123,7 +154,6 @@ export default function Progress() {
   }
 
   const displayName = profile.displayName || 'Player';
-  const displayDeviceCode = profile.deviceCode || '----';
 
   return (
     <div>
@@ -139,10 +169,7 @@ export default function Progress() {
 
       {/* Player ID card */}
       <div className="player-id-box bg-surface border border-primary rounded-lg p-3 my-3 text-center text-lg font-semibold text-primary">
-        Player ID:{' '}
-        <span className="text-text">
-          {displayName} {displayDeviceCode}
-        </span>
+        Player ID: <span className="text-text">{displayName}</span>
         {user && !isAnonymous && (
           <span className="ml-2 text-xs text-success">(Cloud connected)</span>
         )}
@@ -156,6 +183,49 @@ export default function Progress() {
         )}
         {profile.email && (
           <div className="text-xs text-muted mt-1">Email: {profile.email}</div>
+        )}
+
+        {user && !renaming && (
+          <div className="mt-2">
+            <button
+              onClick={openRename}
+              className="text-xs text-primary underline hover:no-underline"
+            >
+              ✏️ Change name
+            </button>
+          </div>
+        )}
+
+        {user && renaming && (
+          <div className="mt-3 flex flex-col gap-2 max-w-xs mx-auto text-left">
+            <div className="text-xs text-muted text-center">
+              Shown as <strong className="text-text">{renameValue || 'Player'}</strong>
+            </div>
+            <input
+              type="text"
+              value={renameValue}
+              onChange={(e) => setRenameValue(e.target.value)}
+              maxLength={20}
+              placeholder="Your name"
+              className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary"
+            />
+            <div className="flex gap-2">
+              <button
+                onClick={saveRename}
+                disabled={renameBusy || !renameValue.trim()}
+                className="btn flex-1 !py-2 !text-sm"
+              >
+                {renameBusy ? 'Saving...' : 'Save'}
+              </button>
+              <button
+                onClick={() => setRenaming(false)}
+                className="btn-secondary flex-1 !py-2 !text-sm"
+              >
+                Cancel
+              </button>
+            </div>
+            {renameMsg && <div className="text-xs text-center">{renameMsg}</div>}
+          </div>
         )}
       </div>
 
@@ -232,7 +302,7 @@ export default function Progress() {
         </div>
       </div>
 
-      {/* Manage Progress */}
+      {/* ─── Manage Progress ─────────────────────────────────── */}
       <div className="mt-6 bg-surface rounded-xl p-5 border border-[#2a2a2a]">
         <h3 className="text-primary text-lg font-semibold mb-3">📊 Manage Progress</h3>
 
@@ -240,20 +310,44 @@ export default function Progress() {
           <>
             <p className="text-muted text-sm mb-3">
               You're playing as a guest. Your progress is saved on this device
-              only. Sign in to keep it safe across devices and to unlock
-              multiplayer duels.
+              only.{' '}
+              <strong className="text-error">
+                Clearing browser data will erase it.
+              </strong>{' '}
+              Sign in to keep it safe across devices and to unlock multiplayer
+              duels.
             </p>
-            <button
-              onClick={() =>
-                requireAuth(
-                  () => {},
-                  'Sign in to save your progress across devices'
-                )
-              }
-              className="btn !w-auto px-6"
-            >
-              🔒 Sign in to save
-            </button>
+
+            <div className="flex flex-wrap gap-3">
+              <button
+                onClick={() =>
+                  requireAuth(
+                    () => {},
+                    'Sign in to save your progress'
+                  )
+                }
+                className="btn !w-auto px-6"
+              >
+                🔒 Sign in to save
+              </button>
+              <button
+                onClick={() =>
+                  requireAuth(
+                    () => {},
+                    'Sign in to load your existing progress'
+                  )
+                }
+                className="btn-secondary !w-auto px-6"
+              >
+                📥 Load progress
+              </button>
+            </div>
+
+            <p className="text-muted text-xs mt-3">
+              Already played on another device? Use{' '}
+              <strong className="text-text">Load progress</strong> and pick the
+              Google account you used before.
+            </p>
           </>
         ) : (
           <>
@@ -265,8 +359,12 @@ export default function Progress() {
               disabled={logoutLoading}
               className="btn-secondary !w-auto px-6"
             >
-              {logoutLoading ? 'Logging out...' : 'Log Out'}
+              {logoutLoading ? 'Logging out...' : 'Log Out / Switch account'}
             </button>
+            <p className="text-muted text-xs mt-3">
+              Want to use a different account? Log out and sign in with the
+              other Google account — your data is tied to each account.
+            </p>
           </>
         )}
       </div>
@@ -274,8 +372,8 @@ export default function Progress() {
       <div className="mt-3 text-center text-muted text-xs">
         {user
           ? isAnonymous
-            ? `Playing as guest · ${displayDeviceCode}`
-            : `Signed in as ${displayName} ${displayDeviceCode}`
+            ? `Playing as guest · ${displayName}`
+            : `Signed in as ${displayName}`
           : 'Not signed in'}
       </div>
 

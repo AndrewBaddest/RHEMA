@@ -26,14 +26,32 @@ function loadGsiScript() {
 }
 
 /**
- * Google One Tap — shows device's Google accounts, user taps one.
- * onCredential(credentialJWT) fires when an account is chosen.
+ * Generate a nonce pair: raw (for Supabase) + SHA-256 hex (for Google).
+ * Google puts the hashed nonce into the ID token; Supabase hashes the raw
+ * nonce you give it and compares. If they don't match, Supabase rejects.
  */
+async function generateNoncePair() {
+  const rawNonce = btoa(
+    String.fromCharCode(...crypto.getRandomValues(new Uint8Array(32)))
+  );
+  const encoder = new TextEncoder();
+  const encodedNonce = encoder.encode(rawNonce);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', encodedNonce);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashedNonce = hashArray
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+  return { rawNonce, hashedNonce };
+}
+
 export function useGoogleOneTap({ onCredential, enabled = true }) {
   const [available, setAvailable] = useState(false);
   const initializedRef = useRef(false);
   const cbRef = useRef(onCredential);
   cbRef.current = onCredential;
+
+  // Current nonce for this session. Regenerated before each prompt.
+  const nonceRef = useRef({ rawNonce: '', hashedNonce: '' });
 
   useEffect(() => {
     if (!enabled) return;
@@ -53,27 +71,57 @@ export function useGoogleOneTap({ onCredential, enabled = true }) {
       }
       if (cancelled || !window.google?.accounts?.id) return;
 
+      // Generate the first nonce pair
+      nonceRef.current = await generateNoncePair();
+      if (cancelled) return;
+
       if (!initializedRef.current) {
         window.google.accounts.id.initialize({
           client_id: clientId,
-          callback: (response) => cbRef.current?.(response.credential),
+          callback: (response) => {
+            // Pass the RAW nonce to Supabase alongside the credential
+            cbRef.current?.(response.credential, nonceRef.current.rawNonce);
+          },
           auto_select: false,
           cancel_on_tap_outside: true,
           use_fedcm_for_prompt: true,
+          nonce: nonceRef.current.hashedNonce, // Google embeds this into the token
         });
         initializedRef.current = true;
       }
       setAvailable(true);
     })();
 
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [enabled]);
 
-  const promptOneTap = useCallback(() => {
+  const promptOneTap = useCallback(async () => {
     if (!window.google?.accounts?.id) return false;
+
+    // Fresh nonce for every prompt attempt
+    const pair = await generateNoncePair();
+    nonceRef.current = pair;
+
+    // Re-initialize with the new hashed nonce
+    window.google.accounts.id.initialize({
+      client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
+      callback: (response) => {
+        cbRef.current?.(response.credential, pair.rawNonce);
+      },
+      auto_select: false,
+      cancel_on_tap_outside: true,
+      use_fedcm_for_prompt: true,
+      nonce: pair.hashedNonce,
+    });
+
     window.google.accounts.id.prompt((notification) => {
       if (notification.isNotDisplayed?.()) {
-        console.log('[one-tap] not displayed:', notification.getNotDisplayedReason?.());
+        console.log(
+          '[one-tap] not displayed:',
+          notification.getNotDisplayedReason?.()
+        );
       } else if (notification.isSkippedMoment?.()) {
         console.log('[one-tap] skipped:', notification.getSkippedReason?.());
       }
