@@ -25,18 +25,15 @@ function loadGsiScript() {
   });
 }
 
-/**
- * Generate a nonce pair: raw (for Supabase) + SHA-256 hex (for Google).
- * Google puts the hashed nonce into the ID token; Supabase hashes the raw
- * nonce you give it and compares. If they don't match, Supabase rejects.
- */
 async function generateNoncePair() {
   const rawNonce = btoa(
     String.fromCharCode(...crypto.getRandomValues(new Uint8Array(32)))
   );
   const encoder = new TextEncoder();
-  const encodedNonce = encoder.encode(rawNonce);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', encodedNonce);
+  const hashBuffer = await crypto.subtle.digest(
+    'SHA-256',
+    encoder.encode(rawNonce)
+  );
   const hashArray = Array.from(new Uint8Array(hashBuffer));
   const hashedNonce = hashArray
     .map((b) => b.toString(16).padStart(2, '0'))
@@ -44,17 +41,25 @@ async function generateNoncePair() {
   return { rawNonce, hashedNonce };
 }
 
+// Module-level: only ONE initialize() call per page, no matter how many
+// hook instances mount (StrictMode double-mount, multiple components).
+let gsiInitialized = false;
+
 export function useGoogleOneTap({ onCredential, enabled = true }) {
   const [available, setAvailable] = useState(false);
-  const initializedRef = useRef(false);
   const cbRef = useRef(onCredential);
   cbRef.current = onCredential;
-
-  // Current nonce for this session. Regenerated before each prompt.
   const nonceRef = useRef({ rawNonce: '', hashedNonce: '' });
 
   useEffect(() => {
     if (!enabled) return;
+    // Synchronous guard — StrictMode's second invocation of this effect
+    // hits this and bails before doing anything.
+    if (gsiInitialized) {
+      setAvailable(true);
+      return;
+    }
+
     let cancelled = false;
 
     (async () => {
@@ -71,25 +76,29 @@ export function useGoogleOneTap({ onCredential, enabled = true }) {
       }
       if (cancelled || !window.google?.accounts?.id) return;
 
-      // Generate the first nonce pair
-      nonceRef.current = await generateNoncePair();
-      if (cancelled) return;
-
-      if (!initializedRef.current) {
-        window.google.accounts.id.initialize({
-          client_id: clientId,
-          callback: (response) => {
-            // Pass the RAW nonce to Supabase alongside the credential
-            cbRef.current?.(response.credential, nonceRef.current.rawNonce);
-          },
-          auto_select: false,
-          cancel_on_tap_outside: true,
-          use_fedcm_for_prompt: true,
-          nonce: nonceRef.current.hashedNonce, // Google embeds this into the token
-        });
-        initializedRef.current = true;
+      // One nonce per page load is fine. Google just needs the hashed
+      // nonce to match what Supabase later compares against.
+      if (!nonceRef.current.rawNonce) {
+        nonceRef.current = await generateNoncePair();
+        if (cancelled) return;
       }
-      setAvailable(true);
+
+      gsiInitialized = true;
+      window.google.accounts.id.initialize({
+        client_id: clientId,
+        callback: (response) => {
+          console.log(
+            '[one-tap] GSI callback fired, credential length:',
+            response?.credential?.length
+          );
+          cbRef.current?.(response.credential, nonceRef.current.rawNonce);
+        },
+        auto_select: false,
+        cancel_on_tap_outside: true,
+        nonce: nonceRef.current.hashedNonce,
+      });
+
+      if (!cancelled) setAvailable(true);
     })();
 
     return () => {
@@ -97,25 +106,8 @@ export function useGoogleOneTap({ onCredential, enabled = true }) {
     };
   }, [enabled]);
 
-  const promptOneTap = useCallback(async () => {
+  const promptOneTap = useCallback(() => {
     if (!window.google?.accounts?.id) return false;
-
-    // Fresh nonce for every prompt attempt
-    const pair = await generateNoncePair();
-    nonceRef.current = pair;
-
-    // Re-initialize with the new hashed nonce
-    window.google.accounts.id.initialize({
-      client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
-      callback: (response) => {
-        cbRef.current?.(response.credential, pair.rawNonce);
-      },
-      auto_select: false,
-      cancel_on_tap_outside: true,
-      use_fedcm_for_prompt: true,
-      nonce: pair.hashedNonce,
-    });
-
     window.google.accounts.id.prompt((notification) => {
       if (notification.isNotDisplayed?.()) {
         console.log(
