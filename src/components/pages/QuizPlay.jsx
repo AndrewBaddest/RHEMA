@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useStore } from '../../lib/store';
 import { useSound } from '../../hooks/useSound';
+import AdRotator from '../shared/AdRotator';
 import {
   fetchQuizData,
   fetchAllQuizQuestions,
@@ -11,6 +12,18 @@ import {
 import { shuffle } from '../../lib/utils';
 import { useAuth } from '../../context/AuthContext';
 import { useSaveQuizAttempt } from '../../hooks/useQuiz';
+
+// ─── Full-screen shell — ad stays pinned at the top ─────────────
+function QuizShell({ children }) {
+  return (
+    <div className="fixed inset-0 z-[70] bg-bg overflow-y-auto">
+      <div className="max-w-2xl mx-auto p-5">
+        <AdRotator />
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export default function QuizPlay() {
   const location = useLocation();
@@ -57,8 +70,11 @@ export default function QuizPlay() {
         } else {
           let allQ = allQuizQuestions;
           if (allQ.length === 0) allQ = await fetchAllQuizQuestions();
-          const available = allQ.filter(q => !playedQuestions.includes(q.ref));
-          const selected = available.length >= 15 ? shuffle(available).slice(0, 15) : shuffle(allQ).slice(0, 15);
+          const available = allQ.filter((q) => !playedQuestions.includes(q.ref));
+          const selected =
+            available.length >= 15
+              ? shuffle(available).slice(0, 15)
+              : shuffle(allQ).slice(0, 15);
           qs = selected;
         }
         setIsDaily(true);
@@ -151,14 +167,14 @@ export default function QuizPlay() {
     newUserAnswers[currentIndex] = userAnswer;
     setUserAnswers(newUserAnswers);
 
-    // Silent during play — the Results page tells them what was right/wrong
+    // Silent during play — the Results page tells them right/wrong
     if (isCorrect) {
-      setScore(prev => prev + 1);
+      setScore((prev) => prev + 1);
     }
 
     if (currentIndex < questions.length - 1) {
       setTimeout(() => {
-        setCurrentIndex(prev => prev + 1);
+        setCurrentIndex((prev) => prev + 1);
         setSelectedOption(null);
         questionFinishedRef.current = false;
         setTimer(timerDuration);
@@ -189,36 +205,46 @@ export default function QuizPlay() {
           score: finalScore,
           isDaily,
           book,
-        }
+        },
       });
     }
   };
 
-  // ─── Render ─────────────────────────────────────────────────────
+  // ─── Render ────────────────────────────────────────────────────
   if (error) {
     return (
-      <div className="text-center py-10">
-        <p className="text-error text-lg">{error}</p>
-        <button className="btn mt-4" onClick={() => navigate('/home')}>Go Home</button>
-      </div>
+      <QuizShell>
+        <div className="text-center py-10">
+          <p className="text-error text-lg">{error}</p>
+          <button className="btn mt-4" onClick={() => navigate('/home')}>
+            Go Home
+          </button>
+        </div>
+      </QuizShell>
     );
   }
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center py-20">
-        <div className="spinner"></div>
-        <p className="text-muted mt-4">Loading questions...</p>
-      </div>
+      <QuizShell>
+        <div className="flex flex-col items-center justify-center py-20">
+          <div className="spinner"></div>
+          <p className="text-muted mt-4">Loading questions...</p>
+        </div>
+      </QuizShell>
     );
   }
 
   if (questions.length === 0 && !error) {
     return (
-      <div className="text-center py-10">
-        <p className="text-muted">No questions available for this book.</p>
-        <button className="btn mt-4" onClick={() => navigate('/home')}>Go Home</button>
-      </div>
+      <QuizShell>
+        <div className="text-center py-10">
+          <p className="text-muted">No questions available for this book.</p>
+          <button className="btn mt-4" onClick={() => navigate('/home')}>
+            Go Home
+          </button>
+        </div>
+      </QuizShell>
     );
   }
 
@@ -228,7 +254,7 @@ export default function QuizPlay() {
   const letters = ['A', 'B', 'C', 'D'];
 
   return (
-    <div>
+    <QuizShell>
       <div className="quiz-header">
         <div>
           {isDaily ? '📅 Daily Quiz' : book ? `${book} Quiz` : 'Quick Quiz'} – {questionNum}/{total}
@@ -239,9 +265,7 @@ export default function QuizPlay() {
         </button>
       </div>
 
-      <div className="question-box">
-        {q.question}
-      </div>
+      <div className="question-box">{q.question}</div>
 
       <div className="options-list">
         {q.options.map((opt, i) => {
@@ -270,6 +294,6 @@ export default function QuizPlay() {
       >
         {currentIndex < total - 1 ? 'Next Question' : 'Submit Quiz'}
       </button>
-    </div>
+    </QuizShell>
   );
 }
