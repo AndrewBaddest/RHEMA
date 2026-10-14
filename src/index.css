@@ -28,66 +28,21 @@
 }
 
 @layer components {
+  /* ─── Header / Nav ───────────────────────────────────────── */
   .header-btn {
     @apply bg-[#333] text-white px-3 py-1 rounded-full border border-primary text-xs font-medium hover:bg-primary hover:text-black transition-all duration-200 inline-flex items-center gap-1 no-underline;
   }
   .user-badge {
     @apply bg-[#333] text-white px-3 py-1 rounded-full border border-primary text-xs max-w-[150px] truncate hover:bg-primary hover:text-black transition-all duration-200 cursor-pointer;
   }
+
+  /* ─── Layout blocks ──────────────────────────────────────── */
   .ad-container {
     @apply bg-[#151515] border border-dashed border-[#333] text-center py-2.5 my-4 text-muted text-xs uppercase tracking-wider min-h-[90px] flex flex-col justify-center;
-  }
-  .sound-btn {
-    @apply text-xl px-2 py-1 bg-surface border border-primary rounded-full w-9 h-9 flex items-center justify-center hover:bg-primary hover:text-black transition-all duration-200;
-  }
-  .btn {
-    @apply bg-primary text-black py-3 px-6 rounded-lg font-bold w-full text-base hover:bg-primary/90 transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-  .btn-secondary {
-    @apply bg-[#333] text-white border border-[#444] py-3 px-6 rounded-lg font-bold w-full text-base hover:bg-[#444] hover:border-primary transition-all duration-200 cursor-pointer;
-  }
-  .btn-success {
-    @apply bg-success text-black py-3 px-6 rounded-lg font-bold w-full text-base hover:bg-green-700 transition-all duration-200 cursor-pointer;
-  }
-  .testament-title {
-    @apply text-primary text-lg font-semibold mt-6 mb-2.5 pl-2 border-l-4 border-primary;
   }
   .mission-box {
     @apply bg-surface border border-primary rounded-xl p-5 mb-6 relative overflow-hidden shadow-[0_4px_20px_rgba(212,175,55,0.08)];
   }
-    .quit-btn {
-  @apply bg-error text-black border-none px-3.5 py-1 rounded-full font-bold cursor-pointer hover:bg-[#b1455a];
-}
-.option-btn {
-  @apply bg-surface border border-[#333] text-text p-3.5 rounded-lg text-left text-base cursor-pointer transition-all hover:border-primary hover:bg-[#252525] disabled:opacity-60 disabled:cursor-not-allowed;
-}
-.option-btn.selected {
-  @apply border-primary bg-[#2a2205];
-}
-.spinner {
-  @apply border-4 border-[#2a2a2a] border-t-primary rounded-full w-10 h-10 animate-spin;
-}
-.opt-review {
-  @apply flex items-center gap-2 p-2 rounded border border-[#333] bg-[#121212];
-}
-.opt-review.player-correct {
-  @apply border-success bg-[#1a3a1a];
-}
-.opt-review.player-correct .opt-letter {
-  @apply text-success;
-}
-.opt-review.player-wrong {
-  @apply border-error bg-[#3a1a1a];
-}
-.opt-review.player-wrong .opt-letter {
-  @apply text-error;
-}
-.opt-review.correct-answer {
-  @apply border-success bg-[#1a2a1a];
-}
-.opt-review.correct-answer .opt-letter {
-  @apply text-success;
-}
   .mission-box::before {
     content: "✦";
     position: absolute;
@@ -98,6 +53,98 @@
     opacity: 0.15;
     font-weight: 300;
   }
+  .testament-title {
+    @apply text-primary text-lg font-semibold mt-6 mb-2.5 pl-2 border-l-4 border-primary;
+  }
+
+  /* ─── Buttons ────────────────────────────────────────────── */
+  .btn {
+    @apply bg-primary text-black py-3 px-6 rounded-lg font-bold w-full text-base hover:bg-primary/90 transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-[#333] text-white border border-[#444] py-3 px-6 rounded-lg font-bold w-full text-base hover:bg-[#444] hover:border-primary transition-all duration-200 cursor-pointer;
+  }
+  .btn-success {
+    @apply bg-success text-black py-3 px-6 rounded-lg font-bold w-full text-base hover:bg-green-700 transition-all duration-200 cursor-pointer;
+  }
+  .sound-btn {
+    @apply text-xl px-2 py-1 bg-surface border border-primary rounded-full w-9 h-9 flex items-center justify-center hover:bg-primary hover:text-black transition-all duration-200;
+  }
+
+  /* ─── Quiz: layout ───────────────────────────────────────── */
+  .quiz-header {
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .timer {
+    color: var(--primary);
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    background-color: #2a2205;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid var(--primary);
+  }
+  .quit-btn {
+    @apply bg-error text-black border-none px-3.5 py-1 rounded-full font-bold cursor-pointer hover:bg-[#b1455a];
+  }
+  .question-box {
+    background-color: var(--surface);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border-left: 4px solid var(--primary);
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
+    line-height: 1.625;
+  }
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* ─── Quiz: options ──────────────────────────────────────── */
+  .option-btn {
+    @apply bg-surface border border-[#333] text-text p-3.5 rounded-lg text-left text-base cursor-pointer transition-all hover:border-primary hover:bg-[#252525] disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .option-btn.selected {
+    @apply border-primary bg-[#2a2205];
+  }
+
+  /* ─── Results page: answer review ────────────────────────── */
+  .opt-review {
+    @apply flex items-center gap-2 p-2 rounded border border-[#333] bg-[#121212];
+  }
+  .opt-review.player-correct {
+    @apply border-success bg-[#1a3a1a];
+  }
+  .opt-review.player-correct .opt-letter {
+    @apply text-success;
+  }
+  .opt-review.player-wrong {
+    @apply border-error bg-[#3a1a1a];
+  }
+  .opt-review.player-wrong .opt-letter {
+    @apply text-error;
+  }
+  .opt-review.correct-answer {
+    @apply border-success bg-[#1a2a2a];
+  }
+  .opt-review.correct-answer .opt-letter {
+    @apply text-success;
+  }
+
+  /* ─── Spinner ────────────────────────────────────────────── */
+  .spinner {
+    @apply border-4 border-[#2a2a2a] border-t-primary rounded-full w-10 h-10 animate-spin;
+  }
+
+  /* ─── Google Translate widget ────────────────────────────── */
   #google_translate_element {
     display: inline-block;
     margin: 0 5px;

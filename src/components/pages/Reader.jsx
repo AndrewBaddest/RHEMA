@@ -25,16 +25,49 @@ export default function Reader() {
 
   const { user } = useAuth();
   const updateProgress = useUpdateProgress();
-  const contentRef = useRef(null);
+  const topRef = useRef(null);
   const updateScripture = useStore((state) => state.updateScripture);
 
-  useEffect(() => {
-    if (!isLoading && contentRef.current) {
-      contentRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Fire the "jump to verse" only once — on the first chapter load.
+  // After that, Prev/Next scroll to top normally.
+  const initialVerseAppliedRef = useRef(false);
+  // Deduplicate progress saves (StrictMode + rapid Next clicks).
+  const lastSavedRef = useRef('');
+
+  const scrollToTop = (smooth = true) => {
+    const behavior = smooth ? 'smooth' : 'auto';
+    try { window.scrollTo({ top: 0, behavior }); } catch {}
+    try { document.documentElement.scrollTo({ top: 0, behavior }); } catch {}
+    try { document.body.scrollTo({ top: 0, behavior }); } catch {}
+
+    let el = topRef.current?.parentElement;
+    while (el) {
+      const style = window.getComputedStyle(el);
+      const overflowY = style.overflowY;
+      const scrollable =
+        (overflowY === 'auto' || overflowY === 'scroll') &&
+        el.scrollHeight > el.clientHeight;
+      if (scrollable && el.scrollTop > 0) {
+        try { el.scrollTo({ top: 0, behavior }); } catch { el.scrollTop = 0; }
+      }
+      el = el.parentElement;
     }
+  };
+
+  // Scroll to top after chapter data loads, but skip the very first mount
+  // so the verse-jump from Results has a chance to run.
+  const firstMountRef = useRef(true);
+  useEffect(() => {
+    if (firstMountRef.current) {
+      firstMountRef.current = false;
+      return;
+    }
+    if (isLoading) return;
+    const t = setTimeout(() => scrollToTop(), 30);
+    return () => clearTimeout(t);
   }, [chapter, isLoading]);
 
+  // ─── Load chapter data ────────────────────────────────────────
   useEffect(() => {
     const loadChapter = async () => {
       setIsLoading(true);
@@ -44,14 +77,13 @@ export default function Reader() {
         let chapterMap = {};
         let chapterList = [];
 
-        // Parse data (same as before)
         if (Array.isArray(rawData)) {
           rawData.forEach((item) => {
             if (item.chapter && Array.isArray(item.verses)) {
               const ch = Number(item.chapter);
-              chapterMap[ch] = item.verses.map((v) => {
-                return typeof v === 'string' ? v : (v.text || v.verse || String(v));
-              });
+              chapterMap[ch] = item.verses.map((v) =>
+                typeof v === 'string' ? v : (v.text || v.verse || String(v))
+              );
             }
           });
           chapterList = Object.keys(chapterMap).map(Number).sort((a, b) => a - b);
@@ -60,15 +92,17 @@ export default function Reader() {
             rawData.chapters.forEach((item) => {
               const ch = Number(item.chapter);
               if (Array.isArray(item.verses)) {
-                chapterMap[ch] = item.verses.map((v) => {
-                  return typeof v === 'string' ? v : (v.text || v.verse || String(v));
-                });
+                chapterMap[ch] = item.verses.map((v) =>
+                  typeof v === 'string' ? v : (v.text || v.verse || String(v))
+                );
               }
             });
             chapterList = Object.keys(chapterMap).map(Number).sort((a, b) => a - b);
           } else {
             const keys = Object.keys(rawData);
-            const isChapterMap = keys.some(k => !isNaN(Number(k)) && Array.isArray(rawData[k]));
+            const isChapterMap = keys.some(
+              (k) => !isNaN(Number(k)) && Array.isArray(rawData[k])
+            );
             if (isChapterMap) {
               chapterMap = rawData;
               chapterList = keys.map(Number).sort((a, b) => a - b);
@@ -89,31 +123,9 @@ export default function Reader() {
         const verseList = chapterMap[targetChapter] || [];
         setVerses(verseList);
 
-        // ─── Save progress asynchronously ────────────────────────────
-        if (user && verseList.length > 0) {
-          // Use `mutate` (non‑blocking) so the UI doesn't hang
-          updateProgress.mutate({
-            userId: user.id,
-            book_name: book,
-            chapter: targetChapter,
-            verse: verseList.length,
-            status: 'read',
-          }, {
-            onSuccess: () => {
-              console.log('✅ Progress saved to Supabase');
-            },
-            onError: (err) => {
-              console.warn('⚠️ Failed to save progress to Supabase:', err);
-              // Fallback to localStorage
-              updateScripture(book, targetChapter, verseList.length);
-            }
-          });
-        } else if (verseList.length > 0) {
-          // No user – use localStorage
-          updateScripture(book, targetChapter, verseList.length);
-        }
-
-        if (initialVerse) {
+        // One-time verse jump — only on the very first load.
+        if (initialVerse && !initialVerseAppliedRef.current) {
+          initialVerseAppliedRef.current = true;
           setHighlightVerse(initialVerse);
           setTimeout(() => {
             const el = document.querySelector(`[data-verse="${initialVerse}"]`);
@@ -131,20 +143,47 @@ export default function Reader() {
     };
 
     loadChapter();
-  }, [book, chapter, initialVerse, user]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [book, chapter]);
 
-  // ... rest of handlers and render (unchanged) ...
+  // ─── Save progress — exactly once per unique state ────────────
+  useEffect(() => {
+    if (!verses.length) return;
+    const key = `${book}|${chapter}|${verses.length}|${user?.id || 'guest'}`;
+    if (lastSavedRef.current === key) return;
+    lastSavedRef.current = key;
 
+    updateProgress.mutate(
+      {
+        userId: user?.id,
+        book_name: book,
+        chapter,
+        verse: verses.length,
+        status: 'read',
+      },
+      {
+        onError: (err) => {
+          console.warn('⚠️ Progress save failed, writing locally:', err);
+          updateScripture(book, chapter, verses.length);
+        },
+      }
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [book, chapter, verses.length, user?.id]);
+
+  // ─── Handlers ────────────────────────────────────────────────
   const handleBookChange = (e) => {
     const newBook = e.target.value;
     setBook(newBook);
     setChapter(1);
     setHighlightVerse(null);
+    scrollToTop(false);
   };
 
   const handleChapterChange = (e) => {
     setChapter(Number(e.target.value));
     setHighlightVerse(null);
+    scrollToTop();
   };
 
   const goToPrevChapter = () => {
@@ -152,6 +191,7 @@ export default function Reader() {
     if (idx > 0) {
       setChapter(chapters[idx - 1]);
       setHighlightVerse(null);
+      scrollToTop();
     }
   };
 
@@ -160,6 +200,7 @@ export default function Reader() {
     if (idx < chapters.length - 1) {
       setChapter(chapters[idx + 1]);
       setHighlightVerse(null);
+      scrollToTop();
     }
   };
 
@@ -171,16 +212,21 @@ export default function Reader() {
     return (
       <div className="text-center py-10">
         <p className="text-error">⚠️ {error}</p>
-        <button className="btn mt-4" onClick={() => window.location.reload()}>Retry</button>
+        <button className="btn mt-4" onClick={() => window.location.reload()}>
+          Retry
+        </button>
       </div>
     );
   }
 
   return (
-    <div>
+    <div ref={topRef}>
       <div className="flex justify-between items-center mb-3 flex-wrap gap-2">
         <h2 className="text-primary text-2xl font-bold">Bible Reader</h2>
-        <button className="btn-secondary !w-auto !py-2 !px-4 text-sm" onClick={goBack}>
+        <button
+          className="btn-secondary !w-auto !py-2 !px-4 text-sm"
+          onClick={goBack}
+        >
           {fromResults ? '← Back to Results' : '← Back'}
         </button>
       </div>
@@ -207,20 +253,21 @@ export default function Reader() {
         </select>
       </div>
 
-      <div
-        ref={contentRef}
-        className="reader-verse-box bg-surface rounded-xl p-5 min-h-[300px] border border-[#2a2a2a]"
-      >
+      <div className="reader-verse-box bg-surface rounded-xl p-5 min-h-[300px] border border-[#2a2a2a]">
         {isLoading ? (
           <div className="flex items-center justify-center py-10">
             <div className="spinner"></div>
             <p className="text-muted ml-4">Loading...</p>
           </div>
         ) : verses.length === 0 ? (
-          <p className="text-muted text-center py-10">No verses found for {book} {chapter}.</p>
+          <p className="text-muted text-center py-10">
+            No verses found for {book} {chapter}.
+          </p>
         ) : (
           <>
-            <h3 className="text-primary text-xl font-bold mb-3">{book} {chapter}</h3>
+            <h3 className="text-primary text-xl font-bold mb-3">
+              {book} {chapter}
+            </h3>
             {verses.map((text, idx) => {
               const v = idx + 1;
               const isHighlight = highlightVerse === v;
@@ -228,7 +275,9 @@ export default function Reader() {
                 <div
                   key={v}
                   data-verse={v}
-                  className={`verse-line mb-1.5 leading-relaxed py-0.5 ${isHighlight ? 'bg-[#2a2205] rounded px-1.5' : ''}`}
+                  className={`verse-line mb-1.5 leading-relaxed py-0.5 ${
+                    isHighlight ? 'bg-[#2a2205] rounded px-1.5' : ''
+                  }`}
                 >
                   <span className="text-primary font-semibold mr-1.5">{v}.</span>
                   {text}

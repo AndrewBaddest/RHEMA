@@ -51,12 +51,10 @@ export default function QuizPlay() {
       let qs = [];
 
       if (daily) {
-        // For daily, try DB first for random questions from all books
         let dbQs = await fetchGlobalChallengeQuestionsFromDB(15);
         if (dbQs && dbQs.length > 0) {
           qs = dbQs;
         } else {
-          // Fallback: use JSON cache
           let allQ = allQuizQuestions;
           if (allQ.length === 0) allQ = await fetchAllQuizQuestions();
           const available = allQ.filter(q => !playedQuestions.includes(q.ref));
@@ -65,12 +63,10 @@ export default function QuizPlay() {
         }
         setIsDaily(true);
       } else if (book) {
-        // For a specific book, try DB first
         let dbQs = await fetchQuizQuestionsFromDB(book, questionsPerBook);
         if (dbQs && dbQs.length > 0) {
           qs = dbQs;
         } else {
-          // Fallback: JSON
           try {
             const data = await fetchQuizData(book);
             if (!data || data.length === 0) {
@@ -87,7 +83,6 @@ export default function QuizPlay() {
           }
         }
       } else {
-        // Mixed/quick quiz – try DB first
         let dbQs = await fetchGlobalChallengeQuestionsFromDB(10);
         if (dbQs && dbQs.length > 0) {
           qs = dbQs;
@@ -118,7 +113,7 @@ export default function QuizPlay() {
     return () => clearInterval(timerRef.current);
   }, [book, daily, allQuizQuestions, timerDuration, questionsPerBook]);
 
-  // ─── Timer effect (unchanged) ──────────────────────────────────
+  // ─── Timer effect ───────────────────────────────────────────────
   useEffect(() => {
     if (isLoading || questions.length === 0) return;
     clearInterval(timerRef.current);
@@ -156,11 +151,9 @@ export default function QuizPlay() {
     newUserAnswers[currentIndex] = userAnswer;
     setUserAnswers(newUserAnswers);
 
+    // Silent during play — the Results page tells them what was right/wrong
     if (isCorrect) {
       setScore(prev => prev + 1);
-      if (soundEffectsEnabled) playEffect('correct');
-    } else {
-      if (soundEffectsEnabled) playEffect('wrong');
     }
 
     if (currentIndex < questions.length - 1) {
@@ -236,23 +229,21 @@ export default function QuizPlay() {
 
   return (
     <div>
-      <div className="quiz-header flex justify-between items-center mb-5 font-bold flex-wrap gap-2">
+      <div className="quiz-header">
         <div>
           {isDaily ? '📅 Daily Quiz' : book ? `${book} Quiz` : 'Quick Quiz'} – {questionNum}/{total}
         </div>
-        <div className="timer text-primary text-xl bg-[#2a2205] px-3 py-1 rounded-full border border-primary">
-          {timer}s
-        </div>
+        <div className="timer">{timer}s</div>
         <button className="quit-btn" onClick={() => navigate('/home')}>
           ✕ Quit
         </button>
       </div>
 
-      <div className="question-box bg-surface p-5 rounded-xl border-l-4 border-primary mb-5 text-lg leading-relaxed">
+      <div className="question-box">
         {q.question}
       </div>
 
-      <div className="options-list flex flex-col gap-3">
+      <div className="options-list">
         {q.options.map((opt, i) => {
           const isSelected = selectedOption === i;
           return (
