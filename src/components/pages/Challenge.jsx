@@ -7,6 +7,7 @@ import { useRequireAuth } from '../../hooks/useRequireAuth';
 import SignInPrompt from '../shared/SignInPrompt';
 import { supabase } from '../../lib/supabase';
 import { fetchGlobalChallengeQuestionsFromDB } from '../../lib/api';
+import { calculateNextScore, canFinishDuel } from '../../lib/duelLogic'; // 👈 NEW IMPORT
 
 // ─── Fallback generator ───────────────────────────────────────────
 const generateGlobalQuizQuestions = (count) => {
@@ -198,7 +199,9 @@ export default function Challenge() {
   // ═══════════════════════════════════════════════════════════════
 
   const maybeFinishDuel = async () => {
-    if (!localFinishedRef.current || !opponentFinishedRef.current) return;
+    // 👈 CHANGED TO USE PURE LOGIC FUNCTION
+    if (!canFinishDuel(localFinishedRef.current, opponentFinishedRef.current)) return;
+    
     const challenge = currentChallengeRef.current;
     if (!challenge) return;
     if (challenge.status === 'finished') {
@@ -573,9 +576,10 @@ export default function Challenge() {
     if (!currentQuestion) return;
 
     const isCorrect = selectedOptionIndex === currentQuestion.correct;
-    let updatedScore = myScoreRef.current;
+    // 👈 CHANGED TO USE PURE LOGIC FUNCTION
+    const updatedScore = calculateNextScore(myScoreRef.current, isCorrect);
+    
     if (isCorrect) {
-      updatedScore += 1;
       myScoreRef.current = updatedScore;
       setMyScore(updatedScore);
     }
