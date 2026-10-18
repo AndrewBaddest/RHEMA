@@ -9,7 +9,7 @@ const API_BASE = '';
 //   2. A verse_reference from the DB that already has C:V
 //   3. A verse_reference from the DB with only chapter → append :1
 //   4. Fallback string
-function pickVerseRef(questionText, dbRef, fallback) {
+export function pickVerseRef(questionText, dbRef, fallback) {
   // 1. Any parenthetical in the question that contains C:V
   const text = String(questionText || '');
   const parens = text.match(/\(([^)]+)\)/g) || [];

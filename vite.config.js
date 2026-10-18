@@ -4,22 +4,28 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true,                       // bind to 0.0.0.0 so tunnels can reach it
+    host: true,
     port: 5173,
-    strictPort: true,                 // fail loudly if 5173 is taken, don't drift
+    strictPort: true,
     allowedHosts: [
-      '.lhr.life',                    // localhost.run
+      '.lhr.life',
       '.localhost.run',
-      '.serveo.net',                  // serveo
-      '.trycloudflare.com',           // cloudflared quick tunnel
-      '.ngrok-free.app',              // ngrok (current)
-      '.ngrok-free.dev',              // ngrok (newer TLD)
-      '.ngrok.io',                    // ngrok (legacy)
-      '.ngrok.app',                   // ngrok (legacy)
+      '.serveo.net',
+      '.trycloudflare.com',
+      '.ngrok-free.app',
+      '.ngrok-free.dev',
+      '.ngrok.io',
+      '.ngrok.app',
     ],
   },
   build: {
     minify: false,
     sourcemap: false,
+  },
+  // 👇 Add this block
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './vitest.setup.js', // 👈 Add this line
   },
 });
