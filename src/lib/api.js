@@ -1,31 +1,7 @@
 // src/lib/api.js
 import { supabase } from './supabase';
 
-const API_BASE = '';
-
-// ─── Pick the most accurate verse reference we can ────────────────
-// Priority:
-//   1. A "(Book C:V)" pattern embedded in the question text
-//   2. A verse_reference from the DB that already has C:V
-//   3. A verse_reference from the DB with only chapter → append :1
-//   4. Fallback string
-export function pickVerseRef(questionText, dbRef, fallback) {
-  // 1. Any parenthetical in the question that contains C:V
-  const text = String(questionText || '');
-  const parens = text.match(/\(([^)]+)\)/g) || [];
-  for (const p of parens) {
-    const inner = p.slice(1, -1).trim();
-    if (/\b\d+\s*:\s*\d+\b/.test(inner)) return inner;
-  }
-
-  // 2/3. DB value
-  const db = String(dbRef || '').trim();
-  if (/\b\d+\s*:\s*\d+\b/.test(db)) return db;
-  if (/^.+?\s+\d+$/.test(db)) return `${db}:1`;
-
-  // 4. Fallback
-  return db || fallback;
-}
+const API_BASE = ''; // relative to domain
 
 // ─── Static JSON (fallback) ──────────────────────────────────────
 export async function fetchBibleData(book) {
@@ -61,7 +37,11 @@ export async function fetchQuizQuestionsFromDB(bookName, limit = 10) {
     }
 
     return questions.map((q, idx) => {
-      const verseRef = pickVerseRef(q.question, q.verse_reference, `${bookName} ${idx + 1}:1`);
+      const verseRef =
+        q.verse_reference && String(q.verse_reference).trim()
+          ? String(q.verse_reference).trim()
+          : `${bookName} ${idx + 1}:1`;
+
       return {
         ref: verseRef,
         question: q.question,
@@ -79,21 +59,46 @@ export async function fetchQuizQuestionsFromDB(bookName, limit = 10) {
 // ─── Fetch global challenge questions (random from all books) ──
 export async function fetchGlobalChallengeQuestionsFromDB(count = 30) {
   try {
-    const { data, error } = await supabase
+    // 1. Fetch the questions WITHOUT the join
+    const { data: questions, error: qError } = await supabase
       .from('quiz_questions')
-      .select('question, options, correct_answer, verse_reference, quizzes(book_name)')
+      .select('id, quiz_id, question, options, correct_answer, verse_reference')
       .limit(count);
 
-    if (error) {
-      console.warn('⚠️ Failed to fetch global questions:', error);
+    if (qError) {
+      console.error('⚠️ Failed to fetch global questions:', qError);
+      return null;
+    }
+    if (!questions || questions.length === 0) {
+      console.warn('⚠️ No questions found in DB for global challenge.');
       return null;
     }
 
-    return data.map((q, idx) => {
-      const bookName = q.quizzes?.book_name || 'Bible';
-      const verseRef = pickVerseRef(q.question, q.verse_reference, `${bookName} ${idx + 1}:1`);
+    // 2. Fetch the quizzes to map book names
+    const quizIds = [...new Set(questions.map((q) => q.quiz_id))];
+    const { data: quizzes, error: quizError } = await supabase
+      .from('quizzes')
+      .select('id, book_name')
+      .in('id', quizIds);
+
+    if (quizError) {
+      console.warn('⚠️ Failed to fetch quizzes for mapping:', quizError);
+    }
+
+    const quizMap = {};
+    (quizzes || []).forEach((qz) => {
+      quizMap[qz.id] = qz.book_name;
+    });
+
+    return questions.map((q, idx) => {
+      const bookName = quizMap[q.quiz_id] || 'Bible';
+      const verseRef =
+        q.verse_reference && String(q.verse_reference).trim()
+          ? String(q.verse_reference).trim()
+          : `${bookName} ${idx + 1}:1`;
+
       return {
-        id: idx,
+        id: q.id || idx,
         book: bookName,
         question: q.question,
         options: q.options,
@@ -133,4 +138,20 @@ export async function fetchAllQuizQuestions() {
   }
   cachedAllQuestions = allQuestions;
   return allQuestions;
+}
+
+// ─── Pick the most accurate verse reference we can ────────────────
+export function pickVerseRef(questionText, dbRef, fallback) {
+  const text = String(questionText || '');
+  const parens = text.match(/\(([^)]+)\)/g) || [];
+  for (const p of parens) {
+    const inner = p.slice(1, -1).trim();
+    if (/\b\d+\s*:\s*\d+\b/.test(inner)) return inner;
+  }
+
+  const db = String(dbRef || '').trim();
+  if (/\b\d+\s*:\s*\d+\b/.test(db)) return db;
+  if (/^.+?\s+\d+$/.test(db)) return `${db}:1`;
+
+  return db || fallback;
 }

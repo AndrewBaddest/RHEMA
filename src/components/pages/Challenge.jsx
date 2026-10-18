@@ -7,7 +7,7 @@ import { useRequireAuth } from '../../hooks/useRequireAuth';
 import SignInPrompt from '../shared/SignInPrompt';
 import { supabase } from '../../lib/supabase';
 import { fetchGlobalChallengeQuestionsFromDB } from '../../lib/api';
-import { calculateNextScore, canFinishDuel } from '../../lib/duelLogic'; // 👈 NEW IMPORT
+import { calculateNextScore, canFinishDuel } from '../../lib/duelLogic';
 
 // ─── Fallback generator ───────────────────────────────────────────
 const generateGlobalQuizQuestions = (count) => {
@@ -59,7 +59,7 @@ export default function Challenge() {
   // ─── Multiplayer Duel ──────────────────────────────────────────
   const [isMultiplayerModalOpen, setIsMultiplayerModalOpen] = useState(false);
   const [opponentId, setOpponentId] = useState('');
-  const [opponentName, setOpponentName] = useState('');   // ← resolved display name
+  const [opponentName, setOpponentName] = useState('');
   const [questionCount, setQuestionCount] = useState(10);
   const [timerSeconds, setTimerSeconds] = useState(30);
   const [multiplayerStatus, setMultiplayerStatus] = useState('idle');
@@ -199,7 +199,6 @@ export default function Challenge() {
   // ═══════════════════════════════════════════════════════════════
 
   const maybeFinishDuel = async () => {
-    // 👈 CHANGED TO USE PURE LOGIC FUNCTION
     if (!canFinishDuel(localFinishedRef.current, opponentFinishedRef.current)) return;
     
     const challenge = currentChallengeRef.current;
@@ -453,13 +452,17 @@ export default function Challenge() {
         return;
       }
 
-      // Resolve display name now so it appears immediately in "pending" UI
       const targetName = await getUserDisplayName(targetUid);
       setOpponentName(targetName);
 
       const questions = await fetchGlobalChallengeQuestionsFromDB(questionCount);
-      const fallbacks =
-        questions && questions.length > 0 ? questions : generateGlobalQuizQuestions(questionCount);
+      let fallbacks = questions;
+      
+      if (!fallbacks || fallbacks.length === 0) {
+        console.error('🚨 DB FAILED: Falling back to sampled questions for multiplayer.');
+        alert('Warning: Could not load DB questions. Using sample questions.');
+        fallbacks = generateGlobalQuizQuestions(questionCount);
+      }
 
       duelStartedRef.current = false;
       localFinishedRef.current = false;
@@ -576,7 +579,6 @@ export default function Challenge() {
     if (!currentQuestion) return;
 
     const isCorrect = selectedOptionIndex === currentQuestion.correct;
-    // 👈 CHANGED TO USE PURE LOGIC FUNCTION
     const updatedScore = calculateNextScore(myScoreRef.current, isCorrect);
     
     if (isCorrect) {
@@ -718,10 +720,14 @@ export default function Challenge() {
   // ─── Global Challenge Quiz ──────────────────────────────────
   const startGlobalQuiz = async () => {
     if (globalChallengeStatus === 'playing') return;
+    
     let questions = await fetchGlobalChallengeQuestionsFromDB(30);
     if (!questions || questions.length === 0) {
+      console.error('🚨 DB FAILED: Falling back to sampled questions for Global Challenge.');
+      alert('Warning: Could not load DB questions. Using sample questions.');
       questions = generateGlobalQuizQuestions(30);
     }
+
     setGlobalQuizQuestions(questions);
     setGlobalCurrentQuestionIndex(0);
     setGlobalPlayerAnswers([]);
