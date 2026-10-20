@@ -15,6 +15,16 @@ export default function Auth() {
   const oneTapFiredRef = useRef(false);
   const shouldPromptOneTap = !loading && isAnonymous;
 
+  // 👇 THE TRAP: Catch the error when the page reloads from Google
+  useEffect(() => {
+    const url = window.location.href;
+    if (url.includes('identity_already_exists')) {
+      setToast('❌ account is already in use. Try "Load progress" instead.', 'error');
+      // Clean the URL so the error doesn't stay visible
+      window.history.replaceState(null, '', '/');
+    }
+  }, [setToast]);
+
   const { available: oneTapAvailable, promptOneTap } = useGoogleOneTap({
     enabled: shouldPromptOneTap,
     onCredential: async (credential, nonce) => {
@@ -31,7 +41,6 @@ export default function Auth() {
     },
   });
 
-  // Auto-fire One Tap shortly after mount, once GSI is ready.
   useEffect(() => {
     if (!shouldPromptOneTap || !oneTapAvailable || oneTapFiredRef.current) return;
     oneTapFiredRef.current = true;
@@ -39,7 +48,6 @@ export default function Auth() {
     return () => clearTimeout(t);
   }, [shouldPromptOneTap, oneTapAvailable, promptOneTap]);
 
-  // Already signed in → redirect to /home.
   useEffect(() => {
     if (loading) return;
     if (!isAnonymous && !navigatedRef.current) {

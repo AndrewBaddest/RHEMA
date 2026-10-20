@@ -16,19 +16,14 @@ function getSessionId() {
   if (typeof sessionStorage === 'undefined') return 'no-session';
   let sid = sessionStorage.getItem(SESSION_KEY);
   if (!sid) {
-    sid = (crypto.randomUUID && crypto.randomUUID()) ||
-          `s-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+    sid = (crypto.randomUUID && crypto.randomUUID()) || `s-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
     try { sessionStorage.setItem(SESSION_KEY, sid); } catch {}
   }
   return sid;
 }
 
 function getSeenAds() {
-  try {
-    return JSON.parse(sessionStorage.getItem(SEEN_ADS_KEY) || '[]');
-  } catch {
-    return [];
-  }
+  try { return JSON.parse(sessionStorage.getItem(SEEN_ADS_KEY) || '[]'); } catch { return []; }
 }
 
 function markAdSeen(adId) {
@@ -41,40 +36,26 @@ function markAdSeen(adId) {
   } catch {}
 }
 
-// ─── Impression / click tracking (fire-and-forget) ────────────────
+// ─── Impression / click tracking ────────────────────────────────
 async function recordImpression(adId, userId) {
-  if (getSeenAds().includes(adId)) return; // one per ad per session
+  if (getSeenAds().includes(adId)) return;
   markAdSeen(adId);
   try {
     await supabase.from('ad_impressions').insert({
-      ad_id: adId,
-      user_id: userId || null,
-      session_id: getSessionId(),
+      ad_id: adId, user_id: userId || null, session_id: getSessionId(),
       page_path: typeof window !== 'undefined' ? window.location.pathname : null,
     });
-  } catch (err) {
-    console.warn('[ads] impression insert failed:', err?.message || err);
-  }
+  } catch (err) {}
 }
 
 function recordClick(adId, userId) {
-  // Fire-and-forget; the <a target="_blank"> keeps our page alive so the
-  // request completes.
-  supabase
-    .from('ad_clicks')
-    .insert({
-      ad_id: adId,
-      user_id: userId || null,
-      session_id: getSessionId(),
-      page_path: typeof window !== 'undefined' ? window.location.pathname : null,
-    })
-    .then(() => {})
-    .catch((err) => {
-      console.warn('[ads] click insert failed:', err?.message || err);
-    });
+  supabase.from('ad_clicks').insert({
+    ad_id: adId, user_id: userId || null, session_id: getSessionId(),
+    page_path: typeof window !== 'undefined' ? window.location.pathname : null,
+  }).then(() => {}).catch(() => {});
 }
 
-// ─── Fetch ads from DB, cached for the page lifetime ─────────────
+// ─── Fetch ads ───────────────────────────────────────────────────
 let adsCache = null;
 let adsFetchPromise = null;
 
@@ -91,22 +72,11 @@ async function fetchAdsFromDb() {
 
   adsFetchPromise = (async () => {
     try {
-      const { data, error } = await supabase
-        .from('ads')
-        .select('*')
-        .eq('active', true)
-        .order('id', { ascending: true });
-
-      if (error) {
-        console.warn('[ads] fetch failed:', error.message);
-        return null;
-      }
-      // Scheduling filter applied client-side — the query is cheap and
-      // already cached, so we don't complicate the SQL.
+      const { data, error } = await supabase.from('ads').select('*').eq('active', true).order('id', { ascending: true });
+      if (error) return null;
       adsCache = (data || []).filter(isActiveNow);
       return adsCache;
     } catch (err) {
-      console.warn('[ads] fetch exception:', err);
       return null;
     } finally {
       adsFetchPromise = null;
@@ -116,15 +86,11 @@ async function fetchAdsFromDb() {
   return adsFetchPromise;
 }
 
-// ─── Weighted pick — next ad chosen proportional to `weight` ─────
+// ─── Weighted pick ───────────────────────────────────────────────
 function pickWeightedIndex(ads, excludeIndex) {
   if (!ads.length) return 0;
-  const candidates = ads
-    .map((ad, idx) => ({ idx, w: Math.max(1, ad.weight || 1) }))
-    .filter((c) => c.idx !== excludeIndex);
-
+  const candidates = ads.map((ad, idx) => ({ idx, w: Math.max(1, ad.weight || 1) })).filter((c) => c.idx !== excludeIndex);
   if (candidates.length === 0) return excludeIndex || 0;
-
   const total = candidates.reduce((sum, c) => sum + c.w, 0);
   let r = Math.random() * total;
   for (const c of candidates) {
@@ -134,12 +100,7 @@ function pickWeightedIndex(ads, excludeIndex) {
   return candidates[candidates.length - 1].idx;
 }
 
-// ─── Ad 1 special case: three-portrait background ────────────────
-const BIBLICAL_ELEARNING_BACKGROUNDS = [
-  '/ads/ad-1-bg-1.jpg',
-  '/ads/ad-1-bg-2.jpg',
-  '/ads/ad-1-bg-3.jpg',
-];
+const BIBLICAL_ELEARNING_BACKGROUNDS = ['/ads/ad-1-bg-1.jpg', '/ads/ad-1-bg-2.jpg', '/ads/ad-1-bg-3.jpg'];
 
 export default function AdRotator() {
   const { user } = useAuth();
@@ -149,14 +110,9 @@ export default function AdRotator() {
   const [isPaused, setIsPaused] = useState(false);
 
   const [logoError, setLogoError] = useState(() => {
-    try {
-      return JSON.parse(localStorage.getItem(LOGO_ERROR_CACHE_KEY) || '{}');
-    } catch {
-      return {};
-    }
+    try { return JSON.parse(localStorage.getItem(LOGO_ERROR_CACHE_KEY) || '{}'); } catch { return {}; }
   });
 
-  // ─── Refs ─────────────────────────────────────────────────────
   const intervalRef = useRef(null);
   const transitioningTimeoutRef = useRef(null);
   const impressionTimerRef = useRef(null);
@@ -173,7 +129,6 @@ export default function AdRotator() {
   useEffect(() => { adsRef.current = ads; }, [ads]);
   useEffect(() => { userRef.current = user; }, [user?.id]);
 
-  // ─── Fetch ads ────────────────────────────────────────────────
   useEffect(() => {
     let cancelled = false;
     (async () => {
@@ -184,7 +139,6 @@ export default function AdRotator() {
     return () => { cancelled = true; };
   }, []);
 
-  // ─── Mount / unmount cleanup ──────────────────────────────────
   useEffect(() => {
     mountedRef.current = true;
     return () => {
@@ -192,30 +146,23 @@ export default function AdRotator() {
       if (intervalRef.current) clearInterval(intervalRef.current);
       if (transitioningTimeoutRef.current) clearTimeout(transitioningTimeoutRef.current);
       if (impressionTimerRef.current) clearTimeout(impressionTimerRef.current);
-      intervalRef.current = null;
-      transitioningTimeoutRef.current = null;
-      impressionTimerRef.current = null;
     };
   }, []);
 
-  // ─── Transition helper ────────────────────────────────────────
   const beginTransition = useCallback(() => {
     if (isTransitioningRef.current) return false;
     isTransitioningRef.current = true;
     setIsTransitioning(true);
-
     if (transitioningTimeoutRef.current) clearTimeout(transitioningTimeoutRef.current);
     transitioningTimeoutRef.current = setTimeout(() => {
       isTransitioningRef.current = false;
       if (mountedRef.current) setIsTransitioning(false);
     }, TRANSITION_MS);
-
     return true;
   }, []);
 
   const adCount = ads?.length || 0;
 
-  // ─── Navigation ───────────────────────────────────────────────
   const goToNext = useCallback(() => {
     if (!beginTransition() || adCount === 0) return;
     setCurrentAd((prev) => pickWeightedIndex(adsRef.current || [], prev));
@@ -223,41 +170,28 @@ export default function AdRotator() {
 
   const goToPrev = useCallback(() => {
     if (!beginTransition() || adCount === 0) return;
-    // Manual previous — sequential, feels right for deliberate navigation
     setCurrentAd((prev) => (prev - 1 + adCount) % adCount);
   }, [beginTransition, adCount]);
 
-  const goToAd = useCallback(
-    (index) => {
-      if (index === currentAd) return;
-      if (!beginTransition()) return;
-      setCurrentAd(index);
-    },
-    [currentAd, beginTransition]
-  );
+  const goToAd = useCallback((index) => {
+    if (index === currentAd) return;
+    if (!beginTransition()) return;
+    setCurrentAd(index);
+  }, [currentAd, beginTransition]);
 
-  // ─── Auto-rotation ────────────────────────────────────────────
   useEffect(() => {
     if (adCount === 0) return;
     intervalRef.current = setInterval(() => {
       if (isPausedRef.current || isTransitioningRef.current) return;
       goToNext();
     }, ROTATE_INTERVAL_MS);
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    };
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
   }, [goToNext, adCount]);
 
-  // ─── Impression tracking ─────────────────────────────────────
-  // Fires one impression per ad per browser session, 1.5s after the ad
-  // becomes visible. If the user rotates away before 1.5s, no count.
   useEffect(() => {
     if (!ads || ads.length === 0) return;
     const ad = ads[currentAd];
     if (!ad) return;
-
     if (impressionTimerRef.current) clearTimeout(impressionTimerRef.current);
     impressionTimerRef.current = setTimeout(() => {
       const stillCurrent = adsRef.current?.[currentAdRef.current];
@@ -265,23 +199,14 @@ export default function AdRotator() {
         recordImpression(ad.id, userRef.current?.id);
       }
     }, IMPRESSION_DELAY_MS);
-
-    return () => {
-      if (impressionTimerRef.current) {
-        clearTimeout(impressionTimerRef.current);
-        impressionTimerRef.current = null;
-      }
-    };
+    return () => { if (impressionTimerRef.current) clearTimeout(impressionTimerRef.current); };
   }, [currentAd, ads]);
 
-  // ─── Logo error handler ──────────────────────────────────────
   const handleLogoError = useCallback((adId) => {
     setLogoError((prev) => {
       if (prev[adId]) return prev;
       const next = { ...prev, [adId]: true };
-      try {
-        localStorage.setItem(LOGO_ERROR_CACHE_KEY, JSON.stringify(next));
-      } catch {}
+      try { localStorage.setItem(LOGO_ERROR_CACHE_KEY, JSON.stringify(next)); } catch {}
       return next;
     });
   }, []);
@@ -289,27 +214,18 @@ export default function AdRotator() {
   const handleMouseEnter = useCallback(() => setIsPaused(true), []);
   const handleMouseLeave = useCallback(() => setIsPaused(false), []);
 
-  // ─── Loading / empty states ───────────────────────────────────
   if (ads === null) {
-    return (
-      <div className="relative w-full rounded-2xl overflow-hidden mb-4 h-[100px] bg-surface/50 border border-[#2a2a2a] animate-pulse" />
-    );
+    return <div className="relative w-full rounded-2xl overflow-hidden mb-4 h-[100px] bg-surface/50 border border-[#2a2a2a] animate-pulse" />;
   }
+  if (ads.length === 0) return null;
 
-  if (ads.length === 0) {
-    return null;
-  }
-
-  // ─── Derived values ───────────────────────────────────────────
   const ad = ads[currentAd] || ads[0];
-  const isRealAd = !!ad.domain;
   const initial = ad.title.charAt(0).toUpperCase();
   const isBiblicalELearning = ad.slug === 'biblical-elearning';
 
   const logoUrl = ad.logo_url && !logoError[ad.id] ? ad.logo_url : null;
-  const bannerUrl = ad.banner_url && !logoError[ad.id] ? ad.banner_url : null;
+  const bannerUrl = ad.banner_url;
 
-  // ─── Background style ────────────────────────────────────────
   let bgStyle = {};
   const brandColor = ad.brand_color || '#000';
 
@@ -322,80 +238,46 @@ export default function AdRotator() {
       backgroundRepeat: 'no-repeat, no-repeat, no-repeat',
     };
   } else if (bannerUrl) {
+    // 👇 THE ENTERPRISE WAY: It reads exactly what the DB tells it to do
     bgStyle = {
       backgroundColor: brandColor,
       backgroundImage: `url(${bannerUrl})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
+      backgroundSize: ad.bg_fit || 'cover',
+      backgroundPosition: ad.bg_position || 'center 20%',
       backgroundRepeat: 'no-repeat',
     };
   } else if (ad.bg_gradient) {
     bgStyle = { background: ad.bg_gradient };
   } else {
-    bgStyle = {
-      background: `linear-gradient(135deg, ${brandColor}40, ${brandColor}80)`,
-    };
+    bgStyle = { background: `linear-gradient(135deg, ${brandColor}40, ${brandColor}80)` };
   }
 
-  const logoContainerClass =
-    'flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10 shadow-lg overflow-hidden';
+  const logoContainerClass = 'flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10 shadow-lg overflow-hidden';
   const imgClass = 'w-14 h-14 object-contain';
 
-  const handleAdClick = () => {
-    recordClick(ad.id, user?.id);
-  };
-
   return (
-    <div
-      className="relative w-full rounded-2xl overflow-hidden mb-4 group shadow-xl"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div
-        className="absolute inset-0 bg-center transition-all duration-700"
-        style={bgStyle}
-      >
+    <div className="relative w-full rounded-2xl overflow-hidden mb-4 group shadow-xl" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div className="absolute inset-0 bg-center transition-all duration-700" style={bgStyle}>
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-transparent"></div>
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-shimmer"></div>
 
-      <a
-        href={ad.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={handleAdClick}
-        className="relative block w-full rounded-2xl p-5 px-10 md:px-12 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
-      >
+      <a href={ad.link} target="_blank" rel="noopener noreferrer" onClick={() => recordClick(ad.id, user?.id)} className="relative block w-full rounded-2xl p-5 px-10 md:px-12 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
         <div className="flex items-center gap-4 relative z-10">
           <div className={logoContainerClass}>
             {logoUrl ? (
-              <img
-                src={logoUrl}
-                alt={ad.title}
-                className={imgClass}
-                loading="lazy"
-                onError={() => handleLogoError(ad.id)}
-              />
+              <img src={logoUrl} alt={ad.title} className={imgClass} loading="lazy" onError={() => handleLogoError(ad.id)} />
             ) : (
-              <div
-                className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl font-bold text-white"
-                style={{
-                  background: `linear-gradient(135deg, ${brandColor}cc, ${brandColor}66)`,
-                }}
-              >
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl font-bold text-white" style={{ background: `linear-gradient(135deg, ${brandColor}cc, ${brandColor}66)` }}>
                 {ad.emoji || initial}
               </div>
             )}
           </div>
 
           <div className="flex-1 min-w-0">
-            <h4 className="text-white font-semibold text-base md:text-lg truncate drop-shadow-lg">
-              {ad.title}
-            </h4>
-            <p className="text-white/80 text-xs md:text-sm truncate drop-shadow-md">
-              {ad.description}
-            </p>
+            <h4 className="text-white font-semibold text-base md:text-lg truncate drop-shadow-lg">{ad.title}</h4>
+            <p className="text-white/80 text-xs md:text-sm truncate drop-shadow-md">{ad.description}</p>
           </div>
 
           <div className="text-xs text-white/50 flex-shrink-0 hidden sm:block drop-shadow-md">
@@ -404,32 +286,11 @@ export default function AdRotator() {
         </div>
       </a>
 
-      <button
-        onClick={goToPrev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-r-lg p-1.5 pl-2 pr-3 transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary opacity-0 group-hover:opacity-100 sm:opacity-100 z-20 backdrop-blur-sm"
-        aria-label="Previous ad"
-      >
-        <ChevronLeft size={20} />
-      </button>
-
-      <button
-        onClick={goToNext}
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-l-lg p-1.5 pr-2 pl-3 transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary opacity-0 group-hover:opacity-100 sm:opacity-100 z-20 backdrop-blur-sm"
-        aria-label="Next ad"
-      >
-        <ChevronRight size={20} />
-      </button>
-
+      <button onClick={goToPrev} className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-r-lg p-1.5 pl-2 pr-3 transition-all hover:scale-110 opacity-0 group-hover:opacity-100 sm:opacity-100 z-20 backdrop-blur-sm" aria-label="Previous ad"><ChevronLeft size={20} /></button>
+      <button onClick={goToNext} className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-l-lg p-1.5 pr-2 pl-3 transition-all hover:scale-110 opacity-0 group-hover:opacity-100 sm:opacity-100 z-20 backdrop-blur-sm" aria-label="Next ad"><ChevronRight size={20} /></button>
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
         {ads.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => goToAd(idx)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              idx === currentAd ? 'bg-primary w-5' : 'bg-white/40 hover:bg-white/60'
-            }`}
-            aria-label={`Go to ad ${idx + 1}`}
-          />
+          <button key={idx} onClick={() => goToAd(idx)} className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentAd ? 'bg-primary w-5' : 'bg-white/40 hover:bg-white/60'}`} aria-label={`Go to ad ${idx + 1}`} />
         ))}
       </div>
     </div>
