@@ -4,7 +4,7 @@ import { Heart } from 'lucide-react';
 export default function Donate() {
   const navigate = useNavigate();
 
-  const PAYPAL_URL = 'https://www.paypal.com/ncp/payment/KJY568KQ4Z2A2';
+  const NTUMA_URL = 'https://ntuma.app/pay/48a185fd-2ff7-43e4-86d9-51ee9cd3a753';
 
   return (
     <div className="py-4 max-w-3xl mx-auto">
@@ -31,17 +31,15 @@ export default function Donate() {
           <p className="text-text font-semibold mb-2">  Support the Mission</p>
           <p className="text-sm">Every contribution Supports Our Mission.</p>
 
-          {/* ─── Themed PayPal Button ─── */}
+          {/* ─── Ntuma Payment Button ─── */}
           <a
-            href={PAYPAL_URL}
+            href={NTUMA_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-black font-bold text-lg hover:bg-primary/80 hover:scale-[1.02] transition-all duration-300 shadow-lg hover:shadow-primary/20 mt-4"
           >
-            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.29 2.73.79 4.56-.05.18-.11.37-.18.56l-.02.06c-.38 1.12-.96 2.07-1.72 2.83-.8.8-1.79 1.38-2.94 1.73-.66.2-1.37.31-2.11.31h-1.5c-.37 0-.68.27-.75.64l-.23 1.46-.01.06c-.06.34-.35.59-.7.59h-1.62c-.37 0-.68-.27-.75-.64l-.22-1.38z"/>
-            </svg>
-              Donate
+            <Heart className="w-5 h-5 fill-current" />
+            Donate with Ntuma
           </a>
 
           <p className="text-xs text-center text-muted mt-4">

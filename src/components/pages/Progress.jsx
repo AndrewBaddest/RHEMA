@@ -48,10 +48,15 @@ export default function Progress() {
       if (progressRes.error) throw progressRes.error;
       if (attemptsRes.error) throw attemptsRes.error;
 
-      const current = useStore.getState();
+      // 👇 THE MAGIC: Back up any local guest data before overwriting it
+      const currentState = useStore.getState();
+      if (currentState.quizzes.length > 0 || currentState.scripture.versesRead > 0) {
+        localStorage.setItem('rhema_guest_backup', JSON.stringify(currentState));
+        console.log('💾 Guest data backed up safely.');
+      }
 
       const loadedProgress = {
-        username: profile.displayName || 'Player',
+        username: profile.username || 'Player',
         playerId: userId.slice(0, 8),
         quizzes: attemptsRes.data.map((a) => ({
           book: a.quiz_id,
@@ -64,9 +69,9 @@ export default function Progress() {
           chaptersRead: progressRes.data.map((p) => `${p.book_name}:${p.chapter}`),
           versesRead: progressRes.data.reduce((sum, p) => sum + (p.verse || 0), 0),
         },
-        globalChallenges: current.globalChallenges || [],
-        dailyQuizHistory: current.dailyQuizHistory || [],
-        playedQuestions: current.playedQuestions || [],
+        globalChallenges: currentState.globalChallenges || [],
+        dailyQuizHistory: currentState.dailyQuizHistory || [],
+        playedQuestions: currentState.playedQuestions || [],
       };
 
       loadProgress(loadedProgress);
@@ -75,11 +80,23 @@ export default function Progress() {
     }
   };
 
-  // ─── Logout ──────────────────────────────────────────────────
+  // ─── Logout (Silently Restores Guest Data) ───────────────────
   const handleLogout = async () => {
     setLogoutLoading(true);
     try {
-      resetProgress();
+      // 1. Wipe the account data from the screen
+      resetProgress(); 
+
+      // 2. Check for a guest backup and restore it
+      const backup = localStorage.getItem('rhema_guest_backup');
+      if (backup) {
+        const parsed = JSON.parse(backup);
+        loadProgress(parsed);
+        localStorage.removeItem('rhema_guest_backup');
+        console.log('🔄 Guest data restored.');
+      }
+
+      // 3. Clear auth keys and sign out
       localStorage.removeItem('rhema_current_player');
       localStorage.removeItem('rhema_auto_save');
       localStorage.removeItem('rhema_device_code');

@@ -3,12 +3,15 @@ import { useAuth } from '../../context/AuthContext';
 import { useGoogleOneTap } from '../../hooks/useGoogleOneTap';
 
 export default function SignInPrompt({ open, reason, onClose }) {
-  const { signInWithGoogle, signInWithGoogleIdToken } = useAuth();
+  const { signInWithGoogle, linkWithGoogle, signInWithGoogleIdToken } = useAuth();
   const [emailMode, setEmailMode] = useState(false);
   const [email, setEmail] = useState('');
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState('');
   const [oneTapTried, setOneTapTried] = useState(false);
+
+  // Determine intent based on the reason string passed from Progress.jsx
+  const isLoadIntent = reason.toLowerCase().includes('load');
 
   const { available: oneTapAvailable, promptOneTap } = useGoogleOneTap({
     enabled: open,
@@ -16,11 +19,17 @@ export default function SignInPrompt({ open, reason, onClose }) {
       setBusy(true);
       setMessage('');
       try {
+        // One Tap always signs in (or links if anonymous). 
+        // If it throws identity_already_exists, we catch it below.
         await signInWithGoogleIdToken(credential, nonce);
         onClose?.();
       } catch (err) {
         console.error('[one-tap] sign-in failed:', err);
-        setMessage('Google sign-in failed. Try the button below.');
+        if (err.message?.includes('already linked')) {
+          setMessage('This Google account is already in use. Try using the "Load progress" button instead.');
+        } else {
+          setMessage('Google sign-in failed. Try the button below.');
+        }
       } finally {
         setBusy(false);
       }
@@ -40,11 +49,21 @@ export default function SignInPrompt({ open, reason, onClose }) {
     setBusy(true);
     setMessage('');
     try {
-      await signInWithGoogle();
+      // 👇 THE FIX: Call the correct function based on intent
+      if (isLoadIntent) {
+        await signInWithGoogle(); // Logs into existing account
+      } else {
+        await linkWithGoogle();   // Links guest to new Google account
+      }
     } catch (err) {
       console.error('Google redirect failed:', err);
-      setMessage('Could not start Google sign-in. Try again.');
-      setBusy(false);
+      if (err.message?.includes('already linked')) {
+         setMessage('This Google account is already in use. Try the "Load progress" button instead.');
+         setBusy(false);
+      } else {
+         setMessage('Could not start Google sign-in. Try again.');
+         setBusy(false);
+      }
     }
   };
 
@@ -59,7 +78,7 @@ export default function SignInPrompt({ open, reason, onClose }) {
       const { supabase } = await import('../../lib/supabase');
       const { error } = await supabase.auth.updateUser({ email: email.trim() });
       if (error) throw error;
-      setMessage('Check your inbox for a confirmation link.');
+      setMessage('✅ Check your inbox for a confirmation link.');
     } catch (err) {
       setMessage(err.message || 'Could not send link.');
     } finally {
@@ -96,7 +115,7 @@ export default function SignInPrompt({ open, reason, onClose }) {
                     <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
                     <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
                   </svg>
-                  Continue with Google
+                  {isLoadIntent ? 'Sign in to Load' : 'Sign in to Save'}
                 </>
               )}
             </button>
@@ -124,12 +143,12 @@ export default function SignInPrompt({ open, reason, onClose }) {
               onClick={() => { setEmailMode(false); setMessage(''); }}
               className="mt-3 text-sm text-muted hover:text-primary transition"
             >
-              Back
+              ← Back
             </button>
           </>
         )}
 
-        {message && <div className="mt-3 text-xs text-muted">{message}</div>}
+        {message && <div className="mt-3 text-xs text-red-400 font-medium">{message}</div>}
 
         <button
           onClick={onClose}

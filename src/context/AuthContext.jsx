@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState, useRef } from 'react';
 import { supabase } from '../lib/supabase';
-import { mergeLocalProgress } from '../lib/mergeProgress';
 import { generateDeviceCode } from '../lib/utils';
 
 const AuthContext = createContext();
@@ -39,10 +38,19 @@ export const AuthProvider = ({ children }) => {
     }
 
     if (data) {
+      // 👇 Ensure the display name always has the 4-digit device code attached
+      const baseName = data.username || data.display_name || 'Player';
+      const code = data.device_code || '';
+      
+      let finalName = data.display_name || baseName;
+      if (code && !finalName.endsWith(code)) {
+        finalName = `${baseName} ${code}`;
+      }
+
       return {
-        username: data.username || '',
-        displayName: data.display_name || '',
-        deviceCode: data.device_code || '',
+        username: baseName,
+        displayName: finalName,
+        deviceCode: code,
         email: data.email || '',
       };
     }
@@ -164,20 +172,25 @@ export const AuthProvider = ({ children }) => {
     return displayName;
   };
 
-  // ─── Google upgrade (OAuth redirect) ──────────────────────────
+  // 👇 THE FIX: Google Sign-In (OAuth) for loading existing accounts
   const signInWithGoogle = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: window.location.origin },
+    });
+    if (error) throw error;
+  };
+
+  // 👇 THE FIX: Google Link (Identity) for saving new guests
+  const linkWithGoogle = async () => {
     const { error } = await supabase.auth.linkIdentity({
       provider: 'google',
       options: { redirectTo: window.location.origin },
     });
     if (error) throw error;
   };
-  const linkWithGoogle = signInWithGoogle;
 
   // ─── Google One Tap ───────────────────────────────────────────
-  // The nonce is required: Google embeds SHA-256(rawNonce) into the ID
-  // token as the "nonce" claim, and Supabase hashes the raw nonce we
-  // pass here to compare. Both must be present or Supabase rejects.
   const signInWithGoogleIdToken = async (credential, nonce) => {
     if (!credential) throw new Error('Missing Google credential');
     if (!nonce) throw new Error('Missing nonce — One Tap must supply it');
@@ -249,21 +262,6 @@ export const AuthProvider = ({ children }) => {
     })();
     return () => { cancelled = true; };
   }, [user?.id, isAnonymous, loading]);
-
-  // ─── Merge local progress after upgrade ───────────────────────
-  useEffect(() => {
-    if (loading || !user || isAnonymous) return;
-
-    const mergedKey = `rhema_merged_${user.id}`;
-    if (localStorage.getItem(mergedKey) === 'true') return;
-
-    mergeLocalProgress(user.id)
-      .then((result) => {
-        console.log('📦 Merged local progress:', result);
-        localStorage.setItem(mergedKey, 'true');
-      })
-      .catch((err) => console.error('mergeLocalProgress failed:', err));
-  }, [user, loading, isAnonymous]);
 
   return (
     <AuthContext.Provider

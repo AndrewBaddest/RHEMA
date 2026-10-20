@@ -15,7 +15,9 @@ export default function Header() {
 
   return (
     <header className="bg-surface border-b-2 border-primary px-4 py-3 flex justify-between items-center sticky top-0 z-50">
-      <div className="flex items-center gap-4 min-w-[80px]">
+      
+      {/* Left side Routing */}
+      <div className="flex items-center gap-4 min-w-[100px]">
         {path === '/' ? (
           <Link to="/about" className="header-btn">About Us</Link>
         ) : path === '/about' || path === '/contact' ? (
@@ -25,9 +27,11 @@ export default function Header() {
         )}
       </div>
 
+      {/* Logo */}
       <h1 className="text-2xl font-bold text-primary tracking-wider">RHEMA</h1>
 
-      <div className="flex items-center gap-3 min-w-[80px] justify-end">
+      {/* Right side Routing */}
+      <div className="flex items-center gap-3 min-w-[100px] justify-end">
         {path === '/about' ? (
           <a
             href="mailto:rhemabiblequiz@gmail.com"
@@ -63,6 +67,7 @@ export default function Header() {
           </>
         )}
       </div>
+
     </header>
   );
 }
