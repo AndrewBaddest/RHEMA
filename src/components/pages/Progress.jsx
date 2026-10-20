@@ -101,10 +101,12 @@ export default function Progress() {
       localStorage.removeItem('rhema_auto_save');
       localStorage.removeItem('rhema_device_code');
       await supabase.auth.signOut();
-      navigate('/', { replace: true });
+      
+      // 👇 THE FIX: Force a full browser reload instead of just navigating
+      window.location.href = '/';
+      
     } catch (error) {
       console.error('Logout error:', error);
-    } finally {
       setLogoutLoading(false);
     }
   };
