@@ -52,7 +52,10 @@ export default function QuizPlay() {
   const [error, setError] = useState(null);
   const [isDaily, setIsDaily] = useState(false);
   const [isGlobal, setIsGlobal] = useState(false);
+  
   const timerRef = useRef(null);
+  const advanceTimeoutRef = useRef(null);
+  const transitionTimeoutRef = useRef(null);
   const questionFinishedRef = useRef(false);
   const questionSetRef = useRef([]);
 
@@ -126,60 +129,39 @@ export default function QuizPlay() {
     };
 
     loadQuestions();
-    return () => clearInterval(timerRef.current);
+    
+    // Cleanup on unmount
+    return () => {
+      clearInterval(timerRef.current);
+      clearTimeout(advanceTimeoutRef.current);
+      clearTimeout(transitionTimeoutRef.current);
+    };
   }, [book, daily, allQuizQuestions, timerDuration, questionsPerBook]);
 
-  // ─── Timer effect ───────────────────────────────────────────────
-  useEffect(() => {
-    if (isLoading || questions.length === 0) return;
-    clearInterval(timerRef.current);
-    setTimer(timerDuration);
-    timerRef.current = setInterval(() => {
-      setTimer((prev) => {
-        if (prev <= 1) {
-          clearInterval(timerRef.current);
-          if (!questionFinishedRef.current) {
-            handleNextQuestion();
-          }
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-    return () => clearInterval(timerRef.current);
-  }, [currentIndex, isLoading, questions, timerDuration]);
-
-  // ─── Handlers ──────────────────────────────────────────────────
-  const handleSelectOption = (index) => {
-    if (questionFinishedRef.current) return;
-    setSelectedOption(index);
-  };
-
-  const handleNextQuestion = () => {
-    if (questionFinishedRef.current) return;
-    questionFinishedRef.current = true;
-    clearInterval(timerRef.current);
-
+  // ─── The core engine: processes an answer and moves forward ─────
+  const processAnswer = (finalAnswer) => {
     const q = questions[currentIndex];
-    const isCorrect = selectedOption === q.answer;
-    const userAnswer = selectedOption !== null ? selectedOption : -1;
+    const isCorrect = finalAnswer === q.answer;
+    const userAnswer = finalAnswer !== null ? finalAnswer : -1;
+    
     const newUserAnswers = [...userAnswers];
     newUserAnswers[currentIndex] = userAnswer;
     setUserAnswers(newUserAnswers);
 
-    // Silent during play — the Results page tells them right/wrong
     if (isCorrect) {
       setScore((prev) => prev + 1);
     }
 
     if (currentIndex < questions.length - 1) {
-      setTimeout(() => {
+      // Move to next question after a brief pause
+      transitionTimeoutRef.current = setTimeout(() => {
         setCurrentIndex((prev) => prev + 1);
         setSelectedOption(null);
         questionFinishedRef.current = false;
         setTimer(timerDuration);
       }, 500);
     } else {
+      // Quiz is over
       const finalScore = score + (isCorrect ? 1 : 0);
       let quizId = book || (daily ? 'daily' : 'mixed');
       if (isDaily) quizId = 'daily';
@@ -208,6 +190,47 @@ export default function QuizPlay() {
         },
       });
     }
+  };
+
+  // ─── Timer effect ───────────────────────────────────────────────
+  useEffect(() => {
+    if (isLoading || questions.length === 0) return;
+    clearInterval(timerRef.current);
+    setTimer(timerDuration);
+    
+    timerRef.current = setInterval(() => {
+      setTimer((prev) => {
+        if (prev <= 1) {
+          clearInterval(timerRef.current);
+          // Time ran out! Lock the question and process with null answer
+          if (!questionFinishedRef.current) {
+            questionFinishedRef.current = true;
+            processAnswer(null); 
+          }
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    
+    return () => clearInterval(timerRef.current);
+  }, [currentIndex, isLoading, questions, timerDuration]);
+
+  // ─── Handlers ──────────────────────────────────────────────────
+  const handleSelectOption = (index) => {
+    if (questionFinishedRef.current) return;
+    
+    // Lock the question immediately to prevent double clicks
+    questionFinishedRef.current = true;
+    clearInterval(timerRef.current);
+    
+    // Highlight the user's choice
+    setSelectedOption(index);
+
+    // Wait 400ms so the user sees the highlight, then process the answer
+    advanceTimeoutRef.current = setTimeout(() => {
+      processAnswer(index);
+    }, 400);
   };
 
   // ─── Render ────────────────────────────────────────────────────
@@ -275,25 +298,13 @@ export default function QuizPlay() {
               key={i}
               className={`option-btn ${isSelected ? 'selected' : ''}`}
               onClick={() => handleSelectOption(i)}
-              disabled={questionFinishedRef.current}
+              disabled={questionFinishedRef.current && selectedOption !== i}
             >
               {letters[i]}. {opt}
             </button>
           );
         })}
       </div>
-
-      <div className="flex justify-end mt-3">
-        <span className="text-sm text-muted" id="feedback-message"></span>
-      </div>
-
-      <button
-        className="btn mt-3"
-        disabled={selectedOption === null || questionFinishedRef.current}
-        onClick={handleNextQuestion}
-      >
-        {currentIndex < total - 1 ? 'Next Question' : 'Submit Quiz'}
-      </button>
     </QuizShell>
   );
 }

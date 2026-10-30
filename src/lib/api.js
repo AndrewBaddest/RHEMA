@@ -11,7 +11,7 @@ export async function fetchBibleData(book) {
   return response.json();
 }
 
-// ─── Fetch quiz questions from Supabase ──────────────────────────
+// ─── Fetch quiz questions from Supabase (Randomized) ─────────────
 export async function fetchQuizQuestionsFromDB(bookName, limit = 10) {
   try {
     const { data: quiz, error: quizError } = await supabase
@@ -25,11 +25,12 @@ export async function fetchQuizQuestionsFromDB(bookName, limit = 10) {
       return null;
     }
 
+    // 👇 Call the Postgres RPC function for random questions
     const { data: questions, error: qError } = await supabase
-      .from('quiz_questions')
-      .select('question, options, correct_answer, verse_reference')
-      .eq('quiz_id', quiz.id)
-      .limit(limit);
+      .rpc('get_random_quiz_questions', {
+        quiz_id_param: quiz.id,
+        limit_param: limit
+      });
 
     if (qError) {
       console.warn(`⚠️ Failed to fetch questions for ${bookName}:`, qError);
@@ -56,14 +57,12 @@ export async function fetchQuizQuestionsFromDB(bookName, limit = 10) {
   }
 }
 
-// ─── Fetch global challenge questions (random from all books) ──
+// ─── Fetch global challenge questions (Random from all books) ──
 export async function fetchGlobalChallengeQuestionsFromDB(count = 30) {
   try {
-    // 1. Fetch the questions WITHOUT the join
+    // 👇 Call the Postgres RPC function for random global questions
     const { data: questions, error: qError } = await supabase
-      .from('quiz_questions')
-      .select('id, quiz_id, question, options, correct_answer, verse_reference')
-      .limit(count);
+      .rpc('get_random_global_questions', { limit_param: count });
 
     if (qError) {
       console.error('⚠️ Failed to fetch global questions:', qError);
@@ -74,7 +73,7 @@ export async function fetchGlobalChallengeQuestionsFromDB(count = 30) {
       return null;
     }
 
-    // 2. Fetch the quizzes to map book names
+    // Fetch the quizzes to map book names
     const quizIds = [...new Set(questions.map((q) => q.quiz_id))];
     const { data: quizzes, error: quizError } = await supabase
       .from('quizzes')
