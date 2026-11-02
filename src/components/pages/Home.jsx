@@ -5,35 +5,24 @@ import { ALL_BOOKS, BOOKS_OT } from '../../lib/utils';
 import { fetchAllQuizQuestions } from '../../lib/api';
 import BookGrid from '../shared/BookGrid';
 import { useAuth } from '../../context/AuthContext';
+import { useLanguage } from '../../context/LanguageContext'; // 👈 Added
 
 export default function Home() {
-  console.log('🏠 Home component rendering...');
-
   const [mode, setMode] = useState('quiz');
   const navigate = useNavigate();
   const setCurrentHomeTab = useUIStore((state) => state.setCurrentHomeTab);
   const setAllQuizQuestions = useStore((s) => s.setAllQuizQuestions);
   const allQuizQuestions = useStore((s) => s.allQuizQuestions || []);
   const playedQuestions = useStore((s) => s.playedQuestions || []);
+  const { language, t } = useLanguage(); // 👈 Get language
 
   const { user, loading } = useAuth();
-  console.log('👤 Auth state:', { user, loading });
 
   useEffect(() => {
-    if (!loading) {
-      console.log('✅ User authenticated:', user?.id);
-    }
-  }, [user, loading]);
-
-  useEffect(() => {
-    console.log('📦 allQuizQuestions length:', allQuizQuestions.length);
     if (allQuizQuestions.length === 0) {
-      console.log('🔄 Starting preload...');
       const load = async () => {
         try {
-          console.log('🔄 Fetching quiz questions...');
           const qs = await fetchAllQuizQuestions();
-          console.log(`✅ Preloaded ${qs.length} questions.`);
           setAllQuizQuestions(qs);
         } catch (err) {
           console.warn('⚠️ Failed to preload quiz questions:', err);
@@ -53,6 +42,7 @@ export default function Home() {
   };
 
   const handleBookClick = (book) => {
+    // 👇 'book' here is always the English name (e.g., 'Genesis')
     if (mode === 'quiz') {
       navigate('/quiz', { state: { book } });
     } else {
@@ -68,8 +58,6 @@ export default function Home() {
     navigate('/challenge');
   };
 
-  const availableCount = allQuizQuestions.filter(q => !playedQuestions.includes(q.ref)).length;
-
   return (
     <div>
       <div className="flex bg-surface rounded-3xl p-1 border border-[#333] mb-5">
@@ -79,7 +67,7 @@ export default function Home() {
           }`}
           onClick={() => handleModeChange('quiz')}
         >
-          Quiz
+          {t('quiz')}
         </button>
         <button
           className={`flex-1 py-2.5 font-bold rounded-2xl transition-all ${
@@ -87,21 +75,21 @@ export default function Home() {
           }`}
           onClick={() => handleModeChange('read')}
         >
-          Scripture
+          {t('scripture')}
         </button>
       </div>
 
       <div className="flex gap-2.5 flex-wrap mb-4">
         <button className="btn flex-1 min-w-[120px]" onClick={startDailyQuiz}>
-          📅 Daily Quiz
+          {t('dailyQuiz')}
         </button>
         <button className="btn-secondary flex-1 min-w-[120px]" onClick={startGlobalChallenge}>
-          🌍 Global Challenge
+          {t('globalChallenge')}
         </button>
       </div>
 
       <h3 className="text-lg font-semibold mb-1.5">
-        Select a Book to {mode === 'quiz' ? 'Play' : 'Read'}
+        {mode === 'quiz' ? t('selectBookPlay') : t('selectBookRead')}
       </h3>
       <p className="text-muted text-sm mb-2.5">
         {mode === 'quiz'
@@ -109,10 +97,12 @@ export default function Home() {
           : 'Choose a book and chapter to start reading.'}
       </p>
 
-      <div className="testament-title">Old Testament</div>
-      <BookGrid books={BOOKS_OT} onClick={handleBookClick} />
-      <div className="testament-title">New Testament</div>
-      <BookGrid books={ALL_BOOKS.filter((b) => !BOOKS_OT.includes(b))} onClick={handleBookClick} />
+      <div className="testament-title">{t('oldTestament')}</div>
+      {/* 👇 Pass the language down */}
+      <BookGrid books={BOOKS_OT} onClick={handleBookClick} lang={language} />
+      
+      <div className="testament-title">{t('newTestament')}</div>
+      <BookGrid books={ALL_BOOKS.filter((b) => !BOOKS_OT.includes(b))} onClick={handleBookClick} lang={language} />
     </div>
   );
 }

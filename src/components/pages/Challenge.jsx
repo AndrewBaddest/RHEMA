@@ -8,8 +8,8 @@ import SignInPrompt from '../shared/SignInPrompt';
 import { supabase } from '../../lib/supabase';
 import { fetchGlobalChallengeQuestionsFromDB, fetchGlobalEvent } from '../../lib/api';
 import { calculateNextScore, canFinishDuel } from '../../lib/duelLogic';
+import { useLanguage } from '../../context/LanguageContext';
 
-// ─── Fallback generator ───────────────────────────────────────────
 const generateGlobalQuizQuestions = (count) => {
   const books = ['Genesis','Exodus','Leviticus','Numbers','Deuteronomy'];
   return Array.from({ length: count }).map((_, idx) => ({
@@ -21,14 +21,29 @@ const generateGlobalQuizQuestions = (count) => {
   }));
 };
 
+// 👇 Countdown formatter — Dd HHh MMm SSs
+const formatCountdown = (sec) => {
+  if (sec <= 0) return '0s';
+  const d = Math.floor(sec / 86400);
+  const h = Math.floor((sec % 86400) / 3600);
+  const m = Math.floor((sec % 3600) / 60);
+  const s = sec % 60;
+  const pad = (n) => String(n).padStart(2, '0');
+  if (d > 0) return `${d}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+  if (h > 0) return `${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+  if (m > 0) return `${pad(m)}m ${pad(s)}s`;
+  return `${s}s`;
+};
+
 export default function Challenge() {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { refetch } = useLeaderboard();
   const submitScore = useSubmitChallengeScore();
   const { requireAuth, promptOpen, reason, closePrompt } = useRequireAuth();
+  const { t } = useLanguage();
 
-  // ─── Global Challenge State ────────────────────────────
+  // ─── Global Challenge Engine State ────────────────────────────
   const [globalEvent, setGlobalEvent] = useState(null);
   const [timeUntilStart, setTimeUntilStart] = useState(0);
   const [globalChallengeStatus, setGlobalChallengeStatus] = useState('idle');
@@ -37,6 +52,7 @@ export default function Challenge() {
   const [globalPlayerAnswers, setGlobalPlayerAnswers] = useState([]);
   const [globalQuestionTimer, setGlobalQuestionTimer] = useState(30);
   const [top10Scores, setTop10Scores] = useState([]);
+  
   const [isReadyForGlobal, setIsReadyForGlobal] = useState(false);
   const [hasFinishedCurrentEvent, setHasFinishedCurrentEvent] = useState(false);
 
@@ -85,7 +101,6 @@ export default function Challenge() {
   useEffect(() => { timerSecondsRef.current = timerSeconds; }, [timerSeconds]);
 
   // ─── DISCONNECT RECOVERY ──────────────────────────────────────
-  // If the user refreshes the page mid-duel, automatically rejoin
   useEffect(() => {
     if (!user) return;
     const checkActiveDuel = async () => {
@@ -99,7 +114,6 @@ export default function Challenge() {
         .maybeSingle();
 
       if (data) {
-        // Found an active duel! Resume it.
         const isChallenger = user.id === data.challenger_id;
         const myProgress = isChallenger ? data.challenger_current_question : data.opponent_current_question;
         
@@ -111,7 +125,6 @@ export default function Challenge() {
         setIsMultiplayerModalOpen(true);
         setMultiplayerStatus('quiz');
         
-        // Start timer for the resumed question
         startQuestionTimer();
       }
     };
@@ -126,7 +139,9 @@ export default function Challenge() {
     };
   }, []);
 
-  // ... (Global Challenge logic remains exactly the same) ...
+  // ═══════════════════════════════════════════════════════════════
+  // SERVER-DRIVEN GLOBAL CHALLENGE ENGINE
+  // ═══════════════════════════════════════════════════════════════
   const fetchTopScores = async (eventId) => {
     if (!eventId) return;
     const { data, error } = await supabase.rpc('get_global_leaderboard', { event_id_param: eventId });
@@ -335,8 +350,6 @@ export default function Challenge() {
     } else {
       localFinishedRef.current = true;
       if (questionTimerRef.current) { clearInterval(questionTimerRef.current); questionTimerRef.current = null; }
-      
-      // Tell opponent we finished
       channelRef.current?.send({ type: 'broadcast', event: 'player_finished', payload: { user: me.id } });
       await maybeFinishDuel();
     }
@@ -407,13 +420,12 @@ export default function Challenge() {
           const updated = payload.new;
           if (!duelStartedRef.current) { quizQuestionsRef.current = updated.questions || []; setQuizQuestions(updated.questions || []); }
           
-          // Update opponent score in real time as they submit answers via RPC
           const isChallenger = me.id === updated.challenger_id;
           setOpponentScore(isChallenger ? updated.score_opponent : updated.score_challenger);
           setMyScore(isChallenger ? updated.score_challenger : updated.score_opponent);
 
           if (updated.status === 'declined') {
-            setMultiplayerStatus('idle'); setNotification({ message: '❌ Challenge declined.', type: 'error' }); setCurrentChallenge(null); setIsMultiplayerModalOpen(false);
+            setMultiplayerStatus('idle'); setNotification({ message: t('challengeDeclined'), type: 'error' }); setCurrentChallenge(null); setIsMultiplayerModalOpen(false);
             if (countdownIntervalRef.current) clearInterval(countdownIntervalRef.current);
             if (questionTimerRef.current) clearInterval(questionTimerRef.current);
           } else if (updated.status === 'accepted' && !duelStartedRef.current) {
@@ -481,14 +493,11 @@ export default function Challenge() {
     await supabase.from('duel_challenges').update({ status: 'declined' }).eq('id', challengeId);
   };
 
-  // 👇 THE SECURE ANSWER SUBMISSION
   const handleSelectAnswer = async (selectedOptionIndex) => {
     if (hasAnsweredRef.current) return;
     hasAnsweredRef.current = true;
-
     const challengeId = currentChallengeRef.current.id;
     
-    // Call the Postgres RPC to validate and update score securely
     const { data, error } = await supabase.rpc('submit_duel_answer', {
       p_duel_id: challengeId,
       p_question_index: currentIndexRef.current,
@@ -496,11 +505,9 @@ export default function Challenge() {
     });
 
     if (!error && data) {
-      // Update local UI with the server's authoritative score
       setMyScore(data.new_score);
       myScoreRef.current = data.new_score;
     }
-
     await handleNextQuestionImpl();
   };
 
@@ -515,8 +522,6 @@ export default function Challenge() {
     if (!channelRef.current || !currentChallengeRef.current) return;
     const freshQuestions = generateGlobalQuizQuestions(questionCount);
     const secs = currentChallengeRef.current.timer_seconds || timerSecondsRef.current || 30;
-    
-    // Reset scores for rematch
     await supabase.from('duel_challenges').update({ 
       status: 'accepted', questions: freshQuestions, score_challenger: 0, score_opponent: 0, current_question: 0,
       challenger_answers: [], opponent_answers: [], challenger_current_question: 0, opponent_current_question: 0
@@ -538,51 +543,42 @@ export default function Challenge() {
   };
 
   // ─── Render ──────────────────────────────────────────────────
-  // ... (Render logic remains exactly the same as the last version) ...
   const show10MinWarning = timeUntilStart > 30 && timeUntilStart <= 600 && globalEvent?.status === 'waiting';
   const showJoinPopup = timeUntilStart > 0 && timeUntilStart <= 30 && globalEvent?.status === 'waiting' && !isReadyForGlobal;
 
   return (
     <div className="py-4 text-center">
-      {/* UI markup remains the same as the previous code block */}
-      <h2 className="text-primary text-2xl font-bold mb-4">🌍 Global Challenge</h2>
+      <h2 className="text-primary text-2xl font-bold mb-4">{t('globalChallenge')}</h2>
       
       <div className="bg-surface rounded-xl p-8 border border-[#2a2a2a] max-w-md mx-auto">
-        <button onClick={() => setIsMultiplayerModalOpen(true)} className="mb-4 btn w-full">⚔️ Multiplayer (1v1 Duel)</button>
+        <button onClick={() => setIsMultiplayerModalOpen(true)} className="mb-4 btn w-full">{t('multiplayer')}</button>
         
         <div className="mb-4">
           {globalEvent?.status === 'live' ? (
             <>
-              <div className="text-4xl font-bold text-success mb-4">🔴 LIVE NOW</div>
+              <div className="text-4xl font-bold text-success mb-4">{t('liveNow')}</div>
               <button onClick={() => requireAuth(() => startGlobalQuiz(globalEvent), 'Enter the Global Challenge')} className="btn w-full bg-green-600 hover:bg-green-500 text-white animate-pulse">
-                Enter Live Challenge
+                {t('enterLive')}
               </button>
             </>
           ) : globalEvent?.status === 'waiting' ? (
             <>
               <div className="text-3xl font-mono text-primary">
-                {timeUntilStart > 0 ? (
-                  <>
-                    {Math.floor(timeUntilStart / 3600) > 0 && `${Math.floor(timeUntilStart / 3600)}h `}
-                    {String(Math.floor((timeUntilStart % 3600) / 60)).padStart(2, '0')}:
-                    {String(timeUntilStart % 60).padStart(2, '0')}
-                  </>
-                ) : (
-                  "Starting..."
-                )}
+                {/* 👇 Dd HHh MMm SSs */}
+                {timeUntilStart > 0 ? formatCountdown(timeUntilStart) : t('starting')}
               </div>
-              <div className="text-sm text-muted mt-1">until the next Global Challenge</div>
+              <div className="text-sm text-muted mt-1">{t('nextChallenge')}</div>
             </>
           ) : (
-            <div className="text-3xl font-mono text-muted">⏳ Next challenge coming soon</div>
+            <div className="text-3xl font-mono text-muted">{t('comingSoon')}</div>
           )}
         </div>
 
         <div className="mt-6 border-t border-[#2a2a2a] pt-6">
-          <h3 className="text-primary text-lg font-semibold mb-3">🏆 Top 10 Global Players</h3>
+          <h3 className="text-primary text-lg font-semibold mb-3">{t('topPlayers')}</h3>
           <div className="bg-[#1a1a1a] rounded-lg p-3 space-y-1">
             {top10Scores.length === 0 ? (
-              <div className="text-center text-muted py-4 text-sm">No scores yet for this event.</div>
+              <div className="text-center text-muted py-4 text-sm">{t('noScores')}</div>
             ) : (
               top10Scores.map((r, idx) => (
                 <div key={idx} className={`flex justify-between py-1 border-b border-[#2a2a2a] last:border-0 ${idx < 3 ? 'font-bold text-text' : 'text-sm text-muted'}`}>
@@ -599,32 +595,118 @@ export default function Challenge() {
         </div>
       </div>
 
-      <button className="mt-6 btn-secondary !w-auto px-6" onClick={() => navigate('/home')}>← Back to Home</button>
+      <button className="mt-6 btn-secondary !w-auto px-6" onClick={() => navigate('/home')}>{t('back_home')}</button>
 
-      {/* Global Challenge Modals... */}
-      {/* Multiplayer Modals... */}
-      
+      {show10MinWarning && (
+        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-[60] bg-primary text-black px-6 py-3 rounded-full font-bold shadow-2xl animate-bounce">
+          ⚠️ Global Challenge starts in 10 minutes! Get ready.
+        </div>
+      )}
+
+      {showJoinPopup && globalChallengeStatus !== 'playing' && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-sm">
+          <div className="bg-surface rounded-xl p-8 max-w-sm w-full text-center border border-primary/50 shadow-[0_0_50px_rgba(212,175,55,0.3)]">
+            <h3 className="text-2xl font-bold text-primary mb-2">{t('globalChallengeStarts')}</h3>
+            <div className="text-7xl font-mono text-primary my-4">{timeUntilStart}</div>
+            <p className="text-muted text-sm mb-6">{t('seconds')}</p>
+            <button 
+              className="btn w-full text-lg py-3" 
+              onClick={() => {
+                requireAuth(() => setIsReadyForGlobal(true), 'Join the Global Challenge');
+              }}
+            >
+              {isReadyForGlobal ? t('waitingOthers') : t('joinNow')}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {isReadyForGlobal && globalChallengeStatus !== 'playing' && globalEvent?.status !== 'live' && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-sm">
+          <div className="text-center">
+            <div className="spinner border-4 border-t-primary border-[#333] w-12 h-12 mx-auto mb-4"></div>
+            <h3 className="text-xl font-bold text-primary animate-pulse">{t('getReady')}</h3>
+            <p className="text-muted mt-2">{t('startingMomentarily')}</p>
+          </div>
+        </div>
+      )}
+
+      {globalChallengeStatus === 'playing' && globalQuizQuestions.length > 0 && (
+        <div className="fixed inset-0 z-[70] bg-bg overflow-y-auto">
+          <div className="max-w-2xl mx-auto p-5">
+            <div className="quiz-header">
+              <div>🌍 {t('globalChallenge')} – {globalCurrentQuestionIndex + 1}/{globalQuizQuestions.length}</div>
+              <div className="timer">{globalQuestionTimer}s</div>
+            </div>
+            <div className="question-box">
+              {globalQuizQuestions[globalCurrentQuestionIndex].question}
+              <div className="text-xs text-muted mt-2">{t('from')} {globalQuizQuestions[globalCurrentQuestionIndex].book}</div>
+            </div>
+            <div className="options-list">
+              {globalQuizQuestions[globalCurrentQuestionIndex].options.map((opt, idx) => (
+                <button key={idx} className="option-btn" onClick={() => handleGlobalAnswer(globalCurrentQuestionIndex, idx)}>
+                  {String.fromCharCode(65 + idx)}. {opt}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {globalChallengeStatus === 'finished' && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md">
+          <div className="bg-surface rounded-xl p-6 max-w-md w-full max-h-[90vh] overflow-y-auto border border-primary/30 shadow-[0_0_50px_rgba(212,175,55,0.15)]">
+            <h4 className="text-2xl font-bold text-primary text-center mb-6">{t('globalLeaderboard')}</h4>
+            
+            <div className="bg-[#1a1a1a] rounded-lg p-3 space-y-1">
+              {top10Scores.length === 0 ? (
+                <div className="text-center text-muted py-4">Calculating results...</div>
+              ) : (
+                top10Scores.map((r, idx) => (
+                  <div key={idx} className={`flex justify-between py-2 border-b border-[#2a2a2a] ${idx < 3 ? 'font-bold' : 'text-sm'}`}>
+                    <span className="flex items-center gap-2">
+                      <span className="w-6 text-right">{idx + 1}.</span>
+                      {idx === 0 && '🥇'} {idx === 1 && '🥈'} {idx === 2 && '🥉'}
+                      {r.display_name || 'Anonymous'}
+                    </span>
+                    <span className="text-primary font-bold">{r.score}/30</span>
+                  </div>
+                ))
+              )}
+            </div>
+
+            <button 
+              onClick={() => { setGlobalChallengeStatus('idle'); setGlobalQuizQuestions([]); setIsReadyForGlobal(false); setHasFinishedCurrentEvent(false); refetch(); }} 
+              className="mt-6 btn w-full"
+            >
+              {t('close')}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Multiplayer Modals */}
       {isMultiplayerModalOpen && multiplayerStatus !== 'quiz' && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="bg-surface rounded-xl p-6 max-w-md w-full max-h-[90vh] overflow-y-auto border border-[#2a2a2a]">
             <div className="flex justify-between items-center mb-2">
-              <h3 className="text-xl font-bold text-primary">⚔️ Duel Quiz</h3>
-              {currentChallenge && (<span className="flex items-center gap-1 text-xs"><span className={`w-2 h-2 rounded-full ${isOpponentPresent ? 'bg-green-500' : 'bg-slate-600'}`}></span>{opponentName || 'Opponent'} {isOpponentPresent ? 'active' : 'away'}</span>)}
+              <h3 className="text-xl font-bold text-primary">⚔️ {t('duel')}</h3>
+              {currentChallenge && (<span className="flex items-center gap-1 text-xs"><span className={`w-2 h-2 rounded-full ${isOpponentPresent ? 'bg-green-500' : 'bg-slate-600'}`}></span>{opponentName || t('opponent')} {isOpponentPresent ? t('opponentActive') : t('opponentAway')}</span>)}
             </div>
             <p className="text-sm text-muted mb-4">Challenge another player to a 1v1 match</p>
-            <div className="flex items-center gap-2 mb-4 text-sm"><span className={`inline-block w-2.5 h-2.5 rounded-full ${connectionStatus ? 'bg-green-500' : 'bg-red-500'}`}></span><span className="text-muted">{connectionStatus ? '🟢 Connected' : '🔴 Disconnected – refresh page'}</span></div>
+            <div className="flex items-center gap-2 mb-4 text-sm"><span className={`inline-block w-2.5 h-2.5 rounded-full ${connectionStatus ? 'bg-green-500' : 'bg-red-500'}`}></span><span className="text-muted">{connectionStatus ? '🟢 Connected' : '🔴 Disconnected'}</span></div>
             {multiplayerStatus === 'idle' && (<>
-              <div className="mb-4"><label className="block text-sm text-muted mb-1">Opponent name</label><input type="text" value={opponentId} onChange={(e) => setOpponentId(e.target.value)} placeholder="e.g. Emma or Emma 4821" className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary" /><div className="text-xs text-muted mt-1">Ask your friend for their name from their Progress page.</div></div>
-              <div className="grid grid-cols-2 gap-4 mb-4"><div><label className="block text-sm text-muted mb-1">Questions</label><select value={questionCount} onChange={(e) => setQuestionCount(Number(e.target.value))} className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary"><option value={10}>10</option><option value={15}>15</option><option value={30}>30</option></select></div><div><label className="block text-sm text-muted mb-1">Timer per Q</label><select value={timerSeconds} onChange={(e) => setTimerSeconds(Number(e.target.value))} className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary"><option value={15}>15 sec</option><option value={30}>30 sec</option><option value={60}>60 sec</option></select></div></div>
-              <div className="flex gap-3 mt-2"><button onClick={handleSendChallenge} className="btn flex-1" disabled={!opponentId.trim()}>Start Duel</button><button onClick={resetMultiplayer} className="btn-secondary flex-1">Cancel</button></div>
+              <div className="mb-4"><label className="block text-sm text-muted mb-1">{t('opponentName')}</label><input type="text" value={opponentId} onChange={(e) => setOpponentId(e.target.value)} placeholder="e.g. Emma or Emma 4821" className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary" /><div className="text-xs text-muted mt-1">{t('askFriendName')}</div></div>
+              <div className="grid grid-cols-2 gap-4 mb-4"><div><label className="block text-sm text-muted mb-1">{t('questions')}</label><select value={questionCount} onChange={(e) => setQuestionCount(Number(e.target.value))} className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary"><option value={10}>10</option><option value={15}>15</option><option value={30}>30</option></select></div><div><label className="block text-sm text-muted mb-1">{t('timerPerQ')}</label><select value={timerSeconds} onChange={(e) => setTimerSeconds(Number(e.target.value))} className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary"><option value={15}>15 sec</option><option value={30}>30 sec</option><option value={60}>60 sec</option></select></div></div>
+              <div className="flex gap-3 mt-2"><button onClick={handleSendChallenge} className="btn flex-1" disabled={!opponentId.trim()}>{t('startDuel')}</button><button onClick={resetMultiplayer} className="btn-secondary flex-1">{t('cancel')}</button></div>
             </>)}
-            {multiplayerStatus === 'pending' && (<div className="text-center py-8"><div className="text-2xl mb-2">⏳</div><p className="text-text">Challenge sent to <strong className="text-primary">{opponentName || 'opponent'}</strong>. Waiting for them to accept...</p><button onClick={resetMultiplayer} className="mt-4 btn-secondary">Cancel</button></div>)}
-            {multiplayerStatus === 'countdown' && (<div className="text-center py-8"><div className="text-6xl font-bold text-primary">{duelCountdown}</div><p className="text-muted mt-2">Get ready for the duel!</p></div>)}
+            {multiplayerStatus === 'pending' && (<div className="text-center py-8"><div className="text-2xl mb-2">⏳</div><p className="text-text">{t('challengeSentTo')} <strong className="text-primary">{opponentName || t('opponent')}</strong>. {t('waitingAccept')}</p><button onClick={resetMultiplayer} className="mt-4 btn-secondary">{t('cancel')}</button></div>)}
+            {multiplayerStatus === 'countdown' && (<div className="text-center py-8"><div className="text-6xl font-bold text-primary">{duelCountdown}</div><p className="text-muted mt-2">{t('getReadyDuel')}</p></div>)}
             {multiplayerStatus === 'finished' && (<div>
-              <h4 className="text-lg font-bold text-primary mb-3">🏁 Duel Results</h4>
-              <div className="bg-[#1a1a1a] rounded-lg p-3 space-y-2"><div className="flex justify-between border-b border-[#2a2a2a] py-1"><span>You</span><span className="text-primary font-bold">{myScore}/{quizQuestions.length}</span></div><div className="flex justify-between border-b border-[#2a2a2a] py-1"><span>{opponentName || 'Opponent'}</span><span className="text-primary font-bold">{opponentScore}/{quizQuestions.length}</span></div></div>
-              <div className="mt-3 text-center text-sm">{myScore > opponentScore && '🎉 You won!'}{myScore < opponentScore && `😞 ${opponentName || 'Opponent'} won!`}{myScore === opponentScore && "🤝 It's a draw!"}</div>
-              <div className="mt-4 flex flex-col gap-2">{isRematchRequested ? <button onClick={handleAcceptRematch} className="btn w-full bg-green-600 hover:bg-green-500">⚡ Accept Rematch</button> : <button onClick={handleInitiateRematch} className="btn-secondary w-full">🔄 Request Rematch</button>}<button onClick={resetMultiplayer} className="btn-secondary w-full">Quit to Arena</button></div>
+              <h4 className="text-lg font-bold text-primary mb-3">{t('duelResults')}</h4>
+              <div className="bg-[#1a1a1a] rounded-lg p-3 space-y-2"><div className="flex justify-between border-b border-[#2a2a2a] py-1"><span>{t('you')}</span><span className="text-primary font-bold">{myScore}/{quizQuestions.length}</span></div><div className="flex justify-between border-b border-[#2a2a2a] py-1"><span>{opponentName || t('opponent')}</span><span className="text-primary font-bold">{opponentScore}/{quizQuestions.length}</span></div></div>
+              <div className="mt-3 text-center text-sm">{myScore > opponentScore && t('youWon')}{myScore < opponentScore && `${t('opponentWon')} (${opponentName || t('opponent')})`}{myScore === opponentScore && t('draw')}</div>
+              <div className="mt-4 flex flex-col gap-2">{isRematchRequested ? <button onClick={handleAcceptRematch} className="btn w-full bg-green-600 hover:bg-green-500">{t('acceptRematch')}</button> : <button onClick={handleInitiateRematch} className="btn-secondary w-full">{t('requestRematch')}</button>}<button onClick={resetMultiplayer} className="btn-secondary w-full">{t('quitToArena')}</button></div>
             </div>)}
           </div>
         </div>
@@ -633,11 +715,11 @@ export default function Challenge() {
       {isMultiplayerModalOpen && multiplayerStatus === 'quiz' && quizQuestions.length > 0 && (
         <div className="fixed inset-0 z-[70] bg-bg overflow-y-auto">
           <div className="max-w-2xl mx-auto p-5">
-            <div className="quiz-header"><div>⚔️ Duel – {currentQuestionIndex + 1}/{quizQuestions.length}</div><div className="timer">{activeQuestionTimer}s</div><button className="quit-btn" onClick={resetMultiplayer}>✕ Quit</button></div>
-            <div className="flex justify-between text-sm mb-3 font-bold"><span className="text-primary">You: {myScore}</span><span className="text-muted flex items-center gap-1">{opponentName || 'Opponent'}: {opponentScore}<span className={`inline-block w-2 h-2 rounded-full ${isOpponentPresent ? 'bg-green-500' : 'bg-slate-600'}`}></span></span></div>
-            <div className="question-box">{quizQuestions[currentQuestionIndex].question}<div className="text-xs text-muted mt-2">From {quizQuestions[currentQuestionIndex].book}</div></div>
+            <div className="quiz-header"><div>⚔️ {t('duel')} – {currentQuestionIndex + 1}/{quizQuestions.length}</div><div className="timer">{activeQuestionTimer}s</div><button className="quit-btn" onClick={resetMultiplayer}>{t('quitBtn')}</button></div>
+            <div className="flex justify-between text-sm mb-3 font-bold"><span className="text-primary">{t('you')}: {myScore}</span><span className="text-muted flex items-center gap-1">{opponentName || t('opponent')}: {opponentScore}<span className={`inline-block w-2 h-2 rounded-full ${isOpponentPresent ? 'bg-green-500' : 'bg-slate-600'}`}></span></span></div>
+            <div className="question-box">{quizQuestions[currentQuestionIndex].question}<div className="text-xs text-muted mt-2">{t('from')} {quizQuestions[currentQuestionIndex].book}</div></div>
             <div className="options-list">{quizQuestions[currentQuestionIndex].options.map((opt, idx) => (<button key={idx} className="option-btn" onClick={() => handleSelectAnswer(idx)}>{String.fromCharCode(65 + idx)}. {opt}</button>))}</div>
-            <div className="flex justify-end mt-3"><span className="text-sm text-muted">Answer when ready — the timer runs on both sides.</span></div>
+            <div className="flex justify-end mt-3"><span className="text-sm text-muted">{t('answerWhenReady')}</span></div>
           </div>
         </div>
       )}
@@ -646,7 +728,7 @@ export default function Challenge() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="bg-surface rounded-xl p-6 max-w-sm w-full border border-[#2a2a2a] text-center">
             <p className="text-text mb-4">{notification.message}</p>
-            <div className="flex gap-3 justify-center">{notification.id && (<><button onClick={() => handleAcceptChallenge(notification.id)} className="btn">Accept</button><button onClick={() => handleDeclineChallenge(notification.id)} className="btn-secondary">Decline</button></>)}</div>
+            <div className="flex gap-3 justify-center">{notification.id && (<><button onClick={() => handleAcceptChallenge(notification.id)} className="btn">Accept</button><button onClick={() => handleDeclineChallenge(notification.id)} className="btn-secondary">{t('cancel')}</button></>)}</div>
           </div>
         </div>
       )}

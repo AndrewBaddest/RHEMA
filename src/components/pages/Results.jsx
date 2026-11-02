@@ -1,10 +1,12 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getFullName, cleanBookName } from '../../lib/utils';
+import { useLanguage } from '../../context/LanguageContext'; // 👈 Added
 
 export default function Results() {
   const location = useLocation();
   const navigate = useNavigate();
   const { questions, userAnswers, score, isDaily, book } = location.state || {};
+  const { t } = useLanguage(); // 👈 Added
 
   if (!questions || !userAnswers) {
     navigate('/home');
@@ -16,55 +18,34 @@ export default function Results() {
   const percent = Math.round((correct / total) * 100);
   let emoji = '';
   let message = '';
-  if (percent === 100) { emoji = ' '; message = 'Perfect! Divine wisdom!'; }
-  else if (percent >= 70) { emoji = ' '; message = 'Great job! You know the Word!'; }
-  else if (percent >= 40) { emoji = ' '; message = 'Good effort! Keep reading!'; }
-  else { emoji = ' '; message = 'Keep studying the Word!'; }
+  if (percent === 100) { emoji = ' '; message = t('perfectWisdom'); }
+  else if (percent >= 70) { emoji = ' '; message = t('greatJob'); }
+  else if (percent >= 40) { emoji = ' '; message = t('goodEffort'); }
+  else { emoji = ' '; message = t('keepStudying'); }
 
   const goToVerse = (ref) => {
     if (!ref) return;
     const trimmed = String(ref).trim();
-    console.log('🔍 goToVerse called with ref:', trimmed);
 
-    // Case 1: "Book C:V"
     let m = trimmed.match(/^(.+?)\s+(\d+):(\d+)$/);
     if (m) {
       const fullBook = getFullName(cleanBookName(m[1].trim()));
-      if (!fullBook) {
-        console.warn('📖 Book not recognized:', m[1]);
-        return;
-      }
+      if (!fullBook) return;
       navigate('/reader', {
-        state: {
-          book: fullBook,
-          chapter: parseInt(m[2], 10),
-          verse: parseInt(m[3], 10),
-          fromResults: true,
-        },
+        state: { book: fullBook, chapter: parseInt(m[2], 10), verse: parseInt(m[3], 10), fromResults: true },
       });
       return;
     }
 
-    // Case 2: "Book C" (chapter only, default to verse 1)
     m = trimmed.match(/^(.+?)\s+(\d+)$/);
     if (m) {
       const fullBook = getFullName(cleanBookName(m[1].trim()));
-      if (!fullBook) {
-        console.warn('📖 Book not recognized:', m[1]);
-        return;
-      }
+      if (!fullBook) return;
       navigate('/reader', {
-        state: {
-          book: fullBook,
-          chapter: parseInt(m[2], 10),
-          verse: 1,
-          fromResults: true,
-        },
+        state: { book: fullBook, chapter: parseInt(m[2], 10), verse: 1, fromResults: true },
       });
       return;
     }
-
-    console.warn('⚠️ Failed to parse ref:', trimmed);
   };
 
   const redoQuiz = () => {
@@ -82,11 +63,11 @@ export default function Results() {
         <div className="text-5xl font-bold text-primary">{correct}/{total}</div>
         <div className="text-lg mt-1">{message}</div>
         {isDaily && (
-          <div className="mt-2 text-primary font-semibold">  Daily Quiz Complete!</div>
+          <div className="mt-2 text-primary font-semibold">{t('dailyQuizComplete')}</div>
         )}
       </div>
 
-      <div className="text-sm font-semibold text-muted mb-3">  Detailed Review</div>
+      <div className="text-sm font-semibold text-muted mb-3">{t('detailedReview')}</div>
 
       {questions.map((q, i) => {
         const userAns = userAnswers[i];
@@ -101,13 +82,15 @@ export default function Results() {
             }`}
           >
             <div className="flex justify-between items-center mb-1.5">
-              <span className="font-bold text-sm text-primary">Question {i + 1}</span>
+              <span className="font-bold text-sm text-primary">
+                {t('question')} {i + 1}
+              </span>
               <span
                 className={`text-sm font-semibold ${
                   isCorrect ? 'text-success' : 'text-error'
                 }`}
               >
-                {isCorrect ? '✅ Correct' : '❌ Incorrect'}
+                {isCorrect ? t('correct') : t('incorrect')}
               </span>
             </div>
 
@@ -129,9 +112,7 @@ export default function Results() {
                 }
                 return (
                   <div key={optIdx} className={optClass}>
-                    <span className="font-bold text-muted min-w-[22px]">
-                      {letters[optIdx]}.
-                    </span>
+                    <span className="font-bold text-muted min-w-[22px]">{letters[optIdx]}.</span>
                     <span className="flex-1">{opt}</span>
                     <span className="ml-auto">{checkMark}</span>
                   </div>
@@ -140,16 +121,14 @@ export default function Results() {
             </div>
 
             {userAns === -1 && (
-              <div className="text-error text-sm mt-1.5">
-                  You did not answer this question in time.
-              </div>
+              <div className="text-error text-sm mt-1.5">{t('timeoutNote')}</div>
             )}
 
             <div
               className="mt-3 pt-2.5 border-t border-[#2a2a2a] text-sm text-primary font-medium cursor-pointer underline text-right"
               onClick={() => goToVerse(verseRef)}
             >
-              📖 {verseRef || 'Reference unavailable'}
+              📖 {verseRef || t('referenceUnavailable')}
             </div>
           </div>
         );
@@ -157,13 +136,13 @@ export default function Results() {
 
       <div className="flex gap-3 flex-wrap mt-5">
         <button className="btn flex-1 min-w-[120px]" onClick={redoQuiz}>
-          Redo Quiz
+          {t('redoQuiz')}
         </button>
         <button
           className="btn-secondary flex-1 min-w-[120px]"
           onClick={() => navigate('/home')}
         >
-          Go Home
+          {t('goHome')}
         </button>
       </div>
     </div>

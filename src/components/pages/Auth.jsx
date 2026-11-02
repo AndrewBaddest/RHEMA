@@ -4,12 +4,14 @@ import { useUIStore } from '../../lib/store';
 import { useSound } from '../../hooks/useSound';
 import { useAuth } from '../../context/AuthContext';
 import { useGoogleOneTap } from '../../hooks/useGoogleOneTap';
+import { useLanguage } from '../../context/LanguageContext'; // 👈 Added
 
 export default function Auth() {
   const navigate = useNavigate();
   const setToast = useUIStore((state) => state.setToast);
   const { startBackground } = useSound();
   const { isAnonymous, loading, signInWithGoogleIdToken } = useAuth();
+  const { t } = useLanguage(); // 👈 Added
 
   const navigatedRef = useRef(false);
   const oneTapFiredRef = useRef(false);
@@ -38,7 +40,7 @@ export default function Auth() {
     return () => clearTimeout(t);
   }, [shouldPromptOneTap, oneTapAvailable, promptOneTap]);
 
-  // 👇 The auto-redirect useEffect has been completely removed here.
+  // Removed the auto-redirect to /home here.
 
   const handlePlay = () => {
     startBackground();
@@ -48,16 +50,12 @@ export default function Auth() {
 
   return (
     <div>
-      <h2 className="text-center text-2xl font-bold mb-4">Welcome to Rhema</h2>
+      <h2 className="text-center text-2xl font-bold mb-4">{t('welcomeRhema')}</h2>
 
       <div className="mission-box">
-        <div className="text-center text-sm text-muted mb-2">Our Mission</div>
+        <div className="text-center text-sm text-muted mb-2">{t('missionTitle')}</div>
         <p className="text-sm leading-relaxed text-center">
-          We're passionate about helping people of all ages and backgrounds
-          explore the Bible in a way that's{' '}
-          <strong className="text-primary">engaging</strong>,{' '}
-          <strong className="text-primary">interactive</strong>, and{' '}
-          <strong className="text-primary">fun</strong>!
+          {t('missionText')}
         </p>
         <div className="mt-3 pt-3 border-t border-primary/15 text-center text-sm text-muted italic">
           "Your word is a lamp to my feet and a light to my path." —{' '}
@@ -66,11 +64,11 @@ export default function Auth() {
       </div>
 
       <button type="button" className="btn" onClick={handlePlay}>
-        ▶ Play
+        {t('play')}
       </button>
 
       <div className="mt-3 text-center text-muted text-xs">
-        Play and create an account to save your progress.
+        {t('createAccountNote')}
       </div>
     </div>
   );

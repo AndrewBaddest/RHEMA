@@ -1,12 +1,14 @@
 import { useStore } from '../../lib/store';
 import { useNavigate } from 'react-router-dom';
 import { ACHIEVEMENTS, THEMES } from '../../lib/store';
+import { useLanguage } from '../../context/LanguageContext'; // 👈 Added
 
 export default function Profile() {
   const navigate = useNavigate();
   const gamification = useStore((state) => state.gamification);
   const scripture = useStore((state) => state.scripture);
   const selectTheme = useStore((state) => state.selectTheme);
+  const { t } = useLanguage(); // 👈 Added
 
   const { xp, level, title, streak, total_quizzes, perfect_quizzes, unlocked_badges, unlocked_themes, selected_theme } = gamification;
   const booksRead = scripture.booksRead.length;
@@ -17,23 +19,22 @@ export default function Profile() {
   return (
     <div className="py-4">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-primary text-2xl font-bold">👤 My Profile</h2>
+        <h2 className="text-primary text-2xl font-bold">{t('myProfile')}</h2>
         <button className="btn-secondary !w-auto !py-2 !px-4 text-sm" onClick={() => navigate('/home')}>
-          ← Back
+          {t('back')}
         </button>
       </div>
 
-      {/* XP & Level */}
       <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a] mb-4">
         <div className="flex items-center gap-4 flex-wrap">
           <div className="text-5xl">{getTitleEmoji(title)}</div>
           <div>
             <p className="text-2xl font-bold text-primary">{title}</p>
-            <p className="text-muted">Level {level}</p>
+            <p className="text-muted">{t('level')} {level}</p>
           </div>
           <div className="ml-auto text-right">
-            <p className="text-lg font-semibold">{xp} XP</p>
-            <p className="text-sm text-muted">Next level: {nextLevelXp - xp} XP</p>
+            <p className="text-lg font-semibold">{xp} {t('xp')}</p>
+            <p className="text-sm text-muted">{t('nextLevel')}: {nextLevelXp - xp} {t('xp')}</p>
           </div>
         </div>
         <div className="progress-bar-container bg-[#2a2a2a] rounded-xl h-3 mt-2 overflow-hidden">
@@ -41,28 +42,26 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* Quick Stats */}
       <div className="grid grid-cols-2 gap-3 mb-4">
         <div className="stat-card bg-surface border border-[#2a2a2a] rounded-xl p-3 text-center">
           <div className="text-2xl font-bold text-primary">{streak}</div>
-          <div className="text-xs text-muted uppercase">🔥 Streak</div>
+          <div className="text-xs text-muted uppercase">{t('streak')}</div>
         </div>
         <div className="stat-card bg-surface border border-[#2a2a2a] rounded-xl p-3 text-center">
           <div className="text-2xl font-bold text-primary">{total_quizzes}</div>
-          <div className="text-xs text-muted uppercase">📚 Quizzes</div>
+          <div className="text-xs text-muted uppercase">{t('quizzesStat')}</div>
         </div>
         <div className="stat-card bg-surface border border-[#2a2a2a] rounded-xl p-3 text-center">
           <div className="text-2xl font-bold text-primary">{perfect_quizzes}</div>
-          <div className="text-xs text-muted uppercase">💯 Perfect</div>
+          <div className="text-xs text-muted uppercase">{t('perfect')}</div>
         </div>
         <div className="stat-card bg-surface border border-[#2a2a2a] rounded-xl p-3 text-center">
           <div className="text-2xl font-bold text-primary">{booksRead}</div>
-          <div className="text-xs text-muted uppercase">📖 Books Read</div>
+          <div className="text-xs text-muted uppercase">{t('booksReadStat')}</div>
         </div>
       </div>
 
-      {/* Badges */}
-      <h3 className="text-primary text-lg font-semibold mb-2">🏅 Badges</h3>
+      <h3 className="text-primary text-lg font-semibold mb-2">{t('badges')}</h3>
       <div className="flex flex-wrap gap-2 mb-4">
         {ACHIEVEMENTS.map(a => {
           const earned = unlocked_badges.includes(a.id);
@@ -75,8 +74,7 @@ export default function Profile() {
         })}
       </div>
 
-      {/* Themes */}
-      <h3 className="text-primary text-lg font-semibold mb-2">🎨 Themes</h3>
+      <h3 className="text-primary text-lg font-semibold mb-2">{t('themes')}</h3>
       <div className="flex flex-wrap gap-2">
         {Object.entries(THEMES).map(([key, theme]) => {
           const unlocked = unlocked_themes.includes(key) || key === 'default';

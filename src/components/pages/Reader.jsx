@@ -5,6 +5,8 @@ import { fetchBibleData } from '../../lib/api';
 import { ALL_BOOKS } from '../../lib/utils';
 import { useAuth } from '../../context/AuthContext';
 import { useUpdateProgress } from '../../hooks/useProgress';
+import { useLanguage } from '../../context/LanguageContext';
+import { getBookDisplayName } from '../../lib/translations'; // 👈 Added
 
 export default function Reader() {
   const location = useLocation();
@@ -14,6 +16,7 @@ export default function Reader() {
   const initialChapter = state.chapter || 1;
   const initialVerse = state.verse || null;
   const fromResults = state.fromResults || false;
+  const { language, t } = useLanguage(); // 👈 Added
 
   const [book, setBook] = useState(initialBook);
   const [chapter, setChapter] = useState(initialChapter);
@@ -28,10 +31,7 @@ export default function Reader() {
   const topRef = useRef(null);
   const updateScripture = useStore((state) => state.updateScripture);
 
-  // Fire the "jump to verse" only once — on the first chapter load.
-  // After that, Prev/Next scroll to top normally.
   const initialVerseAppliedRef = useRef(false);
-  // Deduplicate progress saves (StrictMode + rapid Next clicks).
   const lastSavedRef = useRef('');
 
   const scrollToTop = (smooth = true) => {
@@ -44,9 +44,7 @@ export default function Reader() {
     while (el) {
       const style = window.getComputedStyle(el);
       const overflowY = style.overflowY;
-      const scrollable =
-        (overflowY === 'auto' || overflowY === 'scroll') &&
-        el.scrollHeight > el.clientHeight;
+      const scrollable = (overflowY === 'auto' || overflowY === 'scroll') && el.scrollHeight > el.clientHeight;
       if (scrollable && el.scrollTop > 0) {
         try { el.scrollTo({ top: 0, behavior }); } catch { el.scrollTop = 0; }
       }
@@ -54,8 +52,6 @@ export default function Reader() {
     }
   };
 
-  // Scroll to top after chapter data loads, but skip the very first mount
-  // so the verse-jump from Results has a chance to run.
   const firstMountRef = useRef(true);
   useEffect(() => {
     if (firstMountRef.current) {
@@ -67,13 +63,12 @@ export default function Reader() {
     return () => clearTimeout(t);
   }, [chapter, isLoading]);
 
-  // ─── Load chapter data ────────────────────────────────────────
   useEffect(() => {
     const loadChapter = async () => {
       setIsLoading(true);
       setError(null);
       try {
-        const rawData = await fetchBibleData(book);
+        const rawData = await fetchBibleData(book); // 👈 Uses English name for DB
         let chapterMap = {};
         let chapterList = [];
 
@@ -81,9 +76,7 @@ export default function Reader() {
           rawData.forEach((item) => {
             if (item.chapter && Array.isArray(item.verses)) {
               const ch = Number(item.chapter);
-              chapterMap[ch] = item.verses.map((v) =>
-                typeof v === 'string' ? v : (v.text || v.verse || String(v))
-              );
+              chapterMap[ch] = item.verses.map((v) => typeof v === 'string' ? v : (v.text || v.verse || String(v)));
             }
           });
           chapterList = Object.keys(chapterMap).map(Number).sort((a, b) => a - b);
@@ -92,17 +85,13 @@ export default function Reader() {
             rawData.chapters.forEach((item) => {
               const ch = Number(item.chapter);
               if (Array.isArray(item.verses)) {
-                chapterMap[ch] = item.verses.map((v) =>
-                  typeof v === 'string' ? v : (v.text || v.verse || String(v))
-                );
+                chapterMap[ch] = item.verses.map((v) => typeof v === 'string' ? v : (v.text || v.verse || String(v)));
               }
             });
             chapterList = Object.keys(chapterMap).map(Number).sort((a, b) => a - b);
           } else {
             const keys = Object.keys(rawData);
-            const isChapterMap = keys.some(
-              (k) => !isNaN(Number(k)) && Array.isArray(rawData[k])
-            );
+            const isChapterMap = keys.some((k) => !isNaN(Number(k)) && Array.isArray(rawData[k]));
             if (isChapterMap) {
               chapterMap = rawData;
               chapterList = keys.map(Number).sort((a, b) => a - b);
@@ -123,7 +112,6 @@ export default function Reader() {
         const verseList = chapterMap[targetChapter] || [];
         setVerses(verseList);
 
-        // One-time verse jump — only on the very first load.
         if (initialVerse && !initialVerseAppliedRef.current) {
           initialVerseAppliedRef.current = true;
           setHighlightVerse(initialVerse);
@@ -146,7 +134,6 @@ export default function Reader() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [book, chapter]);
 
-  // ─── Save progress — exactly once per unique state ────────────
   useEffect(() => {
     if (!verses.length) return;
     const key = `${book}|${chapter}|${verses.length}|${user?.id || 'guest'}`;
@@ -154,13 +141,7 @@ export default function Reader() {
     lastSavedRef.current = key;
 
     updateProgress.mutate(
-      {
-        userId: user?.id,
-        book_name: book,
-        chapter,
-        verse: verses.length,
-        status: 'read',
-      },
+      { userId: user?.id, book_name: book, chapter, verse: verses.length, status: 'read' },
       {
         onError: (err) => {
           console.warn('⚠️ Progress save failed, writing locally:', err);
@@ -171,9 +152,8 @@ export default function Reader() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [book, chapter, verses.length, user?.id]);
 
-  // ─── Handlers ────────────────────────────────────────────────
   const handleBookChange = (e) => {
-    const newBook = e.target.value;
+    const newBook = e.target.value; // 👈 English name from select value
     setBook(newBook);
     setChapter(1);
     setHighlightVerse(null);
@@ -212,9 +192,7 @@ export default function Reader() {
     return (
       <div className="text-center py-10">
         <p className="text-error">⚠️ {error}</p>
-        <button className="btn mt-4" onClick={() => window.location.reload()}>
-          Retry
-        </button>
+        <button className="btn mt-4" onClick={() => window.location.reload()}>{t('retry')}</button>
       </div>
     );
   }
@@ -222,34 +200,21 @@ export default function Reader() {
   return (
     <div ref={topRef}>
       <div className="flex justify-between items-center mb-3 flex-wrap gap-2">
-        <h2 className="text-primary text-2xl font-bold">Bible Reader</h2>
-        <button
-          className="btn-secondary !w-auto !py-2 !px-4 text-sm"
-          onClick={goBack}
-        >
-          {fromResults ? '← Back to Results' : '← Back'}
+        <h2 className="text-primary text-2xl font-bold">{t('bibleReader')}</h2>
+        <button className="btn-secondary !w-auto !py-2 !px-4 text-sm" onClick={goBack}>
+          {fromResults ? t('backToResults') : t('back')}
         </button>
       </div>
 
       <div className="reader-controls flex gap-2.5 flex-wrap mb-4">
-        <select
-          value={book}
-          onChange={handleBookChange}
-          className="flex-1 min-w-[100px] p-2.5 rounded-lg border border-[#333] bg-surface text-text text-base"
-        >
+        <select value={book} onChange={handleBookChange} className="flex-1 min-w-[100px] p-2.5 rounded-lg border border-[#333] bg-surface text-text text-base">
           {ALL_BOOKS.map((b) => (
-            <option key={b} value={b}>{b}</option>
+            // 👇 Value is English, Display is Swahili
+            <option key={b} value={b}>{getBookDisplayName(b, language)}</option>
           ))}
         </select>
-        <select
-          value={chapter}
-          onChange={handleChapterChange}
-          className="flex-1 min-w-[100px] p-2.5 rounded-lg border border-[#333] bg-surface text-text text-base"
-          disabled={chapters.length === 0}
-        >
-          {chapters.map((ch) => (
-            <option key={ch} value={ch}>Chapter {ch}</option>
-          ))}
+        <select value={chapter} onChange={handleChapterChange} className="flex-1 min-w-[100px] p-2.5 rounded-lg border border-[#333] bg-surface text-text text-base" disabled={chapters.length === 0}>
+          {chapters.map((ch) => <option key={ch} value={ch}>{t('chapter')} {ch}</option>)}
         </select>
       </div>
 
@@ -257,28 +222,21 @@ export default function Reader() {
         {isLoading ? (
           <div className="flex items-center justify-center py-10">
             <div className="spinner"></div>
-            <p className="text-muted ml-4">Loading...</p>
+            <p className="text-muted ml-4">{t('loading')}</p>
           </div>
         ) : verses.length === 0 ? (
-          <p className="text-muted text-center py-10">
-            No verses found for {book} {chapter}.
-          </p>
+          <p className="text-muted text-center py-10">{t('noVerses')} {getBookDisplayName(book, language)} {chapter}.</p>
         ) : (
           <>
+            {/* 👇 Translated heading */}
             <h3 className="text-primary text-xl font-bold mb-3">
-              {book} {chapter}
+              {getBookDisplayName(book, language)} {chapter}
             </h3>
             {verses.map((text, idx) => {
               const v = idx + 1;
               const isHighlight = highlightVerse === v;
               return (
-                <div
-                  key={v}
-                  data-verse={v}
-                  className={`verse-line mb-1.5 leading-relaxed py-0.5 ${
-                    isHighlight ? 'bg-[#2a2205] rounded px-1.5' : ''
-                  }`}
-                >
+                <div key={v} data-verse={v} className={`verse-line mb-1.5 leading-relaxed py-0.5 ${isHighlight ? 'bg-[#2a2205] rounded px-1.5' : ''}`}>
                   <span className="text-primary font-semibold mr-1.5">{v}.</span>
                   {text}
                 </div>
@@ -289,19 +247,11 @@ export default function Reader() {
       </div>
 
       <div className="reader-actions flex gap-2.5 mt-4 flex-wrap">
-        <button
-          className="btn-secondary flex-1 min-w-[100px]"
-          onClick={goToPrevChapter}
-          disabled={chapters.indexOf(chapter) <= 0}
-        >
-          ◀ Prev
+        <button className="btn-secondary flex-1 min-w-[100px]" onClick={goToPrevChapter} disabled={chapters.indexOf(chapter) <= 0}>
+          {t('prev')}
         </button>
-        <button
-          className="btn-secondary flex-1 min-w-[100px]"
-          onClick={goToNextChapter}
-          disabled={chapters.indexOf(chapter) >= chapters.length - 1}
-        >
-          Next ▶
+        <button className="btn-secondary flex-1 min-w-[100px]" onClick={goToNextChapter} disabled={chapters.indexOf(chapter) >= chapters.length - 1}>
+          {t('next')}
         </button>
       </div>
     </div>

@@ -8,13 +8,13 @@ import {
   fetchAllQuizQuestions,
   fetchQuizQuestionsFromDB,
   fetchGlobalChallengeQuestionsFromDB,
-  fetchDailyChallengeQuestions, // 👈 New import
+  fetchDailyChallengeQuestions,
 } from '../../lib/api';
 import { shuffle } from '../../lib/utils';
 import { useAuth } from '../../context/AuthContext';
 import { useSaveQuizAttempt } from '../../hooks/useQuiz';
+import { useLanguage } from '../../context/LanguageContext'; // 👈 Added
 
-// ─── Full-screen shell — ad stays pinned at the top ─────────────
 function QuizShell({ children }) {
   return (
     <div className="fixed inset-0 z-[70] bg-bg overflow-y-auto">
@@ -30,6 +30,7 @@ export default function QuizPlay() {
   const location = useLocation();
   const navigate = useNavigate();
   const { book, daily } = location.state || {};
+  const { t } = useLanguage(); // 👈 Added
 
   const settings = useStore((s) => s.settings);
   const timerDuration = settings.quiz.timer || 30;
@@ -60,7 +61,6 @@ export default function QuizPlay() {
   const questionFinishedRef = useRef(false);
   const questionSetRef = useRef([]);
 
-  // ─── Load questions ──────────────────────────────────────────────
   useEffect(() => {
     const loadQuestions = async () => {
       setIsLoading(true);
@@ -68,15 +68,14 @@ export default function QuizPlay() {
       let qs = [];
 
       if (daily) {
-        // 👇 USE THE AUTONOMOUS DAILY CHALLENGE
         let dbQs = await fetchDailyChallengeQuestions();
         if (dbQs && dbQs.length > 0) {
           qs = dbQs;
         } else {
-          // Fallback if the DB fails
           let allQ = allQuizQuestions;
           if (allQ.length === 0) allQ = await fetchAllQuizQuestions();
-          qs = shuffle(allQ).slice(0, 15);
+          const available = allQ.filter((q) => !playedQuestions.includes(q.ref));
+          qs = available.length >= 15 ? shuffle(available).slice(0, 15) : shuffle(allQ).slice(0, 15);
         }
         setIsDaily(true);
       } else if (book) {
@@ -111,7 +110,7 @@ export default function QuizPlay() {
       }
 
       if (qs.length === 0 && !error) {
-        setError('No questions available. Please try again later.');
+        setError(t('noQuestions'));
         setIsLoading(false);
         return;
       }
@@ -135,7 +134,6 @@ export default function QuizPlay() {
     };
   }, [book, daily, allQuizQuestions, timerDuration, questionsPerBook]);
 
-  // ─── The core engine: processes an answer and moves forward ─────
   const processAnswer = (finalAnswer) => {
     const q = questions[currentIndex];
     const isCorrect = finalAnswer === q.answer;
@@ -164,30 +162,17 @@ export default function QuizPlay() {
 
       if (user) {
         saveQuizAttempt.mutate({
-          userId: user.id,
-          quizId,
-          score: finalScore,
-          totalQuestions: questions.length,
-          answers: newUserAnswers,
+          userId: user.id, quizId, score: finalScore, totalQuestions: questions.length, answers: newUserAnswers,
         });
-      } else {
-        console.warn('⚠️ No user – quiz result not saved.');
       }
 
       if (soundEffectsEnabled) playEffect('gameover');
       navigate('/results', {
-        state: {
-          questions: questionSetRef.current,
-          userAnswers: newUserAnswers,
-          score: finalScore,
-          isDaily,
-          book,
-        },
+        state: { questions: questionSetRef.current, userAnswers: newUserAnswers, score: finalScore, isDaily, book },
       });
     }
   };
 
-  // ─── Timer effect ───────────────────────────────────────────────
   useEffect(() => {
     if (isLoading || questions.length === 0) return;
     clearInterval(timerRef.current);
@@ -210,10 +195,8 @@ export default function QuizPlay() {
     return () => clearInterval(timerRef.current);
   }, [currentIndex, isLoading, questions, timerDuration]);
 
-  // ─── Handlers ──────────────────────────────────────────────────
   const handleSelectOption = (index) => {
     if (questionFinishedRef.current) return;
-    
     questionFinishedRef.current = true;
     clearInterval(timerRef.current);
     setSelectedOption(index);
@@ -223,15 +206,12 @@ export default function QuizPlay() {
     }, 400);
   };
 
-  // ─── Render ────────────────────────────────────────────────────
   if (error) {
     return (
       <QuizShell>
         <div className="text-center py-10">
           <p className="text-error text-lg">{error}</p>
-          <button className="btn mt-4" onClick={() => navigate('/home')}>
-            Go Home
-          </button>
+          <button className="btn mt-4" onClick={() => navigate('/home')}>{t('back_home')}</button>
         </div>
       </QuizShell>
     );
@@ -242,7 +222,7 @@ export default function QuizPlay() {
       <QuizShell>
         <div className="flex flex-col items-center justify-center py-20">
           <div className="spinner"></div>
-          <p className="text-muted mt-4">Loading questions...</p>
+          <p className="text-muted mt-4">{t('loading')}</p>
         </div>
       </QuizShell>
     );
@@ -252,10 +232,8 @@ export default function QuizPlay() {
     return (
       <QuizShell>
         <div className="text-center py-10">
-          <p className="text-muted">No questions available for this book.</p>
-          <button className="btn mt-4" onClick={() => navigate('/home')}>
-            Go Home
-          </button>
+          <p className="text-muted">{t('noQuestions')}</p>
+          <button className="btn mt-4" onClick={() => navigate('/home')}>{t('back_home')}</button>
         </div>
       </QuizShell>
     );
@@ -270,12 +248,10 @@ export default function QuizPlay() {
     <QuizShell>
       <div className="quiz-header">
         <div>
-          {isDaily ? '📅 Daily Quiz' : book ? `${book} Quiz` : 'Quick Quiz'} – {questionNum}/{total}
+          {isDaily ? t('dailyQuiz') : book ? `${book} ${t('quiz')}` : t('quickQuiz')} – {questionNum}/{total}
         </div>
         <div className="timer">{timer}s</div>
-        <button className="quit-btn" onClick={() => navigate('/home')}>
-          ✕ Quit
-        </button>
+        <button className="quit-btn" onClick={() => navigate('/home')}>{t('quitBtn')}</button>
       </div>
 
       <div className="question-box">{q.question}</div>

@@ -72,7 +72,12 @@ async function fetchAdsFromDb() {
 
   adsFetchPromise = (async () => {
     try {
-      const { data, error } = await supabase.from('ads').select('*').eq('active', true).order('id', { ascending: true });
+      // 👇 ORDER BY display_order — sequential 1 → 2 → 3 → … → N
+      const { data, error } = await supabase
+        .from('ads')
+        .select('*')
+        .eq('active', true)
+        .order('display_order', { ascending: true });
       if (error) return null;
       adsCache = (data || []).filter(isActiveNow);
       return adsCache;
@@ -86,19 +91,10 @@ async function fetchAdsFromDb() {
   return adsFetchPromise;
 }
 
-// ─── Weighted pick ───────────────────────────────────────────────
-function pickWeightedIndex(ads, excludeIndex) {
-  if (!ads.length) return 0;
-  const candidates = ads.map((ad, idx) => ({ idx, w: Math.max(1, ad.weight || 1) })).filter((c) => c.idx !== excludeIndex);
-  if (candidates.length === 0) return excludeIndex || 0;
-  const total = candidates.reduce((sum, c) => sum + c.w, 0);
-  let r = Math.random() * total;
-  for (const c of candidates) {
-    r -= c.w;
-    if (r <= 0) return c.idx;
-  }
-  return candidates[candidates.length - 1].idx;
-}
+// ─── Note: pickWeightedIndex removed ─────────────────────────────
+// Auto-rotation is strictly sequential now. `weight` is still a column
+// in the schema (harmless, reserved for future weighted rotation) but
+// it no longer influences which ad shows next.
 
 const BIBLICAL_ELEARNING_BACKGROUNDS = ['/ads/ad-1-bg-1.jpg', '/ads/ad-1-bg-2.jpg', '/ads/ad-1-bg-3.jpg'];
 
@@ -139,6 +135,22 @@ export default function AdRotator() {
     return () => { cancelled = true; };
   }, []);
 
+  // 👇 Re-fetch on tab focus so DB reorders show up live without a hard reload
+  useEffect(() => {
+    const handleFocus = async () => {
+      adsCache = null; // bust module-level cache
+      const data = await fetchAdsFromDb();
+      if (!mountedRef.current || !data) return;
+      setAds(data);
+      // Try to keep showing the same ad (by slug) after a reorder
+      const currentSlug = adsRef.current?.[currentAdRef.current]?.slug;
+      const newIndex = currentSlug ? data.findIndex((a) => a.slug === currentSlug) : 0;
+      setCurrentAd(newIndex >= 0 ? newIndex : 0);
+    };
+    window.addEventListener('focus', handleFocus);
+    return () => window.removeEventListener('focus', handleFocus);
+  }, []);
+
   useEffect(() => {
     mountedRef.current = true;
     return () => {
@@ -163,9 +175,10 @@ export default function AdRotator() {
 
   const adCount = ads?.length || 0;
 
+  // 👇 SEQUENTIAL: 1 → 2 → 3 → … → N → 1
   const goToNext = useCallback(() => {
     if (!beginTransition() || adCount === 0) return;
-    setCurrentAd((prev) => pickWeightedIndex(adsRef.current || [], prev));
+    setCurrentAd((prev) => (prev + 1) % adCount);
   }, [beginTransition, adCount]);
 
   const goToPrev = useCallback(() => {
@@ -238,7 +251,7 @@ export default function AdRotator() {
       backgroundRepeat: 'no-repeat, no-repeat, no-repeat',
     };
   } else if (bannerUrl) {
-    // 👇 THE ENTERPRISE WAY: It reads exactly what the DB tells it to do
+    // 👇 Reads exactly what the DB tells it to do
     bgStyle = {
       backgroundColor: brandColor,
       backgroundImage: `url(${bannerUrl})`,

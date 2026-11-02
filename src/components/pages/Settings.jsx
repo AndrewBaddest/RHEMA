@@ -1,29 +1,19 @@
-import { useState } from 'react';
 import { useStore } from '../../lib/store';
 import { useSound } from '../../hooks/useSound';
 import { useNavigate } from 'react-router-dom';
 import { Volume2, VolumeX, RefreshCw, Globe } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function Settings() {
   const navigate = useNavigate();
+  // 👇 'enabled' now comes from the master switch via LanguageContext
+  const { language, setLanguage, t, enabled } = useLanguage();
   const settings = useStore((s) => s.settings);
   const updateSoundSetting = useStore((s) => s.updateSoundSetting);
   const updateQuizSetting = useStore((s) => s.updateQuizSetting);
   const updateReaderSetting = useStore((s) => s.updateReaderSetting);
   const resetProgress = useStore((s) => s.resetProgress);
   const { toggleMute, isMuted } = useSound();
-
-  // 👇 Language State (Defaults to English)
-  const [language, setLanguage] = useState(() => {
-    return localStorage.getItem('rhema_language') || 'en';
-  });
-
-  const handleLanguageChange = (e) => {
-    const newLang = e.target.value;
-    setLanguage(newLang);
-    localStorage.setItem('rhema_language', newLang);
-    // Note: When ready, we will trigger the LanguageContext change here
-  };
 
   const handleClearProgress = () => {
     if (confirm('Are you sure you want to clear all your progress? This cannot be undone.')) {
@@ -32,43 +22,41 @@ export default function Settings() {
     }
   };
 
-  const handleSync = () => {
-    alert('Sync is currently disabled. Please connect to a database.');
-  };
-
   return (
     <div className="py-4">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-primary text-2xl font-bold">Settings</h2>
+        <h2 className="text-primary text-2xl font-bold">{t('settings')}</h2>
         <button className="btn-secondary !w-auto !py-2 !px-4 text-sm" onClick={() => navigate('/home')}>
-          ← Back
+          {t('back')}
         </button>
       </div>
 
-      {/* 👇 Language Settings (Added above Sound) */}
-      <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a] mb-4">
-        <h3 className="text-primary text-lg font-semibold mb-3 flex items-center gap-2">
-          <Globe size={18} /> Language
-        </h3>
-        <div className="flex items-center justify-between">
-          <span className="text-sm">App Language</span>
-          <select
-            value={language}
-            onChange={handleLanguageChange}
-            className="bg-[#333] text-text px-3 py-1 rounded-lg border border-[#444] text-sm transition-all duration-200 focus:outline-none focus:border-primary"
-          >
-            <option value="en">English</option>
-            <option value="sw">Kiswahili</option>
-          </select>
+      {/* Language Settings — hidden automatically when master switch is OFF */}
+      {enabled && (
+        <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a] mb-4">
+          <h3 className="text-primary text-lg font-semibold mb-3 flex items-center gap-2">
+            <Globe size={18} /> {t('language')}
+          </h3>
+          <div className="flex items-center justify-between">
+            <span className="text-sm">{t('appLanguage')}</span>
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+              className="bg-[#333] text-text px-3 py-1 rounded-lg border border-[#444] text-sm transition-all duration-200 focus:outline-none focus:border-primary"
+            >
+              <option value="en">English</option>
+              <option value="sw">Kiswahili</option>
+            </select>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Sound Settings */}
       <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a] mb-4">
-        <h3 className="text-primary text-lg font-semibold mb-3">Sound</h3>
+        <h3 className="text-primary text-lg font-semibold mb-3">{t('sound')}</h3>
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-sm">Background Music</span>
+            <span className="text-sm">{t('backgroundMusic')}</span>
             <button
               onClick={() => updateSoundSetting('bgMusic', !settings.sound.bgMusic)}
               className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ${
@@ -79,7 +67,7 @@ export default function Settings() {
             </button>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm">Sound Effects</span>
+            <span className="text-sm">{t('soundEffects')}</span>
             <button
               onClick={() => updateSoundSetting('soundEffects', !settings.sound.soundEffects)}
               className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ${
@@ -90,7 +78,7 @@ export default function Settings() {
             </button>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm">Global Mute</span>
+            <span className="text-sm">{t('globalMute')}</span>
             <button
               onClick={toggleMute}
               className="sound-btn transition-transform duration-200 hover:scale-105"
@@ -104,10 +92,10 @@ export default function Settings() {
 
       {/* Quiz Settings */}
       <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a] mb-4">
-        <h3 className="text-primary text-lg font-semibold mb-3">Quiz</h3>
+        <h3 className="text-primary text-lg font-semibold mb-3">{t('quizSettings')}</h3>
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-sm">Timer per question</span>
+            <span className="text-sm">{t('timerPerQuestion')}</span>
             <select
               value={settings.quiz.timer}
               onChange={(e) => updateQuizSetting('timer', Number(e.target.value))}
@@ -120,7 +108,7 @@ export default function Settings() {
             </select>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm">Questions per book quiz</span>
+            <span className="text-sm">{t('questionsPerBook')}</span>
             <select
               value={settings.quiz.questionsPerBook}
               onChange={(e) => updateQuizSetting('questionsPerBook', Number(e.target.value))}
@@ -136,9 +124,9 @@ export default function Settings() {
 
       {/* Reader Settings */}
       <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a] mb-4">
-        <h3 className="text-primary text-lg font-semibold mb-3">Reader</h3>
+        <h3 className="text-primary text-lg font-semibold mb-3">{t('reader')}</h3>
         <div className="flex items-center justify-between">
-          <span className="text-sm">Font size</span>
+          <span className="text-sm">{t('fontSize')}</span>
           <select
             value={settings.reader.fontSize}
             onChange={(e) => updateReaderSetting('fontSize', e.target.value)}
@@ -153,25 +141,15 @@ export default function Settings() {
 
       {/* Data Settings */}
       <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a]">
-        <h3 className="text-primary text-lg font-semibold mb-3">Data</h3>
+        <h3 className="text-primary text-lg font-semibold mb-3">{t('data')}</h3>
         <div className="space-y-3">
           <button
             onClick={handleClearProgress}
             className="flex items-center gap-2 bg-error/20 text-error px-4 py-2 rounded-lg hover:bg-error/30 transition-all duration-200"
           >
             <RefreshCw size={16} />
-            Clear all progress
+            {t('clearProgress')}
           </button>
-          <button
-            onClick={handleSync}
-            className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-lg hover:bg-primary/20 transition-all duration-200"
-          >
-            <RefreshCw size={16} />
-            Sync with cloud (coming soon)
-          </button>
-          <p className="text-muted text-xs mt-1">
-            Progress is currently stored locally. Sync will be available when connected to a database.
-          </p>
         </div>
       </div>
     </div>
