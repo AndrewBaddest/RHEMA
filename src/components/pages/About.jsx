@@ -56,7 +56,7 @@ export default function About() {
   const handleShare = async () => {
     const shareData = {
       title: 'Rhema - Bible Quiz',
-      text: 'Explore the Bible through interactive quizzes and reading!',
+      text: 'Explore the Bible through interactive Quizzes',
       url: window.location.href,
     };
     try {

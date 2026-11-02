@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { useStore } from '../../lib/store';
 import { useSound } from '../../hooks/useSound';
 import { useNavigate } from 'react-router-dom';
-import { Volume2, VolumeX, RefreshCw } from 'lucide-react';
+import { Volume2, VolumeX, RefreshCw, Globe } from 'lucide-react';
 
 export default function Settings() {
   const navigate = useNavigate();
@@ -12,6 +13,18 @@ export default function Settings() {
   const resetProgress = useStore((s) => s.resetProgress);
   const { toggleMute, isMuted } = useSound();
 
+  // 👇 Language State (Defaults to English)
+  const [language, setLanguage] = useState(() => {
+    return localStorage.getItem('rhema_language') || 'en';
+  });
+
+  const handleLanguageChange = (e) => {
+    const newLang = e.target.value;
+    setLanguage(newLang);
+    localStorage.setItem('rhema_language', newLang);
+    // Note: When ready, we will trigger the LanguageContext change here
+  };
+
   const handleClearProgress = () => {
     if (confirm('Are you sure you want to clear all your progress? This cannot be undone.')) {
       resetProgress();
@@ -20,21 +33,39 @@ export default function Settings() {
   };
 
   const handleSync = () => {
-    alert('  Sync is currently disabled. Please connect to a database.');
+    alert('Sync is currently disabled. Please connect to a database.');
   };
 
   return (
     <div className="py-4">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-primary text-2xl font-bold">  Settings</h2>
+        <h2 className="text-primary text-2xl font-bold">Settings</h2>
         <button className="btn-secondary !w-auto !py-2 !px-4 text-sm" onClick={() => navigate('/home')}>
           ← Back
         </button>
       </div>
 
+      {/* 👇 Language Settings (Added above Sound) */}
+      <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a] mb-4">
+        <h3 className="text-primary text-lg font-semibold mb-3 flex items-center gap-2">
+          <Globe size={18} /> Language
+        </h3>
+        <div className="flex items-center justify-between">
+          <span className="text-sm">App Language</span>
+          <select
+            value={language}
+            onChange={handleLanguageChange}
+            className="bg-[#333] text-text px-3 py-1 rounded-lg border border-[#444] text-sm transition-all duration-200 focus:outline-none focus:border-primary"
+          >
+            <option value="en">English</option>
+            <option value="sw">Kiswahili</option>
+          </select>
+        </div>
+      </div>
+
       {/* Sound Settings */}
       <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a] mb-4">
-        <h3 className="text-primary text-lg font-semibold mb-3">  Sound</h3>
+        <h3 className="text-primary text-lg font-semibold mb-3">Sound</h3>
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-sm">Background Music</span>
@@ -73,7 +104,7 @@ export default function Settings() {
 
       {/* Quiz Settings */}
       <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a] mb-4">
-        <h3 className="text-primary text-lg font-semibold mb-3">  Quiz</h3>
+        <h3 className="text-primary text-lg font-semibold mb-3">Quiz</h3>
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-sm">Timer per question</span>
@@ -105,7 +136,7 @@ export default function Settings() {
 
       {/* Reader Settings */}
       <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a] mb-4">
-        <h3 className="text-primary text-lg font-semibold mb-3">  Reader</h3>
+        <h3 className="text-primary text-lg font-semibold mb-3">Reader</h3>
         <div className="flex items-center justify-between">
           <span className="text-sm">Font size</span>
           <select
@@ -122,7 +153,7 @@ export default function Settings() {
 
       {/* Data Settings */}
       <div className="bg-surface rounded-xl p-5 border border-[#2a2a2a]">
-        <h3 className="text-primary text-lg font-semibold mb-3">  Data</h3>
+        <h3 className="text-primary text-lg font-semibold mb-3">Data</h3>
         <div className="space-y-3">
           <button
             onClick={handleClearProgress}

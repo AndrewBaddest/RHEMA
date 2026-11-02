@@ -4,7 +4,7 @@ import { Heart } from 'lucide-react';
 export default function Donate() {
   const navigate = useNavigate();
 
-  const NTUMA_URL = 'https://ntuma.app/pay/48a185fd-2ff7-43e4-86d9-51ee9cd3a753';
+  const NTUMA_URL = 'https://ntuma.app/pay/8d83c658-d05e-4438-9d8d-7d3ec1d4f3d8';
 
   return (
     <div className="py-4 max-w-3xl mx-auto">

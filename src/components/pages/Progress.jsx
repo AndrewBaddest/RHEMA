@@ -52,7 +52,7 @@ export default function Progress() {
       const currentState = useStore.getState();
       if (currentState.quizzes.length > 0 || currentState.scripture.versesRead > 0) {
         localStorage.setItem('rhema_guest_backup', JSON.stringify(currentState));
-        console.log('💾 Guest data backed up safely.');
+        console.log('  Guest data backed up safely.');
       }
 
       const loadedProgress = {
@@ -347,7 +347,7 @@ export default function Progress() {
                 }
                 className="btn !w-auto px-6"
               >
-                🔒 Sign in to save
+                  Sign in to save
               </button>
               <button
                 onClick={() =>
@@ -358,7 +358,7 @@ export default function Progress() {
                 }
                 className="btn-secondary !w-auto px-6"
               >
-                📥 Load progress
+                  Load progress
               </button>
             </div>
 

@@ -8,6 +8,7 @@ import {
   fetchAllQuizQuestions,
   fetchQuizQuestionsFromDB,
   fetchGlobalChallengeQuestionsFromDB,
+  fetchDailyChallengeQuestions, // 👈 New import
 } from '../../lib/api';
 import { shuffle } from '../../lib/utils';
 import { useAuth } from '../../context/AuthContext';
@@ -67,18 +68,15 @@ export default function QuizPlay() {
       let qs = [];
 
       if (daily) {
-        let dbQs = await fetchGlobalChallengeQuestionsFromDB(15);
+        // 👇 USE THE AUTONOMOUS DAILY CHALLENGE
+        let dbQs = await fetchDailyChallengeQuestions();
         if (dbQs && dbQs.length > 0) {
           qs = dbQs;
         } else {
+          // Fallback if the DB fails
           let allQ = allQuizQuestions;
           if (allQ.length === 0) allQ = await fetchAllQuizQuestions();
-          const available = allQ.filter((q) => !playedQuestions.includes(q.ref));
-          const selected =
-            available.length >= 15
-              ? shuffle(available).slice(0, 15)
-              : shuffle(allQ).slice(0, 15);
-          qs = selected;
+          qs = shuffle(allQ).slice(0, 15);
         }
         setIsDaily(true);
       } else if (book) {
@@ -130,7 +128,6 @@ export default function QuizPlay() {
 
     loadQuestions();
     
-    // Cleanup on unmount
     return () => {
       clearInterval(timerRef.current);
       clearTimeout(advanceTimeoutRef.current);
@@ -153,7 +150,6 @@ export default function QuizPlay() {
     }
 
     if (currentIndex < questions.length - 1) {
-      // Move to next question after a brief pause
       transitionTimeoutRef.current = setTimeout(() => {
         setCurrentIndex((prev) => prev + 1);
         setSelectedOption(null);
@@ -161,7 +157,6 @@ export default function QuizPlay() {
         setTimer(timerDuration);
       }, 500);
     } else {
-      // Quiz is over
       const finalScore = score + (isCorrect ? 1 : 0);
       let quizId = book || (daily ? 'daily' : 'mixed');
       if (isDaily) quizId = 'daily';
@@ -202,7 +197,6 @@ export default function QuizPlay() {
       setTimer((prev) => {
         if (prev <= 1) {
           clearInterval(timerRef.current);
-          // Time ran out! Lock the question and process with null answer
           if (!questionFinishedRef.current) {
             questionFinishedRef.current = true;
             processAnswer(null); 
@@ -220,14 +214,10 @@ export default function QuizPlay() {
   const handleSelectOption = (index) => {
     if (questionFinishedRef.current) return;
     
-    // Lock the question immediately to prevent double clicks
     questionFinishedRef.current = true;
     clearInterval(timerRef.current);
-    
-    // Highlight the user's choice
     setSelectedOption(index);
 
-    // Wait 400ms so the user sees the highlight, then process the answer
     advanceTimeoutRef.current = setTimeout(() => {
       processAnswer(index);
     }, 400);
