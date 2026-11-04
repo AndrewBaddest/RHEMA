@@ -4,14 +4,14 @@ import { useUIStore } from '../../lib/store';
 import { useSound } from '../../hooks/useSound';
 import { useAuth } from '../../context/AuthContext';
 import { useGoogleOneTap } from '../../hooks/useGoogleOneTap';
-import { useLanguage } from '../../context/LanguageContext'; // 👈 Added
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function Auth() {
   const navigate = useNavigate();
   const setToast = useUIStore((state) => state.setToast);
   const { startBackground } = useSound();
   const { isAnonymous, loading, signInWithGoogleIdToken } = useAuth();
-  const { t } = useLanguage(); // 👈 Added
+  const { t } = useLanguage();
 
   const navigatedRef = useRef(false);
   const oneTapFiredRef = useRef(false);
@@ -40,11 +40,9 @@ export default function Auth() {
     return () => clearTimeout(t);
   }, [shouldPromptOneTap, oneTapAvailable, promptOneTap]);
 
-  // Removed the auto-redirect to /home here.
-
   const handlePlay = () => {
     startBackground();
-    setToast('👋 Welcome to Rhema!', 'success');
+    setToast(t('welcomeToast'), 'success');
     navigate('/home');
   };
 
@@ -58,8 +56,8 @@ export default function Auth() {
           {t('missionText')}
         </p>
         <div className="mt-3 pt-3 border-t border-primary/15 text-center text-sm text-muted italic">
-          "Your word is a lamp to my feet and a light to my path." —{' '}
-          <span className="text-primary not-italic font-medium">Psalm 119:105</span>
+          {t('dailyVerse')} —{' '}
+          <span className="text-primary not-italic font-medium">{t('dailyVerseRef')}</span>
         </div>
       </div>
 

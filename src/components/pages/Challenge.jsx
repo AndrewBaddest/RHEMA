@@ -6,7 +6,7 @@ import { useSubmitChallengeScore } from '../../hooks/useSubmitChallengeScore';
 import { useRequireAuth } from '../../hooks/useRequireAuth';
 import SignInPrompt from '../shared/SignInPrompt';
 import { supabase } from '../../lib/supabase';
-import { fetchGlobalChallengeQuestionsFromDB, fetchGlobalEvent } from '../../lib/api';
+import { fetchGlobalChallengeQuestionsFromDB, fetchGlobalEvent, localizeQuestions } from '../../lib/api';
 import { calculateNextScore, canFinishDuel } from '../../lib/duelLogic';
 import { useLanguage } from '../../context/LanguageContext';
 
@@ -41,7 +41,7 @@ export default function Challenge() {
   const { refetch } = useLeaderboard();
   const submitScore = useSubmitChallengeScore();
   const { requireAuth, promptOpen, reason, closePrompt } = useRequireAuth();
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   // ─── Global Challenge Engine State ────────────────────────────
   const [globalEvent, setGlobalEvent] = useState(null);
@@ -224,6 +224,11 @@ export default function Challenge() {
       }
     }
     if (questions.length === 0) questions = generateGlobalQuizQuestions(30);
+  try {
+    questions = await localizeQuestions(questions, language);
+  } catch (err) {
+    console.warn('[global] localize failed:', err);
+  }
     setGlobalQuizQuestions(questions);
     setGlobalCurrentQuestionIndex(0);
     setGlobalPlayerAnswers([]);
@@ -373,8 +378,14 @@ export default function Challenge() {
     }, 1000);
   };
 
-  const beginCountdown = (questions, seconds) => {
+  const beginCountdown = async (questions, seconds) => {
     duelStartedRef.current = true;
+
+  try {
+    questions = await localizeQuestions(questions, language);
+  } catch (err) {
+    console.warn('[duel] localize failed:', err);
+  }
     quizQuestionsRef.current = questions;
     currentIndexRef.current = 0;
     myScoreRef.current = 0;
@@ -458,13 +469,13 @@ export default function Challenge() {
 
   const handleSendChallenge = () => {
     requireAuth(async () => {
-      if (!opponentId.trim()) { alert("Please enter your opponent's name."); return; }
+      if (!opponentId.trim()) { alert(t('alertOpponentName')); return; }
       const targetUid = await findOpponent(opponentId.trim());
-      if (!targetUid || targetUid === user.id) { alert('Opponent not found or you cannot challenge yourself.'); return; }
-      if (!connectionStatus) { alert('Connection not ready.'); return; }
+      if (!targetUid || targetUid === user.id) { alert(t('alertOpponentNotFound')); return; }
+      if (!connectionStatus) { alert(t('alertConnectionNotReady')); return; }
 
       setOpponentName(await getUserDisplayName(targetUid));
-      const questions = await fetchGlobalChallengeQuestionsFromDB(questionCount);
+      const questions = await fetchGlobalChallengeQuestionsFromDB(questionCount, language);
       const fallbacks = questions?.length > 0 ? questions : generateGlobalQuizQuestions(questionCount);
 
       duelStartedRef.current = false; localFinishedRef.current = false; opponentFinishedRef.current = false; hasAnsweredRef.current = false;
@@ -474,7 +485,7 @@ export default function Challenge() {
           challenger_id: user.id, opponent_id: targetUid, status: 'pending', questions: fallbacks, score_challenger: 0, score_opponent: 0, current_question: 0, timer_seconds: timerSeconds,
         }).select().single();
 
-      if (error) { alert('Failed to send challenge.'); return; }
+      if (error) { alert(t('alertChallengeFailed')); return; }
       setCurrentChallenge(data); setMultiplayerStatus('pending');
     }, 'Sign in to challenge another player');
   };
@@ -483,7 +494,7 @@ export default function Challenge() {
     requireAuth(async () => {
       setNotification(null);
       const { data, error } = await supabase.from('duel_challenges').update({ status: 'accepted' }).eq('id', challengeId).select().single();
-      if (error || !data) { alert('Failed to accept challenge.'); return; }
+      if (error || !data) { alert(t('alertAcceptFailed')); return; }
       setCurrentChallenge(data); beginCountdown(data.questions || [], data.timer_seconds || 30);
     }, 'Sign in to accept the challenge');
   };
@@ -514,7 +525,7 @@ export default function Challenge() {
   const handleInitiateRematch = async () => {
     if (channelRef.current) {
       channelRef.current.send({ type: 'broadcast', event: 'rematch_requested', payload: {} });
-      alert('Rematch request sent!');
+      alert(t('alertRematchSent'));
     }
   };
 
@@ -660,7 +671,7 @@ export default function Challenge() {
             
             <div className="bg-[#1a1a1a] rounded-lg p-3 space-y-1">
               {top10Scores.length === 0 ? (
-                <div className="text-center text-muted py-4">Calculating results...</div>
+                <div className="text-center text-muted py-4">{t('calculatingResults')}</div>
               ) : (
                 top10Scores.map((r, idx) => (
                   <div key={idx} className={`flex justify-between py-2 border-b border-[#2a2a2a] ${idx < 3 ? 'font-bold' : 'text-sm'}`}>
@@ -693,8 +704,8 @@ export default function Challenge() {
               <h3 className="text-xl font-bold text-primary">⚔️ {t('duel')}</h3>
               {currentChallenge && (<span className="flex items-center gap-1 text-xs"><span className={`w-2 h-2 rounded-full ${isOpponentPresent ? 'bg-green-500' : 'bg-slate-600'}`}></span>{opponentName || t('opponent')} {isOpponentPresent ? t('opponentActive') : t('opponentAway')}</span>)}
             </div>
-            <p className="text-sm text-muted mb-4">Challenge another player to a 1v1 match</p>
-            <div className="flex items-center gap-2 mb-4 text-sm"><span className={`inline-block w-2.5 h-2.5 rounded-full ${connectionStatus ? 'bg-green-500' : 'bg-red-500'}`}></span><span className="text-muted">{connectionStatus ? '🟢 Connected' : '🔴 Disconnected'}</span></div>
+            <p className="text-sm text-muted mb-4">{t('challengeDesc')}</p>
+            <div className="flex items-center gap-2 mb-4 text-sm"><span className={`inline-block w-2.5 h-2.5 rounded-full ${connectionStatus ? 'bg-green-500' : 'bg-red-500'}`}></span><span className="text-muted">{connectionStatus ? t('connected') : t('disconnected')}</span></div>
             {multiplayerStatus === 'idle' && (<>
               <div className="mb-4"><label className="block text-sm text-muted mb-1">{t('opponentName')}</label><input type="text" value={opponentId} onChange={(e) => setOpponentId(e.target.value)} placeholder="e.g. Emma or Emma 4821" className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary" /><div className="text-xs text-muted mt-1">{t('askFriendName')}</div></div>
               <div className="grid grid-cols-2 gap-4 mb-4"><div><label className="block text-sm text-muted mb-1">{t('questions')}</label><select value={questionCount} onChange={(e) => setQuestionCount(Number(e.target.value))} className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary"><option value={10}>10</option><option value={15}>15</option><option value={30}>30</option></select></div><div><label className="block text-sm text-muted mb-1">{t('timerPerQ')}</label><select value={timerSeconds} onChange={(e) => setTimerSeconds(Number(e.target.value))} className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary"><option value={15}>15 sec</option><option value={30}>30 sec</option><option value={60}>60 sec</option></select></div></div>
@@ -728,7 +739,7 @@ export default function Challenge() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="bg-surface rounded-xl p-6 max-w-sm w-full border border-[#2a2a2a] text-center">
             <p className="text-text mb-4">{notification.message}</p>
-            <div className="flex gap-3 justify-center">{notification.id && (<><button onClick={() => handleAcceptChallenge(notification.id)} className="btn">Accept</button><button onClick={() => handleDeclineChallenge(notification.id)} className="btn-secondary">{t('cancel')}</button></>)}</div>
+            <div className="flex gap-3 justify-center">{notification.id && (<><button onClick={() => handleAcceptChallenge(notification.id)} className="btn">{t('accept')}</button><button onClick={() => handleDeclineChallenge(notification.id)} className="btn-secondary">{t('cancel')}</button></>)}</div>
           </div>
         </div>
       )}

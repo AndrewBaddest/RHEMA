@@ -1,10 +1,8 @@
-// src/lib/api.js
 import { supabase } from './supabase';
 import { shuffle } from './utils';
 
 const API_BASE = '';
 
-// ─── Bible data from Supabase (DB-based, multilingual) ──────────
 const BOOK_NAME_ALIASES = {
   'Song of Solomon': ['Song of Solomon', 'Song Of Solomon'],
 };
@@ -20,7 +18,6 @@ export async function fetchBibleData(book, language = 'en') {
   let lastError = null;
 
   for (const dbName of candidates) {
-    // 👇 PAGINATE: fetch 1000 at a time until the whole book is loaded
     let allRows = [];
     const PAGE = 1000;
     let from = 0;
@@ -74,10 +71,44 @@ export async function fetchBibleData(book, language = 'en') {
   return result;
 }
 
-// ─── Fetch quiz questions from Supabase (Randomized & Multilingual) ──
+// 👇 THE SUPER-FAIR LOCALIZER
+export async function localizeQuestions(englishQuestions, language) {
+  if (language === 'en' || !englishQuestions || englishQuestions.length === 0) return englishQuestions;
+  
+  const ids = englishQuestions.map(q => q.id).filter(Boolean);
+  if (ids.length === 0) return englishQuestions;
+
+  const { data: swahili } = await supabase
+    .from('quiz_questions')
+    .select('*')
+    .in('source_id', ids)
+    .eq('language', language);
+
+  if (!swahili || swahili.length === 0) return englishQuestions;
+
+  const swMap = new Map(swahili.map(s => [s.source_id, s]));
+
+  return englishQuestions.map(en => {
+    const sw = swMap.get(en.id);
+    if (!sw) return en;
+    
+    // 👇 SECURITY FIX: Force the localized options to match the exact index of the English options.
+    const safeOptions = en.options.map((opt, i) => sw.options[i] || opt);
+
+    return {
+      ...en,
+      question: sw.question,
+      options: safeOptions,
+      answer: en.correct_answer, // Keep English index for DB validation
+      correct: en.correct_answer,
+      ref: sw.verse_reference || en.ref,
+      reference: sw.verse_reference || en.reference,
+    };
+  });
+}
+
 export async function fetchQuizQuestionsFromDB(bookName, language = 'en', limit = 10) {
   try {
-    // 1. Get the quiz ID
     const { data: quiz, error: quizError } = await supabase
       .from('quizzes')
       .select('id')
@@ -86,7 +117,6 @@ export async function fetchQuizQuestionsFromDB(bookName, language = 'en', limit 
 
     if (quizError || !quiz) return null;
 
-    // 2. Fetch questions in the requested language
     let { data: questions, error: qError } = await supabase
       .from('quiz_questions')
       .select('*')
@@ -95,7 +125,6 @@ export async function fetchQuizQuestionsFromDB(bookName, language = 'en', limit 
 
     if (qError) return null;
 
-    // 3. Fallback: If Swahili questions don't exist yet, use English
     if ((!questions || questions.length === 0) && language !== 'en') {
       const fallback = await supabase
         .from('quiz_questions')
@@ -107,7 +136,6 @@ export async function fetchQuizQuestionsFromDB(bookName, language = 'en', limit 
 
     if (!questions || questions.length === 0) return null;
 
-    // 4. Shuffle and slice
     const shuffled = shuffle(questions).slice(0, limit);
 
     return shuffled.map((q) => {
@@ -125,8 +153,7 @@ export async function fetchQuizQuestionsFromDB(bookName, language = 'en', limit 
   }
 }
 
-// ─── Fetch global challenge questions (Random from all books) ──
-export async function fetchGlobalChallengeQuestionsFromDB(count = 30) {
+export async function fetchGlobalChallengeQuestionsFromDB(count = 30, language = 'en') {
   try {
     const { data: questions, error: qError } = await supabase
       .rpc('get_random_global_questions', { limit_param: count });
@@ -142,11 +169,12 @@ export async function fetchGlobalChallengeQuestionsFromDB(count = 30) {
     const quizMap = {};
     (quizzes || []).forEach((qz) => { quizMap[qz.id] = qz.book_name; });
 
-    return questions.map((q, idx) => {
+    const formattedEnglish = questions.map((q, idx) => {
       const bookName = quizMap[q.quiz_id] || 'Bible';
       const verseRef = pickVerseRef(q.question, q.verse_reference, `${bookName} 1:1`);
       return {
         id: q.id || idx,
+        quiz_id: q.quiz_id,
         book: bookName,
         question: q.question,
         options: q.options,
@@ -154,15 +182,17 @@ export async function fetchGlobalChallengeQuestionsFromDB(count = 30) {
         correct: q.correct_answer,
         ref: verseRef,
         reference: verseRef,
+        verse_reference: q.verse_reference
       };
     });
+
+    return await localizeQuestions(formattedEnglish, language);
   } catch (err) {
     return null;
   }
 }
 
-// ─── Fetch the Autonomous Daily Quiz ─────────────────────────────
-export async function fetchDailyChallengeQuestions() {
+export async function fetchDailyChallengeQuestions(language = 'en') {
   try {
     await supabase.rpc('generate_daily_challenge');
 
@@ -177,7 +207,8 @@ export async function fetchDailyChallengeQuestions() {
     const { data: questions, error: qError } = await supabase
       .from('quiz_questions')
       .select('id, quiz_id, question, options, correct_answer, verse_reference, quizzes(book_name)')
-      .in('id', challenge.question_ids);
+      .in('id', challenge.question_ids)
+      .eq('language', 'en'); // Always fetch English base
 
     if (qError) throw qError;
 
@@ -187,11 +218,12 @@ export async function fetchDailyChallengeQuestions() {
 
     const shuffledQuestions = shuffle(orderedQuestions);
 
-    return shuffledQuestions.map((q, idx) => {
+    const formattedEnglish = shuffledQuestions.map((q, idx) => {
       const bookName = q.quizzes?.book_name || 'Bible';
       const verseRef = pickVerseRef(q.question, q.verse_reference, `${bookName} 1:1`);
       return {
         id: q.id,
+        quiz_id: q.quiz_id,
         book: bookName,
         question: q.question,
         options: q.options,
@@ -199,14 +231,16 @@ export async function fetchDailyChallengeQuestions() {
         correct: q.correct_answer,
         ref: verseRef,
         reference: verseRef,
+        verse_reference: q.verse_reference
       };
     });
+
+    return await localizeQuestions(formattedEnglish, language);
   } catch (err) {
     return null;
   }
 }
 
-// ─── Fetch the current Global Event (Self-Healing Engine) ────────
 export async function fetchGlobalEvent() {
   try {
     const { data, error } = await supabase.rpc('get_or_create_global_event');
@@ -217,7 +251,6 @@ export async function fetchGlobalEvent() {
   }
 }
 
-// ─── Legacy JSON functions ──────────────────────────────────────
 export async function fetchQuizData(book) {
   const safeName = encodeURIComponent(book);
   const response = await fetch(`${API_BASE}/quiz_data/${safeName}.json`);
@@ -240,19 +273,15 @@ export async function fetchAllQuizQuestions() {
   return allQuestions;
 }
 
-// ─── Extract the best possible verse reference ───────────────────
 export function pickVerseRef(questionText, dbRef, fallback) {
   const text = String(questionText || '');
-
   const parens = text.match(/\(([^)]+)\)/g) || [];
   for (const p of parens) {
     const inner = p.slice(1, -1).trim();
     if (/\b\d+\s*:\s*\d+\b/.test(inner)) return inner;
   }
-
   const db = String(dbRef || '').trim();
   if (/\b\d+\s*:\s*\d+\b/.test(db)) return db;
   if (/^.+?\s+\d+$/.test(db)) return `${db}:1`;
-
   return db || fallback;
 }

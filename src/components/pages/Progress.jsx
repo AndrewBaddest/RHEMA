@@ -5,11 +5,13 @@ import { supabase } from '../../lib/supabase';
 import { useAuth } from '../../context/AuthContext';
 import { useRequireAuth } from '../../hooks/useRequireAuth';
 import SignInPrompt from '../shared/SignInPrompt';
+import { useLanguage } from '../../context/LanguageContext'; // 👈 Added
 
 export default function Progress() {
   const navigate = useNavigate();
   const { user, loading, isAnonymous, profile, updateDisplayName } = useAuth();
   const { requireAuth, promptOpen, reason, closePrompt } = useRequireAuth();
+  const { t } = useLanguage(); // 👈 Added
 
   const loadProgress = useStore((s) => s.loadProgress);
   const resetProgress = useStore((s) => s.resetProgress);
@@ -113,7 +115,7 @@ export default function Progress() {
 
   // ─── Rename handlers ─────────────────────────────────────────
   const openRename = () => {
-    setRenameValue(profile.username || 'Player');
+    setRenameValue(profile.username || t('player'));
     setRenameMsg('');
     setRenaming(true);
   };
@@ -167,41 +169,41 @@ export default function Progress() {
     return (
       <div className="flex flex-col items-center justify-center py-20">
         <div className="spinner"></div>
-        <p className="text-muted mt-4">Loading your profile...</p>
+        <p className="text-muted mt-4">{t('loadingProfile')}</p>
       </div>
     );
   }
 
-  const displayName = profile.displayName || 'Player';
+  const displayName = profile.displayName || t('player');
 
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-primary text-2xl font-bold">📊 Your Progress</h2>
+        <h2 className="text-primary text-2xl font-bold">{t('yourProgress')}</h2>
         <button
           className="btn-secondary !w-auto !py-2 !px-4 text-sm"
           onClick={() => navigate('/home')}
         >
-          ← Back
+          {t('back')}
         </button>
       </div>
 
       {/* Player ID card */}
       <div className="player-id-box bg-surface border border-primary rounded-lg p-3 my-3 text-center text-lg font-semibold text-primary">
-        Player ID: <span className="text-text">{displayName}</span>
+        {t('playerIdLabel')} <span className="text-text">{displayName}</span>
         {user && !isAnonymous && (
-          <span className="ml-2 text-xs text-success">(Cloud connected)</span>
+          <span className="ml-2 text-xs text-success">{t('cloudConnected')}</span>
         )}
         {isAnonymous && (
-          <span className="ml-2 text-xs text-muted">(Guest)</span>
+          <span className="ml-2 text-xs text-muted">{t('guestMode')}</span>
         )}
         {user && (
           <div className="text-xs text-muted mt-1">
-            User ID: {user.id.slice(0, 8)}...
+            {t('userIdLabel')} {user.id.slice(0, 8)}...
           </div>
         )}
         {profile.email && (
-          <div className="text-xs text-muted mt-1">Email: {profile.email}</div>
+          <div className="text-xs text-muted mt-1">{t('emailLabel')} {profile.email}</div>
         )}
 
         {user && !renaming && (
@@ -210,7 +212,7 @@ export default function Progress() {
               onClick={openRename}
               className="text-xs text-primary underline hover:no-underline"
             >
-              ✏️ Change name
+              {t('changeName')}
             </button>
           </div>
         )}
@@ -218,14 +220,14 @@ export default function Progress() {
         {user && renaming && (
           <div className="mt-3 flex flex-col gap-2 max-w-xs mx-auto text-left">
             <div className="text-xs text-muted text-center">
-              Shown as <strong className="text-text">{renameValue || 'Player'}</strong>
+              {t('shownAs')} <strong className="text-text">{renameValue || t('player')}</strong>
             </div>
             <input
               type="text"
               value={renameValue}
               onChange={(e) => setRenameValue(e.target.value)}
               maxLength={20}
-              placeholder="Your name"
+              placeholder={t('yourNamePlaceholder')}
               className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary"
             />
             <div className="flex gap-2">
@@ -234,13 +236,13 @@ export default function Progress() {
                 disabled={renameBusy || !renameValue.trim()}
                 className="btn flex-1 !py-2 !text-sm"
               >
-                {renameBusy ? 'Saving...' : 'Save'}
+                {renameBusy ? t('saving') : t('save')}
               </button>
               <button
                 onClick={() => setRenaming(false)}
                 className="btn-secondary flex-1 !py-2 !text-sm"
               >
-                Cancel
+                {t('cancel')}
               </button>
             </div>
             {renameMsg && <div className="text-xs text-center">{renameMsg}</div>}
@@ -253,7 +255,7 @@ export default function Progress() {
         <div className="stat-card bg-surface border border-[#2a2a2a] rounded-xl p-4 text-center">
           <div className="stat-number text-3xl font-bold text-primary">{accuracy}%</div>
           <div className="stat-label text-xs text-muted uppercase tracking-wide mt-1">
-            Quiz Accuracy
+            {t('quizAccuracy')}
           </div>
         </div>
         <div className="stat-card bg-surface border border-[#2a2a2a] rounded-xl p-4 text-center">
@@ -261,40 +263,40 @@ export default function Progress() {
             {totalCorrect}/{totalQuestions}
           </div>
           <div className="stat-label text-xs text-muted uppercase tracking-wide mt-1">
-            Quiz Correct / Total
+            {t('quizCorrectTotal')}
           </div>
         </div>
         <div className="stat-card bg-surface border border-[#2a2a2a] rounded-xl p-4 text-center">
           <div className="stat-number text-3xl font-bold text-primary">{booksRead}</div>
           <div className="stat-label text-xs text-muted uppercase tracking-wide mt-1">
-            Books Read
+            {t('booksReadStat')}
           </div>
         </div>
         <div className="stat-card bg-surface border border-[#2a2a2a] rounded-xl p-4 text-center">
           <div className="stat-number text-3xl font-bold text-primary">{versesRead}</div>
           <div className="stat-label text-xs text-muted uppercase tracking-wide mt-1">
-            Verses Read
+            {t('versesReadLabel')}
           </div>
         </div>
         <div className="stat-card bg-surface border border-[#2a2a2a] rounded-xl p-4 text-center">
           <div className="stat-number text-3xl font-bold text-primary">{gcAttempts}</div>
           <div className="stat-label text-xs text-muted uppercase tracking-wide mt-1">
-            Global Challenges
+            {t('globalChallengesLabel')}
           </div>
         </div>
         <div className="stat-card bg-surface border border-[#2a2a2a] rounded-xl p-4 text-center">
           <div className="stat-number text-3xl font-bold text-primary">{gcBest}%</div>
           <div className="stat-label text-xs text-muted uppercase tracking-wide mt-1">
-            Best Challenge
+            {t('bestChallenge')}
           </div>
         </div>
       </div>
 
       {/* Per-book stats */}
       <div className="mt-3 text-sm text-muted">
-        <strong>Per‑Book Quiz Stats:</strong>
+        <strong>{t('perBookQuizStats')}</strong>
         {Object.keys(bookStats).length === 0 ? (
-          ' None yet.'
+          ` ${t('noneYet')}`
         ) : (
           <ul className="list-none p-0 mt-1">
             {Object.entries(bookStats).map(([book, stats]) => (
@@ -310,7 +312,7 @@ export default function Progress() {
       {/* Overall progress bar */}
       <div className="mt-3">
         <div className="flex justify-between text-sm text-muted">
-          <span>Overall Progress</span>
+          <span>{t('overallProgress')}</span>
           <span>{accuracy}%</span>
         </div>
         <div className="progress-bar-container bg-[#2a2a2a] rounded-xl h-5 mt-1 overflow-hidden">
@@ -323,18 +325,12 @@ export default function Progress() {
 
       {/* ─── Manage Progress ─────────────────────────────────── */}
       <div className="mt-6 bg-surface rounded-xl p-5 border border-[#2a2a2a]">
-        <h3 className="text-primary text-lg font-semibold mb-3">📊 Manage Progress</h3>
+        <h3 className="text-primary text-lg font-semibold mb-3">{t('manageProgress')}</h3>
 
         {isAnonymous ? (
           <>
             <p className="text-muted text-sm mb-3">
-              You're playing as a guest. Your progress is saved on this device
-              only.{' '}
-              <strong className="text-error">
-                Clearing browser data will erase it.
-              </strong>{' '}
-              Sign in to keep it safe across devices and to unlock multiplayer
-              duels.
+              {t('guestWarning')}
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -342,47 +338,44 @@ export default function Progress() {
                 onClick={() =>
                   requireAuth(
                     () => {},
-                    'Sign in to save your progress'
+                    t('signInToSavePrompt')
                   )
                 }
                 className="btn !w-auto px-6"
               >
-                  Sign in to save
+                  {t('signInToSave')}
               </button>
               <button
                 onClick={() =>
                   requireAuth(
                     () => {},
-                    'Sign in to load your existing progress'
+                    t('signInToLoadPrompt')
                   )
                 }
                 className="btn-secondary !w-auto px-6"
               >
-                  Load progress
+                  {t('loadProgressBtn')}
               </button>
             </div>
 
             <p className="text-muted text-xs mt-3">
-              Already played on another device? Use{' '}
-              <strong className="text-text">Load progress</strong> and pick the
-              Google account you used before.
+              {t('syncWarning')}
             </p>
           </>
         ) : (
           <>
             <p className="text-success text-sm mb-3">
-              ✅ Your progress is synced to your account across devices.
+              {t('progressSynced')}
             </p>
             <button
               onClick={handleLogout}
               disabled={logoutLoading}
               className="btn-secondary !w-auto px-6"
             >
-              {logoutLoading ? 'Logging out...' : 'Log Out / Switch account'}
+              {logoutLoading ? t('loggingOut') : t('logoutSwitch')}
             </button>
             <p className="text-muted text-xs mt-3">
-              Want to use a different account? Log out and sign in with the
-              other Google account — your data is tied to each account.
+              {t('logoutNote')}
             </p>
           </>
         )}
@@ -391,9 +384,9 @@ export default function Progress() {
       <div className="mt-3 text-center text-muted text-xs">
         {user
           ? isAnonymous
-            ? `Playing as guest · ${displayName}`
-            : `Signed in as ${displayName}`
-          : 'Not signed in'}
+            ? `${t('playingAsGuest')} · ${displayName}`
+            : `${t('signedInAs')} ${displayName}`
+          : t('notSignedIn')}
       </div>
 
       {/* Sign-in prompt for gated actions */}

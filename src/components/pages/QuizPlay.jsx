@@ -68,7 +68,7 @@ export default function QuizPlay() {
       let qs = [];
 
       if (daily) {
-        let dbQs = await fetchDailyChallengeQuestions();
+        let dbQs = await fetchDailyChallengeQuestions(language);
         if (dbQs && dbQs.length > 0) {
           qs = dbQs;
         } else {
@@ -100,7 +100,7 @@ export default function QuizPlay() {
           }
         }
       } else {
-        let dbQs = await fetchGlobalChallengeQuestionsFromDB(10);
+        let dbQs = await fetchGlobalChallengeQuestionsFromDB(10, language);
         if (dbQs && dbQs.length > 0) {
           qs = dbQs;
         } else {
