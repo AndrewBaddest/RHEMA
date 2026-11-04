@@ -64,6 +64,7 @@ export default function Challenge() {
   const [timerSeconds, setTimerSeconds] = useState(30);
   const [multiplayerStatus, setMultiplayerStatus] = useState('idle');
   const [notification, setNotification] = useState(null);
+  const [resumableDuel, setResumableDuel] = useState(null);
   const [currentChallenge, setCurrentChallenge] = useState(null);
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -105,28 +106,16 @@ export default function Challenge() {
     if (!user) return;
     const checkActiveDuel = async () => {
       const { data } = await supabase
-        .from('duel_challenges')
-        .select('*')
-        .or(`challenger_id.eq.${user.id},opponent_id.eq.${user.id}`)
-        .eq('status', 'accepted')
-        .order('created_at', { ascending: false })
+        .from("duel_challenges")
+        .select("*")
+        .or(`challenger_id.eq.,opponent_id.eq.`)
+        .in("status", ["accepted", "active"])
+        .gte("last_activity_at", new Date(Date.now() - 15 * 60 * 1000).toISOString())
+        .order("last_activity_at", { ascending: false })
         .limit(1)
         .maybeSingle();
 
-      if (data) {
-        const isChallenger = user.id === data.challenger_id;
-        const myProgress = isChallenger ? data.challenger_current_question : data.opponent_current_question;
-        
-        setCurrentChallenge(data);
-        setQuizQuestions(data.questions);
-        setCurrentQuestionIndex(myProgress || 0);
-        setMyScore(isChallenger ? data.score_challenger : data.score_opponent);
-        setOpponentScore(isChallenger ? data.score_opponent : data.score_challenger);
-        setIsMultiplayerModalOpen(true);
-        setMultiplayerStatus('quiz');
-        
-        startQuestionTimer();
-      }
+      if (data) setResumableDuel(data);
     };
     checkActiveDuel();
   }, [user]);
@@ -467,6 +456,40 @@ export default function Challenge() {
     };
   }, [currentChallenge?.id, user?.id]);
 
+  useEffect(() => {
+    if (multiplayerStatus !== "quiz" || !currentChallengeRef.current?.id) return;
+    const interval = setInterval(() => {
+      supabase
+        .from("duel_challenges")
+        .update({ last_activity_at: new Date().toISOString() })
+        .eq("id", currentChallengeRef.current.id)
+        .then(() => {}).catch(() => {});
+    }, 30000);
+    return () => clearInterval(interval);
+  }, [multiplayerStatus]);
+
+  const resumeDuel = (duel) => {
+    const isChallenger = user.id === duel.challenger_id;
+    const myProgress = isChallenger ? duel.challenger_current_question : duel.opponent_current_question;
+    setCurrentChallenge(duel);
+    setQuizQuestions(duel.questions);
+    setCurrentQuestionIndex(myProgress || 0);
+    setMyScore(isChallenger ? duel.score_challenger : duel.score_opponent);
+    setOpponentScore(isChallenger ? duel.score_opponent : duel.score_challenger);
+    setIsMultiplayerModalOpen(true);
+    setMultiplayerStatus('quiz');
+    setResumableDuel(null);
+    startQuestionTimer();
+  };
+
+  const discardDuel = async (duel) => {
+    await supabase
+      .from('duel_challenges')
+      .update({ status: 'abandoned' })
+      .eq('id', duel.id);
+    setResumableDuel(null);
+  };
+
   const handleSendChallenge = () => {
     requireAuth(async () => {
       if (!opponentId.trim()) { alert(t('alertOpponentName')); return; }
@@ -543,6 +566,13 @@ export default function Challenge() {
   };
 
   const resetMultiplayer = () => {
+  if (currentChallengeRef.current?.id) {
+    supabase
+      .from("duel_challenges")
+      .update({ status: "finished" })
+      .eq("id", currentChallengeRef.current.id)
+      .then(() => {}).catch(() => {});
+  }
     setIsMultiplayerModalOpen(false); setOpponentId(''); setOpponentName(''); setMultiplayerStatus('idle');
     setNotification(null); setQuizQuestions([]); setCurrentQuestionIndex(0); setMyScore(0); setOpponentScore(0);
     setCurrentChallenge(null); setIsRematchRequested(false); setIsOpponentPresent(false);
@@ -559,6 +589,32 @@ export default function Challenge() {
 
   return (
     <div className="py-4 text-center">
+      {resumableDuel && !isMultiplayerModalOpen && (
+        <div className="bg-primary/10 border border-primary/40 rounded-xl p-3 mb-4 flex items-center justify-between gap-3 flex-wrap max-w-md mx-auto text-left">
+          <span className="text-sm text-text">⚔️ You have an active Duel in progress</span>
+          <div className="flex gap-2">
+            <button onClick={() => {
+              const duel = resumableDuel;
+              const isChallenger = user.id === duel.challenger_id;
+              const myProgress = isChallenger ? duel.challenger_current_question : duel.opponent_current_question;
+              setCurrentChallenge(duel);
+              setQuizQuestions(duel.questions);
+              setCurrentQuestionIndex(myProgress || 0);
+              setMyScore(isChallenger ? duel.score_challenger : duel.score_opponent);
+              setOpponentScore(isChallenger ? duel.score_opponent : duel.score_challenger);
+              setIsMultiplayerModalOpen(true);
+              setMultiplayerStatus("quiz");
+              setResumableDuel(null);
+              startQuestionTimer();
+            }} className="btn !py-1.5 !px-4 text-sm">Resume</button>
+            <button onClick={() => {
+              supabase.from("duel_challenges").update({ status: "abandoned" }).eq("id", resumableDuel.id).then(() => {});
+              setResumableDuel(null);
+            }} className="btn-secondary !py-1.5 !px-4 text-sm">Discard</button>
+          </div>
+        </div>
+      )}
+
       <h2 className="text-primary text-2xl font-bold mb-4">{t('globalChallenge')}</h2>
       
       <div className="bg-surface rounded-xl p-8 border border-[#2a2a2a] max-w-md mx-auto">
@@ -568,7 +624,7 @@ export default function Challenge() {
           {globalEvent?.status === 'live' ? (
             <>
               <div className="text-4xl font-bold text-success mb-4">{t('liveNow')}</div>
-              <button onClick={() => requireAuth(() => startGlobalQuiz(globalEvent), 'Enter the Global Challenge')} className="btn w-full bg-green-600 hover:bg-green-500 text-white animate-pulse">
+              <button onClick={() => requireAuth(() => startGlobalQuiz(globalEvent), t("enterLive"))} className="btn w-full bg-green-600 hover:bg-green-500 text-white animate-pulse">
                 {t('enterLive')}
               </button>
             </>
