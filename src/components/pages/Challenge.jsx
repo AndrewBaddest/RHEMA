@@ -103,22 +103,30 @@ export default function Challenge() {
 
   // ─── DISCONNECT RECOVERY ──────────────────────────────────────
   useEffect(() => {
-    if (!user) return;
+    if (!user?.id) return;
     const checkActiveDuel = async () => {
-      const { data } = await supabase
-        .from("duel_challenges")
-        .select("*")
-        .or(`challenger_id.eq.,opponent_id.eq.`)
-        .in("status", ["accepted", "active"])
-        .gte("last_activity_at", new Date(Date.now() - 15 * 60 * 1000).toISOString())
-        .order("last_activity_at", { ascending: false })
-        .limit(1)
-        .maybeSingle();
+      try {
+        const { data, error } = await supabase
+          .from("duel_challenges")
+          .select("*")
+          .or(`challenger_id.eq.${user.id},opponent_id.eq.${user.id}`)
+          .in("status", ["accepted", "active"])
+          .gte("last_activity_at", new Date(Date.now() - 15 * 60 * 1000).toISOString())
+          .order("last_activity_at", { ascending: false })
+          .limit(1)
+          .maybeSingle();
 
-      if (data) setResumableDuel(data);
+        if (error) {
+          console.warn("[duel] banner check failed (non-fatal):", error.message);
+          return;
+        }
+        if (data) setResumableDuel(data);
+      } catch (err) {
+        console.warn("[duel] banner check crashed (non-fatal):", err);
+      }
     };
     checkActiveDuel();
-  }, [user]);
+  }, [user?.id]);
 
   useEffect(() => {
     return () => {
