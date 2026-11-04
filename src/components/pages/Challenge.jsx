@@ -498,7 +498,7 @@ export default function Challenge() {
       if (!connectionStatus) { alert(t('alertConnectionNotReady')); return; }
 
       setOpponentName(await getUserDisplayName(targetUid));
-      const questions = await fetchGlobalChallengeQuestionsFromDB(questionCount, language);
+      const questions = await fetchGlobalChallengeQuestionsFromDB(questionCount, "en");
       const fallbacks = questions?.length > 0 ? questions : generateGlobalQuizQuestions(questionCount);
 
       duelStartedRef.current = false; localFinishedRef.current = false; opponentFinishedRef.current = false; hasAnsweredRef.current = false;
@@ -554,7 +554,7 @@ export default function Challenge() {
 
   const handleAcceptRematch = async () => {
     if (!channelRef.current || !currentChallengeRef.current) return;
-    const freshQuestions = generateGlobalQuizQuestions(questionCount);
+    const freshQuestions = await fetchGlobalChallengeQuestionsFromDB(questionCount, "en");
     const secs = currentChallengeRef.current.timer_seconds || timerSecondsRef.current || 30;
     await supabase.from('duel_challenges').update({ 
       status: 'accepted', questions: freshQuestions, score_challenger: 0, score_opponent: 0, current_question: 0,
