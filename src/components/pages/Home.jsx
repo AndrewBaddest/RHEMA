@@ -1,40 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useUIStore, useStore } from '../../lib/store';
+import { useUIStore } from '../../lib/store';
 import { ALL_BOOKS, BOOKS_OT } from '../../lib/utils';
-import { fetchAllQuizQuestions } from '../../lib/api';
 import BookGrid from '../shared/BookGrid';
-import { useAuth } from '../../context/AuthContext';
-import { useLanguage } from '../../context/LanguageContext'; // 👈 Added
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function Home() {
   const [mode, setMode] = useState('quiz');
   const navigate = useNavigate();
   const setCurrentHomeTab = useUIStore((state) => state.setCurrentHomeTab);
-  const setAllQuizQuestions = useStore((s) => s.setAllQuizQuestions);
-  const allQuizQuestions = useStore((s) => s.allQuizQuestions || []);
-  const playedQuestions = useStore((s) => s.playedQuestions || []);
-  const { language, t } = useLanguage(); // 👈 Get language
-
-  const { user, loading } = useAuth();
-
-  useEffect(() => {
-    if (allQuizQuestions.length === 0) {
-      const load = async () => {
-        try {
-          const qs = await fetchAllQuizQuestions();
-          setAllQuizQuestions(qs);
-        } catch (err) {
-          console.warn('⚠️ Failed to preload quiz questions:', err);
-        }
-      };
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(load, { timeout: 5000 });
-      } else {
-        setTimeout(load, 1000);
-      }
-    }
-  }, []);
+  const { language, t } = useLanguage();
 
   const handleModeChange = (tab) => {
     setMode(tab);
@@ -42,7 +17,7 @@ export default function Home() {
   };
 
   const handleBookClick = (book) => {
-    // 👇 'book' here is always the English name (e.g., 'Genesis')
+    // 'book' is the English name (e.g., 'Genesis') for the DB query
     if (mode === 'quiz') {
       navigate('/quiz', { state: { book } });
     } else {
@@ -92,13 +67,10 @@ export default function Home() {
         {mode === 'quiz' ? t('selectBookPlay') : t('selectBookRead')}
       </h3>
       <p className="text-muted text-sm mb-2.5">
-        {mode === 'quiz'
-          ? 'Choose a book and test your knowledge with 10 questions.'
-          : 'Choose a book and chapter to start reading.'}
+        {mode === 'quiz' ? t('homeDescQuiz') : t('homeDescRead')}
       </p>
 
       <div className="testament-title">{t('oldTestament')}</div>
-      {/* 👇 Pass the language down */}
       <BookGrid books={BOOKS_OT} onClick={handleBookClick} lang={language} />
       
       <div className="testament-title">{t('newTestament')}</div>

@@ -6,7 +6,7 @@ import { ALL_BOOKS } from '../../lib/utils';
 import { useAuth } from '../../context/AuthContext';
 import { useUpdateProgress } from '../../hooks/useProgress';
 import { useLanguage } from '../../context/LanguageContext';
-import { getBookDisplayName } from '../../lib/translations'; // 👈 Added
+import { getBookDisplayName } from '../../lib/translations';
 
 export default function Reader() {
   const location = useLocation();
@@ -16,7 +16,7 @@ export default function Reader() {
   const initialChapter = state.chapter || 1;
   const initialVerse = state.verse || null;
   const fromResults = state.fromResults || false;
-  const { language, t } = useLanguage(); // 👈 Added
+  const { language, t } = useLanguage();
 
   const [book, setBook] = useState(initialBook);
   const [chapter, setChapter] = useState(initialChapter);
@@ -68,7 +68,7 @@ export default function Reader() {
       setIsLoading(true);
       setError(null);
       try {
-        const rawData = await fetchBibleData(book); // 👈 Uses English name for DB
+        const rawData = await fetchBibleData(book, language);
         let chapterMap = {};
         let chapterList = [];
 
@@ -104,7 +104,14 @@ export default function Reader() {
         setChapters(chapterList);
 
         let targetChapter = chapter;
-        if (!chapterMap[targetChapter]) {
+        
+        // 👇 THE FIX: If the specific chapter is missing, throw an error instead of silently defaulting to 1
+        if (!chapterMap[targetChapter] && chapter !== 1) {
+          console.warn(`⚠️ Chapter ${chapter} not found in ${book}.`);
+          setError(`Chapter ${chapter} not found in ${book}.`);
+          setIsLoading(false);
+          return;
+        } else if (!chapterMap[targetChapter]) {
           targetChapter = chapterList[0] || 1;
           setChapter(targetChapter);
         }
@@ -132,7 +139,7 @@ export default function Reader() {
 
     loadChapter();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [book, chapter]);
+  }, [book, chapter, language]);
 
   useEffect(() => {
     if (!verses.length) return;
@@ -153,7 +160,7 @@ export default function Reader() {
   }, [book, chapter, verses.length, user?.id]);
 
   const handleBookChange = (e) => {
-    const newBook = e.target.value; // 👈 English name from select value
+    const newBook = e.target.value;
     setBook(newBook);
     setChapter(1);
     setHighlightVerse(null);
@@ -193,6 +200,7 @@ export default function Reader() {
       <div className="text-center py-10">
         <p className="text-error">⚠️ {error}</p>
         <button className="btn mt-4" onClick={() => window.location.reload()}>{t('retry')}</button>
+        <button className="btn-secondary mt-4 ml-2" onClick={() => { setBook(book); setChapter(1); }}>Go to Chapter 1</button>
       </div>
     );
   }
@@ -209,7 +217,6 @@ export default function Reader() {
       <div className="reader-controls flex gap-2.5 flex-wrap mb-4">
         <select value={book} onChange={handleBookChange} className="flex-1 min-w-[100px] p-2.5 rounded-lg border border-[#333] bg-surface text-text text-base">
           {ALL_BOOKS.map((b) => (
-            // 👇 Value is English, Display is Swahili
             <option key={b} value={b}>{getBookDisplayName(b, language)}</option>
           ))}
         </select>
@@ -228,7 +235,6 @@ export default function Reader() {
           <p className="text-muted text-center py-10">{t('noVerses')} {getBookDisplayName(book, language)} {chapter}.</p>
         ) : (
           <>
-            {/* 👇 Translated heading */}
             <h3 className="text-primary text-xl font-bold mb-3">
               {getBookDisplayName(book, language)} {chapter}
             </h3>

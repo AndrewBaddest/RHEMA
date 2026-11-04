@@ -4,3 +4,5 @@ dist/
 *.log
 .env
 .env.local
+english-questions.json
+swahili-questions.json

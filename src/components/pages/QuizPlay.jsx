@@ -13,7 +13,7 @@ import {
 import { shuffle } from '../../lib/utils';
 import { useAuth } from '../../context/AuthContext';
 import { useSaveQuizAttempt } from '../../hooks/useQuiz';
-import { useLanguage } from '../../context/LanguageContext'; // 👈 Added
+import { useLanguage } from '../../context/LanguageContext';
 
 function QuizShell({ children }) {
   return (
@@ -30,7 +30,7 @@ export default function QuizPlay() {
   const location = useLocation();
   const navigate = useNavigate();
   const { book, daily } = location.state || {};
-  const { t } = useLanguage(); // 👈 Added
+  const { language, t } = useLanguage(); // 👈 Added language
 
   const settings = useStore((s) => s.settings);
   const timerDuration = settings.quiz.timer || 30;
@@ -79,7 +79,8 @@ export default function QuizPlay() {
         }
         setIsDaily(true);
       } else if (book) {
-        let dbQs = await fetchQuizQuestionsFromDB(book, questionsPerBook);
+        // 👇 Pass language here
+        let dbQs = await fetchQuizQuestionsFromDB(book, language, questionsPerBook);
         if (dbQs && dbQs.length > 0) {
           qs = dbQs;
         } else {
@@ -132,7 +133,8 @@ export default function QuizPlay() {
       clearTimeout(advanceTimeoutRef.current);
       clearTimeout(transitionTimeoutRef.current);
     };
-  }, [book, daily, allQuizQuestions, timerDuration, questionsPerBook]);
+    // 👇 Add language to the dependencies
+  }, [book, daily, allQuizQuestions, timerDuration, questionsPerBook, language, t]);
 
   const processAnswer = (finalAnswer) => {
     const q = questions[currentIndex];

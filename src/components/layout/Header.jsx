@@ -36,10 +36,10 @@ export default function Header() {
             rel="noopener noreferrer"
             className="header-btn"
           >
-            Contact Us
+            {t("contactUs")}
           </a>
         ) : path === '/contact' ? null : path === '/' ? (
-          <Link to="/donate" className="header-btn">Donate</Link>
+          <Link to="/donate" className="header-btn">{t("donate")}</Link>
         ) : (
           <>
             <Link

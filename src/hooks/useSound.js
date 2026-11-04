@@ -1,110 +1,180 @@
-import { useEffect, useRef } from 'react';
-import { useUIStore } from '../lib/store';
+import { useEffect, useState } from 'react';
+import { useUIStore, useStore } from '../lib/store';
 
-// ── Singleton audio instance ────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────
+// MODULE-LEVEL SINGLETONS
+// One background track for the whole tab, survives navigation.
+// ─────────────────────────────────────────────────────────────────
+const BG_URL = '/audio/bg-music.mp3';
+const BG_VOLUME = 0.55;
+const LS_WANTED = 'rhema_bg_wanted';   // 👈 persists "user wants music" across reloads
+
 let bgAudio = null;
-let isBgInitialized = false;
+let initialized = false;
+let listenerAttached = false;
 
+// Session flag — set by startBackground() after auth, cleared by pauseBackground()
+let shouldStart = false;
+
+// Mirrors of store state — module-level so unlock handler never sees stale closure
+let mutedRef = false;
+let bgMusicRef = true;
+let sfxRef = true;
+
+// True only when play() was rejected by autoplay policy AND we still want to play
+let blocked = false;
+
+const subs = new Set();
+
+function notify() {
+  const snap = {
+    playing: !!bgAudio && !bgAudio.paused,
+    blocked,
+    shouldStart,
+    muted: mutedRef,
+    bgMusic: bgMusicRef,
+  };
+  subs.forEach((fn) => { try { fn(snap); } catch (_) {} });
+}
+
+function shouldActuallyPlay() {
+  return shouldStart && bgMusicRef && !mutedRef;
+}
+
+function tryPlay() {
+  if (!bgAudio || !shouldActuallyPlay()) return;
+  if (!bgAudio.paused) return;
+  const p = bgAudio.play();
+  if (!p || typeof p.then !== 'function') return;
+  p.then(
+    () => { blocked = false; notify(); },
+    (err) => {
+      if (err?.name === 'NotAllowedError') {
+        // Autoplay policy — expected. Unlock listener will retry on first gesture.
+        blocked = true;
+        notify();
+      } else {
+        console.warn('[audio] background failed:', err);
+      }
+    }
+  );
+}
+
+function ensureInit() {
+  if (initialized) return;
+  initialized = true;
+
+  // 👇 Restore user's music intent from previous session (survives refresh)
+  try { shouldStart = localStorage.getItem(LS_WANTED) === '1'; } catch (_) {}
+
+  bgAudio = new Audio(BG_URL);
+  bgAudio.loop = true;
+  bgAudio.volume = BG_VOLUME;
+  bgAudio.preload = 'auto';
+  bgAudio.addEventListener('play', () => { blocked = false; notify(); });
+  bgAudio.addEventListener('pause', notify);
+  bgAudio.addEventListener('error', () => {
+    console.warn('[audio] background error:', bgAudio?.error);
+  });
+
+  // 👇 Attempt playback immediately. On cold load this will be blocked by
+  //    autoplay policy — that's expected. The unlock listener below will
+  //    retry on the first pointerdown/keydown anywhere on the page.
+  if (shouldStart) setTimeout(tryPlay, 0);
+}
+
+function ensureListener() {
+  if (listenerAttached) return;
+  listenerAttached = true;
+
+  // Persistent — never cleaned up. Fires on every gesture, only acts if
+  // we're waiting for play permission.
+  const handler = () => {
+    if (shouldActuallyPlay() && bgAudio?.paused) tryPlay();
+  };
+  document.addEventListener('pointerdown', handler, { passive: true });
+  document.addEventListener('keydown', handler, { passive: true });
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') handler();
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────
+// HOOK
+// ─────────────────────────────────────────────────────────────────
 export function useSound() {
-  const isMuted = useUIStore((state) => state.isMuted);
-  const toggleMute = useUIStore((state) => state.toggleMute);
-  const sounds = useRef({});
+  ensureInit();
+  ensureListener();
 
-  // ── Initialize audio only once ────────────────────────────────
+  const isMuted = useUIStore((s) => s.isMuted);
+  const toggleMuteAction = useUIStore((s) => s.toggleMute);
+
+  const bgMusic = useStore((s) => s.settings?.sound?.bgMusic ?? true);
+  const soundEffects = useStore((s) => s.settings?.sound?.soundEffects ?? true);
+
+  // Reacts to all three flags. Updates module refs, then reconciles
+  // the audio element to match shouldActuallyPlay().
   useEffect(() => {
-    if (isBgInitialized) return;
-    isBgInitialized = true;
-
-    bgAudio = new Audio('/audio/bg-music.mp3');
-    bgAudio.loop = true;
-    bgAudio.volume = 0.6; // even lower to blend with other audio
-    bgAudio.preload = 'auto';
-
-    // Preload sound effects
-    sounds.current = {
-      correct: new Audio('/audio/correct.mp3'),
-      wrong: new Audio('/audio/wrong.mp3'),
-      gameover: new Audio('/audio/game-over.mp3'),
-    };
-
-    // Unlock audio on first user interaction (click/tap)
-    const unlock = () => {
-      // Only start if we have a pending start request
-      if (bgAudio && bgAudio.paused && bgAudio._shouldStart) {
-        bgAudio.play().catch(() => {});
-        bgAudio._shouldStart = false;
-      }
-      document.removeEventListener('click', unlock);
-      document.removeEventListener('touchstart', unlock);
-    };
-    document.addEventListener('click', unlock);
-    document.addEventListener('touchstart', unlock);
-
-    return () => {
-      document.removeEventListener('click', unlock);
-      document.removeEventListener('touchstart', unlock);
-      if (bgAudio) {
-        bgAudio.pause();
-        bgAudio.currentTime = 0;
-        bgAudio._shouldStart = false;
-      }
-    };
-  }, []);
-
-  // ── Watch mute state ────────────────────────────────────────────
-  useEffect(() => {
+    mutedRef = isMuted;
+    bgMusicRef = bgMusic;
+    sfxRef = soundEffects;
     if (!bgAudio) return;
-    if (isMuted) {
-      if (!bgAudio.paused) bgAudio.pause();
-    } else {
-      // If muted is off and we have a pending start, play
-      if (bgAudio.paused && bgAudio._shouldStart) {
-        bgAudio.play().catch(() => {});
-        bgAudio._shouldStart = false;
-      }
-    }
-  }, [isMuted]);
 
-  // ── Start background music (call once after login) ──────────────
+    const want = shouldActuallyPlay();
+    if (want && bgAudio.paused) {
+      tryPlay();
+    } else if (!want && !bgAudio.paused) {
+      bgAudio.pause();
+    }
+    notify();
+  }, [isMuted, bgMusic, soundEffects]);
+
   const startBackground = () => {
-    if (!bgAudio) return;
-    if (isMuted) {
-      // If muted, just mark that we want to start later
-      bgAudio._shouldStart = true;
-      return;
-    }
-    if (bgAudio.paused) {
-      bgAudio._shouldStart = false;
-      bgAudio.currentTime = 0;
-      bgAudio.play().catch((err) => console.warn('Playback failed:', err));
-    }
+    shouldStart = true;
+    // 👇 Persist intent so it survives refresh
+    try { localStorage.setItem(LS_WANTED, '1'); } catch (_) {}
+    if (!shouldActuallyPlay()) { notify(); return; }
+    tryPlay();
   };
 
   const pauseBackground = () => {
-    if (bgAudio && !bgAudio.paused) {
-      bgAudio.pause();
-    }
+    shouldStart = false;
+    // 👇 Persist "user doesn't want music"
+    try { localStorage.setItem(LS_WANTED, '0'); } catch (_) {}
+    blocked = false;
+    if (bgAudio && !bgAudio.paused) bgAudio.pause();
+    notify();
   };
 
-  const playEffect = (type) => {
-    if (isMuted) return;
-    const sound = sounds.current[type];
-    if (sound) {
-      sound.currentTime = 0;
-      sound.play().catch(() => {});
-    }
+  const resumeBackground = () => { tryPlay(); };
+
+  const playEffect = (_type) => {
+    if (mutedRef || !sfxRef) return;
+    // Effects not wired yet — will respect sfxRef when enabled
   };
 
-  const handleToggleMute = () => {
-    toggleMute();
-    // The mute effect (above) will pause/play automatically.
-  };
+  const toggleMute = () => { toggleMuteAction(); };
 
-  return {
-    isMuted,
-    toggleMute: handleToggleMute,
-    startBackground,   // call this only after login
-    pauseBackground,
-    playEffect,
-  };
+  return { isMuted, toggleMute, startBackground, pauseBackground, resumeBackground, playEffect };
+}
+
+// ─────────────────────────────────────────────────────────────────
+// OPTIONAL: reactive status for "tap to enable sound" banner
+// ─────────────────────────────────────────────────────────────────
+export function useSoundStatus() {
+  const [status, setStatus] = useState(() => ({
+    playing: !!bgAudio && !bgAudio.paused,
+    blocked,
+    shouldStart,
+    muted: mutedRef,
+    bgMusic: bgMusicRef,
+  }));
+
+  useEffect(() => {
+    const fn = (s) => setStatus(s);
+    subs.add(fn);
+    return () => { subs.delete(fn); };
+  }, []);
+
+  return status;
 }

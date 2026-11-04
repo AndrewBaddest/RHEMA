@@ -1,12 +1,13 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getFullName, cleanBookName } from '../../lib/utils';
-import { useLanguage } from '../../context/LanguageContext'; // 👈 Added
+import { useLanguage } from '../../context/LanguageContext';
+import { SWAHILI_BOOK_NAMES } from '../../lib/translations';
 
 export default function Results() {
   const location = useLocation();
   const navigate = useNavigate();
   const { questions, userAnswers, score, isDaily, book } = location.state || {};
-  const { t } = useLanguage(); // 👈 Added
+  const { language, t } = useLanguage();
 
   if (!questions || !userAnswers) {
     navigate('/home');
@@ -27,25 +28,66 @@ export default function Results() {
     if (!ref) return;
     const trimmed = String(ref).trim();
 
-    let m = trimmed.match(/^(.+?)\s+(\d+):(\d+)$/);
-    if (m) {
-      const fullBook = getFullName(cleanBookName(m[1].trim()));
-      if (!fullBook) return;
-      navigate('/reader', {
-        state: { book: fullBook, chapter: parseInt(m[2], 10), verse: parseInt(m[3], 10), fromResults: true },
-      });
+    // Match "Book Chapter:Verse" or "Book Chapter"
+    const matchWithVerse = trimmed.match(/^(.+?)\s+(\d+):(\d+)$/);
+    const matchChapterOnly = trimmed.match(/^(.+?)\s+(\d+)$/);
+
+    let rawBook, chapter, verse;
+    if (matchWithVerse) {
+      rawBook = matchWithVerse[1];
+      chapter = matchWithVerse[2];
+      verse = matchWithVerse[3];
+    } else if (matchChapterOnly) {
+      rawBook = matchChapterOnly[1];
+      chapter = matchChapterOnly[2];
+      verse = 1;
+    } else {
       return;
     }
 
-    m = trimmed.match(/^(.+?)\s+(\d+)$/);
-    if (m) {
-      const fullBook = getFullName(cleanBookName(m[1].trim()));
-      if (!fullBook) return;
-      navigate('/reader', {
-        state: { book: fullBook, chapter: parseInt(m[2], 10), verse: 1, fromResults: true },
-      });
+    // Clean the string: remove periods and lowercase it (e.g., "Mwa." -> "mwa")
+    const cleanString = rawBook.replace(/\./g, '').trim().toLowerCase();
+    
+    let finalBook = null;
+
+    // 👇 IF WE ARE IN SWAHILI MODE, TRY SWAHILI FIRST!
+    if (language === 'sw') {
+      // 1. Exact Swahili match
+      for (const [en, sw] of Object.entries(SWAHILI_BOOK_NAMES)) {
+        if (sw.replace(/\./g, '').toLowerCase() === cleanString) {
+          finalBook = en;
+          break;
+        }
+      }
+      // 2. Fuzzy Swahili match (e.g., "mwa" -> "mwanzo")
+      if (!finalBook) {
+        for (const [en, sw] of Object.entries(SWAHILI_BOOK_NAMES)) {
+          const swClean = sw.replace(/\./g, '').toLowerCase();
+          if (cleanString.length >= 3 && swClean.startsWith(cleanString)) {
+            finalBook = en;
+            break;
+          }
+        }
+      }
+    }
+
+    // 👇 FALLBACK TO ENGLISH (If Swahili failed, or if we are in English mode)
+    if (!finalBook) {
+      finalBook = getFullName(cleanBookName(cleanString));
+    }
+
+    // Debug log to help track any future issues
+    console.log(`🔍 Parsing Ref: "${ref}" -> Resolved Book: "${finalBook}" (Chapter ${chapter}, Verse ${verse})`);
+
+    if (!finalBook) {
+      console.warn("❌ Could not resolve book:", rawBook);
       return;
     }
+
+    console.log("🔍 Parsing Ref:", ref, "-> Book:", finalBook, "Chapter:", chapter);
+    navigate("/reader", {
+      state: { book: finalBook, chapter: parseInt(chapter, 10), verse: parseInt(verse, 10), fromResults: true },
+    });
   };
 
   const redoQuiz = () => {

@@ -1,6 +1,9 @@
+import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import { LanguageProvider } from './context/LanguageContext'; // 👈 Added
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { LanguageProvider } from './context/LanguageContext';
+import { useSound } from './hooks/useSound';
+
 import Layout from './components/layout/Layout';
 import Auth from './components/pages/Auth';
 import Home from './components/pages/Home';
@@ -27,10 +30,30 @@ const AdminRoute = ({ children }) => {
   return children;
 };
 
+// 👇 Bridges auth lifecycle → audio lifecycle.
+// Runs startBackground() once after auth rehydrates (including after refresh)
+// and pauseBackground() on logout. Renders nothing.
+function SoundSync() {
+  const { user } = useAuth();
+  const { startBackground, pauseBackground } = useSound();
+
+  useEffect(() => {
+    if (user) {
+      startBackground();
+    } else {
+      pauseBackground();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.id]);   // 👈 only re-run on user identity change
+
+  return null;
+}
+
 function App() {
   return (
-    <LanguageProvider> {/* 👈 Added */}
+    <LanguageProvider>
       <AuthProvider>
+        <SoundSync />   {/* 👈 added */}
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Auth />} />

@@ -1,6 +1,6 @@
 // 👇 THE MASTER SWITCH — one place to rule them all
 // Set to false to force English-only mode (hides language UI, disables Swahili names & strings)
-export const ENABLE_MULTI_LANGUAGE = false;
+export const ENABLE_MULTI_LANGUAGE = true;
 
 export const translations = {
   en: {
@@ -35,6 +35,8 @@ export const translations = {
     oldTestament: 'Old Testament',
     newTestament: 'New Testament',
     quickQuiz: 'Quick Quiz',
+    homeDescQuiz: 'Choose a book and test your knowledge with 10 questions.',
+    homeDescRead: 'Choose a book and chapter to start reading.',
 
     // ─── Quiz Play ─────────────────────────────────────────────
     noQuestions: 'No questions available for this book.',
@@ -230,6 +232,7 @@ export const translations = {
     privacyH8: '8. Contact Us',
     privacyP9: 'If you have any questions about this Privacy Policy, please contact us at info@rhema.org.',
     policyBack: '← Back',
+    builtWithLove: 'Built with ❤️ for exploring the Word.',
     lastUpdatedLabel: 'Last updated:',
   },
   sw: {
@@ -264,6 +267,8 @@ export const translations = {
     oldTestament: 'Agano la Kale',
     newTestament: 'Agano Jipya',
     quickQuiz: 'Jaribio la Haraka',
+    homeDescQuiz: 'Chagua kitabu na ujaribu ujuzi wako kwa maswali 10.',
+    homeDescRead: 'Chagua kitabu na sura ili kuanza kusoma.',
 
     // ─── Quiz Play ─────────────────────────────────────────────
     noQuestions: 'Hakuna maswali yanayopatikana kwa kitabu hiki.',
@@ -459,6 +464,7 @@ export const translations = {
     privacyH8: '8. Wasiliana Nasi',
     privacyP9: 'Ikiwa una maswali yoyote kuhusu Sera hii ya Faragha, tafadhali wasiliana nasi kwa info@rhema.org.',
     policyBack: '← Rudi',
+    builtWithLove: 'Imeundwa kwa ❤️ kwa ajili ya kuchunguza Neno.',
     lastUpdatedLabel: 'Ilisasishwa mwisho:',
   }
 };
