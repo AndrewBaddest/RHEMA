@@ -554,7 +554,7 @@ export default function Challenge() {
 
   const handleAcceptRematch = async () => {
     if (!channelRef.current || !currentChallengeRef.current) return;
-    const freshQuestions = await fetchGlobalChallengeQuestionsFromDB(questionCount, "en");
+    const freshQuestions = (await fetchGlobalChallengeQuestionsFromDB(questionCount, "en")) || generateGlobalQuizQuestions(questionCount);
     const secs = currentChallengeRef.current.timer_seconds || timerSecondsRef.current || 30;
     await supabase.from('duel_challenges').update({ 
       status: 'accepted', questions: freshQuestions, score_challenger: 0, score_opponent: 0, current_question: 0,
